@@ -1,0 +1,80 @@
+<div class="container">
+  <!-- Hotel Search Form -->
+  <div class="hotel-search-section">
+    <h2>Search Hotels</h2>
+    <form class="form-container">
+      <div class="form-row">
+        <label for="location">Location</label>
+        <input type="text" id="location" placeholder="Enter location..." />
+        <label for="startDate">Check in</label>
+        <input type="date" id="startDate" />
+        <label for="endDate">Check out</label>
+        <input type="date" id="endDate" />
+      </div>
+      <div class="form-row">
+        <label for="rooms">Rooms</label>
+        <input type="number" id="rooms" min="1" placeholder="1" />
+        <label for="adults">Adults</label>
+        <input type="number" id="adults" min="1" placeholder="1" />
+        <label for="children">Children</label>
+        <input type="number" id="children" min="0" placeholder="0" />
+      </div>
+      <div class="form-actions">
+        <button type="submit" class="search-btn"></button>
+      </div>
+    </form>
+  </div>
+
+    <!-- Top Destinations Section -->
+    <div class="hotel-list-section">
+      <h2>Top destinations in India</h2>
+      <div class="card-container">
+       
+        <div class="card">
+          <img src="assets/delhi.jpg" alt="" class="card-img" />
+          <div class="card-content">
+            <h3>New Delhi and NCR</h3>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="assets/mumbai.jpg" alt="" class="card-img" />
+          <div class="card-content">
+            <h3>Mumbai</h3>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="assets/goa.jpg" alt="" class="card-img" />
+          <div class="card-content">
+            <h3>Goa</h3>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="assets/bengaluru.jpg" alt="" class="card-img" />
+          <div class="card-content">
+            <h3>Bengaluru</h3>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  <!-- Hotel List Section -->
+  <div class="hotel-list-section">
+    <h2>Hot hotel deals right now</h2>
+    <div class="card-container">
+      <div *ngFor="let hotel of hotels" class="card">
+        <img [src]="hotel.image" alt="{{ hotel.name }}" class="card-img" />
+        <div class="card-content">
+          <h3>{{ hotel.name }}</h3>
+          <p><strong>Location:</strong> {{ hotel.location }}</p>
+          <p><strong>Price:</strong> ${{ hotel.price }} / night</p>
+          <p><strong>Amenities:</strong> {{ hotel.amenities.join(', ') }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>

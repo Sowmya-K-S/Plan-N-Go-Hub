@@ -1,0 +1,68 @@
+{
+  "hotels": [
+    {
+      "id": 1,
+      "name": "Luxury Hotel Paradise",
+      "location": "New York City",
+      "price": 200,
+      "image": "assets/pexels-asadphoto-3293192.jpg",
+      "amenities": ["Free WiFi", "Pool", "Spa"]
+    },
+    {
+      "id": 2,
+      "name": "Budget Inn",
+      "location": "San Francisco",
+      "price": 80,
+      "image": "assets/pexels-jess-vide-5007455.jpg",
+      "amenities": ["Free Parking", "Complimentary Breakfast"]
+    },
+    {
+      "id": 3,
+      "name": "Seaside Resort - Miami Beach",
+      "location": "Miami Beach",
+      "price": 150,
+      "image": "assets/pexels-jess-vide-7502347.jpg",
+      "amenities": ["Beachfront", "Restaurant", "Gym"]
+    },
+    {
+      "id": 4,
+      "name": "Seaside Resort - Ocean View",
+      "location": "Miami Beach",
+      "price": 160,
+      "image": "assets/pexels-jimbear-1458457.jpg",
+      "amenities": ["Beachfront", "Spa", "Gym"]
+    },
+    {
+      "id": 5,
+      "name": "Mountain Retreat Hotel",
+      "location": "Denver",
+      "price": 180,
+      "image": "assets/pexels-kadiravsarr-14750357.jpg",
+      "amenities": ["Mountain View", "Restaurant", "Bar"]
+    },
+    {
+      "id": 6,
+      "name": "City Center Hotel",
+      "location": "Los Angeles",
+      "price": 120,
+      "image": "assets/pexels-mikhail-nilov-8431120.jpg",
+      "amenities": ["Free WiFi", "Complimentary Breakfast", "Fitness Center"]
+    },
+    {
+      "id": 7,
+      "name": "Desert Oasis Resort",
+      "location": "Phoenix",
+      "price": 250,
+      "image": "assets/pexels-stephen-leonardi-587681991-28408694.jpg",
+      "amenities": ["Pool", "Spa", "Golf Course"]
+    },
+    {
+      "id": 8,
+      "name": "Forest Hideaway Lodge",
+      "location": "Vermont",
+      "price": 200,
+      "image": "assets/pexels-strangehappenings-11757075.jpg",
+      "amenities": ["Forest View", "Restaurant", "Hiking Trails"]
+    }
+  ]
+}
