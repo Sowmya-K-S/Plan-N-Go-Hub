@@ -1,3 +1,5 @@
+//search-hotel.component.spec.ts
+
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SearchHotelComponent } from './search-hotel.component';

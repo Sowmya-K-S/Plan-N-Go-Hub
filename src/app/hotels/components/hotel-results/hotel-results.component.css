@@ -1,0 +1,68 @@
+/* hotel-results.component.css */
+
+/* Hotel List Section Styling */
+.hotel-list-section {
+    margin-top: 40px;
+  }
+  
+  .card-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Display 4 cards in one line */
+    gap: 20px;
+  }
+  
+  .card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  
+  .card-content {
+    padding: 15px;
+  }
+  
+  .card-content h3 {
+    color: #34495e;
+    margin-bottom: 10px;
+  }
+  
+  .card-content p {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .form-container {
+      gap: 15px;
+    }
+  
+    .form-row {
+      flex-direction: column;
+      gap: 15px;
+    }
+  
+    .card-container {
+      grid-template-columns: repeat(2, 1fr); /* Display 2 cards per row on smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .card-container {
+      grid-template-columns: 1fr; /* Display 1 card per row on very small screens */
+    }
+  }
+  

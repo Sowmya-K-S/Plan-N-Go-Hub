@@ -1,19 +1,30 @@
+//search-hotel.component.ts
+
 import { Component, OnInit } from '@angular/core';
-import { HttpClient} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
+import { FormsModule } from '@angular/forms'; 
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';  // Ensure this is imported for HttpClient
 
 @Component({
   selector: 'app-hotel-search',
   standalone: true,
-  imports: [HttpClientModule, CommonModule],  // Properly import HttpClientModule and CommonModule
+  imports: [FormsModule, CommonModule],
   templateUrl: './search-hotel.component.html',
   styleUrls: ['./search-hotel.component.css']
 })
 export class SearchHotelComponent implements OnInit {
-  hotels: any[] = [];  // Holds the fetched hotel data
+  hotels: any[] = [];
+  searchParams = {
+    location: '',
+    startDate: '',
+    endDate: '',
+    rooms: 1,
+    adults: 1,
+    children: 0
+  };
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   ngOnInit(): void {
     this.fetchHotels();
@@ -26,10 +37,14 @@ export class SearchHotelComponent implements OnInit {
       },
       (error) => {
         console.error('Error fetching hotel data:', error);
+        this.hotels = [];
       }
     );
   }
 
-
+  onSearch() {
+    const { location } = this.searchParams;
+    this.router.navigate(['/search-results'], { queryParams: { location } });
+  }
   
 }

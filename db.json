@@ -19,7 +19,7 @@
     {
       "id": 3,
       "name": "Seaside Resort - Miami Beach",
-      "location": "Miami Beach",
+      "location": "Miami",
       "price": 150,
       "image": "assets/pexels-jess-vide-7502347.jpg",
       "amenities": ["Beachfront", "Restaurant", "Gym"]
@@ -27,7 +27,7 @@
     {
       "id": 4,
       "name": "Seaside Resort - Ocean View",
-      "location": "Miami Beach",
+      "location": "Miami",
       "price": 160,
       "image": "assets/pexels-jimbear-1458457.jpg",
       "amenities": ["Beachfront", "Spa", "Gym"]
