@@ -1,27 +1,26 @@
 <!-- search-hotel.component.html -->
 
-<!-- search-hotel form -->
+<!-- Search Hotel Form -->
 <div class="container">
   <div class="hotel-search-section">
     <h2>Search Hotels</h2>
     <form class="form-container" (ngSubmit)="onSearch()">
-
       <div class="form-row">
         <label for="location">Location</label>
         <input type="text" id="location" [(ngModel)]="searchParams.location" name="location" placeholder="Enter location..." required />
-        <label for="startDate">Check in</label>
+        <label for="startDate">Check-in</label>
         <input type="date" id="startDate" [(ngModel)]="searchParams.startDate" name="startDate" required />
-        <label for="endDate">Check out</label>
+        <label for="endDate">Check-out</label>
         <input type="date" id="endDate" [(ngModel)]="searchParams.endDate" name="endDate" required />
       </div>
 
       <div class="form-row">
-        <label for="rooms" >Rooms</label>
+        <label for="rooms">Rooms</label>
         <input type="number" id="rooms" min="1" placeholder="1" [(ngModel)]="searchParams.rooms" name="rooms" />
         <label for="adults">Adults</label>
-        <input type="number" id="adults" min="1" placeholder="1" [(ngModel)]="searchParams.adults" name="adults"/>
+        <input type="number" id="adults" min="1" placeholder="1" [(ngModel)]="searchParams.adults" name="adults" />
         <label for="children">Children</label>
-        <input type="number" id="children" min="0" placeholder="0" [(ngModel)]="searchParams.children" name="children"/>
+        <input type="number" id="children" min="0" placeholder="0" [(ngModel)]="searchParams.children" name="children" />
       </div>
 
       <div class="form-actions">
@@ -31,16 +30,16 @@
   </div>
 </div>
 
- <!-- Top Destinations Section -->
- <div class="hotel-list-section">
+<!-- Top Destinations Section -->
+<div class="hotel-list-section">
   <h2>Top destinations in India</h2>
   <div class="card-container">
-   
     <div class="card">
       <img src="assets/delhi.jpg" alt="" class="card-img" />
       <div class="card-content">
         <h3>New Delhi and NCR</h3>
       </div>
+      <button class="know-more-btn">Explore</button>
     </div>
 
     <div class="card">
@@ -48,6 +47,7 @@
       <div class="card-content">
         <h3>Mumbai</h3>
       </div>
+      <button class="know-more-btn">Explore</button>
     </div>
 
     <div class="card">
@@ -55,6 +55,7 @@
       <div class="card-content">
         <h3>Goa</h3>
       </div>
+      <button class="know-more-btn">Explore</button>
     </div>
 
     <div class="card">
@@ -62,25 +63,24 @@
       <div class="card-content">
         <h3>Bengaluru</h3>
       </div>
+      <button class="know-more-btn">Explore</button>
     </div>
-
   </div>
 </div>
 
-<!-- Hotel List Section -->
+<!-- Hotel Deals Section -->
 <div class="hotel-list-section">
-<h2>Hot hotel deals right now</h2>
-<div class="card-container">
-  <div *ngFor="let hotel of hotels" class="card">
-    <img [src]="hotel.image" alt="{{ hotel.name }}" class="card-img" />
-    <div class="card-content">
-      <h3>{{ hotel.name }}</h3>
-      <p><strong>Location:</strong> {{ hotel.location }}</p>
-      <p><strong>Price:</strong> ${{ hotel.price }} / night</p>
-      <p><strong>Amenities:</strong> {{ hotel.amenities.join(', ') }}</p>
+  <h2>Hot hotel deals right now</h2>
+  <div class="card-container">
+    <div *ngFor="let hotel of topDeals" class="card">
+      <img [src]="hotel.image" alt="{{ hotel.name }}" class="card-img" />
+      <div class="card-content">
+        <h3>{{ hotel.name }}</h3>
+        <p><strong>Location:</strong> {{ hotel.location }}</p>
+        <p><strong>Price:</strong> ₹{{ hotel.price }} / night</p>
+        <p><strong>Amenities:</strong> {{ hotel.amenities.join(', ') }}</p>
+      </div>
+      <button class="know-more-btn">Know More</button>
     </div>
   </div>
 </div>
-</div>
-
-

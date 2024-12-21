@@ -1,9 +1,7 @@
-//search-hotel.component.ts
-
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { FormsModule } from '@angular/forms'; 
+import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -15,6 +13,7 @@ import { CommonModule } from '@angular/common';
 })
 export class SearchHotelComponent implements OnInit {
   hotels: any[] = [];
+  topDeals: any[] = [];
   searchParams = {
     location: '',
     startDate: '',
@@ -34,10 +33,12 @@ export class SearchHotelComponent implements OnInit {
     this.http.get<any[]>('http://localhost:3000/hotels').subscribe(
       (data) => {
         this.hotels = data;
+        this.topDeals = this.hotels.filter((hotel) => hotel.price < 12000);
       },
       (error) => {
         console.error('Error fetching hotel data:', error);
         this.hotels = [];
+        this.topDeals = [];
       }
     );
   }
@@ -46,5 +47,4 @@ export class SearchHotelComponent implements OnInit {
     const { location } = this.searchParams;
     this.router.navigate(['/search-results'], { queryParams: { location } });
   }
-  
 }

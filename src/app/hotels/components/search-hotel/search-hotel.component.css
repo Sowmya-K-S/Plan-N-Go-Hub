@@ -1,5 +1,3 @@
-/* search-hotel.component.css */
-
 /* General Styles */
 .container {
   max-width: 1200px;
@@ -91,43 +89,83 @@ input:focus {
   margin-top: 40px;
 }
 
+/* Updated Cards Section */
 .card-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Display 4 cards in one line */
-  gap: 20px;
+  flex-grow: 1; /* Take the remaining space for cards */
+  display: flex;
+  flex-wrap: wrap; /* Wrap cards to a new row if necessary */
+  gap: 15px; /* Space between cards */
+  justify-content: center; /* Align cards to the left */
 }
 
 .card {
+  width: 295px; /* Fixed width for each card */
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
   background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease-in-out;
-}
-
-.card:hover {
-  transform: translateY(-5px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  
 }
 
 .card-img {
   width: 100%;
-  height: 200px;
+  height: 150px; /* Adjusted height for smaller cards */
   object-fit: cover;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
 }
 
 .card-content {
-  padding: 15px;
+  padding: 15px; /* Increased padding for a better visual balance */
+  background-color: #fafafa; /* Light background for card content */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
 }
 
 .card-content h3 {
-  color: #34495e;
-  margin-bottom: 10px;
+  font-size: 18px; /* Slightly larger font for hotel name */
+  margin: 5px 8px ;
+  color: #333; /* Darker color for better readability */
+  font-weight: bold; /* Make hotel name stand out */
 }
 
 .card-content p {
-  color: #7f8c8d;
-  font-size: 0.9rem;
+  font-size: 14px; /* Slightly smaller font for the details */
+  margin: 5px 8px;
+  color: #555; /* Softer color for details */
+}
+
+.card-content p strong {
+  color: #007bff; /* Blue color for labels (Location, Price, etc.) */
+}
+
+.know-more-btn {
+  background: linear-gradient(135deg, #ff7f50, #ff6347); /* Vibrant gradient color */
+  color: #fff;
+  font-size: 14px;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  font-weight: bold;
+  width: 90%;
+  transition: background 0.3s ease, transform 0.2s ease;
+  margin-bottom: 5px;
+}
+
+.know-more-btn:hover {
+  background: linear-gradient(135deg, #ff6347, #ff4500); /* Darker gradient on hover */
+  transform: scale(1.05); /* Slight scale effect for interaction */
+}
+
+.know-more-btn:active {
+  transform: scale(1); /* Reset the scale when the button is clicked */
 }
 
 /* Responsive Design */
