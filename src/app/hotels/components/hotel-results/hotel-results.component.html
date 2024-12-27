@@ -40,12 +40,12 @@
   <div *ngIf="filteredHotels.length; else noResults">
     <div class="card-container">
       <div *ngFor="let hotel of filteredHotels" class="card">
-        <img [src]="hotel.image" alt="{{ hotel.name }}" class="card-img" />
+        <img [src]="hotel['image']" alt="{{ hotel['name'] }}" class="card-img" />
         <div class="card-content">
-          <h3>{{ hotel.name }}</h3>
-          <p><strong>Location:</strong> {{ hotel.location }}</p>
-          <p><strong>Price:</strong> ₹{{ hotel.price }} / night</p>
-          <p><strong>Amenities:</strong> {{ hotel.amenities.join(', ') }}</p>
+          <h3>{{ hotel['name'] }}</h3>
+          <p><strong>Location:</strong> {{ hotel['location'] }}</p>
+          <p><strong>Price:</strong> ₹{{ hotel['price'] }} / night</p>
+          <p><strong>Amenities:</strong> {{ hotel['amenities'].join(', ') }}</p>
         </div>
         <button class="know-more-btn">Know More</button>
       </div>
