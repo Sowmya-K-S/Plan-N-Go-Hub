@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { HotelService } from '../../services/hotel.service';
 import { Hotel } from '../../models/hotel.model';
@@ -46,7 +47,7 @@ export class HotelResultsComponent implements OnInit {
     'Lake View',
   ];
 
-  constructor(private route: ActivatedRoute, private hotelService: HotelService) {}
+  constructor(private route: ActivatedRoute, private hotelService: HotelService, private router: Router) {}
 
   ngOnInit(): void {
     this.route.queryParams.subscribe((params) => {
@@ -56,7 +57,6 @@ export class HotelResultsComponent implements OnInit {
   }
 
   fetchHotels(location?: string) {
-    console.log("Location passed: ", location);
     if (!location?.trim()) {
       this.hotels = [];
       this.filteredHotels = [];
@@ -92,4 +92,10 @@ export class HotelResultsComponent implements OnInit {
     }
     // Do not call applyFilters() here to avoid auto-filtering
   }
-}  
+  
+  navigateToDetails(hotel: Hotel): void {
+    this.hotelService.setSelectedHotel(hotel);
+    this.router.navigate(['/hotel-details', hotel.id]);
+  }
+
+}

@@ -1,0 +1,12 @@
+<div *ngIf="hotel">
+    <h1>{{ hotel.name }}</h1>
+    <img [src]="hotel['image']" alt="{{ hotel['name'] }}" />
+    <p><strong>Location:</strong> {{ hotel['location'] }}</p>
+    <p><strong>Price:</strong> ₹{{ hotel['price'] }} / night</p>
+    <p><strong>Amenities:</strong> {{ hotel['amenities'].join(', ') }}</p>
+  </div>
+  
+  <div *ngIf="!hotel">
+    <p>Loading hotel details...</p>
+  </div>
+  

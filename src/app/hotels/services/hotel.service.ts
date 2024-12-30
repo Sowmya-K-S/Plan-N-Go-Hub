@@ -3,7 +3,7 @@
 
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject} from 'rxjs';
 import { Hotel } from '../models/hotel.model';
 
 @Injectable({
@@ -14,9 +14,13 @@ export class HotelService {
 
   constructor(private http: HttpClient) {}
 
+// for search-hotel Component
   getHotels(): Observable<Hotel[]> {
     return this.http.get<Hotel[]>(this.apiUrl);
   }
+
+
+  // for hotel-results component
 
   /**
    * Fetch hotels filtered by location
@@ -53,4 +57,20 @@ export class HotelService {
       return matchesMaxPrice && matchesMinPrice && matchesAmenities;
     });
   }
+
+//for hotel-details component
+
+private selectedHotelSource = new BehaviorSubject<Hotel | null>(null);
+getHotelById(id: number): Observable<Hotel> {
+  return this.http.get<Hotel>(`${this.apiUrl}/${id}`);
+}
+
+setSelectedHotel(hotel: Hotel): void {
+  this.selectedHotelSource.next(hotel);
+}
+
+getSelectedHotel(): Observable<Hotel | null> {
+  return this.selectedHotelSource.asObservable();
+}
+
 }

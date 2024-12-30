@@ -1,4 +1,4 @@
-<h2>Search Results</h2>
+<h2 *ngIf="filteredHotels.length">Showing {{ filteredHotels.length }} hotels in {{ searchParams.location }}</h2>
 
 <div class="container">
   <!-- Filters Section -->
@@ -47,7 +47,7 @@
           <p><strong>Price:</strong> ₹{{ hotel['price'] }} / night</p>
           <p><strong>Amenities:</strong> {{ hotel['amenities'].join(', ') }}</p>
         </div>
-        <button class="know-more-btn">Know More</button>
+        <button class="know-more-btn" (click)="navigateToDetails(hotel)">Know More</button>
       </div>
     </div>
   </div>

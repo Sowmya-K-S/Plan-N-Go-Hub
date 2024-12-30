@@ -5,7 +5,8 @@
     <form class="form-container" (ngSubmit)="onSearch()">
       <div class="form-row">
         <label for="location">Location</label>
-        <input 
+        <div>
+          <input 
           type="text" 
           id="location" 
           [(ngModel)]="searchParams.location" 
@@ -13,6 +14,10 @@
           placeholder="Enter location..." 
           required 
         />
+   
+    
+        </div>
+
         
         <label for="startDate">Check-in</label>
         <input 
@@ -78,7 +83,7 @@
       <div class="card-content">
         <h3>New Delhi and NCR</h3>
       </div>
-      <button class="know-more-btn">Explore</button>
+      <button class="know-more-btn" (click)="navigateToLocation('New Delhi')">Explore</button>
     </div>
 
     <div class="card">
@@ -86,7 +91,7 @@
       <div class="card-content">
         <h3>Mumbai</h3>
       </div>
-      <button class="know-more-btn">Explore</button>
+      <button class="know-more-btn" (click)="navigateToLocation('Mumbai')">Explore</button>
     </div>
 
     <div class="card">
@@ -94,7 +99,7 @@
       <div class="card-content">
         <h3>Goa</h3>
       </div>
-      <button class="know-more-btn">Explore</button>
+      <button class="know-more-btn" (click)="navigateToLocation('Goa')">Explore</button>
     </div>
 
     <div class="card">
@@ -102,7 +107,7 @@
       <div class="card-content">
         <h3>Bengaluru</h3>
       </div>
-      <button class="know-more-btn">Explore</button>
+      <button class="know-more-btn"  (click)="navigateToLocation('Bengaluru')">Explore</button>
     </div>
   </div>
 </div>
@@ -119,7 +124,7 @@
         <p><strong>Price:</strong> ₹{{ hotel['price'] }} / night</p>
         <p *ngIf="hotel['amenities']?.length"><strong>Amenities:</strong> {{ hotel['amenities'].join(', ') }}</p>
       </div>
-      <button class="know-more-btn">Get Deal</button>
+      <button class="know-more-btn" (click)="navigateToDetails(hotel)">Get Deal</button>
     </div>
   </div>
 </div>

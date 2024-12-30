@@ -45,11 +45,26 @@ export class SearchHotelComponent implements OnInit {
     );
   }
 
+  showWarning: boolean = false;
   onSearch() {
     const { location } = this.searchParams;
     if (!location.trim()) {
-      alert('Please enter a valid location');
       return; // Prevent empty location searches
+    }
+    this.router.navigate(['/search-results'], { queryParams: { location: location.trim() } });
+  }
+  
+
+  navigateToDetails(hotel: Hotel): void {
+    this.hotelService.setSelectedHotel(hotel);
+    this.router.navigate(['/hotel-details', hotel.id]);
+  }
+
+
+  navigateToLocation(location: string): void {
+    if (!location.trim()) {
+      console.error('Invalid location');
+      return;
     }
     this.router.navigate(['/search-results'], { queryParams: { location: location.trim() } });
   }
