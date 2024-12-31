@@ -1,0 +1,47 @@
+.image-gallery {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .photo img {
+    width: 100px;
+    height: 80px;
+    object-fit: cover;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .see-all-btn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .see-all-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .room-card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .reserve-btn {
+    background-color: #28a745;
+    color: #fff;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .reserve-btn:hover {
+    background-color: #218838;
+  }
+  

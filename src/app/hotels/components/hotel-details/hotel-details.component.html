@@ -1,12 +1,32 @@
 <div *ngIf="hotel">
-    <h1>{{ hotel.name }}</h1>
-    <img [src]="hotel['image']" alt="{{ hotel['name'] }}" />
-    <p><strong>Location:</strong> {{ hotel['location'] }}</p>
-    <p><strong>Price:</strong> ₹{{ hotel['price'] }} / night</p>
-    <p><strong>Amenities:</strong> {{ hotel['amenities'].join(', ') }}</p>
+  <!-- Hotel Header Section -->
+  <h1>{{ hotel['name'] }}</h1>
+  <p><strong>Address:</strong> {{ hotel['location'] }}</p>
+  <p>{{ hotel['description'] }}</p>
+
+  <!-- Image Gallery -->
+  <div class="image-gallery">
+    <div *ngFor="let photo of hotel['images'].slice(0, 5)" class="photo">
+      <img [src]="photo" alt="{{ hotel['name'] }} photo" />
+    </div>
+    <button class="see-all-btn">See All Photos</button>
   </div>
-  
-  <div *ngIf="!hotel">
-    <p>Loading hotel details...</p>
+
+  <!-- Amenities Section -->
+  <h3>Amenities</h3>
+  <p>{{ hotel['amenities'].join(', ') }}</p>
+
+  <!-- Room Details -->
+  <div *ngFor="let room of hotel['rooms']" class="room-card">
+    <h4>{{ room['type'] }}</h4>
+    <p><strong>Bed:</strong> {{ room['bed'] }}</p>
+    <p><strong>Room Size:</strong> {{ room['size'] }}</p>
+    <p><strong>Room Amenities:</strong> {{ room['amenities'].join(', ') }}</p>
+    <p><strong>Price per Night:</strong> ₹{{ room['price'] }}</p>
+    <button class="reserve-btn">Reserve</button>
   </div>
-  
+</div>
+
+<div *ngIf="!hotel">
+  <p>Loading hotel details...</p>
+</div>

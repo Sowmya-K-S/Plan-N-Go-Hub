@@ -5,15 +5,31 @@
       "name": "The Oberoi Mumbai",
       "location": "Mumbai",
       "price": 30000,
-      "image": "assets/hotel/oberoi-mumbai.jpg",
-      "amenities": ["Sea View", "Spa", "Fitness Center", "Restaurant", "Free WiFi", "Air Conditioning", "Parking"]
+      "images": ["assets/hotel/oberoi-mumbai.jpg","assets/hotel/oberoi-mumbai.jpg"],
+      "amenities": ["Sea View", "Spa", "Fitness Center", "Restaurant", "Free WiFi", "Air Conditioning", "Parking"], 
+      "rooms": [
+        {
+          "type": "Deluxe Room",
+          "bed": "King Size",
+          "size": "300 sq ft",
+          "amenities": ["AC", "TV", "Mini Bar"],
+          "price": 19057
+        },
+        {
+          "type": "Suite",
+          "bed": "Queen Size",
+          "size": "500 sq ft",
+          "amenities": ["AC", "TV", "Mini Bar", "Sea View"],
+          "price": 25000
+        }
+      ]
     },
     {
       "id": 2,
       "name": "The Leela Palace Udaipur",
       "location": "Udaipur",
       "price": 25000,
-      "image": "assets/hotel/leela-palace-udaipur.jpg",
+      "images":[ "assets/hotel/leela-palace-udaipur.jpg"],
       "amenities": ["Lake View", "Spa", "Restaurant", "Bar", "Free WiFi", "Air Conditioning", "Parking"]
     },
     {
@@ -21,7 +37,7 @@
       "name": "Taj Mahal Palace Hotel",
       "location": "Mumbai",
       "price": 22000,
-      "image": "assets/hotel/taj-mahal-palace-mumbai.jpg",
+      "images":[ "assets/hotel/taj-mahal-palace-mumbai.jpg"],
       "amenities": ["Sea View", "Spa", "Fitness Center", "Restaurant", "Free WiFi", "Air Conditioning", "Parking"]
     },
     {
@@ -29,7 +45,7 @@
       "name": "The Oberoi Rajvilas",
       "location": "Jaipur",
       "price": 20000,
-      "image": "assets/hotel/oberoi-rajvilas-jaipur.jpg",
+      "images":[ "assets/hotel/oberoi-rajvilas-jaipur.jpg"],
       "amenities": ["Garden View", "Spa", "Restaurant", "Bar", "Free WiFi", "Air Conditioning", "Parking"]
     },
     {
@@ -37,7 +53,7 @@
       "name": "The Leela Palace New Delhi",
       "location": "New Delhi",
       "price": 18000,
-      "image": "assets/hotel/leela-palace-delhi.jpg",
+      "images":[ "assets/hotel/leela-palace-delhi.jpg"],
       "amenities": ["City View", "Spa", "Fitness Center", "Restaurant", "Free WiFi", "Air Conditioning", "Parking"]
     },
     {
@@ -45,7 +61,7 @@
       "name": "The Oberoi Udaivilas",
       "location": "Udaipur",
       "price": 17000,
-      "image": "assets/hotel/oberoi-udaivilas-udaipur.jpg",
+      "images":[ "assets/hotel/oberoi-udaivilas-udaipur.jpg"],
       "amenities": ["Lake View", "Spa", "Restaurant", "Bar", "Free WiFi", "Air Conditioning", "Parking"]
     },
     {
@@ -53,7 +69,7 @@
       "name": "The Leela Palace Bengaluru",
       "location": "Bengaluru",
       "price": 16000,
-      "image": "assets/hotel/leela-palace-bengaluru.jpg",
+      "images":[ "assets/hotel/leela-palace-bengaluru.jpg"],
       "amenities": ["City View", "Spa", "Fitness Center", "Restaurant", "Free WiFi", "Air Conditioning", "Parking", "Pet-friendly"]
     },
     {
@@ -61,7 +77,7 @@
       "name": "The Oberoi Grand",
       "location": "Kolkata",
       "price": 15000,
-      "image": "assets/hotel/oberoi-grand-kolkata.jpg",
+      "images":[ "assets/hotel/oberoi-grand-kolkata.jpg"],
       "amenities": ["City View", "Spa", "Fitness Center", "Restaurant", "Free WiFi", "Air Conditioning", "Parking"]
     },
     {
@@ -69,7 +85,7 @@
       "name": "The Leela Palace Chennai",
       "location": "Chennai",
       "price": 14000,
-      "image": "assets/hotel/leela-palace-chennai.jpg",
+      "images":[ "assets/hotel/leela-palace-chennai.jpg"],
       "amenities": ["Sea View", "Spa", "Fitness Center", "Restaurant", "Free WiFi", "Air Conditioning", "Parking"]
     },
     {
@@ -77,7 +93,7 @@
       "name": "The Oberoi Sukhvilas Resort & Spa",
       "location": "Chandigarh",
       "price": 13000,
-      "image": "assets/hotel/oberoi-sukhvilas-chandigarh.jpg",
+      "images":[ "assets/hotel/oberoi-sukhvilas-chandigarh.jpg"],
       "amenities": ["Mountain View", "Spa", "Fitness Center", "Restaurant", "Free WiFi", "Air Conditioning", "Parking"]
     },
     {
@@ -85,7 +101,7 @@
       "name": "Wildflower Hall",
       "location": "Shimla",
       "price": 12000,
-      "image": "assets/hotel/wildflower-hall-shimla.jpg",
+      "images":[ "assets/hotel/wildflower-hall-shimla.jpg"],
       "amenities": ["Mountain View", "Spa", "Gym", "Free WiFi", "Air Conditioning", "Parking"]
     },
     {
@@ -93,7 +109,7 @@
       "name": "The Taj West End",
       "location": "Bengaluru",
       "price": 11000,
-      "image": "assets/hotel/taj-west-end-bengaluru.jpg",
+      "images":[ "assets/hotel/taj-west-end-bengaluru.jpg"],
       "amenities": ["Garden View", "Pool", "Fitness Center", "Free WiFi", "Air Conditioning", "Parking"]
     },
     {
@@ -101,7 +117,7 @@
       "name": "Ananda in the Himalayas",
       "location": "Rishikesh",
       "price": 25000,
-      "image": "assets/hotel/ananda-himalayas-rishikesh.jpg",
+      "images":[ "assets/hotel/ananda-himalayas-rishikesh.jpg"],
       "amenities": ["Spa", "Yoga Retreat", "Mountain View", "Free WiFi", "Air Conditioning"]
     },
     {
@@ -109,7 +125,7 @@
       "name": "ITC Grand Bharat",
       "location": "Gurgaon",
       "price": 14000,
-      "image": "assets/hotel/itc-grand-bharat-gurgaon.jpg",
+      "images":[ "assets/hotel/itc-grand-bharat-gurgaon.jpg"],
       "amenities": ["Pool", "Restaurant", "Bar", "Spa", "Free WiFi", "Air Conditioning", "Parking"]
     },
     {
@@ -117,7 +133,7 @@
       "name": "Park Hyatt Chennai",
       "location": "Chennai",
       "price": 12000,
-      "image": "assets/hotel/park-hyatt-chennai.jpg",
+      "images":[ "assets/hotel/park-hyatt-chennai.jpg"],
       "amenities": ["Pool", "Fitness Center", "Restaurant", "Free WiFi", "Air Conditioning", "Parking"]
     },
     {
@@ -125,7 +141,7 @@
       "name": "Taj Falaknuma Palace",
       "location": "Hyderabad",
       "price": 23000,
-      "image": "assets/hotel/taj-falaknuma-palace-hyderabad.jpg",
+      "images":[ "assets/hotel/taj-falaknuma-palace-hyderabad.jpg"],
       "amenities": ["Palace View", "Spa", "Restaurant", "Free WiFi", "Air Conditioning", "Parking"]
     },
     {
@@ -133,7 +149,7 @@
       "name": "The Grand New Delhi",
       "location": "New Delhi",
       "price": 15000,
-      "image": "assets/hotel/grand-new-delhi.jpg",
+      "images":[ "assets/hotel/grand-new-delhi.jpg"],
       "amenities": ["City View", "Pool", "Restaurant", "Bar", "Free WiFi", "Air Conditioning", "Parking"]
     },
     {
@@ -141,7 +157,7 @@
       "name": "ITC Maratha",
       "location": "Mumbai",
       "price": 10000,
-      "image": "assets/hotel/itc-maratha-mumbai.jpg",
+      "images":[ "assets/hotel/itc-maratha-mumbai.jpg"],
       "amenities": ["Pool", "Spa", "Restaurant", "Free WiFi", "Air Conditioning", "Parking"]
     },
     {
@@ -149,7 +165,7 @@
       "name": "The St. Regis Mumbai",
       "location": "Mumbai",
       "price": 22000,
-      "image": "assets/hotel/st-regis-mumbai.jpg",
+      "images":[ "assets/hotel/st-regis-mumbai.jpg"],
       "amenities": ["Pool", "Spa", "Restaurant", "Bar", "Free WiFi", "Air Conditioning", "Parking"]
     },
     {
@@ -157,7 +173,7 @@
       "name": "Le Méridien Jaipur Resort & Spa",
       "location": "Jaipur",
       "price": 15000,
-      "image": "assets/hotel/le-meridien-jaipur.jpg",
+      "images":[ "assets/hotel/le-meridien-jaipur.jpg"],
       "amenities": ["Garden View", "Spa", "Restaurant", "Free WiFi", "Air Conditioning", "Parking"]
     },
     {
@@ -165,7 +181,7 @@
       "name": "Rambagh Palace",
       "location": "Jaipur",
       "price": 18000,
-      "image": "assets/hotel/rambagh-palace-jaipur.jpg",
+      "images":[ "assets/hotel/rambagh-palace-jaipur.jpg"],
       "amenities": ["Palace View", "Restaurant", "Bar", "Free WiFi", "Air Conditioning", "Parking"]
     },
     {
@@ -173,7 +189,7 @@
       "name": "The Park Chennai",
       "location": "Chennai",
       "price": 9000,
-      "image": "assets/hotel/park-chennai.jpg",
+      "images":[ "assets/hotel/park-chennai.jpg"],
       "amenities": ["City View", "Restaurant", "Bar", "Free WiFi", "Air Conditioning", "Parking"]
     },
     {
@@ -181,7 +197,7 @@
       "name": "The Imperial New Delhi",
       "location": "New Delhi",
       "price": 20000,
-      "image": "assets/hotel/imperial-new-delhi.jpg",
+      "images":[ "assets/hotel/imperial-new-delhi.jpg"],
       "amenities": ["Pool", "Spa", "Restaurant", "Bar", "Free WiFi", "Air Conditioning", "Parking"]
     },
     {
@@ -189,7 +205,7 @@
       "name": "JW Marriott Mussoorie Walnut Grove Resort & Spa",
       "location": "Mussoorie",
       "price": 15000,
-      "image": "assets/hotel/jw-marriott-mussoorie.jpg",
+      "images":[ "assets/hotel/jw-marriott-mussoorie.jpg"],
       "amenities": ["Mountain View", "Spa", "Fitness Center", "Free WiFi", "Air Conditioning", "Parking"]
     },
     {
@@ -197,7 +213,7 @@
       "name": "The Leela Goa",
       "location": "Goa",
       "price": 18000,
-      "image": "assets/hotel/leela-goa.jpg",
+      "images":[ "assets/hotel/leela-goa.jpg"],
       "amenities": ["Beachfront", "Pool", "Spa", "Restaurant", "Free WiFi", "Air Conditioning", "Parking"]
     },
     {
@@ -205,7 +221,7 @@
       "name": "The Ritz-Carlton Bangalore",
       "location": "Bengaluru",
       "price": 22000,
-      "image": "assets/hotel/ritz-carlton-bengaluru.jpg",
+      "images":[ "assets/hotel/ritz-carlton-bengaluru.jpg"],
       "amenities": ["Pool", "Spa", "Restaurant", "Bar", "Free WiFi", "Air Conditioning", "Parking"]
     },
     {
@@ -213,7 +229,7 @@
       "name": "Viceroy Hotel",
       "location": "Hyderabad",
       "price": 7000,
-      "image": "assets/hotel/viceroy-hotel-hyderabad.jpg",
+      "images":[ "assets/hotel/viceroy-hotel-hyderabad.jpg"],
       "amenities": ["Restaurant", "Bar", "Fitness Center", "Free WiFi", "Air Conditioning", "Parking"]
     },
     {
@@ -221,7 +237,7 @@
       "name": "Radisson Blu Resort Temple Bay Mamallapuram",
       "location": "Chennai",
       "price": 12000,
-      "image": "assets/hotel/radisson-blu-chennai.jpg",
+      "images":[ "assets/hotel/radisson-blu-chennai.jpg"],
       "amenities": ["Beachfront", "Spa", "Restaurant", "Free WiFi", "Air Conditioning", "Parking"]
     },
     {
@@ -229,7 +245,7 @@
       "name": "The Taj Coromandel",
       "location": "Chennai",
       "price": 15000,
-      "image": "assets/hotel/taj-coromandel-chennai.jpg",
+      "images":[ "assets/hotel/taj-coromandel-chennai.jpg"],
       "amenities": ["Pool", "Restaurant", "Bar", "Fitness Center", "Free WiFi", "Air Conditioning", "Parking"]
     },
     {
@@ -237,7 +253,7 @@
       "name": "The Oberoi Bangalore",
       "location": "Bengaluru",
       "price": 16000,
-      "image": "assets/hotel/oberoi-bangalore.jpg",
+      "images":[ "assets/hotel/oberoi-bangalore.jpg"],
       "amenities": ["City View", "Spa", "Restaurant", "Bar", "Free WiFi", "Air Conditioning", "Parking"]
     }
   ]

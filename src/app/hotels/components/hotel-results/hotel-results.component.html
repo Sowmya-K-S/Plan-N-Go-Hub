@@ -40,7 +40,7 @@
   <div *ngIf="filteredHotels.length; else noResults">
     <div class="card-container">
       <div *ngFor="let hotel of filteredHotels" class="card">
-        <img [src]="hotel['image']" alt="{{ hotel['name'] }}" class="card-img" />
+        <img [src]="hotel['images'].slice(0, 1)" alt="{{ hotel['name'] }}" class="card-img" />
         <div class="card-content">
           <h3>{{ hotel['name'] }}</h3>
           <p><strong>Location:</strong> {{ hotel['location'] }}</p>
