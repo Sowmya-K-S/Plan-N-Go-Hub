@@ -2,15 +2,19 @@
     font-family: poppins;
   }
 
-.hotel-details-container {
-    max-width: 95%;
+  .hotel-details-container {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: center;
+    gap: 20px; /* Add spacing between children */
+    width: 95%;
     margin: 50px auto;
     padding: 20px;
     font-family: 'Arial', sans-serif;
     background-color: #fafafa;
     border-radius: 10px;
     overflow-x: hidden;
-  }
+}
   
   .hotel-details-container h2 {
     margin-bottom: 20px;
@@ -63,94 +67,131 @@
     border-radius: 5px;
   }
 
-  .more-details
+  .amenities
+  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 90%;
+    height:30px;
+    border-radius: 5px;
+    background-color: #ffecd1;;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+  }
+
+  .hotel-amenities {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.more-details
   {
     padding: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap:30px;
+    gap:50px;
     flex-direction: row;
     /* border: solid black; */
   }
 
-  .amenities, .surroundings, .nearby-attractions
+
+  .rating, .surroundings, .nearby-attractions
   {
     display: flex;
     align-items: center;
     justify-content: start;
     flex-direction: column;
-    /* border: solid black; */
     width: 25%;
-    height:140px;
+    height:160px;
     border-radius: 5px;
     background-color: #ffecd1;;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 30px;
+    padding: 40px;
+    padding-top: 20px;
   }
 
-  .amenities>h3, .surroundings>h3, .nearby-attractions>h3
+  .rating>h3,.amenities>h3, .surroundings>h3, .nearby-attractions>h3
   {
     margin-top:0px;
     padding: 0px;
     font-size: 20px;
   }
 
-  .hotel-amenities,.hotel-nearby,.hotel-surroundings
-  {
+  .hotel-surroundings li,.hotel-nearby li {
     list-style: none;
+    display: inline-block;
+    max-width: 100%; /* Ensure it adapts to the card width */
+    white-space: nowrap; /* Prevent wrapping */
+    overflow: hidden; /* Hide overflowing text */
+    text-overflow: ellipsis; /* Add the ellipsis for overflowed text */
+    font-size: 16px; /* Adjust font size as needed */
+    margin-bottom: 5px; /* Add some spacing between items */
+    line-height: 1.5; /* Better readability */
     text-align: left;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: row;
-    flex-wrap: wrap;
-    /* border: solid black; */
   }
 
   .rooms
   {
+    width: 95%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    gap:30px;
   }
-  
+
+  .rooms>h1
+  {
+    margin: 0;
+    padding: 0;
+    font-size: 30px;
+  }  
+
   .room-card {
+    width:100%;
+    height: 200px;
     border: 1px solid #ddd;
     background-color: #F0FFFF;
     border-radius: 5px;
     padding: 10px;
-    margin-bottom: 20px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width:90%;
-  }
+    justify-content: space-around;
+    gap:30px;
+}
 
-  .room-card>img {
-    width: 350px;
-    height: 250px;
+  .room-card img {
+    width: 250px;
+    height: 150px;
     object-fit: cover;
     border: 1px solid #ddd;
     border-radius: 5px;
   }
 
-  .room-price 
+  .room-type-img
   {
-    line-height: 0.5;
+    width: 25%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
   }
-  .room-price>p
-  {
-    font-size: 10px;
-  }
-  .room-price>h2
+
+  .room-type-img>h3
   {
     margin: 0;
     padding: 0;
-    text-align: left;
+    font-size: 20px;
   }
 
   .details
@@ -159,7 +200,8 @@
     align-items: start;
     justify-content: center;
     flex-direction: column;
-    gap:5px;
+    gap:20px;
+    width: 45%;
   }
 
   .details>h3{
@@ -170,18 +212,41 @@
 
   .room-details
   {
+    width: 100%;
     list-style: none;
-    text-align: left;
     margin: 0;
     padding: 0;
     height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    font-size: 15px;
+
+  }
+
+  .capacity
+  {
+    width: 15%;
     display: flex;
-    align-items: start;
-    justify-content: start;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
-    flex-wrap: wrap;
-    gap:2px;
-    font-size: 17px;
+  }
+
+  .room-price 
+  {
+    line-height: 0.5;
+    width: 15%;
+  }
+  .room-price>p
+  {
+    font-size: 10px;
+  }
+  .room-price>h2
+  {
+    margin: 0;
+    padding: 0;
+    text-align: left ;
   }
 
   .reserve-btn {

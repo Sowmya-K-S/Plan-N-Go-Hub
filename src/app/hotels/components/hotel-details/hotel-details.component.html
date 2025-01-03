@@ -17,7 +17,7 @@
         <div>
           <h1>{{ hotel['name'] }}</h1>
           <p><i class="fas fa-map-marker-alt"></i> {{ hotel['Address'] }}</p>
-          <p><i class="fas fa-info-circle"></i> {{ hotel['description'] }}</p>
+          <p><i class="fas fa-building"></i> {{ hotel['description'] }}</p>
         </div>
     
         <h2>₹{{ hotel['price'] }}</h2>
@@ -32,35 +32,40 @@
         <img [src]="photo" alt="{{ hotel['name'] }} photo" />
       </div>
     </div>
+
+    <!-- Amenities -->
+     <div class="amenities">
+      <h3>Amenities</h3>
+      <div class="hotel-amenities">
+      <li *ngFor="let amenity of hotel['amenities']" class="amenity-item"><i [class]="getAmenityIcon(amenity)"></i> {{ amenity }}</li>
+      </div>
+      </div>
   
-    <!-- Amenities, nearby places and surroundings -->
+    <!-- rating, nearby places and surroundings -->
     <div class="more-details">
 
       <!-- Amenities -->
-      <div class="amenities">
-        <h3>Amenities</h3>
-        <div class="hotel-amenities">
-        <li *ngFor="let amenity of hotel['amenities']" class="amenity-item"><i [class]="getAmenityIcon(amenity)"></i> {{ amenity }}</li>
-        </div>
+      <div class="rating">
+        <h3>User Rating</h3>
       </div>
 
       <!-- nearby attractions -->
       <div class="nearby-attractions">
         <h3>Nearby Attractions</h3>
         <div class="hotel-nearby">
-          <li *ngFor="let attraction of hotel['nearbyAttractions']" class="amenity-item">{{ attraction }}</li>
+          <li *ngFor="let attraction of hotel['nearbyAttractions']" class="amenity-item"> <i class="fas fa-map-pin"></i> {{ getTruncatedSurrounding(attraction) }}</li>
           </div>
       </div>
 
       <!-- surroundings -->
-      <!-- <div class="surroundings">
+      <div class="surroundings">
         <h3>Surroundings</h3>
         <div class="hotel-surroundings">
-          <li><i class="fa fa-airport"></i> <strong>Airport:</strong> {{ hotel['surroundings'].Airport }}</li>
-          <li><i class=""></i> <strong>Train:</strong> {{ hotel['surroundings'].Train }}</li>
-          <li><i class=""></i> <strong>Bus:</strong> {{ hotel['surroundings'].Bus }}</li>
-          </div>
-      </div> -->
+          <li> <i class="fas fa-plane"></i> {{ getTruncatedSurrounding(hotel['surroundings'].Airport) }}</li>
+          <li> <i class="fa fa-train"></i> {{ getTruncatedSurrounding(hotel['surroundings'].Train) }}</li>
+          <li> <i class="fa fa-bus"> </i> {{ getTruncatedSurrounding(hotel['surroundings'].Bus) }}</li>
+      </div>
+      </div>
     </div>
     
     <!-- Room Details -->
@@ -68,10 +73,14 @@
       <h1>Rooms</h1>
       <div *ngFor="let room of hotel['rooms']" class="room-card">
           
-          <img [src]="room.image" alt="{{ room.type }} photo"/>
+          <div class="room-type-img">
+            <h3>{{ room['type'] }}
+            <img [src]="room.image" alt="{{ room.type }} photo"/>
+          </h3>
+          </div>
+          
 
           <div class="details">
-            <h3>{{ room['type'] }}</h3>
             <ul class="room-details">
               <li><i class="fas fa-bed"></i> {{ room['bed'] }}</li>
               <li><i class="fas fa-ruler-combined"></i> {{ room['size'] }}</li>

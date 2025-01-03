@@ -6,13 +6,13 @@
         "location": "Mumbai",
         "description":"Located on the iconic Marine Drive, The Oberoi Mumbai offers luxurious accommodations with panoramic views of the Arabian Sea.",
         "Address": "Marine Drive, Mumbai, Maharashtra 400020, India",
-        "nearbyAttractions": ["Gateway of India","Chhatrapati Shivaji Maharaj Vastu Sangrahalaya","Marine Drive","Colaba Causeway"],
+        "nearbyAttractions": ["Gateway of India (Approx. 5-minute walk)","Chhatrapati Shivaji Maharaj Vastu Sangrahalaya (Approx. 10-minute walk)","Marine Drive (Approx. 1-minute walk)","Colaba Causeway (Approx. 5-minute walk)"],
         "specialOffers": [],
         "price": 30000,
         "images": ["assets/hotel/hotel-images/oberoi-mumbai.jpg","assets/hotel/hotel-images/oberoi-mumbai2.jpg","assets/hotel/hotel-images/oberoi-mumbai3.jpg","assets/hotel/hotel-images/oberoi-mumbai4.jpg"],
         "amenities": ["Free Wifi", "Free Parking", "Lift", "Restaurant", "Sauna", "EV charging station", "Children's pool", "Luggage storage", "Bar"],
         "surroundings":{
-          "Airport": "Chhatrapati Shivaji Maharaj International Airport(Approx. 24 km)",
+          "Airport": "Chhatrapati Shivaji Maharaj International Airport (Approx. 24 km)",
           "Train":"Churchgate Railway Station (Approx. 5-minute walk)",
           "Bus":"N.C.P.A. Bus Stop (Approx. 2-minute walk)"
 
