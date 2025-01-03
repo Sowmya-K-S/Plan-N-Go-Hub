@@ -1,32 +1,104 @@
-<div *ngIf="hotel">
-  <!-- Hotel Header Section -->
-  <h1>{{ hotel['name'] }}</h1>
-  <p><strong>Address:</strong> {{ hotel['location'] }}</p>
-  <p>{{ hotel['description'] }}</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
 
-  <!-- Image Gallery -->
-  <div class="image-gallery">
-    <div *ngFor="let photo of hotel['images'].slice(0, 5)" class="photo">
-      <img [src]="photo" alt="{{ hotel['name'] }} photo" />
+  <div *ngIf="hotel" class="hotel-details-container">
+
+    <!-- Hotel Header Section -->
+    <div class="hotel-header">
+        <div>
+          <h1>{{ hotel['name'] }}</h1>
+          <p><i class="fas fa-map-marker-alt"></i> {{ hotel['Address'] }}</p>
+          <p><i class="fas fa-info-circle"></i> {{ hotel['description'] }}</p>
+        </div>
+    
+        <h2>₹{{ hotel['price'] }}</h2>
+    
+        <button class="select-rooms-btn">Select Rooms</button>
+    
     </div>
-    <button class="see-all-btn">See All Photos</button>
+  
+    <!-- Image Gallery -->
+    <div class="image-gallery">
+      <div *ngFor="let photo of hotel['images'].slice(0, 5)" class="photo">
+        <img [src]="photo" alt="{{ hotel['name'] }} photo" />
+      </div>
+    </div>
+  
+    <!-- Amenities, nearby places and surroundings -->
+    <div class="more-details">
+
+      <!-- Amenities -->
+      <div class="amenities">
+        <h3>Amenities</h3>
+        <div class="hotel-amenities">
+        <li *ngFor="let amenity of hotel['amenities']" class="amenity-item"><i [class]="getAmenityIcon(amenity)"></i> {{ amenity }}</li>
+        </div>
+      </div>
+
+      <!-- nearby attractions -->
+      <div class="nearby-attractions">
+        <h3>Nearby Attractions</h3>
+        <div class="hotel-nearby">
+          <li *ngFor="let attraction of hotel['nearbyAttractions']" class="amenity-item">{{ attraction }}</li>
+          </div>
+      </div>
+
+      <!-- surroundings -->
+      <!-- <div class="surroundings">
+        <h3>Surroundings</h3>
+        <div class="hotel-surroundings">
+          <li><i class="fa fa-airport"></i> <strong>Airport:</strong> {{ hotel['surroundings'].Airport }}</li>
+          <li><i class=""></i> <strong>Train:</strong> {{ hotel['surroundings'].Train }}</li>
+          <li><i class=""></i> <strong>Bus:</strong> {{ hotel['surroundings'].Bus }}</li>
+          </div>
+      </div> -->
+    </div>
+    
+    <!-- Room Details -->
+    <div class="rooms">
+      <h1>Rooms</h1>
+      <div *ngFor="let room of hotel['rooms']" class="room-card">
+          
+          <img [src]="room.image" alt="{{ room.type }} photo"/>
+
+          <div class="details">
+            <h3>{{ room['type'] }}</h3>
+            <ul class="room-details">
+              <li><i class="fas fa-bed"></i> {{ room['bed'] }}</li>
+              <li><i class="fas fa-ruler-combined"></i> {{ room['size'] }}</li>
+              <li *ngFor="let amenity of room['amenities']" class="amenity-item"><i [class]="getAmenityIcon(amenity)"></i> {{ amenity }}</li>
+            </ul>
+          </div>
+
+          <div class="capacity">
+            <h3> <i class="fa fa-user"></i> {{ room['capacity'].adults }}</h3>
+            <h3><i class="fa fa-child"></i> {{ room['capacity'].children }}</h3>
+          </div>
+      
+          <div class="room-price">
+            <h2> ₹{{ room['price'] }}</h2>
+            <p>price per night</p>
+            <p>incl. of taxes</p>
+            <button class="reserve-btn">Reserve</button>
+          </div>
+
+      </div>
+    </div>
+
   </div>
-
-  <!-- Amenities Section -->
-  <h3>Amenities</h3>
-  <p>{{ hotel['amenities'].join(', ') }}</p>
-
-  <!-- Room Details -->
-  <div *ngFor="let room of hotel['rooms']" class="room-card">
-    <h4>{{ room['type'] }}</h4>
-    <p><strong>Bed:</strong> {{ room['bed'] }}</p>
-    <p><strong>Room Size:</strong> {{ room['size'] }}</p>
-    <p><strong>Room Amenities:</strong> {{ room['amenities'].join(', ') }}</p>
-    <p><strong>Price per Night:</strong> ₹{{ room['price'] }}</p>
-    <button class="reserve-btn">Reserve</button>
+  
+  <div *ngIf="!hotel">
+    <p>Loading hotel details...</p>
   </div>
-</div>
-
-<div *ngIf="!hotel">
-  <p>Loading hotel details...</p>
-</div>
+  
+</body>
+</html>

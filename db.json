@@ -1,260 +1,1091 @@
 {
-  "hotels": [
-    {
-      "id": 1,
-      "name": "The Oberoi Mumbai",
-      "location": "Mumbai",
-      "price": 30000,
-      "images": ["assets/hotel/oberoi-mumbai.jpg","assets/hotel/oberoi-mumbai.jpg"],
-      "amenities": ["Sea View", "Spa", "Fitness Center", "Restaurant", "Free WiFi", "Air Conditioning", "Parking"], 
-      "rooms": [
+    "hotels": [
+      {
+        "id": 1,
+        "name": "The Oberoi Mumbai",
+        "location": "Mumbai",
+        "description":"Located on the iconic Marine Drive, The Oberoi Mumbai offers luxurious accommodations with panoramic views of the Arabian Sea.",
+        "Address": "Marine Drive, Mumbai, Maharashtra 400020, India",
+        "nearbyAttractions": ["Gateway of India","Chhatrapati Shivaji Maharaj Vastu Sangrahalaya","Marine Drive","Colaba Causeway"],
+        "specialOffers": [],
+        "price": 30000,
+        "images": ["assets/hotel/hotel-images/oberoi-mumbai.jpg","assets/hotel/hotel-images/oberoi-mumbai2.jpg","assets/hotel/hotel-images/oberoi-mumbai3.jpg","assets/hotel/hotel-images/oberoi-mumbai4.jpg"],
+        "amenities": ["Free Wifi", "Free Parking", "Lift", "Restaurant", "Sauna", "EV charging station", "Children's pool", "Luggage storage", "Bar"],
+        "surroundings":{
+          "Airport": "Chhatrapati Shivaji Maharaj International Airport(Approx. 24 km)",
+          "Train":"Churchgate Railway Station (Approx. 5-minute walk)",
+          "Bus":"N.C.P.A. Bus Stop (Approx. 2-minute walk)"
+
+        },
+        "rooms": [
+        {
+          "type": "Luxury Room",
+          "bed": "King Size",
+          "size": "350 sq ft",
+          "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Mountain View", "Free Breakfast"],
+          "price": 18000,
+          "totalRooms": 30,
+          "availability": [],
+          "capacity": { "adults": 2, "children": 1 },
+          "image": "assets/hotel/room-images/luxury-room.jpg"
+        },
+        {
+          "type": "Executive Suite",
+          "bed": "Queen Size",
+          "size": "450 sq ft",
+          "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Ocean View", "Room Service"],
+          "price": 24000,
+          "totalRooms": 15,
+          "availability": [],
+          "capacity": { "adults": 3, "children": 1 },
+          "image": "assets/hotel/room-images/executive-suite-room.jpg"
+        }
+      ]
+      },
+      {
+        "id": 2,
+        "name": "The Leela Palace Udaipur",
+        "location": "Udaipur",
+        "description":"Situated on the banks of Lake Pichola, this palace hotel recreates the grandeur of the Mewar dynasty, offering opulent rooms and stunning views. ",
+        "Address": "Lake Pichola, Udaipur, Rajasthan 313001, India",
+        "nearbyAttractions": ["City Palace", "Jagdish Temple", "Lake Pichola boat rides", "Sajjangarh Monsoon Palace"],
+        "specialOffers": [],
+        "price": 25000,
+        "images":[ "assets/hotel/hotel-images/leela-palace-udaipur.jpg","assets/hotel/hotel-images/leela-palace-udaipur2.jpg","assets/hotel/hotel-images/leela-palace-udaipur3.jpg","assets/hotel/hotel-images/leela-palace-udaipur4.jpg"],
+        "amenities": ["Free Wifi", "Free Parking", "Lift", "Restaurant", "Conference room", "Massage room", "Table tennis room", "Cleaning Services", "Children's pool"],
+        "rooms": [
+          {
+            "type": "Heritage Room",
+            "bed": "Queen Size",
+            "size": "400 sq ft",
+            "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "City View", "Free Breakfast"],
+            "price": 20000,
+            "totalRooms": 20,
+            "availability": [],
+            "capacity": { "adults": 2, "children": 1 },
+            "image": "assets/hotel/room-images/heritage-room.jpg"
+          },
+          {
+            "type": "Royal Suite",
+            "bed": "King Size",
+            "size": "700 sq ft",
+            "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "City View", "Room Service", "Free Breakfast"],
+            "price": 45000,
+            "totalRooms": 10,
+            "availability": [],
+            "capacity": { "adults": 4, "children": 2 },
+            "image": "assets/hotel/room-images/royal-suite-room.jpg"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Taj Mahal Palace Hotel",
+        "location": "Mumbai",
+        "description":"A historic landmark in Mumbai, the Taj Mahal Palace Hotel combines old-world charm with modern luxury, overlooking the Arabian Sea.",
+        "Address": "Apollo Bunder, Mumbai, Maharashtra 400001, India",
+        "nearbyAttractions": ["Gateway of India", "Marine Drive", "Chhatrapati Shivaji Maharaj Vastu Sangrahalaya", "Colaba Causeway"],
+        "specialOffers": [],
+        "price": 22000,
+        "images":[ "assets/hotel/hotel-images/taj-mahal-palace-mumbai.jpg","assets/hotel/hotel-images/taj-mahal-palace-mumbai2.jpg","assets/hotel/hotel-images/taj-mahal-palace-mumbai3.jpg","assets/hotel/hotel-images/taj-mahal-palace-mumbai4.jpg"],
+        "amenities": [ "Free Wifi", "Free Parking", "Lift", "Restaurant", "Spa", "Childcare service", "Bar", "Karaoke", "Children's pool"],
+        "rooms": [
         {
           "type": "Deluxe Room",
           "bed": "King Size",
-          "size": "300 sq ft",
-          "amenities": ["AC", "TV", "Mini Bar"],
-          "price": 19057
+          "size": "360 sq ft",
+          "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Garden View"],
+          "price": 22000,
+          "totalRooms": 40,
+          "availability": [],
+          "capacity": { "adults": 2, "children": 1 },
+          "image": "assets/hotel/room-images/deluxe-room.jpg"
         },
         {
-          "type": "Suite",
+          "type": "Grand Suite",
           "bed": "Queen Size",
-          "size": "500 sq ft",
-          "amenities": ["AC", "TV", "Mini Bar", "Sea View"],
-          "price": 25000
+          "size": "600 sq ft",
+          "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Ocean View", "Bath Tub", "Room Service"],
+          "price": 50000,
+          "totalRooms": 8,
+          "availability": [],
+          "capacity": { "adults": 3, "children": 2 },
+          "image": "assets/hotel/room-images/grand-suite.jpg"
         }
       ]
-    },
-    {
-      "id": 2,
-      "name": "The Leela Palace Udaipur",
-      "location": "Udaipur",
-      "price": 25000,
-      "images":[ "assets/hotel/leela-palace-udaipur.jpg"],
-      "amenities": ["Lake View", "Spa", "Restaurant", "Bar", "Free WiFi", "Air Conditioning", "Parking"]
-    },
-    {
-      "id": 3,
-      "name": "Taj Mahal Palace Hotel",
-      "location": "Mumbai",
-      "price": 22000,
-      "images":[ "assets/hotel/taj-mahal-palace-mumbai.jpg"],
-      "amenities": ["Sea View", "Spa", "Fitness Center", "Restaurant", "Free WiFi", "Air Conditioning", "Parking"]
-    },
-    {
-      "id": 4,
-      "name": "The Oberoi Rajvilas",
-      "location": "Jaipur",
-      "price": 20000,
-      "images":[ "assets/hotel/oberoi-rajvilas-jaipur.jpg"],
-      "amenities": ["Garden View", "Spa", "Restaurant", "Bar", "Free WiFi", "Air Conditioning", "Parking"]
-    },
-    {
-      "id": 5,
-      "name": "The Leela Palace New Delhi",
-      "location": "New Delhi",
-      "price": 18000,
-      "images":[ "assets/hotel/leela-palace-delhi.jpg"],
-      "amenities": ["City View", "Spa", "Fitness Center", "Restaurant", "Free WiFi", "Air Conditioning", "Parking"]
-    },
-    {
-      "id": 6,
-      "name": "The Oberoi Udaivilas",
-      "location": "Udaipur",
-      "price": 17000,
-      "images":[ "assets/hotel/oberoi-udaivilas-udaipur.jpg"],
-      "amenities": ["Lake View", "Spa", "Restaurant", "Bar", "Free WiFi", "Air Conditioning", "Parking"]
-    },
-    {
-      "id": 7,
-      "name": "The Leela Palace Bengaluru",
-      "location": "Bengaluru",
-      "price": 16000,
-      "images":[ "assets/hotel/leela-palace-bengaluru.jpg"],
-      "amenities": ["City View", "Spa", "Fitness Center", "Restaurant", "Free WiFi", "Air Conditioning", "Parking", "Pet-friendly"]
-    },
-    {
-      "id": 8,
-      "name": "The Oberoi Grand",
-      "location": "Kolkata",
-      "price": 15000,
-      "images":[ "assets/hotel/oberoi-grand-kolkata.jpg"],
-      "amenities": ["City View", "Spa", "Fitness Center", "Restaurant", "Free WiFi", "Air Conditioning", "Parking"]
-    },
-    {
-      "id": 9,
-      "name": "The Leela Palace Chennai",
-      "location": "Chennai",
-      "price": 14000,
-      "images":[ "assets/hotel/leela-palace-chennai.jpg"],
-      "amenities": ["Sea View", "Spa", "Fitness Center", "Restaurant", "Free WiFi", "Air Conditioning", "Parking"]
-    },
-    {
-      "id": 10,
-      "name": "The Oberoi Sukhvilas Resort & Spa",
-      "location": "Chandigarh",
-      "price": 13000,
-      "images":[ "assets/hotel/oberoi-sukhvilas-chandigarh.jpg"],
-      "amenities": ["Mountain View", "Spa", "Fitness Center", "Restaurant", "Free WiFi", "Air Conditioning", "Parking"]
-    },
-    {
-      "id": 11,
-      "name": "Wildflower Hall",
-      "location": "Shimla",
-      "price": 12000,
-      "images":[ "assets/hotel/wildflower-hall-shimla.jpg"],
-      "amenities": ["Mountain View", "Spa", "Gym", "Free WiFi", "Air Conditioning", "Parking"]
-    },
-    {
-      "id": 12,
-      "name": "The Taj West End",
-      "location": "Bengaluru",
-      "price": 11000,
-      "images":[ "assets/hotel/taj-west-end-bengaluru.jpg"],
-      "amenities": ["Garden View", "Pool", "Fitness Center", "Free WiFi", "Air Conditioning", "Parking"]
-    },
-    {
-      "id": 13,
-      "name": "Ananda in the Himalayas",
-      "location": "Rishikesh",
-      "price": 25000,
-      "images":[ "assets/hotel/ananda-himalayas-rishikesh.jpg"],
-      "amenities": ["Spa", "Yoga Retreat", "Mountain View", "Free WiFi", "Air Conditioning"]
-    },
-    {
-      "id": 14,
-      "name": "ITC Grand Bharat",
-      "location": "Gurgaon",
-      "price": 14000,
-      "images":[ "assets/hotel/itc-grand-bharat-gurgaon.jpg"],
-      "amenities": ["Pool", "Restaurant", "Bar", "Spa", "Free WiFi", "Air Conditioning", "Parking"]
-    },
-    {
-      "id": 15,
-      "name": "Park Hyatt Chennai",
-      "location": "Chennai",
-      "price": 12000,
-      "images":[ "assets/hotel/park-hyatt-chennai.jpg"],
-      "amenities": ["Pool", "Fitness Center", "Restaurant", "Free WiFi", "Air Conditioning", "Parking"]
-    },
-    {
-      "id": 16,
-      "name": "Taj Falaknuma Palace",
-      "location": "Hyderabad",
-      "price": 23000,
-      "images":[ "assets/hotel/taj-falaknuma-palace-hyderabad.jpg"],
-      "amenities": ["Palace View", "Spa", "Restaurant", "Free WiFi", "Air Conditioning", "Parking"]
-    },
-    {
-      "id": 17,
-      "name": "The Grand New Delhi",
-      "location": "New Delhi",
-      "price": 15000,
-      "images":[ "assets/hotel/grand-new-delhi.jpg"],
-      "amenities": ["City View", "Pool", "Restaurant", "Bar", "Free WiFi", "Air Conditioning", "Parking"]
-    },
-    {
-      "id": 18,
-      "name": "ITC Maratha",
-      "location": "Mumbai",
-      "price": 10000,
-      "images":[ "assets/hotel/itc-maratha-mumbai.jpg"],
-      "amenities": ["Pool", "Spa", "Restaurant", "Free WiFi", "Air Conditioning", "Parking"]
-    },
-    {
-      "id": 19,
-      "name": "The St. Regis Mumbai",
-      "location": "Mumbai",
-      "price": 22000,
-      "images":[ "assets/hotel/st-regis-mumbai.jpg"],
-      "amenities": ["Pool", "Spa", "Restaurant", "Bar", "Free WiFi", "Air Conditioning", "Parking"]
-    },
-    {
-      "id": 20,
-      "name": "Le Méridien Jaipur Resort & Spa",
-      "location": "Jaipur",
-      "price": 15000,
-      "images":[ "assets/hotel/le-meridien-jaipur.jpg"],
-      "amenities": ["Garden View", "Spa", "Restaurant", "Free WiFi", "Air Conditioning", "Parking"]
-    },
-    {
-      "id": 21,
-      "name": "Rambagh Palace",
-      "location": "Jaipur",
-      "price": 18000,
-      "images":[ "assets/hotel/rambagh-palace-jaipur.jpg"],
-      "amenities": ["Palace View", "Restaurant", "Bar", "Free WiFi", "Air Conditioning", "Parking"]
-    },
-    {
-      "id": 22,
-      "name": "The Park Chennai",
-      "location": "Chennai",
-      "price": 9000,
-      "images":[ "assets/hotel/park-chennai.jpg"],
-      "amenities": ["City View", "Restaurant", "Bar", "Free WiFi", "Air Conditioning", "Parking"]
-    },
-    {
-      "id": 23,
-      "name": "The Imperial New Delhi",
-      "location": "New Delhi",
-      "price": 20000,
-      "images":[ "assets/hotel/imperial-new-delhi.jpg"],
-      "amenities": ["Pool", "Spa", "Restaurant", "Bar", "Free WiFi", "Air Conditioning", "Parking"]
-    },
-    {
-      "id": 24,
-      "name": "JW Marriott Mussoorie Walnut Grove Resort & Spa",
-      "location": "Mussoorie",
-      "price": 15000,
-      "images":[ "assets/hotel/jw-marriott-mussoorie.jpg"],
-      "amenities": ["Mountain View", "Spa", "Fitness Center", "Free WiFi", "Air Conditioning", "Parking"]
-    },
-    {
-      "id": 25,
-      "name": "The Leela Goa",
-      "location": "Goa",
-      "price": 18000,
-      "images":[ "assets/hotel/leela-goa.jpg"],
-      "amenities": ["Beachfront", "Pool", "Spa", "Restaurant", "Free WiFi", "Air Conditioning", "Parking"]
-    },
-    {
-      "id": 26,
-      "name": "The Ritz-Carlton Bangalore",
-      "location": "Bengaluru",
-      "price": 22000,
-      "images":[ "assets/hotel/ritz-carlton-bengaluru.jpg"],
-      "amenities": ["Pool", "Spa", "Restaurant", "Bar", "Free WiFi", "Air Conditioning", "Parking"]
-    },
-    {
-      "id": 27,
-      "name": "Viceroy Hotel",
-      "location": "Hyderabad",
-      "price": 7000,
-      "images":[ "assets/hotel/viceroy-hotel-hyderabad.jpg"],
-      "amenities": ["Restaurant", "Bar", "Fitness Center", "Free WiFi", "Air Conditioning", "Parking"]
-    },
-    {
-      "id": 28,
-      "name": "Radisson Blu Resort Temple Bay Mamallapuram",
-      "location": "Chennai",
-      "price": 12000,
-      "images":[ "assets/hotel/radisson-blu-chennai.jpg"],
-      "amenities": ["Beachfront", "Spa", "Restaurant", "Free WiFi", "Air Conditioning", "Parking"]
-    },
-    {
-      "id": 29,
-      "name": "The Taj Coromandel",
-      "location": "Chennai",
-      "price": 15000,
-      "images":[ "assets/hotel/taj-coromandel-chennai.jpg"],
-      "amenities": ["Pool", "Restaurant", "Bar", "Fitness Center", "Free WiFi", "Air Conditioning", "Parking"]
-    },
-    {
-      "id": 30,
-      "name": "The Oberoi Bangalore",
-      "location": "Bengaluru",
-      "price": 16000,
-      "images":[ "assets/hotel/oberoi-bangalore.jpg"],
-      "amenities": ["City View", "Spa", "Restaurant", "Bar", "Free WiFi", "Air Conditioning", "Parking"]
-    }
-  ]
-}
+      },
+      {
+        "id": 4,
+        "name": "The Oberoi Rajvilas",
+        "location": "Jaipur",
+        "description":"Set amidst 32 acres of lush gardens, The Oberoi Rajvilas offers a regal experience with traditional Rajasthani architecture and modern amenities.",
+        "Address": "Goner Road, Jaipur, Rajasthan 302031, India",
+        "nearbyAttractions": ["Amber Fort", "Hawa Mahal", "City Palace", "Jantar Mantar"],
+        "specialOffers": [],
+        "price": 20000,
+        "images":[ "assets/hotel/hotel-images/oberoi-rajvilas-jaipur.jpg","assets/hotel/hotel-images/oberoi-rajvilas-jaipur2.jpg","assets/hotel/hotel-images/oberoi-rajvilas-jaipur3.jpg","assets/hotel/hotel-images/oberoi-rajvilas-jaipur4.jpg"],
+        "amenities": ["Free Wifi", "Free Parking", "Lift", "Restaurant", "Outdoor swimming pool", "Bar", "Conference room", "Karaoke", "Sauna"],
+        "rooms": [
+        {
+          "type": "Premier Room",
+          "bed": "King Size",
+          "size": "350 sq ft",
+          "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "City View", "Room Service"],
+          "price": 19000,
+          "totalRooms": 25,
+          "availability": [],
+          "capacity": { "adults": 2, "children": 1 },
+          "image": "assets/hotel/room-images/premier-room.jpg"
+        },
+        {
+          "type": "Luxury Villa",
+          "bed": "Queen Size",
+          "size": "600 sq ft",
+          "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Garden View", "Bath Tub", "Free Breakfast", "Room Service"],
+          "price": 55000,
+          "totalRooms": 5,
+          "availability": [],
+          "capacity": { "adults": 4, "children": 2 },
+          "image": "assets/hotel/room-images/luxury-villa.jpg"
+        }
+      ]
+      },
+      {
+        "id": 5,
+        "name": "The Leela Palace New Delhi",
+        "location": "New Delhi",
+        "description":"A blend of historic heritage and modern luxury, The Leela Palace New Delhi offers elegant rooms and exceptional service.",
+        "Address": "Diplomatic Enclave, Chanakyapuri, New Delhi, Delhi 110023, India",
+        "nearbyAttractions": ["Rashtrapati Bhavan", "India Gate", "National Museum", "Lodhi Gardens"],
+        "specialOffers": [],
+        "price": 18000,
+        "images":[ "assets/hotel/hotel-images/leela-palace-delhi.jpg","assets/hotel/hotel-images/leela-palace-delhi2.jpg","assets/hotel/hotel-images/leela-palace-delhi3.jpg","assets/hotel/hotel-images/leela-palace-delhi4.jpg"],
+        "amenities": ["Free Wifi", "Free Parking", "Lift", "Restaurant", "Yoga Retreat", "Spa", "Gym", "Playground", "Table tennis room"],
+        "rooms": [
+        {
+          "type": "Grand Room",
+          "bed": "Queen Size",
+          "size": "400 sq ft",
+          "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "City View", "Free Breakfast"],
+          "price": 23000,
+          "totalRooms": 35,
+          "availability": [],
+          "capacity": { "adults": 2, "children": 1 },
+          "image":"assets/hotel/room-images/grand-room.jpg"
+        },
+        {
+          "type": "Presidential Suite",
+          "bed": "King Size",
+          "size": "1000 sq ft",
+          "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Ocean View", "Bath Tub", "Room Service"],
+          "price": 100000,
+          "totalRooms": 2,
+          "availability": [],
+          "capacity": { "adults": 4, "children": 2 },
+          "image": "assets/hotel/room-images/presidential-suite.jpg"
+        }
+      ]
+      },
+      {
+        "id": 6,
+        "name": "The Oberoi Udaivilas",
+        "location": "Udaipur",
+        "description":"Overlooking Lake Pichola, The Oberoi Udaivilas is a luxurious resort set amidst 50 acres of landscaped gardens, offering a tranquil retreat.",
+        "Address": "Lake Pichola, Udaipur, Rajasthan 313001, India.",
+        "nearbyAttractions": ["City Palace", "Jag Mandir", "Lake Pichola", "Bagore Ki Haveli"],
+        "specialOffers": [],
+        "price": 17000,
+        "images":[ "assets/hotel/hotel-images/oberoi-udaivilas-udaipur.jpg","assets/hotel/hotel-images/oberoi-udaivilas-udaipur2.jpg","assets/hotel/hotel-images/oberoi-udaivilas-udaipur3.jpg","assets/hotel/hotel-images/oberoi-udaivilas-udaipur4.jpg"],
+        "amenities": ["Free Wifi", "Free Parking", "Lift", "Restaurant", "Children's pool", "Bar", "Cleaning Services", "Table tennis room", "Childcare service"],
+        "rooms": [
+          {
+            "type": "Premier Room",
+            "bed": "King Size",
+            "size": "450 sq ft",
+            "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "City View", "Room Service"],
+            "price": 25000,
+            "totalRooms": 30,
+            "availability": [],
+            "capacity": { "adults": 2, "children": 1 },
+            "image":"assets/hotel/room-images/premier-room.jpg"
+          },
+          {
+            "type": "Royal Suite",
+            "bed": "Queen Size",
+            "size": "750 sq ft",
+            "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "City View", "Room Service", "Free Breakfast"],
+            "price": 55000,
+            "totalRooms": 8,
+            "availability": [],
+            "capacity": { "adults": 3, "children": 2 },
+            "image": "assets/hotel/room-images/royal-suite-room.jpg"
+          }
+        ]
+
+      },
+      {
+        "id": 7,
+        "name": "The Leela Palace Bengaluru",
+        "location": "Bengaluru",
+        "description":"Located in the heart of Bengaluru, The Leela Palace offers a blend of traditional Indian hospitality and modern luxury.",
+        "Address": "23, Old Airport Road, Bengaluru, Karnataka 560008, India.",
+        "nearbyAttractions": ["Cubbon Park", "Lalbagh Botanical Garden", "Bangalore Palace", "UB City Mall"],
+        "specialOffers": [],
+        "price": 16000,
+        "images":[ "assets/hotel/hotel-images/leela-palace-bengaluru.jpg","assets/hotel/hotel-images/leela-palace-bengaluru2.jpg","assets/hotel/hotel-images/leela-palace-bengaluru3.jpg","assets/hotel/hotel-images/leela-palace-bengaluru4.jpg"],
+        "amenities": ["Free Wifi", "Free Parking", "Lift", "Restaurant", "Children's pool", "Yoga Retreat", "Bar", "Massage room", "Outdoor swimming pool"],
+        "rooms": [
+        {
+          "type": "Luxury Room",
+          "bed": "King Size",
+          "size": "400 sq ft",
+          "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Mountain View", "Free Breakfast"],
+          "price": 22000,
+          "totalRooms": 40,
+          "availability": [],
+          "capacity": { "adults": 2, "children": 1 },
+          "image": "assets/hotel/room-images/luxury-room.jpg"
+        },
+        {
+          "type": "Executive Suite",
+          "bed": "Queen Size",
+          "size": "600 sq ft",
+          "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Ocean View", "Room Service"],
+          "price": 30000,
+          "totalRooms": 12,
+          "availability": [],
+          "capacity": { "adults": 3, "children": 1 },
+          "image": "assets/hotel/room-images/executive-suite-room.jpg"
+        }
+      ]
+      },
+      {
+        "id": 8,
+        "name": "The Oberoi Grand",
+        "location": "Kolkata",
+        "description":"Known as the 'Grande Dame of Kolkata,' this hotel offers colonial charm with modern amenities in the city's heart.",
+        "Address": "15 Jawaharlal Nehru Road, Kolkata, West Bengal 700013, India",
+        "nearbyAttractions": ["Victoria Memorial", "Indian Museum", "Park Street", "Howrah Bridge"],
+        "specialOffers": [],
+        "price": 15000,
+        "images":[ "assets/hotel/hotel-images/oberoi-grand-kolkata.jpg","assets/hotel/hotel-images/oberoi-grand-kolkata2.jpg","assets/hotel/hotel-images/oberoi-grand-kolkata3.jpg","assets/hotel/hotel-images/oberoi-grand-kolkata4.jpg"],
+        "amenities": ["Free Wifi", "Free Parking", "Lift", "Restaurant", "Bar", "Playground", "Conference room", "Spa", "Yoga Retreat"],
+        "rooms": [
+          {
+            "type": "Premier Room",
+            "bed": "King Size",
+            "size": "450 sq ft",
+            "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "City View", "Room Service"],
+            "price": 18000,
+            "totalRooms": 30,
+            "availability": [],
+            "capacity": { "adults": 2, "children": 1 },
+            "image": "assets/hotel/room-images/premier-room.jpg"
+          },
+          {
+            "type": "Luxury Suite",
+            "bed": "Queen Size",
+            "size": "700 sq ft",
+            "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Ocean View", "Room Service"],
+            "price": 40000,
+            "totalRooms": 10,
+            "availability": [],
+            "capacity": { "adults": 4, "children": 2 },
+            "image": "assets/hotel/room-images/luxury-suite.jpg"
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "name": "The Leela Palace Chennai",
+        "location": "Chennai",
+        "description":"Overlooking the Bay of Bengal, The Leela Palace Chennai offers luxurious accommodations with a blend of traditional and contemporary design.",
+        "Address": "Adyar Seaface, MRC Nagar, Chennai, Tamil Nadu 600028, India",
+        "nearbyAttractions": ["Marina Beach", "Kapaleeshwarar Temple", "Fort St. George", "Santhome Basilica"],
+        "specialOffers": [],
+        "price": 14000,
+        "images":[ "assets/hotel/hotel-images/leela-palace-chennai.jpg","assets/hotel/hotel-images/leela-palace-chennai2.jpg","assets/hotel/hotel-images/leela-palace-chennai3.jpg","assets/hotel/hotel-images/leela-palace-chennai4.jpg"],
+        "amenities": ["Free Wifi", "Free Parking", "Lift", "Restaurant", "Yoga Retreat", "Massage room", "Gym", "Outdoor swimming pool", "Playground"],
+        "rooms": [
+          {
+            "type": "Deluxe Room",
+            "bed": "King Size",
+            "size": "400 sq ft",
+            "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Garden View"],
+            "price": 20000,
+            "totalRooms": 40,
+            "availability": [],
+            "capacity": { "adults": 2, "children": 1 },
+            "image": "assets/hotel/room-images/deluxe-room.jpg"
+          },
+          {
+            "type": "Luxury Suite",
+            "bed": "Queen Size",
+            "size": "700 sq ft",
+            "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Ocean View", "Bath Tub", "Room Service"],
+            "price": 45000,
+            "totalRooms": 15,
+            "availability": [],
+            "capacity": { "adults": 4, "children": 2 },
+            "image": "assets/hotel/room-images/luxury-suite.jpg"
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "name": "The Oberoi Sukhvilas Resort & Spa",
+        "location": "Chandigarh",
+        "description":"Nestled amidst 8,000 acres of natural forest, this resort offers a serene environment with luxury accommodations and wellness facilities.",
+        "Address": "Siswan Forest Range, New Chandigarh, Punjab 140110, India.",
+        "nearbyAttractions": ["Siswan Forest Range", "Rock Garden", "Sukhna Lake", "Pinjore Gardens"],
+        "specialOffers": [],
+        "price": 13000,
+        "images":[ "assets/hotel/hotel-images/oberoi-sukhvilas-chandigarh.jpg","assets/hotel/hotel-images/oberoi-sukhvilas-chandigarh2.jpg","assets/hotel/hotel-images/oberoi-sukhvilas-chandigarh3.jpg","assets/hotel/hotel-images/oberoi-sukhvilas-chandigarh4.jpg"],
+        "amenities": ["Free Wifi", "Free Parking", "Lift", "Restaurant", "Playground", "Table tennis room", "Karaoke", "Cleaning Services", "Massage room"],
+        "rooms": [
+          {
+            "type": "Premier Room",
+            "bed": "King Size",
+            "size": "350 sq ft",
+            "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "City View", "Room Service"],
+            "price": 25000,
+            "totalRooms": 20,
+            "availability": [],
+            "capacity": { "adults": 2, "children": 1 },
+            "image": "assets/hotel/room-images/premier-room.jpg"
+          },
+          {
+            "type": "Royal Suite",
+            "bed": "Queen Size",
+            "size": "750 sq ft",
+            "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Ocean View", "Room Service", "Free Breakfast"],
+            "price": 55000,
+            "totalRooms": 10,
+            "availability": [],
+            "capacity": { "adults": 3, "children": 2 },
+            "image": "assets/hotel/room-images/royal-suite-room.jpg"
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "name": "Wildflower Hall",
+        "location": "Shimla",
+        "description":"Located in the Himalayas, Wildflower Hall offers a luxurious retreat amidst pine and cedar forests, with panoramic mountain views.",
+        "Address": "Mashobra, Shimla, Himachal Pradesh 171007, India",
+        "nearbyAttractions": ["Kufri", "Mall Road Shimla", "Jakhoo Temple", "The Ridge"],
+        "specialOffers": [],
+        "price": 12000,
+        "images":[ "assets/hotel/hotel-images/wildflower-hall-shimla.jpg","assets/hotel/hotel-images/wildflower-hall-shimla2.jpg","assets/hotel/hotel-images/wildflower-hall-shimla3.jpg","assets/hotel/hotel-images/wildflower-hall-shimla4.jpg"],
+        "amenities": ["Free Wifi", "Free Parking", "Lift", "Restaurant", "Conference room", "Sauna", "EV charging station", "Bar", "Karaoke"],
+        "rooms": [
+        {
+          "type": "Luxury Room",
+          "bed": "Queen Size",
+          "size": "400 sq ft",
+          "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Mountain View", "Free Breakfast"],
+          "price": 22000,
+          "totalRooms": 30,
+          "availability": [],
+          "capacity": { "adults": 2, "children": 1 },
+          "image": "assets/hotel/room-images/luxury-room.jpg"
+        },
+        {
+          "type": "Presidential Suite",
+          "bed": "King Size",
+          "size": "900 sq ft",
+          "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Mountain View", "Free Breakfast", "Room Service"],
+          "price": 70000,
+          "totalRooms": 5,
+          "availability": [],
+          "capacity": { "adults": 4, "children": 2 },
+          "image": "assets/hotel/room-images/presidential-suite.jpg"
+        }
+      ]
+      },
+      {
+        "id": 12,
+        "name": "The Taj West End",
+        "location": "Bengaluru",
+        "description":"Set amidst 20 acres of lush gardens, The Taj West End offers a blend of colonial charm and modern luxury in the heart of Bengaluru.",
+        "Address": " Race Course Road, Bengaluru, Karnataka 560001, India",
+        "nearbyAttractions": ["Cubbon Park", "Vidhana Soudha", "Lalbagh Botanical Garden", "Bangalore Palace"],
+        "specialOffers": [],
+        "price": 11000,
+        "images":[ "assets/hotel/hotel-images/taj-west-end-bengaluru.jpg","assets/hotel/hotel-images/taj-west-end-bengaluru2.jpg","assets/hotel/hotel-images/taj-west-end-bengaluru3.jpg","assets/hotel/hotel-images/taj-west-end-bengaluru4.jpg"],
+        "amenities": ["Free Wifi", "Free Parking", "Lift", "Restaurant", "Spa", "Cleaning Services", "Luggage storage", "Conference room", "Gym"],
+        "rooms": [
+            {
+              "type": "Heritage Room",
+              "bed": "Queen Size",
+              "size": "450 sq ft",
+              "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "City View", "Free Breakfast"],
+              "price": 24000,
+              "totalRooms": 25,
+              "availability": [],
+              "capacity": { "adults": 2, "children": 1 },
+              "image": "assets/hotel/room-images/heritage-room.jpg"
+            },
+            {
+              "type": "Luxury Suite",
+              "bed": "King Size",
+              "size": "800 sq ft",
+              "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Ocean View", "Room Service"],
+              "price": 60000,
+              "totalRooms": 12,
+              "availability": [],
+              "capacity": { "adults": 4, "children": 2 },
+              "image": "assets/hotel/room-images/luxury-suite.jpg"
+            }
+          ]
+      },
+      {
+        "id": 13,
+        "name": "Ananda in the Himalayas",
+        "location": "Rishikesh",
+        "description":"A luxury yoga and wellness retreat, Ananda offers panoramic views of the Himalayas and the Ganges River.",
+        "Address": "The Palace Estate, Narendra Nagar, Tehri Garhwal, Uttarakhand 249175, India",
+        "nearbyAttractions": ["Rishikesh", "Haridwar", "Rajaji National Park"],
+        "specialOffers": [],
+        "price": 25000,
+        "images":[ "assets/hotel/hotel-images/ananda-himalayas-rishikesh.jpg","assets/hotel/hotel-images/ananda-himalayas-rishikesh2.jpg","assets/hotel/hotel-images/ananda-himalayas-rishikesh3.jpg","assets/hotel/hotel-images/ananda-himalayas-rishikesh4.jpg"],
+        "amenities": ["Free Wifi", "Free Parking", "Lift", "Restaurant", "Conference room", "Yoga Retreat", "Spa", "Gym", "EV charging station"],
+        "rooms": [
+        {
+          "type": "Deluxe Room",
+          "bed": "King Size",
+          "size": "350 sq ft",
+          "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Garden View"],
+          "price": 27000,
+          "totalRooms": 40,
+          "availability": [],
+          "capacity": { "adults": 2, "children": 1 },
+          "image": "assets/hotel/room-images/deluxe-room.jpg"
+        },
+        {
+          "type": "Luxury Villa",
+          "bed": "Queen Size",
+          "size": "1200 sq ft",
+          "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Garden View", "Bath Tub", "Free Breakfast", "Room Service"],
+          "price": 95000,
+          "totalRooms": 5,
+          "availability": [],
+          "capacity": { "adults": 4, "children": 2 },
+          "image": "assets/hotel/room-images/luxury-villa.jpg"
+        }
+      ]
+      },
+      {
+        "id": 14,
+        "name": "ITC Grand Bharat",
+        "location": "Gurgaon",
+        "description":"An all-suite luxury resort, ITC Grand Bharat offers a regal experience with traditional Indian architecture and modern amenities.",
+        "Address": "Gurgaon, Haryana 122001, India",
+        "nearbyAttractions": ["Kingdom of Dreams", "Sultanpur Bird Sanctuary", "Damdama Lake", "Sohna Hot Springs"],
+        "specialOffers": [],
+        "price": 14000,
+        "images":[ "assets/hotel/hotel-images/itc-grand-bharat-gurgaon.jpg","assets/hotel/hotel-images/itc-grand-bharat-gurgaon2.jpg","assets/hotel/hotel-images/itc-grand-bharat-gurgaon3.jpg","assets/hotel/hotel-images/itc-grand-bharat-gurgaon4.jpg"],
+        "amenities": ["Free Wifi", "Free Parking", "Lift", "Restaurant", "Gym", "Cleaning Services", "Karaoke", "Bar", "Luggage storage"],
+        "rooms": [
+        {
+          "type": "Grand Room",
+          "bed": "King Size",
+          "size": "500 sq ft",
+          "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "City View", "Free Breakfast"],
+          "price": 32000,
+          "totalRooms": 30,
+          "availability": [],
+          "capacity": { "adults": 2, "children": 1 },
+          "image": "assets/hotel/room-images/grand-room.jpg"
+        },
+        {
+          "type": "Presidential Villa",
+          "bed": "Queen Size",
+          "size": "1500 sq ft",
+          "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Garden View", "Bath Tub", "Free Breakfast", "Room Service"],
+          "price": 125000,
+          "totalRooms": 3,
+          "availability": [],
+          "capacity": { "adults": 6, "children": 3 },
+          "image": "assets/hotel/room-images/presidential-villa.jpg"
+        }
+      ]
+      },
+      {
+        "id": 15,
+        "name": "Park Hyatt Chennai",
+        "location": "Chennai",
+        "description":"Located in the heart of Chennai, Park Hyatt offers contemporary luxury with a focus on art and design.",
+        "Address": "39 Velachery Road, Chennai, Tamil Nadu 600032, India",
+        "nearbyAttractions": ["Guindy National Park", "Marina Beach", "Kapaleeshwarar Temple", "Phoenix Marketcity"],
+        "specialOffers": [],
+        "price": 12000,
+        "images":[ "assets/hotel/hotel-images/park-hyatt-chennai.jpg","assets/hotel/hotel-images/park-hyatt-chennai2.jpg","assets/hotel/hotel-images/park-hyatt-chennai3.jpg","assets/hotel/hotel-images/park-hyatt-chennai4.jpg"],
+        "amenities": ["Free Wifi", "Free Parking", "Lift", "Restaurant", "Spa", "Luggage storage", "Children's pool", "Yoga Retreat", "Table tennis room"],
+        "rooms": [
+        {
+          "type": "Deluxe Room",
+          "bed": "Queen Size",
+          "size": "400 sq ft",
+          "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Garden View"],
+          "price": 18000,
+          "totalRooms": 45,
+          "availability": [],
+          "capacity": { "adults": 2, "children": 1 },
+          "image": "assets/hotel/room-images/deluxe-room.jpg"
+        },
+        {
+          "type": "Executive Suite",
+          "bed": "King Size",
+          "size": "750 sq ft",
+          "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Ocean View", "Room Service"],
+          "price": 35000,
+          "totalRooms": 15,
+          "availability": [],
+          "capacity": { "adults": 3, "children": 2 },
+          "image": "assets/hotel/room-images/executive-suite-room.jpg"
+        }
+      ]
+      },
+      {
+        "id": 16,
+        "name": "Taj Falaknuma Palace",
+        "location": "Hyderabad",
+        "description":"Once the residence of the Nizam, this palace hotel offers a regal experience with opulent rooms and fine dining.",
+        "Address": "Falaknuma, Hyderabad, Telangana 500053, India",
+        "nearbyAttractions": ["Charminar", "Mecca Masjid", "Chowmahalla Palace", "Laad Bazaar"],
+        "specialOffers": [],
+        "price": 23000,
+        "images":[ "assets/hotel/hotel-images/taj-falaknuma-palace-hyderabad.jpg","assets/hotel/hotel-images/taj-falaknuma-palace-hyderabad2.jpg","assets/hotel/hotel-images/taj-falaknuma-palace-hyderabad3.jpg","assets/hotel/hotel-images/taj-falaknuma-palace-hyderabad4.jpg"],
+        "amenities": [ "Free Wifi", "Free Parking", "Lift", "Restaurant", "Childcare service", "Sauna", "Playground", "Yoga Retreat", "Bar"],
+        "rooms": [
+        {
+          "type": "Heritage Room",
+          "bed": "King Size",
+          "size": "450 sq ft",
+          "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "City View", "Free Breakfast"],
+          "price": 30000,
+          "totalRooms": 25,
+          "availability": [],
+          "capacity": { "adults": 2, "children": 1 },
+          "image": "assets/hotel/room-images/heritage-room.jpg"
+        },
+        {
+          "type": "Nizam Suite",
+          "bed": "Queen Size",
+          "size": "900 sq ft",
+          "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Smoking Permitted", "Balcony", "Garden View", "Bath Tub", "Room Service"],
+          "price": 120000,
+          "totalRooms": 4,
+          "availability": [],
+          "capacity": { "adults": 4, "children": 2 },
+          "image": "assets/hotel/room-images/nizam-suite.jpg"
+        }
+      ]
+      },
+      {
+        "id": 17,
+        "name": "The Grand New Delhi",
+        "location": "New Delhi",
+        "description":"A luxury hotel offering modern accommodations and facilities, located in the diplomatic enclave of New Delhi.",
+        "Address": "Vasant Kunj, New Delhi, Delhi 110070, India",
+        "nearbyAttractions": ["Qutub Minar", "DLF Emporio Mall", "India Gate", "Lotus Temple"],
+        "specialOffers": [],
+        "price": 15000,
+        "images":[ "assets/hotel/hotel-images/grand-new-delhi.jpg","assets/hotel/hotel-images/grand-new-delhi2.jpg","assets/hotel/hotel-images/grand-new-delhi3.jpg","assets/hotel/hotel-images/grand-new-delhi4.jpg"],
+        "amenities": ["Free Wifi", "Free Parking", "Lift", "Restaurant", "Luggage storage", "Yoga Retreat", "Bar", "Gym", "Massage room"],
+        "rooms": [
+          {
+            "type": "Deluxe Room",
+            "bed": "King Size",
+            "size": "450 sq ft",
+            "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Garden View"],
+            "price": 18000,
+            "totalRooms": 50,
+            "availability": [],
+            "capacity": { "adults": 2, "children": 1 },
+            "image": "assets/hotel/room-images/deluxe-room.jpg"
+          },
+          {
+            "type": "Luxury Suite",
+            "bed": "Queen Size",
+            "size": "800 sq ft",
+            "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Ocean View", "Room Service"],
+            "price": 40000,
+            "totalRooms": 10,
+            "availability": [],
+            "capacity": { "adults": 4, "children": 2 },
+            "image": "assets/hotel/room-images/luxury-suite.jpg"
+          }
+        ]
+      },
+      {
+        "id": 18,
+        "name": "ITC Maratha",
+        "location": "Mumbai",
+        "description":"A luxury hotel inspired by the Maratha dynasty's grandeur, offering refined accommodations and a range of dining options.",
+        "Address": "Sahar Airport Road, Andheri East, Mumbai, Maharashtra 400099, India",
+        "nearbyAttractions": ["Juhu Beach", "ISKCON Temple Mumbai", "Sanjay Gandhi National Park", "Powai Lake"],
+        "specialOffers": [],
+        "price": 10000,
+        "images":[ "assets/hotel/hotel-images/itc-maratha-mumbai.jpg","assets/hotel/hotel-images/itc-maratha-mumbai2.jpg","assets/hotel/hotel-images/itc-maratha-mumbai3.jpg","assets/hotel/hotel-images/itc-maratha-mumbai4.jpg"], 
+        "amenities": ["Free Wifi", "Free Parking", "Lift", "Restaurant", "Spa", "Cleaning Services", "Massage room", "Table tennis room", "Children's pool"],
+        "rooms": [
+        {
+          "type": "Executive Room",
+          "bed": "King Size",
+          "size": "400 sq ft",
+          "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "City View", "Room Service"],
+          "price": 20000,
+          "totalRooms": 40,
+          "availability": [],
+          "capacity": { "adults": 2, "children": 1 },
+          "image": "assets/hotel/room-images/executive-room.jpg"
+        },
+        {
+          "type": "Presidential Suite",
+          "bed": "Queen Size",
+          "size": "1000 sq ft",
+          "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Ocean View", "Free Breakfast", "Room Service"],
+          "price": 85000,
+          "totalRooms": 5,
+          "availability": [],
+          "capacity": { "adults": 5, "children": 2 },
+          "image": "assets/hotel/room-images/presidential-suite.jpg"
+        }
+      ]
+        
+      },
+      {
+        "id": 19,
+        "name": "The St. Regis Mumbai",
+        "location": "Mumbai",
+        "description":"A five-star hotel located in the heart of Mumbai, offering panoramic city views, upscale dining, and personalized services.",
+        "Address": "462, Senapati Bapat Marg, Lower Parel, Mumbai, Maharashtra 400013, India",
+        "nearbyAttractions": ["Worli Sea Face", "Haji Ali Dargah", "Bandra-Worli Sea Link", "Siddhivinayak Temple"],
+        "specialOffers": [],
+        "price": 22000,
+        "images":[ "assets/hotel/hotel-images/st-regis-mumbai.jpg","assets/hotel/hotel-images/st-regis-mumbai2.jpg","assets/hotel/hotel-images/st-regis-mumbai3.jpg","assets/hotel/hotel-images/st-regis-mumbai4.jpg"],
+        "amenities": ["Free Wifi", "Free Parking", "Lift", "Restaurant", "Table tennis room", "Yoga Retreat", "EV charging station", "Sauna", "Playground"],
+        "rooms": [
+          {
+            "type": "Deluxe Room",
+            "bed": "Queen Size",
+            "size": "350 sq ft",
+            "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Garden View"],
+            "price": 22000,
+            "totalRooms": 60,
+            "availability": [],
+            "capacity": { "adults": 2, "children": 1 },
+            "image": "assets/hotel/room-images/deluxe-room.jpg"
+          },
+          {
+            "type": "Luxury Suite",
+            "bed": "King Size",
+            "size": "850 sq ft",
+            "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Ocean View", "Room Service"],
+            "price": 60000,
+            "totalRooms": 20,
+            "availability": [],
+            "capacity": { "adults": 4, "children": 2 },
+            "image": "assets/hotel/room-images/luxury-suite.jpg"
+          }
+        ]
+      },
+      {
+        "id": 20,
+        "name": "Le Méridien Jaipur Resort & Spa",
+        "location": "Jaipur",
+        "description":"A resort blending traditional grandeur with modern amenities, featuring spacious rooms, a spa, and cultural experiences.",
+        "Address": "Number 1, Riico, Kukas, Jaipur, Rajasthan 302028, India",
+        "nearbyAttractions": ["Amber Fort", "Nahargarh Fort", "Jal Mahal", "Jaigarh Fort"],
+        "specialOffers": [],
+        "price": 15000,
+        "images":[ "assets/hotel/hotel-images/le-meridien-jaipur.jpg","assets/hotel/hotel-images/le-meridien-jaipur2.jpg","assets/hotel/hotel-images/le-meridien-jaipur3.jpg","assets/hotel/hotel-images/le-meridien-jaipur4.jpg"],
+        "amenities": ["Free Wifi", "Free Parking", "Lift", "Restaurant", "Karaoke", "Playground", "EV charging station", "Children's pool", "Outdoor swimming pool"],
+        "rooms": [
+          {
+            "type": "Deluxe Room",
+            "bed": "King Size",
+            "size": "400 sq ft",
+            "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Garden View"],
+            "price": 16000,
+            "totalRooms": 30,
+            "availability": [],
+            "capacity": { "adults": 2, "children": 1 },
+            "image": "assets/hotel/room-images/deluxe-room.jpg"
+          },
+          {
+            "type": "Royal Suite",
+            "bed": "Queen Size",
+            "size": "900 sq ft",
+            "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Ocean View", "Room Service"],
+            "price": 50000,
+            "totalRooms": 8,
+            "availability": [],
+            "capacity": { "adults": 3, "children": 2 },
+            "image": "assets/hotel/room-images/royal-suite-room.jpg"
+          }
+        ]
+      },
+      {
+        "id": 21,
+        "name": "Rambagh Palace",
+        "location": "Jaipur",
+        "description":"Once the residence of Jaipur's royalty, this palace hotel offers opulent rooms, exquisite gardens, and a rich history.",
+        "Address": "Bhawani Singh Road, Jaipur, Rajasthan 302005, India",
+        "nearbyAttractions": ["Hawa Mahal", "City Palace", "Jantar Mantar", "Amber Fort"],
+        "specialOffers": [],
+        "price": 18000,
+        "images":[ "assets/hotel/hotel-images/rambagh-palace-jaipur.jpg","assets/hotel/hotel-images/rambagh-palace-jaipur2.jpg","assets/hotel/hotel-images/rambagh-palace-jaipur3.jpg","assets/hotel/hotel-images/rambagh-palace-jaipur4.jpg"], 
+        "amenities": ["Free Wifi", "Free Parking", "Lift", "Restaurant", "Massage room", "Childcare service", "Playground", "Table tennis room", "Spa"],
+        "rooms": [
+        {
+          "type": "Heritage Room",
+          "bed": "King Size",
+          "size": "450 sq ft",
+          "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "City View", "Free Breakfast"],
+          "price": 38000,
+          "totalRooms": 35,
+          "availability": [],
+          "capacity": { "adults": 2, "children": 1 },
+          "image": "assets/hotel/room-images/heritage-room.jpg"
+        },
+        {
+          "type": "Maharaja Suite",
+          "bed": "Queen Size",
+          "size": "1200 sq ft",
+          "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Smoking Permitted", "Balcony", "Ocean View", "Bath Tub", "Room Service"],
+          "price": 140000,
+          "totalRooms": 3,
+          "availability": [],
+          "capacity": { "adults": 4, "children": 2 },
+          "image": "assets/hotel/room-images/maharaja-suite.jpg"
+        }
+      ]
+      },
+      {
+        "id": 22,
+        "name": "The Park Chennai",
+        "location": "Chennai",
+        "description":"A contemporary hotel in Chennai's business district, known for its chic interiors, rooftop pool, and vibrant nightlife venues.",
+        "Address": "601, Anna Salai, Near US Consulate, Chennai, Tamil Nadu 600006, India",
+        "nearbyAttractions": ["Marina Beach", "Express Avenue Mall", "Government Museum Chennai", "Fort St. George"],
+        "specialOffers": [],
+        "price": 9000,
+        "images":[ "assets/hotel/hotel-images/park-chennai.jpg","assets/hotel/hotel-images/park-chennai2.jpg","assets/hotel/hotel-images/park-chennai3.jpg","assets/hotel/hotel-images/park-chennai4.jpg"],
+        "amenities": ["Free Wifi", "Free Parking", "Lift", "Restaurant", "EV charging station", "Children's pool", "Luggage storage", "Spa", "Cleaning Services"],
+        "rooms": [
+          {
+            "type": "Standard Room",
+            "bed": "Queen Size",
+            "size": "300 sq ft",
+            "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "City View"],
+            "price": 11000,
+            "totalRooms": 80,
+            "availability": [],
+            "capacity": { "adults": 2, "children": 1 },
+            "image": "assets/hotel/room-images/standard-room.jpg"
+          },
+          {
+            "type": "Premium Suite",
+            "bed": "King Size",
+            "size": "750 sq ft",
+            "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Ocean View", "Bath Tub", "Room Service"],
+            "price": 30000,
+            "totalRooms": 10,
+            "availability": [],
+            "capacity": { "adults": 3, "children": 2 },
+            "image": "assets/hotel/room-images/premium-suite.jpg" 
+          }
+        ]
+      },
+      {
+        "id": 23,
+        "name": "The Imperial New Delhi",
+        "location": "New Delhi",
+        "description":"A historic hotel offering a blend of Victorian, colonial, and art deco styles, with luxurious rooms and a renowned art collection.",
+        "Address": "Janpath Lane, Connaught Place, New Delhi, Delhi 110001, India",
+        "nearbyAttractions": ["India Gate", "Connaught Place", "Rashtrapati Bhavan", "Jantar Mantar"],
+        "specialOffers": [],
+        "price": 20000,
+        "images":[ "assets/hotel/hotel-images/imperial-new-delhi.jpg","assets/hotel/hotel-images/imperial-new-delhi2.jpg","assets/hotel/hotel-images/imperial-new-delhi3.jpg","assets/hotel/hotel-images/imperial-new-delhi4.jpg"],
+        "amenities": ["Free Wifi", "Free Parking", "Lift", "Restaurant", "Karaoke", "Luggage storage", "Conference room", "Children's pool", "Spa"],
+        "rooms": [
+          {
+            "type": "Luxury Room",
+            "bed": "King Size",
+            "size": "400 sq ft",
+            "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Mountain View", "Free Breakfast"],
+            "price": 26000,
+            "totalRooms": 40,
+            "availability": [],
+            "capacity": { "adults": 2, "children": 1 },
+            "image": "assets/hotel/room-images/luxury-room.jpg"
+          },
+          {
+            "type": "Royal Suite",
+            "bed": "Queen Size",
+            "size": "1000 sq ft",
+            "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Ocean View", "Room Service", "Free Breakfast"],
+            "price": 90000,
+            "totalRooms": 6,
+            "availability": [],
+            "capacity": { "adults": 4, "children": 2 },
+            "image": "assets/hotel/room-images/royal-suite-room.jpg"
+          }
+        ]
+      },
+      {
+        "id": 24,
+        "name": "JW Marriott Mussoorie Walnut Grove Resort & Spa",
+        "location": "Mussoorie",
+        "description":"A luxury resort nestled in the Himalayas, featuring elegant accommodations, a spa, and panoramic mountain views.",
+        "Address": "Village Siya, Kempty Fall Road, Mussoorie, Uttarakhand 248179, India",
+        "nearbyAttractions": ["Kempty Falls", "Gun Hill", "Camel's Back Road", "Cloud's End"],
+        "specialOffers": [],
+        "price": 15000,
+        "images":[ "assets/hotel/hotel-images/jw-marriott-mussoorie.jpg","assets/hotel/hotel-images/jw-marriott-mussoorie2.jpg","assets/hotel/hotel-images/jw-marriott-mussoorie3.jpg","assets/hotel/hotel-images/jw-marriott-mussoorie4.jpg"],
+        "amenities": ["Free Wifi", "Free Parking", "Lift", "Restaurant", "Playground", "Karaoke", "Yoga Retreat", "EV charging station", "Cleaning Services"],
+        "rooms": [
+        {
+          "type": "Deluxe Room",
+          "bed": "Queen Size",
+          "size": "400 sq ft",
+          "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Garden View"],
+          "price": 28000,
+          "totalRooms": 50,
+          "availability": [],
+          "capacity": { "adults": 2, "children": 1 },
+          "image": "assets/hotel/room-images/deluxe-room.jpg"
+        },
+        {
+          "type": "Luxury Suite",
+          "bed": "King Size",
+          "size": "900 sq ft",
+          "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Smoking Permitted", "Balcony", "Ocean View", "Bath Tub", "Room Service"],
+          "price": 70000,
+          "totalRooms": 10,
+          "availability": [],
+          "capacity": { "adults": 3, "children": 2 },
+          "image": "assets/hotel/room-images/luxury-suite.jpg"
+        }
+      ]
+      },
+      {
+        "id": 25,
+        "name": "The Leela Goa",
+        "location": "Goa",
+        "description":"A beachfront resort set amidst 75 acres of landscaped gardens, offering a blend of South Indian architecture and Portuguese heritage.",
+        "Address": "Mobor Beach, Cavelossim, Goa 403731, India",
+        "nearbyAttractions": ["Colva Beach", "Basilica of Bom Jesus", "Dudhsagar Falls", "Anjuna Market"],
+        "specialOffers": [],
+        "price": 18000,
+        "images":[ "assets/hotel/hotel-images/leela-goa.jpg","assets/hotel/hotel-images/leela-goa2.jpg","assets/hotel/hotel-images/leela-goa3.jpg","assets/hotel/hotel-images/leela-goa4.jpg"],
+        "amenities": ["Free Wifi", "Free Parking", "Lift", "Restaurant", "Yoga Retreat", "Childcare service", "Playground", "Conference room", "Table tennis room"],
+        "rooms": [
+          {
+            "type": "Lagoon View Room",
+            "bed": "King Size",
+            "size": "500 sq ft",
+            "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Lagoon View", "Room Service"],
+            "price": 32000,
+            "totalRooms": 60,
+            "availability": [],
+            "capacity": { "adults": 2, "children": 1 },
+            "image": "assets/hotel/room-images/lagoon-view-room.jpg"
+          },
+          {
+            "type": "Royal Villa",
+            "bed": "Queen Size",
+            "size": "1500 sq ft",
+            "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Mountain View", "Bath Tub", "Free Breakfast", "Room Service"],
+            "price": 120000,
+            "totalRooms": 8,
+            "availability": [],
+            "capacity": { "adults": 4, "children": 2 },
+            "image": "assets/hotel/room-images/royal-villa.jpg"
+          }
+        ]
+      },
+      {
+        "id": 26,
+        "name": "The Ritz-Carlton Bangalore",
+        "location": "Bengaluru",
+        "description":"A luxury hotel in the city's heart, featuring elegant rooms, a rooftop bar, and a renowned spa.",
+        "Address": "99, Residency Road, Bengaluru, Karnataka 560025, India",
+        "nearbyAttractions": ["Cubbon Park", "Lalbagh Botanical Garden", "Bangalore Palace", "UB City Mall"],
+        "specialOffers": [],
+        "price": 22000,
+        "images":[ "assets/hotel/hotel-images/ritz-carlton-bengaluru.jpg","assets/hotel/hotel-images/ritz-carlton-bengaluru2.jpg","assets/hotel/hotel-images/ritz-carlton-bengaluru3.jpg","assets/hotel/hotel-images/ritz-carlton-bengaluru4.jpg"], 
+        "amenities": ["Free Wifi", "Free Parking", "Lift", "Restaurant", "Cleaning Services", "Karaoke", "Spa", "Gym", "Conference room"],
+        "rooms": [
+          {
+            "type": "Deluxe Room",
+            "bed": "King Size",
+            "size": "450 sq ft",
+            "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Garden View"],
+            "price": 25000,
+            "totalRooms": 40,
+            "availability": [],
+            "capacity": { "adults": 2, "children": 1 },
+            "image": "assets/hotel/room-images/deluxe-room.jpg"
+          },
+          {
+            "type": "Executive Suite",
+            "bed": "Queen Size",
+            "size": "850 sq ft",
+            "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Ocean View", "Room Service"],
+            "price": 50000,
+            "totalRooms": 15,
+            "availability": [],
+            "capacity": { "adults": 3, "children": 2 },
+            "image": "assets/hotel/room-images/executive-suite-room.jpg"
+          }
+        ]
+      },
+      {
+        "id": 27,
+        "name": "Viceroy Hotel",
+        "location": "Hyderabad",
+        "description":"A hotel offering comfortable accommodations and views of the Hussain Sagar Lake, located near major city attractions.",
+        "nearbyAttractions": ["Charminar", "Hussain Sagar Lake", "Salar Jung Museum", "Chowmahalla Palace"],
+        "specialOffers": [],
+        "price": 7000,
+        "images":[ "assets/hotel/hotel-images/viceroy-hotel-hyderabad.jpg","assets/hotel/hotel-images/viceroy-hotel-hyderabad2.jpg","assets/hotel/hotel-images/viceroy-hotel-hyderabad3.jpg","assets/hotel/hotel-images/viceroy-hotel-hyderabad4.jpg"],
+        "amenities": ["Free Wifi", "Free Parking", "Lift", "Restaurant", "Playground", "EV charging station", "Cleaning Services", "Sauna", "Yoga Retreat"],
+        "rooms": [
+        {
+          "type": "Standard Room",
+          "bed": "Queen Size",
+          "size": "350 sq ft",
+          "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "City View"],
+          "price": 14000,
+          "totalRooms": 50,
+          "availability": [],
+          "capacity": { "adults": 2, "children": 1 },
+          "image": "assets/hotel/room-images/standard-room.jpg"
+        },
+        {
+          "type": "Premium Suite",
+          "bed": "King Size",
+          "size": "700 sq ft",
+          "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Ocean View", "Bath Tub", "Room Service"],
+          "price": 35000,
+          "totalRooms": 10,
+          "availability": [],
+          "capacity": { "adults": 4, "children": 2 },
+          "image": "assets/hotel/room-images/premium-suite.jpg"
+        }
+      ]
+      },
+      {
+        "id": 28,
+        "name": "Radisson Blu Resort Temple Bay Mamallapuram",
+        "location": "Chennai",
+        "description":"A seaside resort offering chalet-style accommodations, infinity pools, and proximity to UNESCO World Heritage sites.",
+        "Address": "57, Covelong Road, Mahabalipuram, Tamil Nadu 603104, India",
+        "nearbyAttractions": ["Shore Temple", "Arjuna’s Penance", "Five Rathas", "Mahabalipuram Beach"],
+        "specialOffers": [],
+        "price": 12000,
+        "images":[ "assets/hotel/hotel-images/radisson-blu-chennai.jpg","assets/hotel/hotel-images/radisson-blu-chennai2.jpg","assets/hotel/hotel-images/radisson-blu-chennai3.jpg","assets/hotel/hotel-images/radisson-blu-chennai4.jpg"], 
+        "amenities": ["Free Wifi", "Free Parking", "Lift", "Restaurant", "EV charging station", "Cleaning Services", "Children's pool", "Spa", "Massage room"],
+        "rooms": [
+          {
+            "type": "Garden View Room",
+            "bed": "King Size",
+            "size": "400 sq ft",
+            "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Garden View"],
+            "price": 20000,
+            "totalRooms": 60,
+            "availability": [],
+            "capacity": { "adults": 2, "children": 1 },
+            "image": "assets/hotel/room-images/garden-view-room.jpg"
+          },
+          {
+            "type": "Sea View Chalet",
+            "bed": "Queen Size",
+            "size": "800 sq ft",
+            "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Ocean View"],
+            "price": 40000,
+            "totalRooms": 15,
+            "availability": [],
+            "capacity": { "adults": 3, "children": 2 },
+            "image": "assets/hotel/room-images/sea-view-chalet.jpg"
+          }
+        ]
+      },
+      {
+        "id": 29,
+        "name": "The Taj Coromandel",
+        "location": "Chennai",
+        "description":"A premier luxury hotel in Chennai, known for its elegant interiors, fine dining, and exceptional service",
+        "Address": "37, Mahatma Gandhi Road, Nungambakkam, Chennai, Tamil Nadu 600034, India",
+        "nearbyAttractions": ["Marina Beach", "Kapaleeshwarar Temple", "Government Museum Chennai", "Fort St. George"],
+        "specialOffers": [],
+        "price": 15000,
+        "images":[ "assets/hotel/hotel-images/taj-coromandel-chennai.jpg","assets/hotel/hotel-images/taj-coromandel-chennai2.jpg","assets/hotel/hotel-images/taj-coromandel-chennai3.jpg","assets/hotel/hotel-images/taj-coromandel-chennai4.jpg"],
+        "amenities": ["Free Wifi", "Free Parking", "Lift", "Restaurant", "EV charging station", "Spa", "Bar", "Children's pool", "Sauna"],
+        "rooms": [
+        {
+          "type": "Luxury Room",
+          "bed": "King Size",
+          "size": "450 sq ft",
+          "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Mountain View", "Free Breakfast"],
+          "price": 30000,
+          "totalRooms": 50,
+          "availability": [],
+          "capacity": { "adults": 2, "children": 1 },
+          "image": "assets/hotel/room-images/luxury-room.jpg"
+        },
+        {
+          "type": "Royal Suite",
+          "bed": "Queen Size",
+          "size": "1000 sq ft",
+          "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Ocean View", "Room Service", "Free Breakfast"],
+          "price": 80000,
+          "totalRooms": 8,
+          "availability": [],
+          "capacity": { "adults": 4, "children": 2 },
+          "image": "assets/hotel/room-images/royal-suite-room.jpg"
+        }
+      ]
+      },
+      {
+        "id": 30,
+        "name": "The Oberoi Bangalore",
+        "location": "Bengaluru",
+        "description":"A luxury hotel set amidst lush gardens, offering spacious rooms, fine dining, and personalized service.",
+        "Address": "37-39, Mahatma Gandhi Road, Bengaluru, Karnataka 560001, India",
+        "nearbyAttractions": ["MG Road", "Cubbon Park", "Lalbagh Botanical Garden", "Bangalore Palace"],
+        "specialOffers": [],
+        "price": 16000,
+        "images":[ "assets/hotel/hotel-images/oberoi-bangalore.jpg","assets/hotel/hotel-images/oberoi-bangalore2.jpg","assets/hotel/hotel-images/oberoi-bangalore3.jpg","assets/hotel/hotel-images/oberoi-bangalore4.jpg"], 
+        "amenities": ["Free Wifi", "Free Parking", "Lift", "Restaurant", "EV charging station", "Children's pool", "Table tennis room", "Conference room", "Massage room"],
+        "rooms": [
+        {
+          "type": "Deluxe Room",
+          "bed": "King Size",
+          "size": "400 sq ft",
+          "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Garden View"],
+          "price": 24000,
+          "totalRooms": 50,
+          "availability": [],
+          "capacity": { "adults": 2, "children": 1 },
+          "image": "assets/hotel/room-images/deluxe-room.jpg"
+        },
+        {
+          "type": "Luxury Suite",
+          "bed": "Queen Size",
+          "size": "900 sq ft",
+          "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Ocean View", "Room Service"],
+          "price": 60000,
+          "totalRooms": 12,
+          "availability": [],
+          "capacity": { "adults": 3, "children": 2 },
+          "image": "assets/hotel/room-images/luxury-suite.jpg"
+        }
+      ]
+      }
+    ]
+  }

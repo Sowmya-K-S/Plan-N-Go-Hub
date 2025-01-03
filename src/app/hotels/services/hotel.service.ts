@@ -74,3 +74,6 @@ getSelectedHotel(): Observable<Hotel | null> {
 }
 
 }
+
+//hotel booking service
+

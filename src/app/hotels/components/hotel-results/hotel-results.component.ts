@@ -5,7 +5,6 @@ import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-
 import { HotelService } from '../../services/hotel.service';
 import { Hotel } from '../../models/hotel.model';
 
@@ -28,24 +27,8 @@ export class HotelResultsComponent implements OnInit {
   };
 
   availableAmenities = [
-    'Free WiFi',
-    'Air Conditioning',
-    'Parking',
-    'Sea View',
-    'Spa',
-    'Fitness Center',
-    'Restaurant',
-    'Bar',
-    'Garden View',
-    'Pool',
-    'Mountain View',
-    'Yoga Retreat',
-    'City View',
-    'Beachfront',
-    'Palace View',
-    'Gym',
-    'Lake View',
-  ];
+    'Outdoor swimming pool','Spa','Gym','Bar','Massage room','Restaurant','Children pool','Free Wifi','Karaoke','Playground','Free Parking','Lift','Sauna','Childcare service','Luggage storage','Conference room','EV charging station','Cleaning Services','Table tennis room','Yoga Retreat'];
+
 
   constructor(private route: ActivatedRoute, private hotelService: HotelService, private router: Router) {}
 

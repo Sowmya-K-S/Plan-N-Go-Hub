@@ -1,10 +1,25 @@
-<h2 *ngIf="filteredHotels.length">Showing {{ filteredHotels.length }} hotels in {{ searchParams.location }}</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <h2 *ngIf="filteredHotels.length">Showing {{ filteredHotels.length }} hotels in {{ searchParams.location }}</h2>
+  <h2 *ngIf="!filteredHotels.length">No hotels in {{ searchParams.location }}</h2>
 
 <div class="container">
   <!-- Filters Section -->
   <div class="filters-section">
-    <h3>Filters</h3>
+
+    <h3>Filters <i class="fas fa-filter"></i></h3>
+
     <div class="filter-row">
+      <label>Price per night <br><br> </label>
       <label for="minPriceRange">Min Price</label>
       ₹<input
         type="number"
@@ -13,6 +28,7 @@
         placeholder="Enter min price"
       />
     </div>
+
     <div class="filter-row">
       <label for="priceRange">Max Price</label>
       ₹<input
@@ -22,6 +38,7 @@
         placeholder="Enter max price"
       />
     </div>
+
     <div class="filter-row">
       <label>Amenities</label>
       <div class="amenity-checkbox" *ngFor="let amenity of availableAmenities">
@@ -33,6 +50,43 @@
         <label>{{ amenity }}</label>
       </div>
     </div>
+
+    <div class="filter-row">
+      <label>Star Category</label>
+      <div class="amenity-checkbox">
+        <input
+          type="checkbox"
+        />
+        <label>3 star</label>
+        <input
+        type="checkbox"
+      />
+      <label>4 star</label>
+      <input
+      type="checkbox"
+    />
+    <label>5 star</label>
+      </div>
+    </div>
+
+    <div class="filter-row">
+      <label>User reviews</label>
+      <div class="amenity-checkbox">
+        <input
+          type="checkbox"
+        />
+        <label>Excellent(4.2+)</label>
+        <input
+        type="checkbox"
+      />
+      <label>Very Good(3.5+)</label>
+      <input
+      type="checkbox"
+    />
+    <label>Good(3.0+)</label>
+      </div>
+    </div>
+
     <button class="filter-btn" (click)="applyFilters()">Apply Filters</button>
   </div>
 
@@ -52,7 +106,28 @@
     </div>
   </div>
 
+  <!-- Random results -->
   <ng-template #noResults>
-    <p>No results found for "{{ searchParams.location }}"</p>
+    <p>Explore other places</p>
+    <!-- <div *ngIf="randomHotels.length; else noResults">
+      <div class="card-container">
+        <div *ngFor="let hotel of randomHotels" class="card">
+          <img [src]="hotel['images'].slice(0, 1)" alt="{{ hotel['name'] }}" class="card-img" />
+          <div class="card-content">
+            <h3>{{ hotel['name'] }}</h3>
+            <p><strong>Location:</strong> {{ hotel['location'] }}</p>
+            <p><strong>Price:</strong> ₹{{ hotel['price'] }} / night</p>
+            <p><strong>Amenities:</strong> {{ hotel['amenities'].join(', ') }}</p>
+          </div>
+          <button class="know-more-btn" (click)="navigateToDetails(hotel)">Know More</button>
+        </div>
+      </div>
+    </div> -->
   </ng-template>
+
 </div>
+</body>
+</html>
+
+
+

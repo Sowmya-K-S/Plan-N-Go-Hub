@@ -1,130 +1,143 @@
-<!-- Search Hotel Form -->
-<div class="container">
-  <div class="hotel-search-section">
-    <h2>Search Hotels</h2>
-    <form class="form-container" (ngSubmit)="onSearch()">
-      <div class="form-row">
-        <label for="location">Location</label>
-        <div>
-          <input 
-          type="text" 
-          id="location" 
-          [(ngModel)]="searchParams.location" 
-          name="location" 
-          placeholder="Enter location..." 
-          required 
-        />
-   
-    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+      <!-- Search Hotel Form -->
+    <div class="container">
+      <div class="hotel-search-section">
+        <h2>Search Hotels</h2>
+        <form class="form-container" (ngSubmit)="onSearch()">
+          <div class="form-row">
+            <label for="location">Location</label>
+              <input 
+              type="text" 
+              id="location" 
+              [(ngModel)]="searchParams.location" 
+              name="location" 
+              placeholder="Enter location..." 
+              required 
+            />
+        
+            <label for="startDate">Check-in</label>
+            <input 
+              type="date" 
+              id="startDate" 
+              [(ngModel)]="searchParams.startDate" 
+              name="startDate" 
+              required 
+            />
+            
+            <label for="endDate">Check-out</label>
+            <input 
+              type="date" 
+              id="endDate" 
+              [(ngModel)]="searchParams.endDate" 
+              name="endDate" 
+              required 
+            />
+          </div>
+
+          <div class="form-row">
+            <label for="rooms">Rooms</label>
+            <input 
+              type="number" 
+              id="rooms" 
+              min="1" 
+              [(ngModel)]="searchParams.rooms" 
+              name="rooms" 
+            />
+            
+            <label for="adults">Adults</label>
+            <input 
+              type="number" 
+              id="adults" 
+              min="1" 
+              [(ngModel)]="searchParams.adults" 
+              name="adults" 
+            />
+            
+            <label for="children">Children</label>
+            <input 
+              type="number" 
+              id="children" 
+              min="0" 
+              [(ngModel)]="searchParams.children" 
+              name="children" 
+            />
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="search-btn">Search &nbsp;<i class="fas fa-search"></i></button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Top Destinations Section -->
+    <div class="hotel-list-section">
+      <h2>Top destinations in India</h2>
+      <div class="card-container">
+        <div class="card">
+          <img src="assets/hotel/delhi.jpg" alt="New Delhi and NCR" class="card-img" />
+          <div class="card-content">
+            <h3>New Delhi</h3>
+          </div>
+          <button class="know-more-btn" (click)="navigateToLocation('New Delhi')">Explore</button>
         </div>
 
-        
-        <label for="startDate">Check-in</label>
-        <input 
-          type="date" 
-          id="startDate" 
-          [(ngModel)]="searchParams.startDate" 
-          name="startDate" 
-          required 
-        />
-        
-        <label for="endDate">Check-out</label>
-        <input 
-          type="date" 
-          id="endDate" 
-          [(ngModel)]="searchParams.endDate" 
-          name="endDate" 
-          required 
-        />
-      </div>
+        <div class="card">
+          <img src="assets/hotel/mumbai.jpg" alt="Mumbai" class="card-img" />
+          <div class="card-content">
+            <h3>Mumbai</h3>
+          </div>
+          <button class="know-more-btn" (click)="navigateToLocation('Mumbai')">Explore</button>
+        </div>
 
-      <div class="form-row">
-        <label for="rooms">Rooms</label>
-        <input 
-          type="number" 
-          id="rooms" 
-          min="1" 
-          [(ngModel)]="searchParams.rooms" 
-          name="rooms" 
-        />
-        
-        <label for="adults">Adults</label>
-        <input 
-          type="number" 
-          id="adults" 
-          min="1" 
-          [(ngModel)]="searchParams.adults" 
-          name="adults" 
-        />
-        
-        <label for="children">Children</label>
-        <input 
-          type="number" 
-          id="children" 
-          min="0" 
-          [(ngModel)]="searchParams.children" 
-          name="children" 
-        />
-      </div>
+        <div class="card">
+          <img src="assets/hotel/goa.jpg" alt="Goa" class="card-img" />
+          <div class="card-content">
+            <h3>Goa</h3>
+          </div>
+          <button class="know-more-btn" (click)="navigateToLocation('Goa')">Explore</button>
+        </div>
 
-      <div class="form-actions">
-        <button type="submit" class="search-btn">Search</button>
+        <div class="card">
+          <img src="assets/hotel/bengaluru.jpg" alt="Bengaluru" class="card-img" />
+          <div class="card-content">
+            <h3>Bengaluru</h3>
+          </div>
+          <button class="know-more-btn"  (click)="navigateToLocation('Bengaluru')">Explore</button>
+        </div>
       </div>
-    </form>
-  </div>
-</div>
-
-<!-- Top Destinations Section -->
-<div class="hotel-list-section">
-  <h2>Top destinations in India</h2>
-  <div class="card-container">
-    <div class="card">
-      <img src="assets/hotel/delhi.jpg" alt="New Delhi and NCR" class="card-img" />
-      <div class="card-content">
-        <h3>New Delhi and NCR</h3>
-      </div>
-      <button class="know-more-btn" (click)="navigateToLocation('New Delhi')">Explore</button>
     </div>
 
-    <div class="card">
-      <img src="assets/hotel/mumbai.jpg" alt="Mumbai" class="card-img" />
-      <div class="card-content">
-        <h3>Mumbai</h3>
+    <!-- Hotel Deals Section -->
+    <div class="hotel-list-section">
+      <h2>Hot hotel deals right now</h2>
+      <div class="card-container">
+        <div *ngFor="let hotel of topDeals" class="card">
+          <img [src]="hotel['images'].slice(0, 1)" alt="{{ hotel['name'] }}" class="card-img" />
+          <div class="card-content">
+            <h3>{{ hotel['name']}}</h3>
+            <p><strong>Location:</strong> {{ hotel['location'] }}</p>
+            <p><strong>Price:</strong> ₹{{ hotel['price'] }} / night</p>
+            <p *ngIf="hotel['amenities']?.length"><strong>Amenities:</strong> {{ hotel['amenities'].join(', ') }}</p>
+          </div>
+          <button class="know-more-btn" (click)="navigateToDetails(hotel)">Get Deal</button>
+        </div>
       </div>
-      <button class="know-more-btn" (click)="navigateToLocation('Mumbai')">Explore</button>
     </div>
 
-    <div class="card">
-      <img src="assets/hotel/goa.jpg" alt="Goa" class="card-img" />
-      <div class="card-content">
-        <h3>Goa</h3>
-      </div>
-      <button class="know-more-btn" (click)="navigateToLocation('Goa')">Explore</button>
-    </div>
+</body>
+</html>
 
-    <div class="card">
-      <img src="assets/hotel/bengaluru.jpg" alt="Bengaluru" class="card-img" />
-      <div class="card-content">
-        <h3>Bengaluru</h3>
-      </div>
-      <button class="know-more-btn"  (click)="navigateToLocation('Bengaluru')">Explore</button>
-    </div>
-  </div>
-</div>
 
-<!-- Hotel Deals Section -->
-<div class="hotel-list-section">
-  <h2>Hot hotel deals right now</h2>
-  <div class="card-container">
-    <div *ngFor="let hotel of topDeals" class="card">
-      <img [src]="hotel['images'].slice(0, 1)" alt="{{ hotel['name'] }}" class="card-img" />
-      <div class="card-content">
-        <h3>{{ hotel['name']}}</h3>
-        <p><strong>Location:</strong> {{ hotel['location'] }}</p>
-        <p><strong>Price:</strong> ₹{{ hotel['price'] }} / night</p>
-        <p *ngIf="hotel['amenities']?.length"><strong>Amenities:</strong> {{ hotel['amenities'].join(', ') }}</p>
-      </div>
-      <button class="know-more-btn" (click)="navigateToDetails(hotel)">Get Deal</button>
-    </div>
-  </div>
-</div>
+
+
