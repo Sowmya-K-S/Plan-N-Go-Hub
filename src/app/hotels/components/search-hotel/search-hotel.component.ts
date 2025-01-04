@@ -4,6 +4,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 import { HotelService } from '../../services/hotel.service';
 import { Hotel } from '../../models/hotel.model';
@@ -11,7 +13,7 @@ import { Hotel } from '../../models/hotel.model';
 @Component({
   selector: 'app-hotel-search',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, FontAwesomeModule],
   templateUrl: './search-hotel.component.html',
   styleUrls: ['./search-hotel.component.css'],
 })
@@ -27,6 +29,8 @@ export class SearchHotelComponent implements OnInit {
     children: 0,
   };
 
+  faSearch = faSearch;
+
   constructor(private hotelService: HotelService, private router: Router) {}
 
   ngOnInit(): void {
@@ -37,7 +41,7 @@ export class SearchHotelComponent implements OnInit {
     this.hotelService.getHotels().subscribe(
       (data) => {
         this.hotels = data;
-        this.topDeals = this.hotels.filter((hotel) => hotel.price < 12000);
+        this.topDeals = this.hotels.filter((hotel) => hotel.price < 18000);
       },
       (error) => {
         console.error('Error fetching hotel data:', error);

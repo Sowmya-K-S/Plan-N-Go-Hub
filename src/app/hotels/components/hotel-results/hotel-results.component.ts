@@ -7,11 +7,13 @@ import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HotelService } from '../../services/hotel.service';
 import { Hotel } from '../../models/hotel.model';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import {faFilter} from'@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-search-results',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, FontAwesomeModule],
   templateUrl: './hotel-results.component.html',
   styleUrls: ['./hotel-results.component.css'],
 })
@@ -19,6 +21,8 @@ export class HotelResultsComponent implements OnInit {
   hotels: Hotel[] = [];
   filteredHotels: Hotel[] = [];
   searchParams: any;
+
+  faFilter = faFilter;
 
   filters = {
     price: 0,

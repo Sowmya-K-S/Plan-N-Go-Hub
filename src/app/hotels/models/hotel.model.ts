@@ -33,7 +33,19 @@ export interface Hotel {
       'Train': string;
       'Bus': string;
     };
-    reviews: string[];//
-    rating: number;//
+    reviews: [
+    {
+      username: string;
+      rating: number;
+      comment: string;
+    } ];
+    rating: number;
+    star: number;
+    faqs: [
+      {
+        question: string;
+        answer: string;
+      }
+    ];
   }
   

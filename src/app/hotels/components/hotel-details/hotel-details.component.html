@@ -1,28 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-</head>
-<body>
 
-  <div *ngIf="hotel" class="hotel-details-container">
+
+<div *ngIf="hotel" class="hotel-details-container">
 
     <!-- Hotel Header Section -->
     <div class="hotel-header">
-        <div>
-          <h1>{{ hotel['name'] }}</h1>
-          <p><i class="fas fa-map-marker-alt"></i> {{ hotel['Address'] }}</p>
-          <p><i class="fas fa-building"></i> {{ hotel['description'] }}</p>
+
+        <div class="hotel-basic">
+          <h1>{{ hotel['name'] }} <i *ngFor="let star of getFilledStars(hotel.star)"><fa-icon [icon]="faStar"></fa-icon></i></h1>
+          <p><i><fa-icon [icon]="faMapMarkerAlt"></fa-icon></i> {{ hotel['Address'] }}</p>
+          <p><i><fa-icon [icon]="faHotel"></fa-icon></i> {{ hotel['description'] }}</p>
         </div>
     
         <h2>₹{{ hotel['price'] }}</h2>
     
-        <button class="select-rooms-btn">Select Rooms</button>
+        <button class="select-rooms-btn" (click)="scrollToRooms()">Select Rooms</button>
     
     </div>
   
@@ -37,23 +28,34 @@
      <div class="amenities">
       <h3>Amenities</h3>
       <div class="hotel-amenities">
-      <li *ngFor="let amenity of hotel['amenities']" class="amenity-item"><i [class]="getAmenityIcon(amenity)"></i> {{ amenity }}</li>
+      <li *ngFor="let amenity of hotel['amenities']" class="amenity-item"><i><fa-icon [icon]="getAmenityIcon(amenity)"></fa-icon></i> {{ amenity }}</li>
       </div>
       </div>
   
     <!-- rating, nearby places and surroundings -->
     <div class="more-details">
 
-      <!-- Amenities -->
+      <!-- rating -->
       <div class="rating">
-        <h3>User Rating</h3>
+
+        <div class="rating-label">
+        <h3>{{ hotel['rating'] }}/5</h3>
+        <span class="rating-label">{{ getRatingLabel(hotel.rating) }}</span>
+        </div>
+
+        <p>{{ hotel['reviews'].slice(0,1)[0].comment }}</p>
+
+        <div class="more-btn">
+          <p>{{ hotel['reviews'].slice(0,1)[0].username }}</p>
+          <a (click)="scrollToReviews()">See all reviews</a>
+        </div>
       </div>
 
       <!-- nearby attractions -->
       <div class="nearby-attractions">
         <h3>Nearby Attractions</h3>
         <div class="hotel-nearby">
-          <li *ngFor="let attraction of hotel['nearbyAttractions']" class="amenity-item"> <i class="fas fa-map-pin"></i> {{ getTruncatedSurrounding(attraction) }}</li>
+          <li *ngFor="let attraction of hotel['nearbyAttractions']" class="amenity-item"> <i><fa-icon [icon]="faMapPin"></fa-icon></i> {{ getTruncatedSurrounding(attraction) }}</li>
           </div>
       </div>
 
@@ -61,15 +63,16 @@
       <div class="surroundings">
         <h3>Surroundings</h3>
         <div class="hotel-surroundings">
-          <li> <i class="fas fa-plane"></i> {{ getTruncatedSurrounding(hotel['surroundings'].Airport) }}</li>
-          <li> <i class="fa fa-train"></i> {{ getTruncatedSurrounding(hotel['surroundings'].Train) }}</li>
-          <li> <i class="fa fa-bus"> </i> {{ getTruncatedSurrounding(hotel['surroundings'].Bus) }}</li>
+          <li> <i><fa-icon [icon]="faPlane"></fa-icon></i> {{ getTruncatedSurrounding(hotel['surroundings'].Airport) }}</li>
+          <li> <i><fa-icon [icon]="faTrain"></fa-icon></i> {{ getTruncatedSurrounding(hotel['surroundings'].Train) }}</li>
+          <li> <i><fa-icon [icon]="faBus"></fa-icon> </i> {{ getTruncatedSurrounding(hotel['surroundings'].Bus) }}</li>
+          <li><a href="">View on map</a></li>
       </div>
       </div>
     </div>
     
     <!-- Room Details -->
-    <div class="rooms">
+    <div #rooms class="rooms">
       <h1>Rooms</h1>
       <div *ngFor="let room of hotel['rooms']" class="room-card">
           
@@ -77,20 +80,19 @@
             <h3>{{ room['type'] }}
             <img [src]="room.image" alt="{{ room.type }} photo"/>
           </h3>
-          </div>
-          
+          </div>       
 
           <div class="details">
             <ul class="room-details">
-              <li><i class="fas fa-bed"></i> {{ room['bed'] }}</li>
-              <li><i class="fas fa-ruler-combined"></i> {{ room['size'] }}</li>
-              <li *ngFor="let amenity of room['amenities']" class="amenity-item"><i [class]="getAmenityIcon(amenity)"></i> {{ amenity }}</li>
+              <li><i><fa-icon [icon]="faBed"></fa-icon></i> {{ room['bed'] }}</li>
+              <li><i><fa-icon [icon]="faRulerCombined"></fa-icon></i> {{ room['size'] }}</li>
+              <li *ngFor="let amenity of room['amenities']" class="amenity-item"><i><fa-icon [icon]="getAmenityIcon(amenity)"></fa-icon></i> {{ amenity }}</li>
             </ul>
           </div>
 
           <div class="capacity">
-            <h3> <i class="fa fa-user"></i> {{ room['capacity'].adults }}</h3>
-            <h3><i class="fa fa-child"></i> {{ room['capacity'].children }}</h3>
+            <h3> <i><fa-icon [icon]="faUser"></fa-icon></i> {{ room['capacity'].adults }}</h3>
+            <h3><i><fa-icon [icon]="faChild"></fa-icon></i> {{ room['capacity'].children }}</h3>
           </div>
       
           <div class="room-price">
@@ -103,11 +105,42 @@
       </div>
     </div>
 
-  </div>
+    <!-- reviews -->
+    <div #reviews class="reviews">
+
+      <h1>Reviews</h1>
+
+      <div class="review-cards">
+
+        <div *ngFor="let review of hotel['reviews']" class="review">
+
+          <div class="review-header">
+            <p><strong>{{ review['username'] }}</strong></p>
+            <p class="comment"><strong>{{ review['rating'] }} </strong><i><fa-icon [icon]="faStar"></fa-icon></i></p>
+          </div>
+
+          <p>{{ review['comment'] }}</p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- faqs -->
+    <div class="faqs">
+      <h2>Frequently Asked Questions</h2>
+      <details *ngFor="let faq of hotel['faqs']" class="faq-item">
+          <summary>{{ faq.question }}</summary>
+          <p>{{ faq.answer }}</p>
+      </details>
+    </div>
   
-  <div *ngIf="!hotel">
-    <p>Loading hotel details...</p>
-  </div>
+</div>
   
-</body>
-</html>
+<div *ngIf="!hotel">
+    <p>Loading hotel details...</p> 
+</div>
+
+
+  
