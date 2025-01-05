@@ -1,4 +1,4 @@
-
+<!-- hotel-details.component.html -->
 
 <div *ngIf="hotel" class="hotel-details-container">
 
@@ -99,7 +99,7 @@
             <h2> ₹{{ room['price'] }}</h2>
             <p>price per night</p>
             <p>incl. of taxes</p>
-            <button class="reserve-btn">Reserve</button>
+            <button class="reserve-btn" (click)="navigateToBooking(room)">Reserve</button>
           </div>
 
       </div>

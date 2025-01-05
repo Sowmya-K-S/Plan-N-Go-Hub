@@ -20,6 +20,7 @@ import { Hotel } from '../../models/hotel.model';
 export class SearchHotelComponent implements OnInit {
   hotels: Hotel[] = [];
   topDeals: Hotel[] = [];
+
   searchParams = {
     location: '',
     startDate: '',
@@ -49,13 +50,15 @@ export class SearchHotelComponent implements OnInit {
     );
   }
 
-  showWarning: boolean = false;
   onSearch() {
+
+  this.hotelService.setSearchDetails(this.searchParams);
+
     const { location } = this.searchParams;
     if (!location.trim()) {
       return; // Prevent empty location searches
     }
-    this.router.navigate(['/search-results'], { queryParams: { location: location.trim() } });
+    this.router.navigate(['/search-results']);
   }
   
 

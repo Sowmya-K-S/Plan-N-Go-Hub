@@ -36,13 +36,14 @@ export class HotelResultsComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private hotelService: HotelService, private router: Router) {}
 
-  ngOnInit(): void {
-    this.route.queryParams.subscribe((params) => {
-      this.searchParams = params;
-      this.fetchHotels(params['location']);
+  ngOnInit() {
+    this.hotelService.getSearchDetails().subscribe((details) => {
+      if (details) {
+        this.searchParams = details;
+        this.fetchHotels(details['location']); 
+      }
     });
   }
-
   fetchHotels(location?: string) {
     if (!location?.trim()) {
       this.hotels = [];

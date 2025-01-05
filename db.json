@@ -4,118 +4,200 @@
       "id": 1,
       "name": "The Oberoi Mumbai",
       "location": "Mumbai",
-      "description":"Located on the iconic Marine Drive, The Oberoi Mumbai offers luxurious accommodations with panoramic views of the Arabian Sea.",
+      "description": "Located on the iconic Marine Drive, The Oberoi Mumbai offers luxurious accommodations with panoramic views of the Arabian Sea.",
       "Address": "Marine Drive, Mumbai, Maharashtra 400020, India",
-      "nearbyAttractions": ["Gateway of India (Approx. 2 km)", "Chhatrapati Shivaji Maharaj Vastu Sangrahalaya (Approx. 2 km)", "Marine Drive (Approx. 3.2 km)", "Colaba Causeway (Approx. 2 km)"],
+      "nearbyAttractions": [
+        "Gateway of India (Approx. 2 km)",
+        "Chhatrapati Shivaji Maharaj Vastu Sangrahalaya (Approx. 2 km)",
+        "Marine Drive (Approx. 3.2 km)",
+        "Colaba Causeway (Approx. 2 km)"
+      ],
       "specialOffers": [],
       "price": 18000,
-      "images": ["assets/hotel/hotel-images/oberoi-mumbai.jpg","assets/hotel/hotel-images/oberoi-mumbai2.jpg","assets/hotel/hotel-images/oberoi-mumbai3.jpg","assets/hotel/hotel-images/oberoi-mumbai4.jpg"],
-      "amenities": ["Free Wifi", "Free Parking", "Lift", "Restaurant", "Sauna", "EV charging station", "Children's pool", "Luggage storage", "Bar"],
-      "surroundings":{
+      "images": [
+        "assets/hotel/hotel-images/oberoi-mumbai.jpg",
+        "assets/hotel/hotel-images/oberoi-mumbai2.jpg",
+        "assets/hotel/hotel-images/oberoi-mumbai3.jpg",
+        "assets/hotel/hotel-images/oberoi-mumbai4.jpg"
+      ],
+      "amenities": [
+        "Free Wifi",
+        "Free Parking",
+        "Lift",
+        "Restaurant",
+        "Sauna",
+        "EV charging station",
+        "Children's pool",
+        "Luggage storage",
+        "Bar"
+      ],
+      "surroundings": {
         "Airport": "Chhatrapati Shivaji Maharaj International Airport (Approx. 24 km)",
-        "Train":"Churchgate Railway Station (Approx. 5-minute walk)",
-        "Bus":"N.C.P.A. Bus Stop (Approx. 2-minute walk)"
+        "Train": "Churchgate Railway Station (Approx. 5-minute walk)",
+        "Bus": "N.C.P.A. Bus Stop (Approx. 2-minute walk)"
       },
       "rooms": [
-      {
-        "type": "Luxury Room",
-        "bed": "King Size",
-        "size": "350 sq ft",
-        "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Mountain View", "Free Breakfast"],
-        "price": 18000,
-        "totalRooms": 30,
-        "availability": [],
-        "capacity": { "adults": 2, "children": 1 },
-        "image": "assets/hotel/room-images/luxury-room.jpg"
-      },
-      {
-        "type": "Executive Suite",
-        "bed": "Queen Size",
-        "size": "450 sq ft",
-        "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Ocean View", "Room Service"],
-        "price": 24000,
-        "totalRooms": 15,
-        "availability": [],
-        "capacity": { "adults": 3, "children": 1 },
-        "image": "assets/hotel/room-images/executive-suite-room.jpg"
-      }
+        {
+          "type": "Luxury Room",
+          "bed": "King Size",
+          "size": "350 sq ft",
+          "amenities": [
+            "Free Wifi",
+            "Private Bathroom",
+            "Air Conditioning",
+            "Non-Smoking",
+            "Mountain View",
+            "Free Breakfast"
+          ],
+          "price": 18000,
+          "totalRooms": 30,
+          "availability": [],
+          "capacity": {
+            "adults": 2,
+            "children": 1
+          },
+          "image": "assets/hotel/room-images/luxury-room.jpg"
+        },
+        {
+          "type": "Executive Suite",
+          "bed": "Queen Size",
+          "size": "450 sq ft",
+          "amenities": [
+            "Free Wifi",
+            "Private Bathroom",
+            "Air Conditioning",
+            "Non-Smoking",
+            "Balcony",
+            "Ocean View",
+            "Room Service"
+          ],
+          "price": 24000,
+          "totalRooms": 15,
+          "availability": [],
+          "capacity": {
+            "adults": 3,
+            "children": 1
+          },
+          "image": "assets/hotel/room-images/executive-suite-room.jpg"
+        }
       ],
-      "reviews":[
-      {
-        "username": "JohnDoe123",
-        "rating": 5,
-        "comment": "Amazing stay with great service and views!"
-      },
-      {
-        "username": "JaneSmith456",
-        "rating": 4,
-        "comment": "Beautiful hotel, but food could be better."
-      },
-      {
-        "username": "Jane12",
-        "rating": 4,
-        "comment": "Beautiful hotel, but food could be better."
-      }
+      "reviews": [
+        {
+          "username": "JohnDoe123",
+          "rating": 5,
+          "comment": "Amazing stay with great service and views!"
+        },
+        {
+          "username": "JaneSmith456",
+          "rating": 4,
+          "comment": "Beautiful hotel, but food could be better."
+        },
+        {
+          "username": "Jane12",
+          "rating": 4,
+          "comment": "Beautiful hotel, but food could be better."
+        }
       ],
       "rating": 4.5,
       "star": 5,
       "faqs": [
-      {
-        "question": "Is airport transportation available?",
-        "answer": "Yes, airport transportation can be arranged upon request."
-      },
-      {
-        "question": "Are pets allowed?",
-        "answer": "No, pets are not allowed at the property."
-      },
-      {
-        "question": "What are the check-in and check-out times?",
-        "answer": "Check-in is from 3:00 PM, and check-out is until 12:00 PM."
-      }
+        {
+          "question": "Is airport transportation available?",
+          "answer": "Yes, airport transportation can be arranged upon request."
+        },
+        {
+          "question": "Are pets allowed?",
+          "answer": "No, pets are not allowed at the property."
+        },
+        {
+          "question": "What are the check-in and check-out times?",
+          "answer": "Check-in is from 3:00 PM, and check-out is until 12:00 PM."
+        }
       ]
-  },
+    },
     {
       "id": 2,
       "name": "The Leela Palace Udaipur",
       "location": "Udaipur",
-      "description":"Situated on the banks of Lake Pichola, this palace hotel recreates the grandeur of the Mewar dynasty, offering opulent rooms and stunning views. ",
+      "description": "Situated on the banks of Lake Pichola, this palace hotel recreates the grandeur of the Mewar dynasty, offering opulent rooms and stunning views. ",
       "Address": "Lake Pichola, Udaipur, Rajasthan 313001, India",
-      "nearbyAttractions": ["City Palace (Approx. 1.4 km)", "Jagdish Temple (Approx. 1.3 km)", "Lake Pichola boat rides (Approx. 3.3 km)", "Sajjangarh Monsoon Palace (Approx. 3.7 km)"],
+      "nearbyAttractions": [
+        "City Palace (Approx. 1.4 km)",
+        "Jagdish Temple (Approx. 1.3 km)",
+        "Lake Pichola boat rides (Approx. 3.3 km)",
+        "Sajjangarh Monsoon Palace (Approx. 3.7 km)"
+      ],
       "specialOffers": [],
       "price": 20000,
-      "images":[ "assets/hotel/hotel-images/leela-palace-udaipur.jpg","assets/hotel/hotel-images/leela-palace-udaipur2.jpg","assets/hotel/hotel-images/leela-palace-udaipur3.jpg","assets/hotel/hotel-images/leela-palace-udaipur4.jpg"],
-      "amenities": ["Free Wifi", "Free Parking", "Lift", "Restaurant", "Conference room", "Massage room", "Table tennis room", "Cleaning Services", "Children's pool"],
+      "images": [
+        "assets/hotel/hotel-images/leela-palace-udaipur.jpg",
+        "assets/hotel/hotel-images/leela-palace-udaipur2.jpg",
+        "assets/hotel/hotel-images/leela-palace-udaipur3.jpg",
+        "assets/hotel/hotel-images/leela-palace-udaipur4.jpg"
+      ],
+      "amenities": [
+        "Free Wifi",
+        "Free Parking",
+        "Lift",
+        "Restaurant",
+        "Conference room",
+        "Massage room",
+        "Table tennis room",
+        "Cleaning Services",
+        "Children's pool"
+      ],
       "surroundings": {
         "Airport": "Maharana Pratap Airport (Approx. 28 km)",
         "Train": "Udaipur City Railway Station (Approx. 6.6 km)",
         "Bus": "Reti Stand Chowk Bus Stop (Approx. 5 km)"
       },
-
       "rooms": [
         {
           "type": "Heritage Room",
           "bed": "Queen Size",
           "size": "400 sq ft",
-          "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "City View", "Free Breakfast"],
+          "amenities": [
+            "Free Wifi",
+            "Private Bathroom",
+            "Air Conditioning",
+            "Non-Smoking",
+            "City View",
+            "Free Breakfast"
+          ],
           "price": 20000,
           "totalRooms": 20,
           "availability": [],
-          "capacity": { "adults": 2, "children": 1 },
+          "capacity": {
+            "adults": 2,
+            "children": 1
+          },
           "image": "assets/hotel/room-images/heritage-room.jpg"
         },
         {
           "type": "Royal Suite",
           "bed": "King Size",
           "size": "700 sq ft",
-          "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "City View", "Room Service", "Free Breakfast"],
+          "amenities": [
+            "Free Wifi",
+            "Private Bathroom",
+            "Air Conditioning",
+            "Non-Smoking",
+            "Balcony",
+            "City View",
+            "Room Service",
+            "Free Breakfast"
+          ],
           "price": 45000,
           "totalRooms": 10,
           "availability": [],
-          "capacity": { "adults": 4, "children": 2 },
+          "capacity": {
+            "adults": 4,
+            "children": 2
+          },
           "image": "assets/hotel/room-images/royal-suite-room.jpg"
         }
       ],
-       "reviews": [
+      "reviews": [
         {
           "username": "Rohit_kumar",
           "rating": 5,
@@ -131,10 +213,10 @@
           "rating": 4,
           "comment": "A majestic experience, the food was really good."
         }
-       ],
-        "rating": 4.7,
-        "star": 5,
-        "faqs": [
+      ],
+      "rating": 4.7,
+      "star": 5,
+      "faqs": [
         {
           "question": "Does the hotel offer boat rides on Lake Pichola?",
           "answer": "Yes, the hotel arranges exclusive boat rides for guests."
@@ -148,197 +230,321 @@
           "answer": "Yes, spa services can be booked during your stay."
         }
       ]
-  },
+    },
     {
       "id": 3,
       "name": "Taj Mahal Palace Hotel",
       "location": "Mumbai",
-      "description":"A historic landmark in Mumbai, the Taj Mahal Palace Hotel combines old-world charm with modern luxury, overlooking the Arabian Sea.",
+      "description": "A historic landmark in Mumbai, the Taj Mahal Palace Hotel combines old-world charm with modern luxury, overlooking the Arabian Sea.",
       "Address": "Apollo Bunder, Mumbai, Maharashtra 400001, India",
-      "nearbyAttractions":["Gateway of India (Approx. 0.1 km)", "Marine Drive (Approx. 3 km)", "Chhatrapati Shivaji Maharaj Vastu Sangrahalaya (Approx. 0.5 km)", "Colaba Causeway (Approx. 0.3 km)"],
+      "nearbyAttractions": [
+        "Gateway of India (Approx. 0.1 km)",
+        "Marine Drive (Approx. 3 km)",
+        "Chhatrapati Shivaji Maharaj Vastu Sangrahalaya (Approx. 0.5 km)",
+        "Colaba Causeway (Approx. 0.3 km)"
+      ],
       "specialOffers": [],
       "price": 22000,
-      "images":[ "assets/hotel/hotel-images/taj-mahal-palace-mumbai.jpg","assets/hotel/hotel-images/taj-mahal-palace-mumbai2.jpg","assets/hotel/hotel-images/taj-mahal-palace-mumbai3.jpg","assets/hotel/hotel-images/taj-mahal-palace-mumbai4.jpg"],
-      "amenities": [ "Free Wifi", "Free Parking", "Lift", "Restaurant", "Spa", "Childcare service", "Bar", "Karaoke", "Children's pool"],
+      "images": [
+        "assets/hotel/hotel-images/taj-mahal-palace-mumbai.jpg",
+        "assets/hotel/hotel-images/taj-mahal-palace-mumbai2.jpg",
+        "assets/hotel/hotel-images/taj-mahal-palace-mumbai3.jpg",
+        "assets/hotel/hotel-images/taj-mahal-palace-mumbai4.jpg"
+      ],
+      "amenities": [
+        "Free Wifi",
+        "Free Parking",
+        "Lift",
+        "Restaurant",
+        "Spa",
+        "Childcare service",
+        "Bar",
+        "Karaoke",
+        "Children's pool"
+      ],
       "surroundings": {
         "Airport": "Chhatrapati Shivaji Maharaj International Airport (Approx. 24.5 km)",
         "Train": "Churchgate Railway Station (Approx. 2 km)",
         "Bus": "Holi Name Vidyalaya Bus Stop (Approx. 0.1 km)"
       },
-
       "rooms": [
-      {
-        "type": "Deluxe Room",
-        "bed": "King Size",
-        "size": "360 sq ft",
-        "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Garden View"],
-        "price": 22000,
-        "totalRooms": 40,
-        "availability": [],
-        "capacity": { "adults": 2, "children": 1 },
-        "image": "assets/hotel/room-images/deluxe-room.jpg"
-      },
-      {
-        "type": "Grand Suite",
-        "bed": "Queen Size",
-        "size": "600 sq ft",
-        "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Ocean View", "Bath Tub", "Room Service"],
-        "price": 50000,
-        "totalRooms": 8,
-        "availability": [],
-        "capacity": { "adults": 3, "children": 2 },
-        "image": "assets/hotel/room-images/grand-suite.jpg"
-      }
+        {
+          "type": "Deluxe Room",
+          "bed": "King Size",
+          "size": "360 sq ft",
+          "amenities": [
+            "Free Wifi",
+            "Private Bathroom",
+            "Air Conditioning",
+            "Non-Smoking",
+            "Balcony",
+            "Garden View"
+          ],
+          "price": 22000,
+          "totalRooms": 40,
+          "availability": [],
+          "capacity": {
+            "adults": 2,
+            "children": 1
+          },
+          "image": "assets/hotel/room-images/deluxe-room.jpg"
+        },
+        {
+          "type": "Grand Suite",
+          "bed": "Queen Size",
+          "size": "600 sq ft",
+          "amenities": [
+            "Free Wifi",
+            "Private Bathroom",
+            "Air Conditioning",
+            "Non-Smoking",
+            "Balcony",
+            "Ocean View",
+            "Bath Tub",
+            "Room Service"
+          ],
+          "price": 50000,
+          "totalRooms": 8,
+          "availability": [],
+          "capacity": {
+            "adults": 3,
+            "children": 2
+          },
+          "image": "assets/hotel/room-images/grand-suite.jpg"
+        }
       ],
-     "reviews": [
-      {
-      "username": "RajeshSharma",
-      "rating": 5,
-      "comment": "An iconic hotel with outstanding service and breathtaking views. Perfect for a luxurious stay."
-      },
-     {
-      "username": "EmilyBrown",
-      "rating": 4,
-      "comment": "Loved the historic charm, but room service could have been faster."
-     },
-     {
-      "username": "Raju Singh",
-      "rating": 5,
-      "comment": "An iconic hotel with outstanding service.. Perfect for a luxurious stay."
-      }
-     ],
+      "reviews": [
+        {
+          "username": "RajeshSharma",
+          "rating": 5,
+          "comment": "An iconic hotel with outstanding service and breathtaking views. Perfect for a luxurious stay."
+        },
+        {
+          "username": "EmilyBrown",
+          "rating": 4,
+          "comment": "Loved the historic charm, but room service could have been faster."
+        },
+        {
+          "username": "Raju Singh",
+          "rating": 5,
+          "comment": "An iconic hotel with outstanding service.. Perfect for a luxurious stay."
+        }
+      ],
       "rating": 4.6,
       "star": 5,
       "faqs": [
-      {
-        "question": "Is airport pickup available?",
-        "answer": "Yes, airport transfers can be arranged for an additional charge."
-      },
-      {
-        "question": "Does the hotel allow pets?",
-        "answer": "No, pets are not permitted in the hotel."
-      },
-      {
-        "question": "Are there any guided tours available?",
-        "answer": "Yes, the hotel can arrange heritage tours upon request."
-      }
-     ]
+        {
+          "question": "Is airport pickup available?",
+          "answer": "Yes, airport transfers can be arranged for an additional charge."
+        },
+        {
+          "question": "Does the hotel allow pets?",
+          "answer": "No, pets are not permitted in the hotel."
+        },
+        {
+          "question": "Are there any guided tours available?",
+          "answer": "Yes, the hotel can arrange heritage tours upon request."
+        }
+      ]
     },
     {
       "id": 4,
       "name": "The Oberoi Rajvilas",
       "location": "Jaipur",
-      "description":"Set amidst 32 acres of lush gardens, The Oberoi Rajvilas offers a regal experience with traditional Rajasthani architecture and modern amenities.",
+      "description": "Set amidst 32 acres of lush gardens, The Oberoi Rajvilas offers a regal experience with traditional Rajasthani architecture and modern amenities.",
       "Address": "Goner Road, Jaipur, Rajasthan 302031, India",
-      "nearbyAttractions": ["Amber Fort (Approx. 11.5 km)", "Hawa Mahal (Approx. 10.5 km)", "City Palace (Approx. 10.4 km)", "Jantar Mantar (Approx. 10.4 km)"],
+      "nearbyAttractions": [
+        "Amber Fort (Approx. 11.5 km)",
+        "Hawa Mahal (Approx. 10.5 km)",
+        "City Palace (Approx. 10.4 km)",
+        "Jantar Mantar (Approx. 10.4 km)"
+      ],
       "specialOffers": [],
       "price": 19000,
-      "images":[ "assets/hotel/hotel-images/oberoi-rajvilas-jaipur.jpg","assets/hotel/hotel-images/oberoi-rajvilas-jaipur2.jpg","assets/hotel/hotel-images/oberoi-rajvilas-jaipur3.jpg","assets/hotel/hotel-images/oberoi-rajvilas-jaipur4.jpg"],
-      "amenities": ["Free Wifi", "Free Parking", "Lift", "Restaurant", "Outdoor swimming pool", "Bar", "Conference room", "Karaoke", "Sauna"],
+      "images": [
+        "assets/hotel/hotel-images/oberoi-rajvilas-jaipur.jpg",
+        "assets/hotel/hotel-images/oberoi-rajvilas-jaipur2.jpg",
+        "assets/hotel/hotel-images/oberoi-rajvilas-jaipur3.jpg",
+        "assets/hotel/hotel-images/oberoi-rajvilas-jaipur4.jpg"
+      ],
+      "amenities": [
+        "Free Wifi",
+        "Free Parking",
+        "Lift",
+        "Restaurant",
+        "Outdoor swimming pool",
+        "Bar",
+        "Conference room",
+        "Karaoke",
+        "Sauna"
+      ],
       "surroundings": {
         "Airport": "Maharana Pratap Airport (Approx. 28 km)",
         "Train": "Jaipur Junction Railway Station (Approx. 12 km)",
         "Bus": "Sindhi Camp Bus Station (Approx. 10 km)"
       },
-
       "rooms": [
-      {
-        "type": "Premier Room",
-        "bed": "King Size",
-        "size": "350 sq ft",
-        "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "City View", "Room Service"],
-        "price": 19000,
-        "totalRooms": 25,
-        "availability": [],
-        "capacity": { "adults": 2, "children": 1 },
-        "image": "assets/hotel/room-images/premier-room.jpg"
-      },
-      {
-        "type": "Luxury Villa",
-        "bed": "Queen Size",
-        "size": "600 sq ft",
-        "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Garden View", "Bath Tub", "Free Breakfast", "Room Service"],
-        "price": 55000,
-        "totalRooms": 5,
-        "availability": [],
-        "capacity": { "adults": 4, "children": 2 },
-        "image": "assets/hotel/room-images/luxury-villa.jpg"
-      }
+        {
+          "type": "Premier Room",
+          "bed": "King Size",
+          "size": "350 sq ft",
+          "amenities": [
+            "Free Wifi",
+            "Private Bathroom",
+            "Air Conditioning",
+            "Non-Smoking",
+            "City View",
+            "Room Service"
+          ],
+          "price": 19000,
+          "totalRooms": 25,
+          "availability": [],
+          "capacity": {
+            "adults": 2,
+            "children": 1
+          },
+          "image": "assets/hotel/room-images/premier-room.jpg"
+        },
+        {
+          "type": "Luxury Villa",
+          "bed": "Queen Size",
+          "size": "600 sq ft",
+          "amenities": [
+            "Free Wifi",
+            "Private Bathroom",
+            "Air Conditioning",
+            "Non-Smoking",
+            "Balcony",
+            "Garden View",
+            "Bath Tub",
+            "Free Breakfast",
+            "Room Service"
+          ],
+          "price": 55000,
+          "totalRooms": 5,
+          "availability": [],
+          "capacity": {
+            "adults": 4,
+            "children": 2
+          },
+          "image": "assets/hotel/room-images/luxury-villa.jpg"
+        }
       ],
       "reviews": [
-      {
-        "username": "AmitVerma",
-        "rating": 5,
-        "comment": "A truly royal experience! The gardens and architecture are mesmerizing. Excellent service!"
-      },
-      {
-        "username": "SophiaTaylor",
-        "rating": 4,
-        "comment": "Beautiful property with great amenities. The pool area is a highlight."
-      },
-      {
-        "username": "Ankita Sharma",
-        "rating": 5,
-        "comment": "The gardens and architecture are mesmerizing. Excellent service!"
-      }
+        {
+          "username": "AmitVerma",
+          "rating": 5,
+          "comment": "A truly royal experience! The gardens and architecture are mesmerizing. Excellent service!"
+        },
+        {
+          "username": "SophiaTaylor",
+          "rating": 4,
+          "comment": "Beautiful property with great amenities. The pool area is a highlight."
+        },
+        {
+          "username": "Ankita Sharma",
+          "rating": 5,
+          "comment": "The gardens and architecture are mesmerizing. Excellent service!"
+        }
       ],
-        "rating": 4.6,
-        "star": 5,
-        "faqs": [
-      {
-        "question": "How far is the hotel from Amber Fort?",
-        "answer": "The hotel is approximately a 20-minute drive from Amber Fort."
-      },
-      {
-        "question": "Does the hotel provide airport transfers?",
-        "answer": "Yes, airport transfers can be arranged upon request for an additional charge."
-      },
-      {
-        "question": "Are guided tours available for nearby attractions?",
-        "answer": "Yes, the hotel can arrange guided tours to Amber Fort, Hawa Mahal, and other nearby landmarks."
-      }
+      "rating": 4.6,
+      "star": 5,
+      "faqs": [
+        {
+          "question": "How far is the hotel from Amber Fort?",
+          "answer": "The hotel is approximately a 20-minute drive from Amber Fort."
+        },
+        {
+          "question": "Does the hotel provide airport transfers?",
+          "answer": "Yes, airport transfers can be arranged upon request for an additional charge."
+        },
+        {
+          "question": "Are guided tours available for nearby attractions?",
+          "answer": "Yes, the hotel can arrange guided tours to Amber Fort, Hawa Mahal, and other nearby landmarks."
+        }
       ]
     },
     {
       "id": 5,
       "name": "The Leela Palace New Delhi",
       "location": "New Delhi",
-      "description":"A blend of historic heritage and modern luxury, The Leela Palace New Delhi offers elegant rooms and exceptional service.",
+      "description": "A blend of historic heritage and modern luxury, The Leela Palace New Delhi offers elegant rooms and exceptional service.",
       "Address": "Diplomatic Enclave, Chanakyapuri, New Delhi, Delhi 110023, India",
-      "nearbyAttractions":  ["Rashtrapati Bhavan (Approx. 7 km)", "India Gate (Approx. 7 km)", "National Museum (Approx. 7 km)", "Lodhi Gardens (Approx. 6 km)"],
+      "nearbyAttractions": [
+        "Rashtrapati Bhavan (Approx. 7 km)",
+        "India Gate (Approx. 7 km)",
+        "National Museum (Approx. 7 km)",
+        "Lodhi Gardens (Approx. 6 km)"
+      ],
       "specialOffers": [],
       "price": 23000,
-      "images":[ "assets/hotel/hotel-images/leela-palace-delhi.jpg","assets/hotel/hotel-images/leela-palace-delhi2.jpg","assets/hotel/hotel-images/leela-palace-delhi3.jpg","assets/hotel/hotel-images/leela-palace-delhi4.jpg"],
-      "amenities": ["Free Wifi", "Free Parking", "Lift", "Restaurant", "Yoga Retreat", "Spa", "Gym", "Playground", "Table tennis room"],
+      "images": [
+        "assets/hotel/hotel-images/leela-palace-delhi.jpg",
+        "assets/hotel/hotel-images/leela-palace-delhi2.jpg",
+        "assets/hotel/hotel-images/leela-palace-delhi3.jpg",
+        "assets/hotel/hotel-images/leela-palace-delhi4.jpg"
+      ],
+      "amenities": [
+        "Free Wifi",
+        "Free Parking",
+        "Lift",
+        "Restaurant",
+        "Yoga Retreat",
+        "Spa",
+        "Gym",
+        "Playground",
+        "Table tennis room"
+      ],
       "surroundings": {
         "Airport": "Indira Gandhi International Airport (Approx. 15 km)",
         "Train": "New Delhi Railway Station (Approx. 8 km)",
         "Bus": "Mandi House Bus Stop (Approx. 3 km)"
       },
-
       "rooms": [
-      {
-        "type": "Grand Room",
-        "bed": "Queen Size",
-        "size": "400 sq ft",
-        "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "City View", "Free Breakfast"],
-        "price": 23000,
-        "totalRooms": 35,
-        "availability": [],
-        "capacity": { "adults": 2, "children": 1 },
-        "image":"assets/hotel/room-images/grand-room.jpg"
-      },
-      {
-        "type": "Presidential Suite",
-        "bed": "King Size",
-        "size": "1000 sq ft",
-        "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Ocean View", "Bath Tub", "Room Service"],
-        "price": 100000,
-        "totalRooms": 2,
-        "availability": [],
-        "capacity": { "adults": 4, "children": 2 },
-        "image": "assets/hotel/room-images/presidential-suite.jpg"
-      }
+        {
+          "type": "Grand Room",
+          "bed": "Queen Size",
+          "size": "400 sq ft",
+          "amenities": [
+            "Free Wifi",
+            "Private Bathroom",
+            "Air Conditioning",
+            "Non-Smoking",
+            "City View",
+            "Free Breakfast"
+          ],
+          "price": 23000,
+          "totalRooms": 35,
+          "availability": [],
+          "capacity": {
+            "adults": 2,
+            "children": 1
+          },
+          "image": "assets/hotel/room-images/grand-room.jpg"
+        },
+        {
+          "type": "Presidential Suite",
+          "bed": "King Size",
+          "size": "1000 sq ft",
+          "amenities": [
+            "Free Wifi",
+            "Private Bathroom",
+            "Air Conditioning",
+            "Non-Smoking",
+            "Balcony",
+            "Ocean View",
+            "Bath Tub",
+            "Room Service"
+          ],
+          "price": 100000,
+          "totalRooms": 2,
+          "availability": [],
+          "capacity": {
+            "adults": 4,
+            "children": 2
+          },
+          "image": "assets/hotel/room-images/presidential-suite.jpg"
+        }
       ],
       "reviews": [
         {
@@ -357,9 +563,9 @@
           "comment": "Beautiful architecture and excellent amenities."
         }
       ],
-        "rating": 4.7,
-        "star": 5,
-        "faqs": [
+      "rating": 4.7,
+      "star": 5,
+      "faqs": [
         {
           "question": "How far is the hotel from Rashtrapati Bhavan?",
           "answer": "The hotel is approximately a 10-minute drive from Rashtrapati Bhavan."
@@ -373,67 +579,107 @@
           "answer": "Yes, the Presidential Suite can accommodate up to 4 adults and 2 children, making it ideal for families."
         }
       ]
-
     },
     {
       "id": 6,
       "name": "The Oberoi Udaivilas",
       "location": "Udaipur",
-      "description":"Overlooking Lake Pichola, The Oberoi Udaivilas is a luxurious resort set amidst 50 acres of landscaped gardens, offering a tranquil retreat.",
+      "description": "Overlooking Lake Pichola, The Oberoi Udaivilas is a luxurious resort set amidst 50 acres of landscaped gardens, offering a tranquil retreat.",
       "Address": "Lake Pichola, Udaipur, Rajasthan 313001, India.",
-      "nearbyAttractions":  ["City Palace (Approx. 2 km)", "Jag Mandir (Approx. 2 km)", "Lake Pichola (Approx. 2 km)", "Bagore Ki Haveli (Approx. 2 km)"],
+      "nearbyAttractions": [
+        "City Palace (Approx. 2 km)",
+        "Jag Mandir (Approx. 2 km)",
+        "Lake Pichola (Approx. 2 km)",
+        "Bagore Ki Haveli (Approx. 2 km)"
+      ],
       "specialOffers": [],
       "price": 25000,
-      "images":[ "assets/hotel/hotel-images/oberoi-udaivilas-udaipur.jpg","assets/hotel/hotel-images/oberoi-udaivilas-udaipur2.jpg","assets/hotel/hotel-images/oberoi-udaivilas-udaipur3.jpg","assets/hotel/hotel-images/oberoi-udaivilas-udaipur4.jpg"],
-      "amenities": ["Free Wifi", "Free Parking", "Lift", "Restaurant", "Children's pool", "Bar", "Cleaning Services", "Table tennis room", "Childcare service"],
+      "images": [
+        "assets/hotel/hotel-images/oberoi-udaivilas-udaipur.jpg",
+        "assets/hotel/hotel-images/oberoi-udaivilas-udaipur2.jpg",
+        "assets/hotel/hotel-images/oberoi-udaivilas-udaipur3.jpg",
+        "assets/hotel/hotel-images/oberoi-udaivilas-udaipur4.jpg"
+      ],
+      "amenities": [
+        "Free Wifi",
+        "Free Parking",
+        "Lift",
+        "Restaurant",
+        "Children's pool",
+        "Bar",
+        "Cleaning Services",
+        "Table tennis room",
+        "Childcare service"
+      ],
       "surroundings": {
-  "Airport": "Maharana Pratap Airport (Approx. 27 km)",
-  "Train": "Udaipur City Railway Station (Approx. 7 km)",
-  "Bus": "Reti Stand Chowk Bus Stop (Approx. 6 km)"
-}
-,
+        "Airport": "Maharana Pratap Airport (Approx. 27 km)",
+        "Train": "Udaipur City Railway Station (Approx. 7 km)",
+        "Bus": "Reti Stand Chowk Bus Stop (Approx. 6 km)"
+      },
       "rooms": [
         {
           "type": "Premier Room",
           "bed": "King Size",
           "size": "450 sq ft",
-          "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "City View", "Room Service"],
+          "amenities": [
+            "Free Wifi",
+            "Private Bathroom",
+            "Air Conditioning",
+            "Non-Smoking",
+            "City View",
+            "Room Service"
+          ],
           "price": 25000,
           "totalRooms": 30,
           "availability": [],
-          "capacity": { "adults": 2, "children": 1 },
-          "image":"assets/hotel/room-images/premier-room.jpg"
+          "capacity": {
+            "adults": 2,
+            "children": 1
+          },
+          "image": "assets/hotel/room-images/premier-room.jpg"
         },
         {
           "type": "Royal Suite",
           "bed": "Queen Size",
           "size": "750 sq ft",
-          "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "City View", "Room Service", "Free Breakfast"],
+          "amenities": [
+            "Free Wifi",
+            "Private Bathroom",
+            "Air Conditioning",
+            "Non-Smoking",
+            "Balcony",
+            "City View",
+            "Room Service",
+            "Free Breakfast"
+          ],
           "price": 55000,
           "totalRooms": 8,
           "availability": [],
-          "capacity": { "adults": 3, "children": 2 },
+          "capacity": {
+            "adults": 3,
+            "children": 2
+          },
           "image": "assets/hotel/room-images/royal-suite-room.jpg"
         }
       ],
       "reviews": [
-      {
-        "username": "Amit Gupta",
-        "rating": 5,
-        "comment": "Absolutely luxurious! The rooms were magnificent with a breathtaking view of Lake Pichola. The service was impeccable, and the staff went above and beyond to make our stay memorable. Highly recommend the Royal Suite!"
-      },
-      {
-        "username": "Priya Sharma",
-        "rating": 4,
-        "comment": "Great experience, beautiful property with lush gardens. The Premier Room was spacious and very comfortable. The food at the restaurant was delicious. Only downside was the price, but worth the indulgence for a special occasion."
-      },
-      {
-        "username": "Ketika Sharma",
-        "rating": 4,
-        "comment": "Great experience, beautiful property with lush gardens. The Premier Room was spacious and very comfortable."
-      }
-     ],
-     "rating": 4.8,
+        {
+          "username": "Amit Gupta",
+          "rating": 5,
+          "comment": "Absolutely luxurious! The rooms were magnificent with a breathtaking view of Lake Pichola. The service was impeccable, and the staff went above and beyond to make our stay memorable. Highly recommend the Royal Suite!"
+        },
+        {
+          "username": "Priya Sharma",
+          "rating": 4,
+          "comment": "Great experience, beautiful property with lush gardens. The Premier Room was spacious and very comfortable. The food at the restaurant was delicious. Only downside was the price, but worth the indulgence for a special occasion."
+        },
+        {
+          "username": "Ketika Sharma",
+          "rating": 4,
+          "comment": "Great experience, beautiful property with lush gardens. The Premier Room was spacious and very comfortable."
+        }
+      ],
+      "rating": 4.8,
       "star": 5,
       "faqs": [
         {
@@ -454,60 +700,101 @@
       "id": 7,
       "name": "The Leela Palace Bengaluru",
       "location": "Bengaluru",
-      "description":"Located in the heart of Bengaluru, The Leela Palace offers a blend of traditional Indian hospitality and modern luxury.",
+      "description": "Located in the heart of Bengaluru, The Leela Palace offers a blend of traditional Indian hospitality and modern luxury.",
       "Address": "23, Old Airport Road, Bengaluru, Karnataka 560008, India.",
-      "nearbyAttractions": ["Cubbon Park (Approx. 2 km)", "Lalbagh Botanical Garden (Approx. 4 km)", "Bangalore Palace (Approx. 4 km)", "UB City Mall (Approx. 1 km)"],
+      "nearbyAttractions": [
+        "Cubbon Park (Approx. 2 km)",
+        "Lalbagh Botanical Garden (Approx. 4 km)",
+        "Bangalore Palace (Approx. 4 km)",
+        "UB City Mall (Approx. 1 km)"
+      ],
       "specialOffers": [],
       "price": 22000,
-      "images":[ "assets/hotel/hotel-images/leela-palace-bengaluru.jpg","assets/hotel/hotel-images/leela-palace-bengaluru2.jpg","assets/hotel/hotel-images/leela-palace-bengaluru3.jpg","assets/hotel/hotel-images/leela-palace-bengaluru4.jpg"],
-      "amenities": ["Free Wifi", "Free Parking", "Lift", "Restaurant", "Children's pool", "Yoga Retreat", "Bar", "Massage room", "Outdoor swimming pool"],
+      "images": [
+        "assets/hotel/hotel-images/leela-palace-bengaluru.jpg",
+        "assets/hotel/hotel-images/leela-palace-bengaluru2.jpg",
+        "assets/hotel/hotel-images/leela-palace-bengaluru3.jpg",
+        "assets/hotel/hotel-images/leela-palace-bengaluru4.jpg"
+      ],
+      "amenities": [
+        "Free Wifi",
+        "Free Parking",
+        "Lift",
+        "Restaurant",
+        "Children's pool",
+        "Yoga Retreat",
+        "Bar",
+        "Massage room",
+        "Outdoor swimming pool"
+      ],
       "surroundings": {
-      "Airport": "Kempegowda International Airport (Approx. 37 km)",
-      "Train": "Bengaluru City Railway Station (Approx. 6 km)",
-      "Bus": "Shivajinagar Bus Station (Approx. 3 km)"
-    },
+        "Airport": "Kempegowda International Airport (Approx. 37 km)",
+        "Train": "Bengaluru City Railway Station (Approx. 6 km)",
+        "Bus": "Shivajinagar Bus Station (Approx. 3 km)"
+      },
       "rooms": [
-      {
-        "type": "Luxury Room",
-        "bed": "King Size",
-        "size": "400 sq ft",
-        "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Mountain View", "Free Breakfast"],
-        "price": 22000,
-        "totalRooms": 40,
-        "availability": [],
-        "capacity": { "adults": 2, "children": 1 },
-        "image": "assets/hotel/room-images/luxury-room.jpg"
-      },
-      {
-        "type": "Executive Suite",
-        "bed": "Queen Size",
-        "size": "600 sq ft",
-        "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Ocean View", "Room Service"],
-        "price": 30000,
-        "totalRooms": 12,
-        "availability": [],
-        "capacity": { "adults": 3, "children": 1 },
-        "image": "assets/hotel/room-images/executive-suite-room.jpg"
-      }
-    ],
-       "reviews": [
-      {
-        "username": "Ravi Kumar",
-        "rating": 5,
-        "comment": "One of the best hotels I've stayed in! The luxury room was spacious and had an incredible view of the mountains. The service was top-notch, and the facilities, including the outdoor pool and spa, were excellent. Highly recommend it for a relaxing getaway."
-      },
-      {
-        "username": "Neha Rani",
-        "rating": 4,
-        "comment": "The hotel is beautiful with excellent amenities, especially the children's pool which was a hit with my kids. The staff was polite and attentive, and the food was great, though a bit on the expensive side."
-      },
-      {
-        "username": "Geeta Sharma",
-        "rating": 4,
-        "comment": "The staff was polite and attentive, and the food was great, though a bit on the expensive side."
-      }
-     ],
-     "rating": 4.8,
+        {
+          "type": "Luxury Room",
+          "bed": "King Size",
+          "size": "400 sq ft",
+          "amenities": [
+            "Free Wifi",
+            "Private Bathroom",
+            "Air Conditioning",
+            "Non-Smoking",
+            "Mountain View",
+            "Free Breakfast"
+          ],
+          "price": 22000,
+          "totalRooms": 40,
+          "availability": [],
+          "capacity": {
+            "adults": 2,
+            "children": 1
+          },
+          "image": "assets/hotel/room-images/luxury-room.jpg"
+        },
+        {
+          "type": "Executive Suite",
+          "bed": "Queen Size",
+          "size": "600 sq ft",
+          "amenities": [
+            "Free Wifi",
+            "Private Bathroom",
+            "Air Conditioning",
+            "Non-Smoking",
+            "Balcony",
+            "Ocean View",
+            "Room Service"
+          ],
+          "price": 30000,
+          "totalRooms": 12,
+          "availability": [],
+          "capacity": {
+            "adults": 3,
+            "children": 1
+          },
+          "image": "assets/hotel/room-images/executive-suite-room.jpg"
+        }
+      ],
+      "reviews": [
+        {
+          "username": "Ravi Kumar",
+          "rating": 5,
+          "comment": "One of the best hotels I've stayed in! The luxury room was spacious and had an incredible view of the mountains. The service was top-notch, and the facilities, including the outdoor pool and spa, were excellent. Highly recommend it for a relaxing getaway."
+        },
+        {
+          "username": "Neha Rani",
+          "rating": 4,
+          "comment": "The hotel is beautiful with excellent amenities, especially the children's pool which was a hit with my kids. The staff was polite and attentive, and the food was great, though a bit on the expensive side."
+        },
+        {
+          "username": "Geeta Sharma",
+          "rating": 4,
+          "comment": "The staff was polite and attentive, and the food was great, though a bit on the expensive side."
+        }
+      ],
+      "rating": 4.8,
       "star": 5,
       "faqs": [
         {
@@ -528,40 +815,80 @@
       "id": 8,
       "name": "The Oberoi Grand",
       "location": "Kolkata",
-      "description":"Known as the 'Grande Dame of Kolkata,' this hotel offers colonial charm with modern amenities in the city's heart.",
+      "description": "Known as the 'Grande Dame of Kolkata,' this hotel offers colonial charm with modern amenities in the city's heart.",
       "Address": "15 Jawaharlal Nehru Road, Kolkata, West Bengal 700013, India",
-      "nearbyAttractions": ["Victoria Memorial (Approx. 1.5 km)", "Indian Museum (Approx. 1 km)", "Park Street (Approx. 0.5 km)", "Howrah Bridge (Approx. 2 km)"],
+      "nearbyAttractions": [
+        "Victoria Memorial (Approx. 1.5 km)",
+        "Indian Museum (Approx. 1 km)",
+        "Park Street (Approx. 0.5 km)",
+        "Howrah Bridge (Approx. 2 km)"
+      ],
       "specialOffers": [],
       "price": 18000,
-      "images":[ "assets/hotel/hotel-images/oberoi-grand-kolkata.jpg","assets/hotel/hotel-images/oberoi-grand-kolkata2.jpg","assets/hotel/hotel-images/oberoi-grand-kolkata3.jpg","assets/hotel/hotel-images/oberoi-grand-kolkata4.jpg"],
-      "amenities": ["Free Wifi", "Free Parking", "Lift", "Restaurant", "Bar", "Playground", "Conference room", "Spa", "Yoga Retreat"],
+      "images": [
+        "assets/hotel/hotel-images/oberoi-grand-kolkata.jpg",
+        "assets/hotel/hotel-images/oberoi-grand-kolkata2.jpg",
+        "assets/hotel/hotel-images/oberoi-grand-kolkata3.jpg",
+        "assets/hotel/hotel-images/oberoi-grand-kolkata4.jpg"
+      ],
+      "amenities": [
+        "Free Wifi",
+        "Free Parking",
+        "Lift",
+        "Restaurant",
+        "Bar",
+        "Playground",
+        "Conference room",
+        "Spa",
+        "Yoga Retreat"
+      ],
       "surroundings": {
-  "Airport": "Netaji Subhas Chandra Bose International Airport (Approx. 20 km)",
-  "Train": "Howrah Railway Station (Approx. 3.5 km)",
-  "Bus": "Esplanade Bus Stand (Approx. 1 km)"
-},
-
+        "Airport": "Netaji Subhas Chandra Bose International Airport (Approx. 20 km)",
+        "Train": "Howrah Railway Station (Approx. 3.5 km)",
+        "Bus": "Esplanade Bus Stand (Approx. 1 km)"
+      },
       "rooms": [
         {
           "type": "Premier Room",
           "bed": "King Size",
           "size": "450 sq ft",
-          "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "City View", "Room Service"],
+          "amenities": [
+            "Free Wifi",
+            "Private Bathroom",
+            "Air Conditioning",
+            "Non-Smoking",
+            "City View",
+            "Room Service"
+          ],
           "price": 18000,
           "totalRooms": 30,
           "availability": [],
-          "capacity": { "adults": 2, "children": 1 },
+          "capacity": {
+            "adults": 2,
+            "children": 1
+          },
           "image": "assets/hotel/room-images/premier-room.jpg"
         },
         {
           "type": "Luxury Suite",
           "bed": "Queen Size",
           "size": "700 sq ft",
-          "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Ocean View", "Room Service"],
+          "amenities": [
+            "Free Wifi",
+            "Private Bathroom",
+            "Air Conditioning",
+            "Non-Smoking",
+            "Balcony",
+            "Ocean View",
+            "Room Service"
+          ],
           "price": 40000,
           "totalRooms": 10,
           "availability": [],
-          "capacity": { "adults": 4, "children": 2 },
+          "capacity": {
+            "adults": 4,
+            "children": 2
+          },
           "image": "assets/hotel/room-images/luxury-suite.jpg"
         }
       ],
@@ -603,40 +930,81 @@
       "id": 9,
       "name": "The Leela Palace Chennai",
       "location": "Chennai",
-      "description":"Overlooking the Bay of Bengal, The Leela Palace Chennai offers luxurious accommodations with a blend of traditional and contemporary design.",
+      "description": "Overlooking the Bay of Bengal, The Leela Palace Chennai offers luxurious accommodations with a blend of traditional and contemporary design.",
       "Address": "Adyar Seaface, MRC Nagar, Chennai, Tamil Nadu 600028, India",
-      "nearbyAttractions": ["Marina Beach (Approx. 3.3 km)", "Kapaleeshwarar Temple (Approx. 4 km)", "Fort St. George (Approx. 5 km)", "Santhome Basilica (Approx. 3 km)"],
+      "nearbyAttractions": [
+        "Marina Beach (Approx. 3.3 km)",
+        "Kapaleeshwarar Temple (Approx. 4 km)",
+        "Fort St. George (Approx. 5 km)",
+        "Santhome Basilica (Approx. 3 km)"
+      ],
       "specialOffers": [],
       "price": 20000,
-      "images":[ "assets/hotel/hotel-images/leela-palace-chennai.jpg","assets/hotel/hotel-images/leela-palace-chennai2.jpg","assets/hotel/hotel-images/leela-palace-chennai3.jpg","assets/hotel/hotel-images/leela-palace-chennai4.jpg"],
-      "amenities": ["Free Wifi", "Free Parking", "Lift", "Restaurant", "Yoga Retreat", "Massage room", "Gym", "Outdoor swimming pool", "Playground"],
+      "images": [
+        "assets/hotel/hotel-images/leela-palace-chennai.jpg",
+        "assets/hotel/hotel-images/leela-palace-chennai2.jpg",
+        "assets/hotel/hotel-images/leela-palace-chennai3.jpg",
+        "assets/hotel/hotel-images/leela-palace-chennai4.jpg"
+      ],
+      "amenities": [
+        "Free Wifi",
+        "Free Parking",
+        "Lift",
+        "Restaurant",
+        "Yoga Retreat",
+        "Massage room",
+        "Gym",
+        "Outdoor swimming pool",
+        "Playground"
+      ],
       "surroundings": {
-  "Airport": "Chennai International Airport (Approx. 12 km)",
-  "Train": "Chennai Egmore Railway Station (Approx. 7 km)",
-  "Bus": "Tidel Park Bus Stop (Approx. 2 km)"
-},
-
+        "Airport": "Chennai International Airport (Approx. 12 km)",
+        "Train": "Chennai Egmore Railway Station (Approx. 7 km)",
+        "Bus": "Tidel Park Bus Stop (Approx. 2 km)"
+      },
       "rooms": [
         {
           "type": "Deluxe Room",
           "bed": "King Size",
           "size": "400 sq ft",
-          "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Garden View"],
+          "amenities": [
+            "Free Wifi",
+            "Private Bathroom",
+            "Air Conditioning",
+            "Non-Smoking",
+            "Balcony",
+            "Garden View"
+          ],
           "price": 20000,
           "totalRooms": 40,
           "availability": [],
-          "capacity": { "adults": 2, "children": 1 },
+          "capacity": {
+            "adults": 2,
+            "children": 1
+          },
           "image": "assets/hotel/room-images/deluxe-room.jpg"
         },
         {
           "type": "Luxury Suite",
           "bed": "Queen Size",
           "size": "700 sq ft",
-          "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Ocean View", "Bath Tub", "Room Service"],
+          "amenities": [
+            "Free Wifi",
+            "Private Bathroom",
+            "Air Conditioning",
+            "Non-Smoking",
+            "Balcony",
+            "Ocean View",
+            "Bath Tub",
+            "Room Service"
+          ],
           "price": 45000,
           "totalRooms": 15,
           "availability": [],
-          "capacity": { "adults": 4, "children": 2 },
+          "capacity": {
+            "adults": 4,
+            "children": 2
+          },
           "image": "assets/hotel/room-images/luxury-suite.jpg"
         }
       ],
@@ -657,9 +1025,9 @@
           "comment": "The Luxury Suite was perfect for a family, and the ocean view was breathtaking."
         }
       ],
-        "rating": 4.7,
-        "star": 5,
-        "faqs": [
+      "rating": 4.7,
+      "star": 5,
+      "faqs": [
         {
           "question": "Does The Leela Palace Chennai offer airport transportation?",
           "answer": "Yes, The Leela Palace Chennai offers airport transfers for a surcharge. Please inform the hotel in advance to arrange for transportation."
@@ -678,38 +1046,81 @@
       "id": 10,
       "name": "The Oberoi Sukhvilas Resort & Spa",
       "location": "Chandigarh",
-      "description":"Nestled amidst 8,000 acres of natural forest, this resort offers a serene environment with luxury accommodations and wellness facilities.",
+      "description": "Nestled amidst 8,000 acres of natural forest, this resort offers a serene environment with luxury accommodations and wellness facilities.",
       "Address": "Siswan Forest Range, New Chandigarh, Punjab 140110, India.",
-      "nearbyAttractions": ["Siswan Forest Range (Approx. 5 km)", "Rock Garden (Approx. 25 km)", "Sukhna Lake (Approx. 30 km)", "Pinjore Gardens (Approx. 20 km)"],
+      "nearbyAttractions": [
+        "Siswan Forest Range (Approx. 5 km)",
+        "Rock Garden (Approx. 25 km)",
+        "Sukhna Lake (Approx. 30 km)",
+        "Pinjore Gardens (Approx. 20 km)"
+      ],
       "specialOffers": [],
       "price": 25000,
-      "images":[ "assets/hotel/hotel-images/oberoi-sukhvilas-chandigarh.jpg","assets/hotel/hotel-images/oberoi-sukhvilas-chandigarh2.jpg","assets/hotel/hotel-images/oberoi-sukhvilas-chandigarh3.jpg","assets/hotel/hotel-images/oberoi-sukhvilas-chandigarh4.jpg"],
-      "amenities": ["Free Wifi", "Free Parking", "Lift", "Restaurant", "Playground", "Table tennis room", "Karaoke", "Cleaning Services", "Massage room"],"surroundings": {
-  "Airport": "Chandigarh International Airport (Approx. 35 km)",
-  "Train": "Chandigarh Railway Station (Approx. 25 km)",
-  "Bus": "Sector 43 Bus Stand (Approx. 30 km)"
-},
+      "images": [
+        "assets/hotel/hotel-images/oberoi-sukhvilas-chandigarh.jpg",
+        "assets/hotel/hotel-images/oberoi-sukhvilas-chandigarh2.jpg",
+        "assets/hotel/hotel-images/oberoi-sukhvilas-chandigarh3.jpg",
+        "assets/hotel/hotel-images/oberoi-sukhvilas-chandigarh4.jpg"
+      ],
+      "amenities": [
+        "Free Wifi",
+        "Free Parking",
+        "Lift",
+        "Restaurant",
+        "Playground",
+        "Table tennis room",
+        "Karaoke",
+        "Cleaning Services",
+        "Massage room"
+      ],
+      "surroundings": {
+        "Airport": "Chandigarh International Airport (Approx. 35 km)",
+        "Train": "Chandigarh Railway Station (Approx. 25 km)",
+        "Bus": "Sector 43 Bus Stand (Approx. 30 km)"
+      },
       "rooms": [
         {
           "type": "Premier Room",
           "bed": "King Size",
           "size": "350 sq ft",
-          "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "City View", "Room Service"],
+          "amenities": [
+            "Free Wifi",
+            "Private Bathroom",
+            "Air Conditioning",
+            "Non-Smoking",
+            "City View",
+            "Room Service"
+          ],
           "price": 25000,
           "totalRooms": 20,
           "availability": [],
-          "capacity": { "adults": 2, "children": 1 },
+          "capacity": {
+            "adults": 2,
+            "children": 1
+          },
           "image": "assets/hotel/room-images/premier-room.jpg"
         },
         {
           "type": "Royal Suite",
           "bed": "Queen Size",
           "size": "750 sq ft",
-          "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Ocean View", "Room Service", "Free Breakfast"],
+          "amenities": [
+            "Free Wifi",
+            "Private Bathroom",
+            "Air Conditioning",
+            "Non-Smoking",
+            "Balcony",
+            "Ocean View",
+            "Room Service",
+            "Free Breakfast"
+          ],
           "price": 55000,
           "totalRooms": 10,
           "availability": [],
-          "capacity": { "adults": 3, "children": 2 },
+          "capacity": {
+            "adults": 3,
+            "children": 2
+          },
           "image": "assets/hotel/room-images/royal-suite-room.jpg"
         }
       ],
@@ -730,9 +1141,9 @@
           "comment": "The Premier Room had stunning views and the service was exceptional. The wellness facilities, including the spa, provided much-needed relaxation. Will definitely return!"
         }
       ],
-        "rating": 4.8,
-        "star": 5,
-        "faqs": [
+      "rating": 4.8,
+      "star": 5,
+      "faqs": [
         {
           "question": "Is there a spa at The Oberoi Sukhvilas Resort & Spa?",
           "answer": "Yes, the resort has a world-class spa offering various treatments designed for relaxation and rejuvenation."
@@ -751,42 +1162,84 @@
       "id": 11,
       "name": "Wildflower Hall",
       "location": "Shimla",
-      "description":"Located in the Himalayas, Wildflower Hall offers a luxurious retreat amidst pine and cedar forests, with panoramic mountain views.",
+      "description": "Located in the Himalayas, Wildflower Hall offers a luxurious retreat amidst pine and cedar forests, with panoramic mountain views.",
       "Address": "Mashobra, Shimla, Himachal Pradesh 171007, India",
-      "nearbyAttractions": ["Kufri (Approx. 13 km)", "Mall Road Shimla (Approx. 15 km)", "Jakhoo Temple (Approx. 16 km)", "The Ridge (Approx. 15 km)"],
+      "nearbyAttractions": [
+        "Kufri (Approx. 13 km)",
+        "Mall Road Shimla (Approx. 15 km)",
+        "Jakhoo Temple (Approx. 16 km)",
+        "The Ridge (Approx. 15 km)"
+      ],
       "specialOffers": [],
       "price": 22000,
-      "images":[ "assets/hotel/hotel-images/wildflower-hall-shimla.jpg","assets/hotel/hotel-images/wildflower-hall-shimla2.jpg","assets/hotel/hotel-images/wildflower-hall-shimla3.jpg","assets/hotel/hotel-images/wildflower-hall-shimla4.jpg"],
-      "amenities": ["Free Wifi", "Free Parking", "Lift", "Restaurant", "Conference room", "Sauna", "EV charging station", "Bar", "Karaoke"],
+      "images": [
+        "assets/hotel/hotel-images/wildflower-hall-shimla.jpg",
+        "assets/hotel/hotel-images/wildflower-hall-shimla2.jpg",
+        "assets/hotel/hotel-images/wildflower-hall-shimla3.jpg",
+        "assets/hotel/hotel-images/wildflower-hall-shimla4.jpg"
+      ],
+      "amenities": [
+        "Free Wifi",
+        "Free Parking",
+        "Lift",
+        "Restaurant",
+        "Conference room",
+        "Sauna",
+        "EV charging station",
+        "Bar",
+        "Karaoke"
+      ],
       "surroundings": {
-  "Airport": "Shimla Airport (Approx. 23 km)",
-  "Train": "Kalka Railway Station (Approx. 90 km)",
-  "Bus": "Shimla Bus Stand (Approx. 15 km)"
-},
-      "rooms": [
-      {
-        "type": "Luxury Room",
-        "bed": "Queen Size",
-        "size": "400 sq ft",
-        "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Mountain View", "Free Breakfast"],
-        "price": 22000,
-        "totalRooms": 30,
-        "availability": [],
-        "capacity": { "adults": 2, "children": 1 },
-        "image": "assets/hotel/room-images/luxury-room.jpg"
+        "Airport": "Shimla Airport (Approx. 23 km)",
+        "Train": "Kalka Railway Station (Approx. 90 km)",
+        "Bus": "Shimla Bus Stand (Approx. 15 km)"
       },
-      {
-        "type": "Presidential Suite",
-        "bed": "King Size",
-        "size": "900 sq ft",
-        "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Mountain View", "Free Breakfast", "Room Service"],
-        "price": 70000,
-        "totalRooms": 5,
-        "availability": [],
-        "capacity": { "adults": 4, "children": 2 },
-        "image": "assets/hotel/room-images/presidential-suite.jpg"
-      }
-    ],
+      "rooms": [
+        {
+          "type": "Luxury Room",
+          "bed": "Queen Size",
+          "size": "400 sq ft",
+          "amenities": [
+            "Free Wifi",
+            "Private Bathroom",
+            "Air Conditioning",
+            "Non-Smoking",
+            "Mountain View",
+            "Free Breakfast"
+          ],
+          "price": 22000,
+          "totalRooms": 30,
+          "availability": [],
+          "capacity": {
+            "adults": 2,
+            "children": 1
+          },
+          "image": "assets/hotel/room-images/luxury-room.jpg"
+        },
+        {
+          "type": "Presidential Suite",
+          "bed": "King Size",
+          "size": "900 sq ft",
+          "amenities": [
+            "Free Wifi",
+            "Private Bathroom",
+            "Air Conditioning",
+            "Non-Smoking",
+            "Balcony",
+            "Mountain View",
+            "Free Breakfast",
+            "Room Service"
+          ],
+          "price": 70000,
+          "totalRooms": 5,
+          "availability": [],
+          "capacity": {
+            "adults": 4,
+            "children": 2
+          },
+          "image": "assets/hotel/room-images/presidential-suite.jpg"
+        }
+      ],
       "reviews": [
         {
           "username": "Priya Kapoor",
@@ -804,9 +1257,9 @@
           "comment": "The service was impeccable, and the food was top-notch. We truly felt at peace surrounded by nature. Highly recommended for a serene getaway!"
         }
       ],
-        "rating": 4.7,
-        "star": 5,
-        "faqs": [
+      "rating": 4.7,
+      "star": 5,
+      "faqs": [
         {
           "question": "Is there a spa or wellness center at Wildflower Hall?",
           "answer": "Yes, Wildflower Hall offers a sauna and a range of wellness services designed for relaxation."
@@ -825,117 +1278,200 @@
       "id": 12,
       "name": "The Taj West End",
       "location": "Bengaluru",
-      "description":"Set amidst 20 acres of lush gardens, The Taj West End offers a blend of colonial charm and modern luxury in the heart of Bengaluru.",
+      "description": "Set amidst 20 acres of lush gardens, The Taj West End offers a blend of colonial charm and modern luxury in the heart of Bengaluru.",
       "Address": " Race Course Road, Bengaluru, Karnataka 560001, India",
-      "nearbyAttractions": ["Cubbon Park (Approx. 2 km)", "Vidhana Soudha (Approx. 2 km)", "Lalbagh Botanical Garden (Approx. 4 km)", "Bangalore Palace (Approx. 3 km)"],
+      "nearbyAttractions": [
+        "Cubbon Park (Approx. 2 km)",
+        "Vidhana Soudha (Approx. 2 km)",
+        "Lalbagh Botanical Garden (Approx. 4 km)",
+        "Bangalore Palace (Approx. 3 km)"
+      ],
       "specialOffers": [],
       "price": 24000,
-      "images":[ "assets/hotel/hotel-images/taj-west-end-bengaluru.jpg","assets/hotel/hotel-images/taj-west-end-bengaluru2.jpg","assets/hotel/hotel-images/taj-west-end-bengaluru3.jpg","assets/hotel/hotel-images/taj-west-end-bengaluru4.jpg"],
-      "amenities": ["Free Wifi", "Free Parking", "Lift", "Restaurant", "Spa", "Cleaning Services", "Luggage storage", "Conference room", "Gym"],
+      "images": [
+        "assets/hotel/hotel-images/taj-west-end-bengaluru.jpg",
+        "assets/hotel/hotel-images/taj-west-end-bengaluru2.jpg",
+        "assets/hotel/hotel-images/taj-west-end-bengaluru3.jpg",
+        "assets/hotel/hotel-images/taj-west-end-bengaluru4.jpg"
+      ],
+      "amenities": [
+        "Free Wifi",
+        "Free Parking",
+        "Lift",
+        "Restaurant",
+        "Spa",
+        "Cleaning Services",
+        "Luggage storage",
+        "Conference room",
+        "Gym"
+      ],
       "surroundings": {
-  "Airport": "Kempegowda International Airport (Approx. 37 km)",
-  "Train": "Bengaluru City Railway Station (Approx. 6 km)",
-  "Bus": "Shivajinagar Bus Station (Approx. 3 km)"
-},
+        "Airport": "Kempegowda International Airport (Approx. 37 km)",
+        "Train": "Bengaluru City Railway Station (Approx. 6 km)",
+        "Bus": "Shivajinagar Bus Station (Approx. 3 km)"
+      },
       "rooms": [
-          {
-            "type": "Heritage Room",
-            "bed": "Queen Size",
-            "size": "450 sq ft",
-            "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "City View", "Free Breakfast"],
-            "price": 24000,
-            "totalRooms": 25,
-            "availability": [],
-            "capacity": { "adults": 2, "children": 1 },
-            "image": "assets/hotel/room-images/heritage-room.jpg"
+        {
+          "type": "Heritage Room",
+          "bed": "Queen Size",
+          "size": "450 sq ft",
+          "amenities": [
+            "Free Wifi",
+            "Private Bathroom",
+            "Air Conditioning",
+            "Non-Smoking",
+            "City View",
+            "Free Breakfast"
+          ],
+          "price": 24000,
+          "totalRooms": 25,
+          "availability": [],
+          "capacity": {
+            "adults": 2,
+            "children": 1
           },
-          {
-            "type": "Luxury Suite",
-            "bed": "King Size",
-            "size": "800 sq ft",
-            "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Ocean View", "Room Service"],
-            "price": 60000,
-            "totalRooms": 12,
-            "availability": [],
-            "capacity": { "adults": 4, "children": 2 },
-            "image": "assets/hotel/room-images/luxury-suite.jpg"
-          }
-        ],
-          "reviews": [
-          {
-            "username": "Ananya Rao",
-            "rating": 5,
-            "comment": "The Taj West End is an oasis in the heart of Bengaluru! The Heritage Room was charming and spacious, offering a blend of comfort and luxury. The lush gardens provided a peaceful escape from the city buzz. A must-visit for anyone seeking a relaxing yet luxurious experience!"
+          "image": "assets/hotel/room-images/heritage-room.jpg"
+        },
+        {
+          "type": "Luxury Suite",
+          "bed": "King Size",
+          "size": "800 sq ft",
+          "amenities": [
+            "Free Wifi",
+            "Private Bathroom",
+            "Air Conditioning",
+            "Non-Smoking",
+            "Balcony",
+            "Ocean View",
+            "Room Service"
+          ],
+          "price": 60000,
+          "totalRooms": 12,
+          "availability": [],
+          "capacity": {
+            "adults": 4,
+            "children": 2
           },
-          {
-            "username": "Rajesh Kumar",
-            "rating": 4,
-            "comment": "Beautiful property with a colonial touch. The Luxury Suite was exceptional, spacious, and well-equipped. The only downside was the restaurant's limited options, but the quality of food was great. Perfect for a weekend getaway!"
-          },
-          {
-            "username": "Anand Sharma",
-            "rating": 5,
-            "comment": "The lush gardens provided a peaceful escape from the city buzz. A must-visit for anyone seeking a relaxing yet luxurious experience!"
-          }
-        ],
-          "rating": 4.5,
-          "star": 5,
-          "faqs": [
-          {
-            "question": "Is there a spa available at The Taj West End?",
-            "answer": "Yes, The Taj West End features a luxurious spa offering various treatments for relaxation and rejuvenation."
-          },
-          {
-            "question": "Can I host a conference or event at The Taj West End?",
-            "answer": "Yes, The Taj West End offers conference rooms and event facilities with modern amenities for business meetings and special occasions."
-          },
-          {
-            "question": "Are there any outdoor activities available at the hotel?",
-            "answer": "Yes, the hotel is surrounded by beautiful gardens and offers various outdoor activities including guided nature walks and fitness programs."
-          }
-        ]
+          "image": "assets/hotel/room-images/luxury-suite.jpg"
+        }
+      ],
+      "reviews": [
+        {
+          "username": "Ananya Rao",
+          "rating": 5,
+          "comment": "The Taj West End is an oasis in the heart of Bengaluru! The Heritage Room was charming and spacious, offering a blend of comfort and luxury. The lush gardens provided a peaceful escape from the city buzz. A must-visit for anyone seeking a relaxing yet luxurious experience!"
+        },
+        {
+          "username": "Rajesh Kumar",
+          "rating": 4,
+          "comment": "Beautiful property with a colonial touch. The Luxury Suite was exceptional, spacious, and well-equipped. The only downside was the restaurant's limited options, but the quality of food was great. Perfect for a weekend getaway!"
+        },
+        {
+          "username": "Anand Sharma",
+          "rating": 5,
+          "comment": "The lush gardens provided a peaceful escape from the city buzz. A must-visit for anyone seeking a relaxing yet luxurious experience!"
+        }
+      ],
+      "rating": 4.5,
+      "star": 5,
+      "faqs": [
+        {
+          "question": "Is there a spa available at The Taj West End?",
+          "answer": "Yes, The Taj West End features a luxurious spa offering various treatments for relaxation and rejuvenation."
+        },
+        {
+          "question": "Can I host a conference or event at The Taj West End?",
+          "answer": "Yes, The Taj West End offers conference rooms and event facilities with modern amenities for business meetings and special occasions."
+        },
+        {
+          "question": "Are there any outdoor activities available at the hotel?",
+          "answer": "Yes, the hotel is surrounded by beautiful gardens and offers various outdoor activities including guided nature walks and fitness programs."
+        }
+      ]
     },
     {
       "id": 13,
       "name": "Ananda in the Himalayas",
       "location": "Rishikesh",
-      "description":"A luxury yoga and wellness retreat, Ananda offers panoramic views of the Himalayas and the Ganges River.",
+      "description": "A luxury yoga and wellness retreat, Ananda offers panoramic views of the Himalayas and the Ganges River.",
       "Address": "The Palace Estate, Narendra Nagar, Tehri Garhwal, Uttarakhand 249175, India",
-      "nearbyAttractions": ["Rishikesh (Approx. 25 km)", "Haridwar (Approx. 50 km)", "Rajaji National Park (Approx. 30 km)"],
+      "nearbyAttractions": [
+        "Rishikesh (Approx. 25 km)",
+        "Haridwar (Approx. 50 km)",
+        "Rajaji National Park (Approx. 30 km)"
+      ],
       "specialOffers": [],
       "price": 27000,
-      "images":[ "assets/hotel/hotel-images/ananda-himalayas-rishikesh.jpg","assets/hotel/hotel-images/ananda-himalayas-rishikesh2.jpg","assets/hotel/hotel-images/ananda-himalayas-rishikesh3.jpg","assets/hotel/hotel-images/ananda-himalayas-rishikesh4.jpg"],
-      "amenities": ["Free Wifi", "Free Parking", "Lift", "Restaurant", "Conference room", "Yoga Retreat", "Spa", "Gym", "EV charging station"],
+      "images": [
+        "assets/hotel/hotel-images/ananda-himalayas-rishikesh.jpg",
+        "assets/hotel/hotel-images/ananda-himalayas-rishikesh2.jpg",
+        "assets/hotel/hotel-images/ananda-himalayas-rishikesh3.jpg",
+        "assets/hotel/hotel-images/ananda-himalayas-rishikesh4.jpg"
+      ],
+      "amenities": [
+        "Free Wifi",
+        "Free Parking",
+        "Lift",
+        "Restaurant",
+        "Conference room",
+        "Yoga Retreat",
+        "Spa",
+        "Gym",
+        "EV charging station"
+      ],
       "surroundings": {
-  "Airport": "Jolly Grant Airport (Approx. 35 km)",
-  "Train": "Haridwar Railway Station (Approx. 50 km)",
-  "Bus": "Rishikesh Bus Stand (Approx. 30 km)"
-},
-      "rooms": [
-      {
-        "type": "Deluxe Room",
-        "bed": "King Size",
-        "size": "350 sq ft",
-        "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Garden View"],
-        "price": 27000,
-        "totalRooms": 40,
-        "availability": [],
-        "capacity": { "adults": 2, "children": 1 },
-        "image": "assets/hotel/room-images/deluxe-room.jpg"
+        "Airport": "Jolly Grant Airport (Approx. 35 km)",
+        "Train": "Haridwar Railway Station (Approx. 50 km)",
+        "Bus": "Rishikesh Bus Stand (Approx. 30 km)"
       },
-      {
-        "type": "Luxury Villa",
-        "bed": "Queen Size",
-        "size": "1200 sq ft",
-        "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Garden View", "Bath Tub", "Free Breakfast", "Room Service"],
-        "price": 95000,
-        "totalRooms": 5,
-        "availability": [],
-        "capacity": { "adults": 4, "children": 2 },
-        "image": "assets/hotel/room-images/luxury-villa.jpg"
-      }
-    ],
-     "reviews": [
+      "rooms": [
+        {
+          "type": "Deluxe Room",
+          "bed": "King Size",
+          "size": "350 sq ft",
+          "amenities": [
+            "Free Wifi",
+            "Private Bathroom",
+            "Air Conditioning",
+            "Non-Smoking",
+            "Balcony",
+            "Garden View"
+          ],
+          "price": 27000,
+          "totalRooms": 40,
+          "availability": [],
+          "capacity": {
+            "adults": 2,
+            "children": 1
+          },
+          "image": "assets/hotel/room-images/deluxe-room.jpg"
+        },
+        {
+          "type": "Luxury Villa",
+          "bed": "Queen Size",
+          "size": "1200 sq ft",
+          "amenities": [
+            "Free Wifi",
+            "Private Bathroom",
+            "Air Conditioning",
+            "Non-Smoking",
+            "Balcony",
+            "Garden View",
+            "Bath Tub",
+            "Free Breakfast",
+            "Room Service"
+          ],
+          "price": 95000,
+          "totalRooms": 5,
+          "availability": [],
+          "capacity": {
+            "adults": 4,
+            "children": 2
+          },
+          "image": "assets/hotel/room-images/luxury-villa.jpg"
+        }
+      ],
+      "reviews": [
         {
           "username": "Neha Sharma",
           "rating": 5,
@@ -952,9 +1488,9 @@
           "comment": "The Deluxe Room was cozy and comfortable. The serene environment helped me recharge completely. Highly recommend for wellness enthusiasts!"
         }
       ],
-        "rating": 4.5,
-        "star": 5,
-        "faqs": [
+      "rating": 4.5,
+      "star": 5,
+      "faqs": [
         {
           "question": "Is Ananda suitable for a wellness retreat?",
           "answer": "Yes, Ananda is a luxury wellness retreat offering yoga, meditation, and wellness therapies amidst stunning Himalayan views."
@@ -973,43 +1509,86 @@
       "id": 14,
       "name": "ITC Grand Bharat",
       "location": "Gurgaon",
-      "description":"An all-suite luxury resort, ITC Grand Bharat offers a regal experience with traditional Indian architecture and modern amenities.",
+      "description": "An all-suite luxury resort, ITC Grand Bharat offers a regal experience with traditional Indian architecture and modern amenities.",
       "Address": "Gurgaon, Haryana 122001, India",
-      "nearbyAttractions": ["Kingdom of Dreams (Approx. 30 km)", "Sultanpur Bird Sanctuary (Approx. 40 km)", "Damdama Lake (Approx. 25 km)", "Sohna Hot Springs (Approx. 20 km)"],
+      "nearbyAttractions": [
+        "Kingdom of Dreams (Approx. 30 km)",
+        "Sultanpur Bird Sanctuary (Approx. 40 km)",
+        "Damdama Lake (Approx. 25 km)",
+        "Sohna Hot Springs (Approx. 20 km)"
+      ],
       "specialOffers": [],
       "price": 32000,
-      "images":[ "assets/hotel/hotel-images/itc-grand-bharat-gurgaon.jpg","assets/hotel/hotel-images/itc-grand-bharat-gurgaon2.jpg","assets/hotel/hotel-images/itc-grand-bharat-gurgaon3.jpg","assets/hotel/hotel-images/itc-grand-bharat-gurgaon4.jpg"],
-      "amenities": ["Free Wifi", "Free Parking", "Lift", "Restaurant", "Gym", "Cleaning Services", "Karaoke", "Bar", "Luggage storage"],
+      "images": [
+        "assets/hotel/hotel-images/itc-grand-bharat-gurgaon.jpg",
+        "assets/hotel/hotel-images/itc-grand-bharat-gurgaon2.jpg",
+        "assets/hotel/hotel-images/itc-grand-bharat-gurgaon3.jpg",
+        "assets/hotel/hotel-images/itc-grand-bharat-gurgaon4.jpg"
+      ],
+      "amenities": [
+        "Free Wifi",
+        "Free Parking",
+        "Lift",
+        "Restaurant",
+        "Gym",
+        "Cleaning Services",
+        "Karaoke",
+        "Bar",
+        "Luggage storage"
+      ],
       "surroundings": {
-  "Airport": "Indira Gandhi International Airport (Approx. 45 km)",
-  "Train": "Gurgaon Railway Station (Approx. 20 km)",
-  "Bus": "Gurgaon Bus Stand (Approx. 25 km)"
-},
-      "rooms": [
-      {
-        "type": "Grand Room",
-        "bed": "King Size",
-        "size": "500 sq ft",
-        "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "City View", "Free Breakfast"],
-        "price": 32000,
-        "totalRooms": 30,
-        "availability": [],
-        "capacity": { "adults": 2, "children": 1 },
-        "image": "assets/hotel/room-images/grand-room.jpg"
+        "Airport": "Indira Gandhi International Airport (Approx. 45 km)",
+        "Train": "Gurgaon Railway Station (Approx. 20 km)",
+        "Bus": "Gurgaon Bus Stand (Approx. 25 km)"
       },
-      {
-        "type": "Presidential Villa",
-        "bed": "Queen Size",
-        "size": "1500 sq ft",
-        "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Garden View", "Bath Tub", "Free Breakfast", "Room Service"],
-        "price": 125000,
-        "totalRooms": 3,
-        "availability": [],
-        "capacity": { "adults": 6, "children": 3 },
-        "image": "assets/hotel/room-images/presidential-villa.jpg"
-      }
-    ],
-    "reviews": [
+      "rooms": [
+        {
+          "type": "Grand Room",
+          "bed": "King Size",
+          "size": "500 sq ft",
+          "amenities": [
+            "Free Wifi",
+            "Private Bathroom",
+            "Air Conditioning",
+            "Non-Smoking",
+            "City View",
+            "Free Breakfast"
+          ],
+          "price": 32000,
+          "totalRooms": 30,
+          "availability": [],
+          "capacity": {
+            "adults": 2,
+            "children": 1
+          },
+          "image": "assets/hotel/room-images/grand-room.jpg"
+        },
+        {
+          "type": "Presidential Villa",
+          "bed": "Queen Size",
+          "size": "1500 sq ft",
+          "amenities": [
+            "Free Wifi",
+            "Private Bathroom",
+            "Air Conditioning",
+            "Non-Smoking",
+            "Balcony",
+            "Garden View",
+            "Bath Tub",
+            "Free Breakfast",
+            "Room Service"
+          ],
+          "price": 125000,
+          "totalRooms": 3,
+          "availability": [],
+          "capacity": {
+            "adults": 6,
+            "children": 3
+          },
+          "image": "assets/hotel/room-images/presidential-villa.jpg"
+        }
+      ],
+      "reviews": [
         {
           "username": "Ravi Mehta",
           "rating": 5,
@@ -1047,117 +1626,200 @@
       "id": 15,
       "name": "Park Hyatt Chennai",
       "location": "Chennai",
-      "description":"Located in the heart of Chennai, Park Hyatt offers contemporary luxury with a focus on art and design.",
+      "description": "Located in the heart of Chennai, Park Hyatt offers contemporary luxury with a focus on art and design.",
       "Address": "39 Velachery Road, Chennai, Tamil Nadu 600032, India",
-      "nearbyAttractions": ["Guindy National Park (Approx. 5.3 km)", "Marina Beach (Approx. 3.3 km)", "Kapaleeshwarar Temple (Approx. 4 km)", "Phoenix Marketcity (Approx. 2 km)"],
+      "nearbyAttractions": [
+        "Guindy National Park (Approx. 5.3 km)",
+        "Marina Beach (Approx. 3.3 km)",
+        "Kapaleeshwarar Temple (Approx. 4 km)",
+        "Phoenix Marketcity (Approx. 2 km)"
+      ],
       "specialOffers": [],
       "price": 18000,
-      "images":[ "assets/hotel/hotel-images/park-hyatt-chennai.jpg","assets/hotel/hotel-images/park-hyatt-chennai2.jpg","assets/hotel/hotel-images/park-hyatt-chennai3.jpg","assets/hotel/hotel-images/park-hyatt-chennai4.jpg"],
-      "amenities": ["Free Wifi", "Free Parking", "Lift", "Restaurant", "Spa", "Luggage storage", "Children's pool", "Yoga Retreat", "Table tennis room"],
+      "images": [
+        "assets/hotel/hotel-images/park-hyatt-chennai.jpg",
+        "assets/hotel/hotel-images/park-hyatt-chennai2.jpg",
+        "assets/hotel/hotel-images/park-hyatt-chennai3.jpg",
+        "assets/hotel/hotel-images/park-hyatt-chennai4.jpg"
+      ],
+      "amenities": [
+        "Free Wifi",
+        "Free Parking",
+        "Lift",
+        "Restaurant",
+        "Spa",
+        "Luggage storage",
+        "Children's pool",
+        "Yoga Retreat",
+        "Table tennis room"
+      ],
       "surroundings": {
-  "Airport": "Chennai International Airport (Approx. 7 km)",
-  "Train": "Chennai Egmore Railway Station (Approx. 9 km)",
-  "Bus": "Tidel Park Bus Stop (Approx. 3 km)"
-},
+        "Airport": "Chennai International Airport (Approx. 7 km)",
+        "Train": "Chennai Egmore Railway Station (Approx. 9 km)",
+        "Bus": "Tidel Park Bus Stop (Approx. 3 km)"
+      },
       "rooms": [
-      {
-        "type": "Deluxe Room",
-        "bed": "Queen Size",
-        "size": "400 sq ft",
-        "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Garden View"],
-        "price": 18000,
-        "totalRooms": 45,
-        "availability": [],
-        "capacity": { "adults": 2, "children": 1 },
-        "image": "assets/hotel/room-images/deluxe-room.jpg"
-      },
-      {
-        "type": "Executive Suite",
-        "bed": "King Size",
-        "size": "750 sq ft",
-        "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Ocean View", "Room Service"],
-        "price": 35000,
-        "totalRooms": 15,
-        "availability": [],
-        "capacity": { "adults": 3, "children": 2 },
-        "image": "assets/hotel/room-images/executive-suite-room.jpg"
-      }
-    ],
-    "reviews": [
-      {
-        "username": "Ananya Rao",
-        "rating": 5,
-        "comment": "A modern luxury experience in Chennai. The Deluxe Room was spacious, with a beautiful garden view. The design of the hotel is very contemporary, and the staff made us feel welcome. The children's pool was a nice touch for the family."
-      },
-      {
-        "username": "Vishal Kumar",
-        "rating": 4,
-        "comment": "Park Hyatt Chennai offers excellent services. The Executive Suite was beautiful and had an ocean view. However, the food prices at the restaurant were a bit high, but everything else was perfect. Great for both business and leisure."
-      },
-      {
-        "username": "Kushi Diwani",
-        "rating": 5,
-        "comment": "The design of the hotel is very contemporary, and the staff made us feel welcome. The children's pool was a nice touch for the family."
-      }
-    ],
+        {
+          "type": "Deluxe Room",
+          "bed": "Queen Size",
+          "size": "400 sq ft",
+          "amenities": [
+            "Free Wifi",
+            "Private Bathroom",
+            "Air Conditioning",
+            "Non-Smoking",
+            "Balcony",
+            "Garden View"
+          ],
+          "price": 18000,
+          "totalRooms": 45,
+          "availability": [],
+          "capacity": {
+            "adults": 2,
+            "children": 1
+          },
+          "image": "assets/hotel/room-images/deluxe-room.jpg"
+        },
+        {
+          "type": "Executive Suite",
+          "bed": "King Size",
+          "size": "750 sq ft",
+          "amenities": [
+            "Free Wifi",
+            "Private Bathroom",
+            "Air Conditioning",
+            "Non-Smoking",
+            "Balcony",
+            "Ocean View",
+            "Room Service"
+          ],
+          "price": 35000,
+          "totalRooms": 15,
+          "availability": [],
+          "capacity": {
+            "adults": 3,
+            "children": 2
+          },
+          "image": "assets/hotel/room-images/executive-suite-room.jpg"
+        }
+      ],
+      "reviews": [
+        {
+          "username": "Ananya Rao",
+          "rating": 5,
+          "comment": "A modern luxury experience in Chennai. The Deluxe Room was spacious, with a beautiful garden view. The design of the hotel is very contemporary, and the staff made us feel welcome. The children's pool was a nice touch for the family."
+        },
+        {
+          "username": "Vishal Kumar",
+          "rating": 4,
+          "comment": "Park Hyatt Chennai offers excellent services. The Executive Suite was beautiful and had an ocean view. However, the food prices at the restaurant were a bit high, but everything else was perfect. Great for both business and leisure."
+        },
+        {
+          "username": "Kushi Diwani",
+          "rating": 5,
+          "comment": "The design of the hotel is very contemporary, and the staff made us feel welcome. The children's pool was a nice touch for the family."
+        }
+      ],
       "rating": 4.5,
       "star": 5,
       "faqs": [
-      {
-        "question": "What kind of amenities are available for families?",
-        "answer": "Park Hyatt Chennai offers a children's pool, a yoga retreat, and a table tennis room. It's great for families with kids."
-      },
-      {
-        "question": "Are pets allowed at Park Hyatt Chennai?",
-        "answer": "No, Park Hyatt Chennai does not allow pets in the hotel."
-      },
-      {
-        "question": "Is there a spa at Park Hyatt Chennai?",
-        "answer": "Yes, there is a full-service spa at Park Hyatt Chennai offering a variety of treatments."
-      }
-    ]
+        {
+          "question": "What kind of amenities are available for families?",
+          "answer": "Park Hyatt Chennai offers a children's pool, a yoga retreat, and a table tennis room. It's great for families with kids."
+        },
+        {
+          "question": "Are pets allowed at Park Hyatt Chennai?",
+          "answer": "No, Park Hyatt Chennai does not allow pets in the hotel."
+        },
+        {
+          "question": "Is there a spa at Park Hyatt Chennai?",
+          "answer": "Yes, there is a full-service spa at Park Hyatt Chennai offering a variety of treatments."
+        }
+      ]
     },
     {
       "id": 16,
       "name": "Taj Falaknuma Palace",
       "location": "Hyderabad",
-      "description":"Once the residence of the Nizam, this palace hotel offers a regal experience with opulent rooms and fine dining.",
+      "description": "Once the residence of the Nizam, this palace hotel offers a regal experience with opulent rooms and fine dining.",
       "Address": "Falaknuma, Hyderabad, Telangana 500053, India",
-      "nearbyAttractions": ["Charminar (Approx. 2 km)", "Mecca Masjid (Approx. 2 km)", "Chowmahalla Palace (Approx. 2 km)", "Laad Bazaar (Approx. 2 km)"],
+      "nearbyAttractions": [
+        "Charminar (Approx. 2 km)",
+        "Mecca Masjid (Approx. 2 km)",
+        "Chowmahalla Palace (Approx. 2 km)",
+        "Laad Bazaar (Approx. 2 km)"
+      ],
       "specialOffers": [],
       "price": 30000,
-      "images":[ "assets/hotel/hotel-images/taj-falaknuma-palace-hyderabad.jpg","assets/hotel/hotel-images/taj-falaknuma-palace-hyderabad2.jpg","assets/hotel/hotel-images/taj-falaknuma-palace-hyderabad3.jpg","assets/hotel/hotel-images/taj-falaknuma-palace-hyderabad4.jpg"],
-      "amenities": [ "Free Wifi", "Free Parking", "Lift", "Restaurant", "Childcare service", "Sauna", "Playground", "Yoga Retreat", "Bar"],
+      "images": [
+        "assets/hotel/hotel-images/taj-falaknuma-palace-hyderabad.jpg",
+        "assets/hotel/hotel-images/taj-falaknuma-palace-hyderabad2.jpg",
+        "assets/hotel/hotel-images/taj-falaknuma-palace-hyderabad3.jpg",
+        "assets/hotel/hotel-images/taj-falaknuma-palace-hyderabad4.jpg"
+      ],
+      "amenities": [
+        "Free Wifi",
+        "Free Parking",
+        "Lift",
+        "Restaurant",
+        "Childcare service",
+        "Sauna",
+        "Playground",
+        "Yoga Retreat",
+        "Bar"
+      ],
       "surroundings": {
-  "Airport": "Kempegowda International Airport (Approx. 37 km)",
-  "Train": "Bengaluru City Railway Station (Approx. 6 km)",
-  "Bus": "Shivajinagar Bus Station (Approx. 3 km)"
-},
-      "rooms": [
-      {
-        "type": "Heritage Room",
-        "bed": "King Size",
-        "size": "450 sq ft",
-        "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "City View", "Free Breakfast"],
-        "price": 30000,
-        "totalRooms": 25,
-        "availability": [],
-        "capacity": { "adults": 2, "children": 1 },
-        "image": "assets/hotel/room-images/heritage-room.jpg"
+        "Airport": "Kempegowda International Airport (Approx. 37 km)",
+        "Train": "Bengaluru City Railway Station (Approx. 6 km)",
+        "Bus": "Shivajinagar Bus Station (Approx. 3 km)"
       },
-      {
-        "type": "Nizam Suite",
-        "bed": "Queen Size",
-        "size": "900 sq ft",
-        "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Smoking Permitted", "Balcony", "Garden View", "Bath Tub", "Room Service"],
-        "price": 120000,
-        "totalRooms": 4,
-        "availability": [],
-        "capacity": { "adults": 4, "children": 2 },
-        "image": "assets/hotel/room-images/nizam-suite.jpg"
-      }
-    ],
-     "reviews": [
+      "rooms": [
+        {
+          "type": "Heritage Room",
+          "bed": "King Size",
+          "size": "450 sq ft",
+          "amenities": [
+            "Free Wifi",
+            "Private Bathroom",
+            "Air Conditioning",
+            "Non-Smoking",
+            "City View",
+            "Free Breakfast"
+          ],
+          "price": 30000,
+          "totalRooms": 25,
+          "availability": [],
+          "capacity": {
+            "adults": 2,
+            "children": 1
+          },
+          "image": "assets/hotel/room-images/heritage-room.jpg"
+        },
+        {
+          "type": "Nizam Suite",
+          "bed": "Queen Size",
+          "size": "900 sq ft",
+          "amenities": [
+            "Free Wifi",
+            "Private Bathroom",
+            "Air Conditioning",
+            "Smoking Permitted",
+            "Balcony",
+            "Garden View",
+            "Bath Tub",
+            "Room Service"
+          ],
+          "price": 120000,
+          "totalRooms": 4,
+          "availability": [],
+          "capacity": {
+            "adults": 4,
+            "children": 2
+          },
+          "image": "assets/hotel/room-images/nizam-suite.jpg"
+        }
+      ],
+      "reviews": [
         {
           "username": "Deepika Reddy",
           "rating": 5,
@@ -1174,9 +1836,9 @@
           "comment": "The staff went above and beyond to make us feel special. A once-in-a-lifetime experience!"
         }
       ],
-        "rating": 4.5,
-        "star": 5,
-        "faqs": [
+      "rating": 4.5,
+      "star": 5,
+      "faqs": [
         {
           "question": "What makes Taj Falaknuma Palace special?",
           "answer": "Taj Falaknuma Palace was once the residence of the Nizam and offers a truly regal experience with opulent rooms, fine dining, and exceptional service."
@@ -1195,39 +1857,80 @@
       "id": 17,
       "name": "The Grand New Delhi",
       "location": "New Delhi",
-      "description":"A luxury hotel offering modern accommodations and facilities, located in the diplomatic enclave of New Delhi.",
+      "description": "A luxury hotel offering modern accommodations and facilities, located in the diplomatic enclave of New Delhi.",
       "Address": "Vasant Kunj, New Delhi, Delhi 110070, India",
-      "nearbyAttractions": ["Qutub Minar (Approx. 2 km)", "DLF Emporio Mall (Approx. 2 km)", "India Gate (Approx. 2 km)", "Lotus Temple (Approx. 2 km)"],
+      "nearbyAttractions": [
+        "Qutub Minar (Approx. 2 km)",
+        "DLF Emporio Mall (Approx. 2 km)",
+        "India Gate (Approx. 2 km)",
+        "Lotus Temple (Approx. 2 km)"
+      ],
       "specialOffers": [],
       "price": 15000,
-      "images":[ "assets/hotel/hotel-images/grand-new-delhi.jpg","assets/hotel/hotel-images/grand-new-delhi2.jpg","assets/hotel/hotel-images/grand-new-delhi3.jpg","assets/hotel/hotel-images/grand-new-delhi4.jpg"],
-      "amenities": ["Free Wifi", "Free Parking", "Lift", "Restaurant", "Luggage storage", "Yoga Retreat", "Bar", "Gym", "Massage room"],
+      "images": [
+        "assets/hotel/hotel-images/grand-new-delhi.jpg",
+        "assets/hotel/hotel-images/grand-new-delhi2.jpg",
+        "assets/hotel/hotel-images/grand-new-delhi3.jpg",
+        "assets/hotel/hotel-images/grand-new-delhi4.jpg"
+      ],
+      "amenities": [
+        "Free Wifi",
+        "Free Parking",
+        "Lift",
+        "Restaurant",
+        "Luggage storage",
+        "Yoga Retreat",
+        "Bar",
+        "Gym",
+        "Massage room"
+      ],
       "surroundings": {
-  "Airport": "Kempegowda International Airport (Approx. 37 km)",
-  "Train": "Bengaluru City Railway Station (Approx. 6 km)",
-  "Bus": "Shivajinagar Bus Station (Approx. 3 km)"
-},
+        "Airport": "Kempegowda International Airport (Approx. 37 km)",
+        "Train": "Bengaluru City Railway Station (Approx. 6 km)",
+        "Bus": "Shivajinagar Bus Station (Approx. 3 km)"
+      },
       "rooms": [
         {
           "type": "Deluxe Room",
           "bed": "King Size",
           "size": "450 sq ft",
-          "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Garden View"],
+          "amenities": [
+            "Free Wifi",
+            "Private Bathroom",
+            "Air Conditioning",
+            "Non-Smoking",
+            "Balcony",
+            "Garden View"
+          ],
           "price": 15000,
           "totalRooms": 50,
           "availability": [],
-          "capacity": { "adults": 2, "children": 1 },
+          "capacity": {
+            "adults": 2,
+            "children": 1
+          },
           "image": "assets/hotel/room-images/deluxe-room.jpg"
         },
         {
           "type": "Luxury Suite",
           "bed": "Queen Size",
           "size": "800 sq ft",
-          "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Ocean View", "Room Service"],
+          "amenities": [
+            "Free Wifi",
+            "Private Bathroom",
+            "Air Conditioning",
+            "Non-Smoking",
+            "Balcony",
+            "Ocean View",
+            "Room Service"
+          ],
           "price": 40000,
           "totalRooms": 10,
           "availability": [],
-          "capacity": { "adults": 4, "children": 2 },
+          "capacity": {
+            "adults": 4,
+            "children": 2
+          },
           "image": "assets/hotel/room-images/luxury-suite.jpg"
         }
       ],
@@ -1248,9 +1951,9 @@
           "comment": "The Luxury Suite had great views, and the in-house restaurant served delicious meals. The only downside was the noise from the busy area outside."
         }
       ],
-        "rating": 4.5,
-        "star": 5,
-        "faqs": [
+      "rating": 4.5,
+      "star": 5,
+      "faqs": [
         {
           "question": "What are the dining options at The Grand New Delhi?",
           "answer": "The hotel has multiple restaurants offering a variety of cuisines, including Indian, continental, and Chinese."
@@ -1269,113 +1972,196 @@
       "id": 18,
       "name": "ITC Maratha",
       "location": "Mumbai",
-      "description":"A luxury hotel inspired by the Maratha dynasty's grandeur, offering refined accommodations and a range of dining options.",
+      "description": "A luxury hotel inspired by the Maratha dynasty's grandeur, offering refined accommodations and a range of dining options.",
       "Address": "Sahar Airport Road, Andheri East, Mumbai, Maharashtra 400099, India",
-      "nearbyAttractions": ["Juhu Beach (Approx. 2 km)", "ISKCON Temple Mumbai (Approx. 2 km)", "Sanjay Gandhi National Park (Approx. 2 km)", "Powai Lake (Approx. 2 km)"],
+      "nearbyAttractions": [
+        "Juhu Beach (Approx. 2 km)",
+        "ISKCON Temple Mumbai (Approx. 2 km)",
+        "Sanjay Gandhi National Park (Approx. 2 km)",
+        "Powai Lake (Approx. 2 km)"
+      ],
       "specialOffers": [],
       "price": 20000,
-      "images":[ "assets/hotel/hotel-images/itc-maratha-mumbai.jpg","assets/hotel/hotel-images/itc-maratha-mumbai2.jpg","assets/hotel/hotel-images/itc-maratha-mumbai3.jpg","assets/hotel/hotel-images/itc-maratha-mumbai4.jpg"], 
-      "amenities": ["Free Wifi", "Free Parking", "Lift", "Restaurant", "Spa", "Cleaning Services", "Massage room", "Table tennis room", "Children's pool"],
+      "images": [
+        "assets/hotel/hotel-images/itc-maratha-mumbai.jpg",
+        "assets/hotel/hotel-images/itc-maratha-mumbai2.jpg",
+        "assets/hotel/hotel-images/itc-maratha-mumbai3.jpg",
+        "assets/hotel/hotel-images/itc-maratha-mumbai4.jpg"
+      ],
+      "amenities": [
+        "Free Wifi",
+        "Free Parking",
+        "Lift",
+        "Restaurant",
+        "Spa",
+        "Cleaning Services",
+        "Massage room",
+        "Table tennis room",
+        "Children's pool"
+      ],
       "surroundings": {
-  "Airport": "Kempegowda International Airport (Approx. 37 km)",
-  "Train": "Bengaluru City Railway Station (Approx. 6 km)",
-  "Bus": "Shivajinagar Bus Station (Approx. 3 km)"
-},
+        "Airport": "Kempegowda International Airport (Approx. 37 km)",
+        "Train": "Bengaluru City Railway Station (Approx. 6 km)",
+        "Bus": "Shivajinagar Bus Station (Approx. 3 km)"
+      },
       "rooms": [
-      {
-        "type": "Executive Room",
-        "bed": "King Size",
-        "size": "400 sq ft",
-        "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "City View", "Room Service"],
-        "price": 20000,
-        "totalRooms": 40,
-        "availability": [],
-        "capacity": { "adults": 2, "children": 1 },
-        "image": "assets/hotel/room-images/executive-room.jpg"
-      },
-      {
-        "type": "Presidential Suite",
-        "bed": "Queen Size",
-        "size": "1000 sq ft",
-        "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Ocean View", "Free Breakfast", "Room Service"],
-        "price": 85000,
-        "totalRooms": 5,
-        "availability": [],
-        "capacity": { "adults": 5, "children": 2 },
-        "image": "assets/hotel/room-images/presidential-suite.jpg"
-      }
-    ],
-    "reviews": [
-      {
-        "username": "Neha Kapoor",
-        "rating": 5,
-        "comment": "The Maratha-inspired decor and architecture were stunning. The Executive Room was very comfortable, and the service was impeccable. A truly memorable stay."
-      },
-      {
-        "username": "Anil Gupta",
-        "rating": 4,
-        "comment": "Great hotel with excellent amenities, especially for business travelers. The Presidential Suite was spacious and luxurious, but the price is on the higher side."
-      },
-      {
-        "username": "Balaji Sharma",
-        "rating": 4,
-        "comment": "The Presidential Suite was spacious and luxurious, but the price is on the higher side."
-      }
-    ],
+        {
+          "type": "Executive Room",
+          "bed": "King Size",
+          "size": "400 sq ft",
+          "amenities": [
+            "Free Wifi",
+            "Private Bathroom",
+            "Air Conditioning",
+            "Non-Smoking",
+            "City View",
+            "Room Service"
+          ],
+          "price": 20000,
+          "totalRooms": 40,
+          "availability": [],
+          "capacity": {
+            "adults": 2,
+            "children": 1
+          },
+          "image": "assets/hotel/room-images/executive-room.jpg"
+        },
+        {
+          "type": "Presidential Suite",
+          "bed": "Queen Size",
+          "size": "1000 sq ft",
+          "amenities": [
+            "Free Wifi",
+            "Private Bathroom",
+            "Air Conditioning",
+            "Non-Smoking",
+            "Balcony",
+            "Ocean View",
+            "Free Breakfast",
+            "Room Service"
+          ],
+          "price": 85000,
+          "totalRooms": 5,
+          "availability": [],
+          "capacity": {
+            "adults": 5,
+            "children": 2
+          },
+          "image": "assets/hotel/room-images/presidential-suite.jpg"
+        }
+      ],
+      "reviews": [
+        {
+          "username": "Neha Kapoor",
+          "rating": 5,
+          "comment": "The Maratha-inspired decor and architecture were stunning. The Executive Room was very comfortable, and the service was impeccable. A truly memorable stay."
+        },
+        {
+          "username": "Anil Gupta",
+          "rating": 4,
+          "comment": "Great hotel with excellent amenities, especially for business travelers. The Presidential Suite was spacious and luxurious, but the price is on the higher side."
+        },
+        {
+          "username": "Balaji Sharma",
+          "rating": 4,
+          "comment": "The Presidential Suite was spacious and luxurious, but the price is on the higher side."
+        }
+      ],
       "rating": 4.5,
       "star": 5,
       "faqs": [
-      {
-        "question": "What is the check-in time at ITC Maratha?",
-        "answer": "Check-in time at ITC Maratha is 2:00 PM, and check-out is at 12:00 PM."
-      },
-      {
-        "question": "Does ITC Maratha have a spa?",
-        "answer": "Yes, ITC Maratha offers a luxurious spa for relaxation and wellness treatments."
-      },
-      {
-        "question": "Are pets allowed at ITC Maratha?",
-        "answer": "No, ITC Maratha does not allow pets on the property."
-      }
-    ] 
+        {
+          "question": "What is the check-in time at ITC Maratha?",
+          "answer": "Check-in time at ITC Maratha is 2:00 PM, and check-out is at 12:00 PM."
+        },
+        {
+          "question": "Does ITC Maratha have a spa?",
+          "answer": "Yes, ITC Maratha offers a luxurious spa for relaxation and wellness treatments."
+        },
+        {
+          "question": "Are pets allowed at ITC Maratha?",
+          "answer": "No, ITC Maratha does not allow pets on the property."
+        }
+      ]
     },
     {
       "id": 19,
       "name": "The St. Regis Mumbai",
       "location": "Mumbai",
-      "description":"A five-star hotel located in the heart of Mumbai, offering panoramic city views, upscale dining, and personalized services.",
+      "description": "A five-star hotel located in the heart of Mumbai, offering panoramic city views, upscale dining, and personalized services.",
       "Address": "462, Senapati Bapat Marg, Lower Parel, Mumbai, Maharashtra 400013, India",
-      "nearbyAttractions": ["Worli Sea Face (Approx. 2 km)", "Haji Ali Dargah (Approx. 2 km)", "Bandra-Worli Sea Link (Approx. 2 km)", "Siddhivinayak Temple (Approx. 2 km)"],
+      "nearbyAttractions": [
+        "Worli Sea Face (Approx. 2 km)",
+        "Haji Ali Dargah (Approx. 2 km)",
+        "Bandra-Worli Sea Link (Approx. 2 km)",
+        "Siddhivinayak Temple (Approx. 2 km)"
+      ],
       "specialOffers": [],
       "price": 22000,
-      "images":[ "assets/hotel/hotel-images/st-regis-mumbai.jpg","assets/hotel/hotel-images/st-regis-mumbai2.jpg","assets/hotel/hotel-images/st-regis-mumbai3.jpg","assets/hotel/hotel-images/st-regis-mumbai4.jpg"],
-      "amenities": ["Free Wifi", "Free Parking", "Lift", "Restaurant", "Table tennis room", "Yoga Retreat", "EV charging station", "Sauna", "Playground"],
+      "images": [
+        "assets/hotel/hotel-images/st-regis-mumbai.jpg",
+        "assets/hotel/hotel-images/st-regis-mumbai2.jpg",
+        "assets/hotel/hotel-images/st-regis-mumbai3.jpg",
+        "assets/hotel/hotel-images/st-regis-mumbai4.jpg"
+      ],
+      "amenities": [
+        "Free Wifi",
+        "Free Parking",
+        "Lift",
+        "Restaurant",
+        "Table tennis room",
+        "Yoga Retreat",
+        "EV charging station",
+        "Sauna",
+        "Playground"
+      ],
       "surroundings": {
-  "Airport": "Kempegowda International Airport (Approx. 37 km)",
-  "Train": "Bengaluru City Railway Station (Approx. 6 km)",
-  "Bus": "Shivajinagar Bus Station (Approx. 3 km)"
-},
+        "Airport": "Kempegowda International Airport (Approx. 37 km)",
+        "Train": "Bengaluru City Railway Station (Approx. 6 km)",
+        "Bus": "Shivajinagar Bus Station (Approx. 3 km)"
+      },
       "rooms": [
         {
           "type": "Deluxe Room",
           "bed": "Queen Size",
           "size": "350 sq ft",
-          "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Garden View"],
+          "amenities": [
+            "Free Wifi",
+            "Private Bathroom",
+            "Air Conditioning",
+            "Non-Smoking",
+            "Balcony",
+            "Garden View"
+          ],
           "price": 22000,
           "totalRooms": 60,
           "availability": [],
-          "capacity": { "adults": 2, "children": 1 },
+          "capacity": {
+            "adults": 2,
+            "children": 1
+          },
           "image": "assets/hotel/room-images/deluxe-room.jpg"
         },
         {
           "type": "Luxury Suite",
           "bed": "King Size",
           "size": "850 sq ft",
-          "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Ocean View", "Room Service"],
+          "amenities": [
+            "Free Wifi",
+            "Private Bathroom",
+            "Air Conditioning",
+            "Non-Smoking",
+            "Balcony",
+            "Ocean View",
+            "Room Service"
+          ],
           "price": 60000,
           "totalRooms": 20,
           "availability": [],
-          "capacity": { "adults": 4, "children": 2 },
+          "capacity": {
+            "adults": 4,
+            "children": 2
+          },
           "image": "assets/hotel/room-images/luxury-suite.jpg"
         }
       ],
@@ -1396,9 +2182,9 @@
           "comment": "The Deluxe Room was elegant, and the panoramic views of the city were breathtaking. The staff was very attentive and made our stay memorable."
         }
       ],
-        "rating": 4.5,
-        "star": 5,
-        "faqs": [
+      "rating": 4.5,
+      "star": 5,
+      "faqs": [
         {
           "question": "What activities are available at The St. Regis Mumbai?",
           "answer": "Guests can enjoy a table tennis room, yoga retreat, sauna, and a playground."
@@ -1417,39 +2203,80 @@
       "id": 20,
       "name": "Le Méridien Jaipur Resort & Spa",
       "location": "Jaipur",
-      "description":"A resort blending traditional grandeur with modern amenities, featuring spacious rooms, a spa, and cultural experiences.",
+      "description": "A resort blending traditional grandeur with modern amenities, featuring spacious rooms, a spa, and cultural experiences.",
       "Address": "Number 1, Riico, Kukas, Jaipur, Rajasthan 302028, India",
-      "nearbyAttractions": ["Amber Fort (Approx. 2 km)", "Nahargarh Fort (Approx. 2 km)", "Jal Mahal (Approx. 2 km)", "Jaigarh Fort (Approx. 2 km)"],
+      "nearbyAttractions": [
+        "Amber Fort (Approx. 2 km)",
+        "Nahargarh Fort (Approx. 2 km)",
+        "Jal Mahal (Approx. 2 km)",
+        "Jaigarh Fort (Approx. 2 km)"
+      ],
       "specialOffers": [],
       "price": 16000,
-      "images":[ "assets/hotel/hotel-images/le-meridien-jaipur.jpg","assets/hotel/hotel-images/le-meridien-jaipur2.jpg","assets/hotel/hotel-images/le-meridien-jaipur3.jpg","assets/hotel/hotel-images/le-meridien-jaipur4.jpg"],
-      "amenities": ["Free Wifi", "Free Parking", "Lift", "Restaurant", "Karaoke", "Playground", "EV charging station", "Children's pool", "Outdoor swimming pool"],
+      "images": [
+        "assets/hotel/hotel-images/le-meridien-jaipur.jpg",
+        "assets/hotel/hotel-images/le-meridien-jaipur2.jpg",
+        "assets/hotel/hotel-images/le-meridien-jaipur3.jpg",
+        "assets/hotel/hotel-images/le-meridien-jaipur4.jpg"
+      ],
+      "amenities": [
+        "Free Wifi",
+        "Free Parking",
+        "Lift",
+        "Restaurant",
+        "Karaoke",
+        "Playground",
+        "EV charging station",
+        "Children's pool",
+        "Outdoor swimming pool"
+      ],
       "surroundings": {
-  "Airport": "Kempegowda International Airport (Approx. 37 km)",
-  "Train": "Bengaluru City Railway Station (Approx. 6 km)",
-  "Bus": "Shivajinagar Bus Station (Approx. 3 km)"
-},
+        "Airport": "Kempegowda International Airport (Approx. 37 km)",
+        "Train": "Bengaluru City Railway Station (Approx. 6 km)",
+        "Bus": "Shivajinagar Bus Station (Approx. 3 km)"
+      },
       "rooms": [
         {
           "type": "Deluxe Room",
           "bed": "King Size",
           "size": "400 sq ft",
-          "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Garden View"],
+          "amenities": [
+            "Free Wifi",
+            "Private Bathroom",
+            "Air Conditioning",
+            "Non-Smoking",
+            "Balcony",
+            "Garden View"
+          ],
           "price": 16000,
           "totalRooms": 30,
           "availability": [],
-          "capacity": { "adults": 2, "children": 1 },
+          "capacity": {
+            "adults": 2,
+            "children": 1
+          },
           "image": "assets/hotel/room-images/deluxe-room.jpg"
         },
         {
           "type": "Royal Suite",
           "bed": "Queen Size",
           "size": "900 sq ft",
-          "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Ocean View", "Room Service"],
+          "amenities": [
+            "Free Wifi",
+            "Private Bathroom",
+            "Air Conditioning",
+            "Non-Smoking",
+            "Balcony",
+            "Ocean View",
+            "Room Service"
+          ],
           "price": 50000,
           "totalRooms": 8,
           "availability": [],
-          "capacity": { "adults": 3, "children": 2 },
+          "capacity": {
+            "adults": 3,
+            "children": 2
+          },
           "image": "assets/hotel/room-images/royal-suite-room.jpg"
         }
       ],
@@ -1470,9 +2297,9 @@
           "comment": "The Royal Suite was spacious and well-appointed. The spa and outdoor pool were perfect for relaxation."
         }
       ],
-        "rating": 4.5,
-        "star": 5,
-        "faqs": [
+      "rating": 4.5,
+      "star": 5,
+      "faqs": [
         {
           "question": "Are there cultural experiences offered at Le Méridien Jaipur?",
           "answer": "Yes, the resort offers cultural experiences such as traditional Rajasthani performances and cooking classes."
@@ -1491,114 +2318,197 @@
       "id": 21,
       "name": "Rambagh Palace",
       "location": "Jaipur",
-      "description":"Once the residence of Jaipur's royalty, this palace hotel offers opulent rooms, exquisite gardens, and a rich history.",
+      "description": "Once the residence of Jaipur's royalty, this palace hotel offers opulent rooms, exquisite gardens, and a rich history.",
       "Address": "Bhawani Singh Road, Jaipur, Rajasthan 302005, India",
-      "nearbyAttractions": ["Hawa Mahal (Approx. 2 km)", "City Palace (Approx. 2 km)", "Jantar Mantar (Approx. 2 km)", "Amber Fort (Approx. 2 km)"],
+      "nearbyAttractions": [
+        "Hawa Mahal (Approx. 2 km)",
+        "City Palace (Approx. 2 km)",
+        "Jantar Mantar (Approx. 2 km)",
+        "Amber Fort (Approx. 2 km)"
+      ],
       "specialOffers": [],
       "price": 38000,
-      "images":[ "assets/hotel/hotel-images/rambagh-palace-jaipur.jpg","assets/hotel/hotel-images/rambagh-palace-jaipur2.jpg","assets/hotel/hotel-images/rambagh-palace-jaipur3.jpg","assets/hotel/hotel-images/rambagh-palace-jaipur4.jpg"], 
-      "amenities": ["Free Wifi", "Free Parking", "Lift", "Restaurant", "Massage room", "Childcare service", "Playground", "Table tennis room", "Spa"],
+      "images": [
+        "assets/hotel/hotel-images/rambagh-palace-jaipur.jpg",
+        "assets/hotel/hotel-images/rambagh-palace-jaipur2.jpg",
+        "assets/hotel/hotel-images/rambagh-palace-jaipur3.jpg",
+        "assets/hotel/hotel-images/rambagh-palace-jaipur4.jpg"
+      ],
+      "amenities": [
+        "Free Wifi",
+        "Free Parking",
+        "Lift",
+        "Restaurant",
+        "Massage room",
+        "Childcare service",
+        "Playground",
+        "Table tennis room",
+        "Spa"
+      ],
       "surroundings": {
-  "Airport": "Kempegowda International Airport (Approx. 37 km)",
-  "Train": "Bengaluru City Railway Station (Approx. 6 km)",
-  "Bus": "Shivajinagar Bus Station (Approx. 3 km)"
-},
+        "Airport": "Kempegowda International Airport (Approx. 37 km)",
+        "Train": "Bengaluru City Railway Station (Approx. 6 km)",
+        "Bus": "Shivajinagar Bus Station (Approx. 3 km)"
+      },
       "rooms": [
-      {
-        "type": "Heritage Room",
-        "bed": "King Size",
-        "size": "450 sq ft",
-        "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "City View", "Free Breakfast"],
-        "price": 38000,
-        "totalRooms": 35,
-        "availability": [],
-        "capacity": { "adults": 2, "children": 1 },
-        "image": "assets/hotel/room-images/heritage-room.jpg"
-      },
-      {
-        "type": "Maharaja Suite",
-        "bed": "Queen Size",
-        "size": "1200 sq ft",
-        "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Smoking Permitted", "Balcony", "Ocean View", "Bath Tub", "Room Service"],
-        "price": 140000,
-        "totalRooms": 3,
-        "availability": [],
-        "capacity": { "adults": 4, "children": 2 },
-        "image": "assets/hotel/room-images/maharaja-suite.jpg"
-      }
-     ],
-     "reviews": [
-      {
-        "username": "Ananya Sharma",
-        "rating": 5,
-        "comment": "Rambagh Palace is a perfect blend of royalty and modern luxury. The Heritage Room was spacious, and the gardens were breathtaking. Truly an unforgettable experience."
-      },
-      {
-        "username": "Deepak Jain",
-        "rating": 4,
-        "comment": "The property is absolutely gorgeous. The Maharaja Suite was fit for a king. However, the price was quite high. Still, the service and luxury made it worth it."
-      },
-      {
-        "username": "Rajesh Kumar",
-        "rating": 5,
-        "comment": "The Heritage Room was spacious, and the gardens were breathtaking. Truly an unforgettable experience."
-      }
-     ],
+        {
+          "type": "Heritage Room",
+          "bed": "King Size",
+          "size": "450 sq ft",
+          "amenities": [
+            "Free Wifi",
+            "Private Bathroom",
+            "Air Conditioning",
+            "Non-Smoking",
+            "City View",
+            "Free Breakfast"
+          ],
+          "price": 38000,
+          "totalRooms": 35,
+          "availability": [],
+          "capacity": {
+            "adults": 2,
+            "children": 1
+          },
+          "image": "assets/hotel/room-images/heritage-room.jpg"
+        },
+        {
+          "type": "Maharaja Suite",
+          "bed": "Queen Size",
+          "size": "1200 sq ft",
+          "amenities": [
+            "Free Wifi",
+            "Private Bathroom",
+            "Air Conditioning",
+            "Smoking Permitted",
+            "Balcony",
+            "Ocean View",
+            "Bath Tub",
+            "Room Service"
+          ],
+          "price": 140000,
+          "totalRooms": 3,
+          "availability": [],
+          "capacity": {
+            "adults": 4,
+            "children": 2
+          },
+          "image": "assets/hotel/room-images/maharaja-suite.jpg"
+        }
+      ],
+      "reviews": [
+        {
+          "username": "Ananya Sharma",
+          "rating": 5,
+          "comment": "Rambagh Palace is a perfect blend of royalty and modern luxury. The Heritage Room was spacious, and the gardens were breathtaking. Truly an unforgettable experience."
+        },
+        {
+          "username": "Deepak Jain",
+          "rating": 4,
+          "comment": "The property is absolutely gorgeous. The Maharaja Suite was fit for a king. However, the price was quite high. Still, the service and luxury made it worth it."
+        },
+        {
+          "username": "Rajesh Kumar",
+          "rating": 5,
+          "comment": "The Heritage Room was spacious, and the gardens were breathtaking. Truly an unforgettable experience."
+        }
+      ],
       "rating": 4.5,
       "star": 5,
       "faqs": [
-      {
-        "question": "Does Rambagh Palace have a swimming pool?",
-        "answer": "Yes, Rambagh Palace features a beautiful outdoor swimming pool for guests."
-      },
-      {
-        "question": "Is there a spa at Rambagh Palace?",
-        "answer": "Yes, Rambagh Palace offers a luxurious spa with a variety of treatments for relaxation."
-      },
-      {
-        "question": "Are pets allowed at Rambagh Palace?",
-        "answer": "Pets are not allowed at Rambagh Palace."
-      }
-     ]
+        {
+          "question": "Does Rambagh Palace have a swimming pool?",
+          "answer": "Yes, Rambagh Palace features a beautiful outdoor swimming pool for guests."
+        },
+        {
+          "question": "Is there a spa at Rambagh Palace?",
+          "answer": "Yes, Rambagh Palace offers a luxurious spa with a variety of treatments for relaxation."
+        },
+        {
+          "question": "Are pets allowed at Rambagh Palace?",
+          "answer": "Pets are not allowed at Rambagh Palace."
+        }
+      ]
     },
     {
       "id": 22,
       "name": "The Park Chennai",
       "location": "Chennai",
-      "description":"A contemporary hotel in Chennai's business district, known for its chic interiors, rooftop pool, and vibrant nightlife venues.",
+      "description": "A contemporary hotel in Chennai's business district, known for its chic interiors, rooftop pool, and vibrant nightlife venues.",
       "Address": "601, Anna Salai, Near US Consulate, Chennai, Tamil Nadu 600006, India",
-      "nearbyAttractions": ["Marina Beach (Approx. 2 km)", "Express Avenue Mall (Approx. 2 km)", "Government Museum Chennai (Approx. 2 km)", "Fort St. George (Approx. 2 km)"],
+      "nearbyAttractions": [
+        "Marina Beach (Approx. 2 km)",
+        "Express Avenue Mall (Approx. 2 km)",
+        "Government Museum Chennai (Approx. 2 km)",
+        "Fort St. George (Approx. 2 km)"
+      ],
       "specialOffers": [],
       "price": 11000,
-      "images":[ "assets/hotel/hotel-images/park-chennai.jpg","assets/hotel/hotel-images/park-chennai2.jpg","assets/hotel/hotel-images/park-chennai3.jpg","assets/hotel/hotel-images/park-chennai4.jpg"],
-      "amenities": ["Free Wifi", "Free Parking", "Lift", "Restaurant", "EV charging station", "Children's pool", "Luggage storage", "Spa", "Cleaning Services"],
+      "images": [
+        "assets/hotel/hotel-images/park-chennai.jpg",
+        "assets/hotel/hotel-images/park-chennai2.jpg",
+        "assets/hotel/hotel-images/park-chennai3.jpg",
+        "assets/hotel/hotel-images/park-chennai4.jpg"
+      ],
+      "amenities": [
+        "Free Wifi",
+        "Free Parking",
+        "Lift",
+        "Restaurant",
+        "EV charging station",
+        "Children's pool",
+        "Luggage storage",
+        "Spa",
+        "Cleaning Services"
+      ],
       "surroundings": {
-  "Airport": "Kempegowda International Airport (Approx. 37 km)",
-  "Train": "Bengaluru City Railway Station (Approx. 6 km)",
-  "Bus": "Shivajinagar Bus Station (Approx. 3 km)"
-},
+        "Airport": "Kempegowda International Airport (Approx. 37 km)",
+        "Train": "Bengaluru City Railway Station (Approx. 6 km)",
+        "Bus": "Shivajinagar Bus Station (Approx. 3 km)"
+      },
       "rooms": [
         {
           "type": "Standard Room",
           "bed": "Queen Size",
           "size": "300 sq ft",
-          "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "City View"],
+          "amenities": [
+            "Free Wifi",
+            "Private Bathroom",
+            "Air Conditioning",
+            "Non-Smoking",
+            "City View"
+          ],
           "price": 11000,
           "totalRooms": 80,
           "availability": [],
-          "capacity": { "adults": 2, "children": 1 },
+          "capacity": {
+            "adults": 2,
+            "children": 1
+          },
           "image": "assets/hotel/room-images/standard-room.jpg"
         },
         {
           "type": "Premium Suite",
           "bed": "King Size",
           "size": "750 sq ft",
-          "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Ocean View", "Bath Tub", "Room Service"],
+          "amenities": [
+            "Free Wifi",
+            "Private Bathroom",
+            "Air Conditioning",
+            "Non-Smoking",
+            "Balcony",
+            "Ocean View",
+            "Bath Tub",
+            "Room Service"
+          ],
           "price": 30000,
           "totalRooms": 10,
           "availability": [],
-          "capacity": { "adults": 3, "children": 2 },
-          "image": "assets/hotel/room-images/premium-suite.jpg" 
+          "capacity": {
+            "adults": 3,
+            "children": 2
+          },
+          "image": "assets/hotel/room-images/premium-suite.jpg"
         }
       ],
       "reviews": [
@@ -1618,9 +2528,9 @@
           "comment": "The Standard Room was very comfortable. The location is perfect for both business and leisure stays."
         }
       ],
-        "rating": 4.5,
-        "star": 5,
-        "faqs": [
+      "rating": 4.5,
+      "star": 5,
+      "faqs": [
         {
           "question": "What dining options are available at The Park Chennai?",
           "answer": "The hotel offers several dining options, including an in-house restaurant serving both local and international cuisines."
@@ -1639,43 +2549,85 @@
       "id": 23,
       "name": "The Imperial New Delhi",
       "location": "New Delhi",
-      "description":"A historic hotel offering a blend of Victorian, colonial, and art deco styles, with luxurious rooms and a renowned art collection.",
+      "description": "A historic hotel offering a blend of Victorian, colonial, and art deco styles, with luxurious rooms and a renowned art collection.",
       "Address": "Janpath Lane, Connaught Place, New Delhi, Delhi 110001, India",
-      "nearbyAttractions": ["India Gate (Approx. 2 km)", "Connaught Place (Approx. 2 km)", "Rashtrapati Bhavan (Approx. 2 km)", "Jantar Mantar (Approx. 2 km)"],
+      "nearbyAttractions": [
+        "India Gate (Approx. 2 km)",
+        "Connaught Place (Approx. 2 km)",
+        "Rashtrapati Bhavan (Approx. 2 km)",
+        "Jantar Mantar (Approx. 2 km)"
+      ],
       "specialOffers": [],
       "price": 26000,
-      "images":[ "assets/hotel/hotel-images/imperial-new-delhi.jpg","assets/hotel/hotel-images/imperial-new-delhi2.jpg","assets/hotel/hotel-images/imperial-new-delhi3.jpg","assets/hotel/hotel-images/imperial-new-delhi4.jpg"],
-      "amenities": ["Free Wifi", "Free Parking", "Lift", "Restaurant", "Karaoke", "Luggage storage", "Conference room", "Children's pool", "Spa"],
+      "images": [
+        "assets/hotel/hotel-images/imperial-new-delhi.jpg",
+        "assets/hotel/hotel-images/imperial-new-delhi2.jpg",
+        "assets/hotel/hotel-images/imperial-new-delhi3.jpg",
+        "assets/hotel/hotel-images/imperial-new-delhi4.jpg"
+      ],
+      "amenities": [
+        "Free Wifi",
+        "Free Parking",
+        "Lift",
+        "Restaurant",
+        "Karaoke",
+        "Luggage storage",
+        "Conference room",
+        "Children's pool",
+        "Spa"
+      ],
       "surroundings": {
-  "Airport": "Kempegowda International Airport (Approx. 37 km)",
-  "Train": "Bengaluru City Railway Station (Approx. 6 km)",
-  "Bus": "Shivajinagar Bus Station (Approx. 3 km)"
-},
+        "Airport": "Kempegowda International Airport (Approx. 37 km)",
+        "Train": "Bengaluru City Railway Station (Approx. 6 km)",
+        "Bus": "Shivajinagar Bus Station (Approx. 3 km)"
+      },
       "rooms": [
         {
           "type": "Luxury Room",
           "bed": "King Size",
           "size": "400 sq ft",
-          "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Mountain View", "Free Breakfast"],
+          "amenities": [
+            "Free Wifi",
+            "Private Bathroom",
+            "Air Conditioning",
+            "Non-Smoking",
+            "Mountain View",
+            "Free Breakfast"
+          ],
           "price": 26000,
           "totalRooms": 40,
           "availability": [],
-          "capacity": { "adults": 2, "children": 1 },
+          "capacity": {
+            "adults": 2,
+            "children": 1
+          },
           "image": "assets/hotel/room-images/luxury-room.jpg"
         },
         {
           "type": "Royal Suite",
           "bed": "Queen Size",
           "size": "1000 sq ft",
-          "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Ocean View", "Room Service", "Free Breakfast"],
+          "amenities": [
+            "Free Wifi",
+            "Private Bathroom",
+            "Air Conditioning",
+            "Non-Smoking",
+            "Balcony",
+            "Ocean View",
+            "Room Service",
+            "Free Breakfast"
+          ],
           "price": 90000,
           "totalRooms": 6,
           "availability": [],
-          "capacity": { "adults": 4, "children": 2 },
+          "capacity": {
+            "adults": 4,
+            "children": 2
+          },
           "image": "assets/hotel/room-images/royal-suite-room.jpg"
         }
       ],
-        "reviews": [
+      "reviews": [
         {
           "username": "Rajesh Verma",
           "rating": 5,
@@ -1692,9 +2644,9 @@
           "comment": "The Royal Suite was incredibly luxurious. The service and food were top-notch."
         }
       ],
-        "rating": 4.5,
-        "star": 5,
-        "faqs": [
+      "rating": 4.5,
+      "star": 5,
+      "faqs": [
         {
           "question": "What is the check-in time at The Imperial New Delhi?",
           "answer": "Check-in time at The Imperial New Delhi is 2:00 PM, and check-out is at 12:00 PM."
@@ -1713,113 +2665,199 @@
       "id": 24,
       "name": "JW Marriott Mussoorie Walnut Grove Resort & Spa",
       "location": "Mussoorie",
-      "description":"A luxury resort nestled in the Himalayas, featuring elegant accommodations, a spa, and panoramic mountain views.",
+      "description": "A luxury resort nestled in the Himalayas, featuring elegant accommodations, a spa, and panoramic mountain views.",
       "Address": "Village Siya, Kempty Fall Road, Mussoorie, Uttarakhand 248179, India",
-      "nearbyAttractions": ["Kempty Falls (Approx. 2 km)", "Gun Hill (Approx. 2 km)", "Camel's Back Road (Approx. 2 km)", "Cloud's End (Approx. 2 km)"],
+      "nearbyAttractions": [
+        "Kempty Falls (Approx. 2 km)",
+        "Gun Hill (Approx. 2 km)",
+        "Camel's Back Road (Approx. 2 km)",
+        "Cloud's End (Approx. 2 km)"
+      ],
       "specialOffers": [],
       "price": 28000,
-      "images":[ "assets/hotel/hotel-images/jw-marriott-mussoorie.jpg","assets/hotel/hotel-images/jw-marriott-mussoorie2.jpg","assets/hotel/hotel-images/jw-marriott-mussoorie3.jpg","assets/hotel/hotel-images/jw-marriott-mussoorie4.jpg"],
-      "amenities": ["Free Wifi", "Free Parking", "Lift", "Restaurant", "Playground", "Karaoke", "Yoga Retreat", "EV charging station", "Cleaning Services"],
+      "images": [
+        "assets/hotel/hotel-images/jw-marriott-mussoorie.jpg",
+        "assets/hotel/hotel-images/jw-marriott-mussoorie2.jpg",
+        "assets/hotel/hotel-images/jw-marriott-mussoorie3.jpg",
+        "assets/hotel/hotel-images/jw-marriott-mussoorie4.jpg"
+      ],
+      "amenities": [
+        "Free Wifi",
+        "Free Parking",
+        "Lift",
+        "Restaurant",
+        "Playground",
+        "Karaoke",
+        "Yoga Retreat",
+        "EV charging station",
+        "Cleaning Services"
+      ],
       "surroundings": {
-  "Airport": "Kempegowda International Airport (Approx. 37 km)",
-  "Train": "Bengaluru City Railway Station (Approx. 6 km)",
-  "Bus": "Shivajinagar Bus Station (Approx. 3 km)"
-},
+        "Airport": "Kempegowda International Airport (Approx. 37 km)",
+        "Train": "Bengaluru City Railway Station (Approx. 6 km)",
+        "Bus": "Shivajinagar Bus Station (Approx. 3 km)"
+      },
       "rooms": [
-      {
-        "type": "Deluxe Room",
-        "bed": "Queen Size",
-        "size": "400 sq ft",
-        "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Garden View"],
-        "price": 28000,
-        "totalRooms": 50,
-        "availability": [],
-        "capacity": { "adults": 2, "children": 1 },
-        "image": "assets/hotel/room-images/deluxe-room.jpg"
-      },
-      {
-        "type": "Luxury Suite",
-        "bed": "King Size",
-        "size": "900 sq ft",
-        "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Smoking Permitted", "Balcony", "Ocean View", "Bath Tub", "Room Service"],
-        "price": 70000,
-        "totalRooms": 10,
-        "availability": [],
-        "capacity": { "adults": 3, "children": 2 },
-        "image": "assets/hotel/room-images/luxury-suite.jpg"
-      }
-    ],
-    "reviews": [
-      {
-        "username": "Rahul Mehta",
-        "rating": 5,
-        "comment": "A peaceful retreat in the Himalayas. The view from the Deluxe Room was mesmerizing. The spa and yoga retreat were perfect for relaxation."
-      },
-      {
-        "username": "Priya Singh",
-        "rating": 4,
-        "comment": "Beautiful resort with incredible views. The Luxury Suite was spacious and luxurious. The only downside was the remote location, but it was worth the peace and quiet."
-      },
-      {
-        "username": "Raju Sharma",
-        "rating": 4,
-        "comment": "The only downside was the remote location, but it was worth the peace and quiet."
-      }
-    ],
+        {
+          "type": "Deluxe Room",
+          "bed": "Queen Size",
+          "size": "400 sq ft",
+          "amenities": [
+            "Free Wifi",
+            "Private Bathroom",
+            "Air Conditioning",
+            "Non-Smoking",
+            "Balcony",
+            "Garden View"
+          ],
+          "price": 28000,
+          "totalRooms": 50,
+          "availability": [],
+          "capacity": {
+            "adults": 2,
+            "children": 1
+          },
+          "image": "assets/hotel/room-images/deluxe-room.jpg"
+        },
+        {
+          "type": "Luxury Suite",
+          "bed": "King Size",
+          "size": "900 sq ft",
+          "amenities": [
+            "Free Wifi",
+            "Private Bathroom",
+            "Air Conditioning",
+            "Smoking Permitted",
+            "Balcony",
+            "Ocean View",
+            "Bath Tub",
+            "Room Service"
+          ],
+          "price": 70000,
+          "totalRooms": 10,
+          "availability": [],
+          "capacity": {
+            "adults": 3,
+            "children": 2
+          },
+          "image": "assets/hotel/room-images/luxury-suite.jpg"
+        }
+      ],
+      "reviews": [
+        {
+          "username": "Rahul Mehta",
+          "rating": 5,
+          "comment": "A peaceful retreat in the Himalayas. The view from the Deluxe Room was mesmerizing. The spa and yoga retreat were perfect for relaxation."
+        },
+        {
+          "username": "Priya Singh",
+          "rating": 4,
+          "comment": "Beautiful resort with incredible views. The Luxury Suite was spacious and luxurious. The only downside was the remote location, but it was worth the peace and quiet."
+        },
+        {
+          "username": "Raju Sharma",
+          "rating": 4,
+          "comment": "The only downside was the remote location, but it was worth the peace and quiet."
+        }
+      ],
       "rating": 4.5,
       "star": 5,
       "faqs": [
-      {
-        "question": "Does JW Marriott Mussoorie have a spa?",
-        "answer": "Yes, JW Marriott Mussoorie features a luxurious spa with a range of rejuvenating treatments."
-      },
-      {
-        "question": "Is there a yoga retreat at JW Marriott Mussoorie?",
-        "answer": "Yes, the resort offers a dedicated yoga retreat for guests looking to relax and rejuvenate."
-      },
-      {
-        "question": "Are pets allowed at JW Marriott Mussoorie?",
-        "answer": "Unfortunately, pets are not allowed at JW Marriott Mussoorie."
-      }
-    ]
-   },
+        {
+          "question": "Does JW Marriott Mussoorie have a spa?",
+          "answer": "Yes, JW Marriott Mussoorie features a luxurious spa with a range of rejuvenating treatments."
+        },
+        {
+          "question": "Is there a yoga retreat at JW Marriott Mussoorie?",
+          "answer": "Yes, the resort offers a dedicated yoga retreat for guests looking to relax and rejuvenate."
+        },
+        {
+          "question": "Are pets allowed at JW Marriott Mussoorie?",
+          "answer": "Unfortunately, pets are not allowed at JW Marriott Mussoorie."
+        }
+      ]
+    },
     {
       "id": 25,
       "name": "The Leela Goa",
       "location": "Goa",
-      "description":"A beachfront resort set amidst 75 acres of landscaped gardens, offering a blend of South Indian architecture and Portuguese heritage.",
+      "description": "A beachfront resort set amidst 75 acres of landscaped gardens, offering a blend of South Indian architecture and Portuguese heritage.",
       "Address": "Mobor Beach, Cavelossim, Goa 403731, India",
-      "nearbyAttractions": ["Colva Beach (Approx. 2 km)", "Basilica of Bom Jesus (Approx. 2 km)", "Dudhsagar Falls (Approx. 2 km)", "Anjuna Market (Approx. 2 km)"],
+      "nearbyAttractions": [
+        "Colva Beach (Approx. 2 km)",
+        "Basilica of Bom Jesus (Approx. 2 km)",
+        "Dudhsagar Falls (Approx. 2 km)",
+        "Anjuna Market (Approx. 2 km)"
+      ],
       "specialOffers": [],
       "price": 32000,
-      "images":[ "assets/hotel/hotel-images/leela-goa.jpg","assets/hotel/hotel-images/leela-goa2.jpg","assets/hotel/hotel-images/leela-goa3.jpg","assets/hotel/hotel-images/leela-goa4.jpg"],
-      "amenities": ["Free Wifi", "Free Parking", "Lift", "Restaurant", "Yoga Retreat", "Childcare service", "Playground", "Conference room", "Table tennis room"],
+      "images": [
+        "assets/hotel/hotel-images/leela-goa.jpg",
+        "assets/hotel/hotel-images/leela-goa2.jpg",
+        "assets/hotel/hotel-images/leela-goa3.jpg",
+        "assets/hotel/hotel-images/leela-goa4.jpg"
+      ],
+      "amenities": [
+        "Free Wifi",
+        "Free Parking",
+        "Lift",
+        "Restaurant",
+        "Yoga Retreat",
+        "Childcare service",
+        "Playground",
+        "Conference room",
+        "Table tennis room"
+      ],
       "surroundings": {
-  "Airport": "Kempegowda International Airport (Approx. 37 km)",
-  "Train": "Bengaluru City Railway Station (Approx. 6 km)",
-  "Bus": "Shivajinagar Bus Station (Approx. 3 km)"
-},
+        "Airport": "Kempegowda International Airport (Approx. 37 km)",
+        "Train": "Bengaluru City Railway Station (Approx. 6 km)",
+        "Bus": "Shivajinagar Bus Station (Approx. 3 km)"
+      },
       "rooms": [
         {
           "type": "Lagoon View Room",
           "bed": "King Size",
           "size": "500 sq ft",
-          "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Lagoon View", "Room Service"],
+          "amenities": [
+            "Free Wifi",
+            "Private Bathroom",
+            "Air Conditioning",
+            "Non-Smoking",
+            "Balcony",
+            "Lagoon View",
+            "Room Service"
+          ],
           "price": 32000,
           "totalRooms": 60,
           "availability": [],
-          "capacity": { "adults": 2, "children": 1 },
+          "capacity": {
+            "adults": 2,
+            "children": 1
+          },
           "image": "assets/hotel/room-images/lagoon-view-room.jpg"
         },
         {
           "type": "Royal Villa",
           "bed": "Queen Size",
           "size": "1500 sq ft",
-          "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Mountain View", "Bath Tub", "Free Breakfast", "Room Service"],
+          "amenities": [
+            "Free Wifi",
+            "Private Bathroom",
+            "Air Conditioning",
+            "Non-Smoking",
+            "Balcony",
+            "Mountain View",
+            "Bath Tub",
+            "Free Breakfast",
+            "Room Service"
+          ],
           "price": 120000,
           "totalRooms": 8,
           "availability": [],
-          "capacity": { "adults": 4, "children": 2 },
+          "capacity": {
+            "adults": 4,
+            "children": 2
+          },
           "image": "assets/hotel/room-images/royal-villa.jpg"
         }
       ],
@@ -1840,9 +2878,9 @@
           "comment": "The Royal Villa is a dream. The only thing I would suggest is more variety in the food options at the restaurant."
         }
       ],
-        "rating": 4.5,
-        "star": 5,
-        "faqs": [
+      "rating": 4.5,
+      "star": 5,
+      "faqs": [
         {
           "question": "Does The Leela Goa have a kids' club?",
           "answer": "Yes, The Leela Goa offers childcare services and a kids' club to keep young guests entertained."
@@ -1861,39 +2899,80 @@
       "id": 26,
       "name": "The Ritz-Carlton Bangalore",
       "location": "Bengaluru",
-      "description":"A luxury hotel in the city's heart, featuring elegant rooms, a rooftop bar, and a renowned spa.",
+      "description": "A luxury hotel in the city's heart, featuring elegant rooms, a rooftop bar, and a renowned spa.",
       "Address": "99, Residency Road, Bengaluru, Karnataka 560025, India",
-      "nearbyAttractions": ["Cubbon Park (Approx. 2 km)", "Lalbagh Botanical Garden (Approx. 2 km)", "Bangalore Palace (Approx. 2 km)", "UB City Mall (Approx. 2 km)"],
+      "nearbyAttractions": [
+        "Cubbon Park (Approx. 2 km)",
+        "Lalbagh Botanical Garden (Approx. 2 km)",
+        "Bangalore Palace (Approx. 2 km)",
+        "UB City Mall (Approx. 2 km)"
+      ],
       "specialOffers": [],
       "price": 25000,
-      "images":[ "assets/hotel/hotel-images/ritz-carlton-bengaluru.jpg","assets/hotel/hotel-images/ritz-carlton-bengaluru2.jpg","assets/hotel/hotel-images/ritz-carlton-bengaluru3.jpg","assets/hotel/hotel-images/ritz-carlton-bengaluru4.jpg"], 
-      "amenities": ["Free Wifi", "Free Parking", "Lift", "Restaurant", "Cleaning Services", "Karaoke", "Spa", "Gym", "Conference room"],
+      "images": [
+        "assets/hotel/hotel-images/ritz-carlton-bengaluru.jpg",
+        "assets/hotel/hotel-images/ritz-carlton-bengaluru2.jpg",
+        "assets/hotel/hotel-images/ritz-carlton-bengaluru3.jpg",
+        "assets/hotel/hotel-images/ritz-carlton-bengaluru4.jpg"
+      ],
+      "amenities": [
+        "Free Wifi",
+        "Free Parking",
+        "Lift",
+        "Restaurant",
+        "Cleaning Services",
+        "Karaoke",
+        "Spa",
+        "Gym",
+        "Conference room"
+      ],
       "surroundings": {
-  "Airport": "Kempegowda International Airport (Approx. 37 km)",
-  "Train": "Bengaluru City Railway Station (Approx. 6 km)",
-  "Bus": "Shivajinagar Bus Station (Approx. 3 km)"
-},
+        "Airport": "Kempegowda International Airport (Approx. 37 km)",
+        "Train": "Bengaluru City Railway Station (Approx. 6 km)",
+        "Bus": "Shivajinagar Bus Station (Approx. 3 km)"
+      },
       "rooms": [
         {
           "type": "Deluxe Room",
           "bed": "King Size",
           "size": "450 sq ft",
-          "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Garden View"],
+          "amenities": [
+            "Free Wifi",
+            "Private Bathroom",
+            "Air Conditioning",
+            "Non-Smoking",
+            "Balcony",
+            "Garden View"
+          ],
           "price": 25000,
           "totalRooms": 40,
           "availability": [],
-          "capacity": { "adults": 2, "children": 1 },
+          "capacity": {
+            "adults": 2,
+            "children": 1
+          },
           "image": "assets/hotel/room-images/deluxe-room.jpg"
         },
         {
           "type": "Executive Suite",
           "bed": "Queen Size",
           "size": "850 sq ft",
-          "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Ocean View", "Room Service"],
+          "amenities": [
+            "Free Wifi",
+            "Private Bathroom",
+            "Air Conditioning",
+            "Non-Smoking",
+            "Balcony",
+            "Ocean View",
+            "Room Service"
+          ],
           "price": 50000,
           "totalRooms": 15,
           "availability": [],
-          "capacity": { "adults": 3, "children": 2 },
+          "capacity": {
+            "adults": 3,
+            "children": 2
+          },
           "image": "assets/hotel/room-images/executive-suite-room.jpg"
         }
       ],
@@ -1914,9 +2993,9 @@
           "comment": "The Executive Suite was spacious and had a beautiful ocean view. The spa was top-notch, and the rooftop bar was amazing."
         }
       ],
-        "rating": 4.5,
-        "star": 5,
-        "faqs": [
+      "rating": 4.5,
+      "star": 5,
+      "faqs": [
         {
           "question": "Does The Ritz-Carlton Bangalore have a gym?",
           "answer": "Yes, The Ritz-Carlton Bangalore has a fully equipped gym for guests."
@@ -1935,42 +3014,83 @@
       "id": 27,
       "name": "Viceroy Hotel",
       "location": "Hyderabad",
-      "description":"A hotel offering comfortable accommodations and views of the Hussain Sagar Lake, located near major city attractions.",
-      "nearbyAttractions": ["Charminar (Approx. 2 km)", "Hussain Sagar Lake (Approx. 2 km)", "Salar Jung Museum (Approx. 2 km)", "Chowmahalla Palace (Approx. 2 km)"],
+      "description": "A hotel offering comfortable accommodations and views of the Hussain Sagar Lake, located near major city attractions.",
+      "nearbyAttractions": [
+        "Charminar (Approx. 2 km)",
+        "Hussain Sagar Lake (Approx. 2 km)",
+        "Salar Jung Museum (Approx. 2 km)",
+        "Chowmahalla Palace (Approx. 2 km)"
+      ],
       "specialOffers": [],
       "price": 14000,
-      "images":[ "assets/hotel/hotel-images/viceroy-hotel-hyderabad.jpg","assets/hotel/hotel-images/viceroy-hotel-hyderabad2.jpg","assets/hotel/hotel-images/viceroy-hotel-hyderabad3.jpg","assets/hotel/hotel-images/viceroy-hotel-hyderabad4.jpg"],
-      "amenities": ["Free Wifi", "Free Parking", "Lift", "Restaurant", "Playground", "EV charging station", "Cleaning Services", "Sauna", "Yoga Retreat"],
+      "images": [
+        "assets/hotel/hotel-images/viceroy-hotel-hyderabad.jpg",
+        "assets/hotel/hotel-images/viceroy-hotel-hyderabad2.jpg",
+        "assets/hotel/hotel-images/viceroy-hotel-hyderabad3.jpg",
+        "assets/hotel/hotel-images/viceroy-hotel-hyderabad4.jpg"
+      ],
+      "amenities": [
+        "Free Wifi",
+        "Free Parking",
+        "Lift",
+        "Restaurant",
+        "Playground",
+        "EV charging station",
+        "Cleaning Services",
+        "Sauna",
+        "Yoga Retreat"
+      ],
       "surroundings": {
-  "Airport": "Kempegowda International Airport (Approx. 37 km)",
-  "Train": "Bengaluru City Railway Station (Approx. 6 km)",
-  "Bus": "Shivajinagar Bus Station (Approx. 3 km)"
-},
-      "rooms": [
-      {
-        "type": "Standard Room",
-        "bed": "Queen Size",
-        "size": "350 sq ft",
-        "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "City View"],
-        "price": 14000,
-        "totalRooms": 50,
-        "availability": [],
-        "capacity": { "adults": 2, "children": 1 },
-        "image": "assets/hotel/room-images/standard-room.jpg"
+        "Airport": "Kempegowda International Airport (Approx. 37 km)",
+        "Train": "Bengaluru City Railway Station (Approx. 6 km)",
+        "Bus": "Shivajinagar Bus Station (Approx. 3 km)"
       },
-      {
-        "type": "Premium Suite",
-        "bed": "King Size",
-        "size": "700 sq ft",
-        "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Ocean View", "Bath Tub", "Room Service"],
-        "price": 35000,
-        "totalRooms": 10,
-        "availability": [],
-        "capacity": { "adults": 4, "children": 2 },
-        "image": "assets/hotel/room-images/premium-suite.jpg"
-      }
-    ],
-     "reviews": [
+      "rooms": [
+        {
+          "type": "Standard Room",
+          "bed": "Queen Size",
+          "size": "350 sq ft",
+          "amenities": [
+            "Free Wifi",
+            "Private Bathroom",
+            "Air Conditioning",
+            "Non-Smoking",
+            "City View"
+          ],
+          "price": 14000,
+          "totalRooms": 50,
+          "availability": [],
+          "capacity": {
+            "adults": 2,
+            "children": 1
+          },
+          "image": "assets/hotel/room-images/standard-room.jpg"
+        },
+        {
+          "type": "Premium Suite",
+          "bed": "King Size",
+          "size": "700 sq ft",
+          "amenities": [
+            "Free Wifi",
+            "Private Bathroom",
+            "Air Conditioning",
+            "Non-Smoking",
+            "Balcony",
+            "Ocean View",
+            "Bath Tub",
+            "Room Service"
+          ],
+          "price": 35000,
+          "totalRooms": 10,
+          "availability": [],
+          "capacity": {
+            "adults": 4,
+            "children": 2
+          },
+          "image": "assets/hotel/room-images/premium-suite.jpg"
+        }
+      ],
+      "reviews": [
         {
           "username": "Ravi Kiran",
           "rating": 4,
@@ -1987,9 +3107,9 @@
           "comment": "The Standard Room was good, and the hotel provided excellent service, but the food options were limited."
         }
       ],
-        "rating": 4.5,
-        "star": 5,
-        "faqs": [
+      "rating": 4.5,
+      "star": 5,
+      "faqs": [
         {
           "question": "Does Viceroy Hotel have a swimming pool?",
           "answer": "Yes, Viceroy Hotel features an outdoor swimming pool for guests to enjoy."
@@ -2008,39 +3128,78 @@
       "id": 28,
       "name": "Radisson Blu Resort Temple Bay Mamallapuram",
       "location": "Chennai",
-      "description":"A seaside resort offering chalet-style accommodations, infinity pools, and proximity to UNESCO World Heritage sites.",
+      "description": "A seaside resort offering chalet-style accommodations, infinity pools, and proximity to UNESCO World Heritage sites.",
       "Address": "57, Covelong Road, Mahabalipuram, Tamil Nadu 603104, India",
-      "nearbyAttractions": ["Shore Temple (Approx. 2 km)", "Arjuna’s Penance (Approx. 2 km)", "Five Rathas (Approx. 2 km)", "Mahabalipuram Beach (Approx. 2 km)"],
+      "nearbyAttractions": [
+        "Shore Temple (Approx. 2 km)",
+        "Arjuna’s Penance (Approx. 2 km)",
+        "Five Rathas (Approx. 2 km)",
+        "Mahabalipuram Beach (Approx. 2 km)"
+      ],
       "specialOffers": [],
       "price": 20000,
-      "images":[ "assets/hotel/hotel-images/radisson-blu-chennai.jpg","assets/hotel/hotel-images/radisson-blu-chennai2.jpg","assets/hotel/hotel-images/radisson-blu-chennai3.jpg","assets/hotel/hotel-images/radisson-blu-chennai4.jpg"], 
-      "amenities": ["Free Wifi", "Free Parking", "Lift", "Restaurant", "EV charging station", "Cleaning Services", "Children's pool", "Spa", "Massage room"],
+      "images": [
+        "assets/hotel/hotel-images/radisson-blu-chennai.jpg",
+        "assets/hotel/hotel-images/radisson-blu-chennai2.jpg",
+        "assets/hotel/hotel-images/radisson-blu-chennai3.jpg",
+        "assets/hotel/hotel-images/radisson-blu-chennai4.jpg"
+      ],
+      "amenities": [
+        "Free Wifi",
+        "Free Parking",
+        "Lift",
+        "Restaurant",
+        "EV charging station",
+        "Cleaning Services",
+        "Children's pool",
+        "Spa",
+        "Massage room"
+      ],
       "surroundings": {
-  "Airport": "Kempegowda International Airport (Approx. 37 km)",
-  "Train": "Bengaluru City Railway Station (Approx. 6 km)",
-  "Bus": "Shivajinagar Bus Station (Approx. 3 km)"
-},
+        "Airport": "Kempegowda International Airport (Approx. 37 km)",
+        "Train": "Bengaluru City Railway Station (Approx. 6 km)",
+        "Bus": "Shivajinagar Bus Station (Approx. 3 km)"
+      },
       "rooms": [
         {
           "type": "Garden View Room",
           "bed": "King Size",
           "size": "400 sq ft",
-          "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Garden View"],
+          "amenities": [
+            "Free Wifi",
+            "Private Bathroom",
+            "Air Conditioning",
+            "Non-Smoking",
+            "Garden View"
+          ],
           "price": 20000,
           "totalRooms": 60,
           "availability": [],
-          "capacity": { "adults": 2, "children": 1 },
+          "capacity": {
+            "adults": 2,
+            "children": 1
+          },
           "image": "assets/hotel/room-images/garden-view-room.jpg"
         },
         {
           "type": "Sea View Chalet",
           "bed": "Queen Size",
           "size": "800 sq ft",
-          "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Ocean View"],
+          "amenities": [
+            "Free Wifi",
+            "Private Bathroom",
+            "Air Conditioning",
+            "Non-Smoking",
+            "Balcony",
+            "Ocean View"
+          ],
           "price": 40000,
           "totalRooms": 15,
           "availability": [],
-          "capacity": { "adults": 3, "children": 2 },
+          "capacity": {
+            "adults": 3,
+            "children": 2
+          },
           "image": "assets/hotel/room-images/sea-view-chalet.jpg"
         }
       ],
@@ -2061,9 +3220,9 @@
           "comment": " The resort is very close to UNESCO World Heritage sites, making it a great base for exploration."
         }
       ],
-        "rating": 4.5,
-        "star": 5,
-        "faqs": [
+      "rating": 4.5,
+      "star": 5,
+      "faqs": [
         {
           "question": "Does Radisson Blu Mamallapuram have a spa?",
           "answer": "Yes, Radisson Blu Mamallapuram offers a luxurious spa and massage room to help you unwind."
@@ -2082,43 +3241,85 @@
       "id": 29,
       "name": "The Taj Coromandel",
       "location": "Chennai",
-      "description":"A premier luxury hotel in Chennai, known for its elegant interiors, fine dining, and exceptional service",
+      "description": "A premier luxury hotel in Chennai, known for its elegant interiors, fine dining, and exceptional service",
       "Address": "37, Mahatma Gandhi Road, Nungambakkam, Chennai, Tamil Nadu 600034, India",
-      "nearbyAttractions": ["Marina Beach (Approx. 2 km)", "Kapaleeshwarar Temple (Approx. 2 km)", "Government Museum Chennai (Approx. 2 km)", "Fort St. George (Approx. 2 km)"],
+      "nearbyAttractions": [
+        "Marina Beach (Approx. 2 km)",
+        "Kapaleeshwarar Temple (Approx. 2 km)",
+        "Government Museum Chennai (Approx. 2 km)",
+        "Fort St. George (Approx. 2 km)"
+      ],
       "specialOffers": [],
       "price": 30000,
-      "images":[ "assets/hotel/hotel-images/taj-coromandel-chennai.jpg","assets/hotel/hotel-images/taj-coromandel-chennai2.jpg","assets/hotel/hotel-images/taj-coromandel-chennai3.jpg","assets/hotel/hotel-images/taj-coromandel-chennai4.jpg"],
-      "amenities": ["Free Wifi", "Free Parking", "Lift", "Restaurant", "EV charging station", "Spa", "Bar", "Children's pool", "Sauna"],
+      "images": [
+        "assets/hotel/hotel-images/taj-coromandel-chennai.jpg",
+        "assets/hotel/hotel-images/taj-coromandel-chennai2.jpg",
+        "assets/hotel/hotel-images/taj-coromandel-chennai3.jpg",
+        "assets/hotel/hotel-images/taj-coromandel-chennai4.jpg"
+      ],
+      "amenities": [
+        "Free Wifi",
+        "Free Parking",
+        "Lift",
+        "Restaurant",
+        "EV charging station",
+        "Spa",
+        "Bar",
+        "Children's pool",
+        "Sauna"
+      ],
       "surroundings": {
-  "Airport": "Kempegowda International Airport (Approx. 37 km)",
-  "Train": "Bengaluru City Railway Station (Approx. 6 km)",
-  "Bus": "Shivajinagar Bus Station (Approx. 3 km)"
-},
-      "rooms": [
-      {
-        "type": "Luxury Room",
-        "bed": "King Size",
-        "size": "450 sq ft",
-        "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Mountain View", "Free Breakfast"],
-        "price": 30000,
-        "totalRooms": 50,
-        "availability": [],
-        "capacity": { "adults": 2, "children": 1 },
-        "image": "assets/hotel/room-images/luxury-room.jpg"
+        "Airport": "Kempegowda International Airport (Approx. 37 km)",
+        "Train": "Bengaluru City Railway Station (Approx. 6 km)",
+        "Bus": "Shivajinagar Bus Station (Approx. 3 km)"
       },
-      {
-        "type": "Royal Suite",
-        "bed": "Queen Size",
-        "size": "1000 sq ft",
-        "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Ocean View", "Room Service", "Free Breakfast"],
-        "price": 80000,
-        "totalRooms": 8,
-        "availability": [],
-        "capacity": { "adults": 4, "children": 2 },
-        "image": "assets/hotel/room-images/royal-suite-room.jpg"
-      }
-    ],
-    "reviews": [
+      "rooms": [
+        {
+          "type": "Luxury Room",
+          "bed": "King Size",
+          "size": "450 sq ft",
+          "amenities": [
+            "Free Wifi",
+            "Private Bathroom",
+            "Air Conditioning",
+            "Non-Smoking",
+            "Mountain View",
+            "Free Breakfast"
+          ],
+          "price": 30000,
+          "totalRooms": 50,
+          "availability": [],
+          "capacity": {
+            "adults": 2,
+            "children": 1
+          },
+          "image": "assets/hotel/room-images/luxury-room.jpg"
+        },
+        {
+          "type": "Royal Suite",
+          "bed": "Queen Size",
+          "size": "1000 sq ft",
+          "amenities": [
+            "Free Wifi",
+            "Private Bathroom",
+            "Air Conditioning",
+            "Non-Smoking",
+            "Balcony",
+            "Ocean View",
+            "Room Service",
+            "Free Breakfast"
+          ],
+          "price": 80000,
+          "totalRooms": 8,
+          "availability": [],
+          "capacity": {
+            "adults": 4,
+            "children": 2
+          },
+          "image": "assets/hotel/room-images/royal-suite-room.jpg"
+        }
+      ],
+      "reviews": [
         {
           "username": "Ramesh Prasad",
           "rating": 5,
@@ -2135,9 +3336,9 @@
           "comment": "The service was impeccable, and the food at the restaurant was delicious."
         }
       ],
-        "rating": 4.5,
-        "star": 5,
-        "faqs": [
+      "rating": 4.5,
+      "star": 5,
+      "faqs": [
         {
           "question": "Does The Taj Coromandel have a children's pool?",
           "answer": "Yes, The Taj Coromandel features a children's pool."
@@ -2156,43 +3357,84 @@
       "id": 30,
       "name": "The Oberoi Bangalore",
       "location": "Bengaluru",
-      "description":"A luxury hotel set amidst lush gardens, offering spacious rooms, fine dining, and personalized service.",
+      "description": "A luxury hotel set amidst lush gardens, offering spacious rooms, fine dining, and personalized service.",
       "Address": "37-39, Mahatma Gandhi Road, Bengaluru, Karnataka 560001, India",
-      "nearbyAttractions": ["MG Road (Approx. 2 km)", "Cubbon Park (Approx. 2 km)", "Lalbagh Botanical Garden (Approx. 2 km)", "Bangalore Palace (Approx. 2 km)"],
+      "nearbyAttractions": [
+        "MG Road (Approx. 2 km)",
+        "Cubbon Park (Approx. 2 km)",
+        "Lalbagh Botanical Garden (Approx. 2 km)",
+        "Bangalore Palace (Approx. 2 km)"
+      ],
       "specialOffers": [],
       "price": 24000,
-      "images":[ "assets/hotel/hotel-images/oberoi-bangalore.jpg","assets/hotel/hotel-images/oberoi-bangalore2.jpg","assets/hotel/hotel-images/oberoi-bangalore3.jpg","assets/hotel/hotel-images/oberoi-bangalore4.jpg"], 
-      "amenities": ["Free Wifi", "Free Parking", "Lift", "Restaurant", "EV charging station", "Children's pool", "Table tennis room", "Conference room", "Massage room"],
+      "images": [
+        "assets/hotel/hotel-images/oberoi-bangalore.jpg",
+        "assets/hotel/hotel-images/oberoi-bangalore2.jpg",
+        "assets/hotel/hotel-images/oberoi-bangalore3.jpg",
+        "assets/hotel/hotel-images/oberoi-bangalore4.jpg"
+      ],
+      "amenities": [
+        "Free Wifi",
+        "Free Parking",
+        "Lift",
+        "Restaurant",
+        "EV charging station",
+        "Children's pool",
+        "Table tennis room",
+        "Conference room",
+        "Massage room"
+      ],
       "surroundings": {
-  "Airport": "Kempegowda International Airport (Approx. 37 km)",
-  "Train": "Bengaluru City Railway Station (Approx. 6 km)",
-  "Bus": "Shivajinagar Bus Station (Approx. 3 km)"
-},
-      "rooms": [
-      {
-        "type": "Deluxe Room",
-        "bed": "King Size",
-        "size": "400 sq ft",
-        "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Garden View"],
-        "price": 24000,
-        "totalRooms": 50,
-        "availability": [],
-        "capacity": { "adults": 2, "children": 1 },
-        "image": "assets/hotel/room-images/deluxe-room.jpg"
+        "Airport": "Kempegowda International Airport (Approx. 37 km)",
+        "Train": "Bengaluru City Railway Station (Approx. 6 km)",
+        "Bus": "Shivajinagar Bus Station (Approx. 3 km)"
       },
-      {
-        "type": "Luxury Suite",
-        "bed": "Queen Size",
-        "size": "900 sq ft",
-        "amenities": ["Free Wifi", "Private Bathroom", "Air Conditioning", "Non-Smoking", "Balcony", "Ocean View", "Room Service"],
-        "price": 60000,
-        "totalRooms": 12,
-        "availability": [],
-        "capacity": { "adults": 3, "children": 2 },
-        "image": "assets/hotel/room-images/luxury-suite.jpg"
-      }
-    ],
-    "reviews": [
+      "rooms": [
+        {
+          "type": "Deluxe Room",
+          "bed": "King Size",
+          "size": "400 sq ft",
+          "amenities": [
+            "Free Wifi",
+            "Private Bathroom",
+            "Air Conditioning",
+            "Non-Smoking",
+            "Balcony",
+            "Garden View"
+          ],
+          "price": 24000,
+          "totalRooms": 50,
+          "availability": [],
+          "capacity": {
+            "adults": 2,
+            "children": 1
+          },
+          "image": "assets/hotel/room-images/deluxe-room.jpg"
+        },
+        {
+          "type": "Luxury Suite",
+          "bed": "Queen Size",
+          "size": "900 sq ft",
+          "amenities": [
+            "Free Wifi",
+            "Private Bathroom",
+            "Air Conditioning",
+            "Non-Smoking",
+            "Balcony",
+            "Ocean View",
+            "Room Service"
+          ],
+          "price": 60000,
+          "totalRooms": 12,
+          "availability": [],
+          "capacity": {
+            "adults": 3,
+            "children": 2
+          },
+          "image": "assets/hotel/room-images/luxury-suite.jpg"
+        }
+      ],
+      "reviews": [
         {
           "username": "Deepika Nair",
           "rating": 5,
@@ -2209,9 +3451,9 @@
           "comment": "The Deluxe Room was comfortable, but I wish there were more dining options within the hotel. Nevertheless, the service and amenities were excellent."
         }
       ],
-        "rating": 4.5,
-        "star": 5,
-        "faqs": [
+      "rating": 4.5,
+      "star": 5,
+      "faqs": [
         {
           "question": "Does The Oberoi Bangalore have a spa?",
           "answer": "Yes, The Oberoi Bangalore features a luxurious spa for guests to unwind and relax."
@@ -2227,6 +3469,34 @@
       ]
     }
   ],
-
-  "booking" : []
+  "bookings": [
+    {
+      "id": "5748",
+      "firstName": "Sowmya",
+      "lastName": "K S",
+      "email": "sowmya68380@gmail.com",
+      "phone": "6363279347",
+      "hotelName": "Taj Falaknuma Palace",
+      "roomType": "Heritage Room",
+      "totalPayable": -35400
+    },
+    {
+      "id": "e3fb",
+      "hotelName": "Viceroy Hotel",
+      "roomType": "Standard Room",
+      "totalPayable": 0
+    },
+    {
+      "id": "32db",
+      "hotelName": "The Park Chennai",
+      "roomType": "Standard Room",
+      "totalPayable": 0
+    },
+    {
+      "id": "3e36",
+      "hotelName": "Viceroy Hotel",
+      "roomType": "Standard Room",
+      "totalPayable": 0
+    }
+  ]
 }

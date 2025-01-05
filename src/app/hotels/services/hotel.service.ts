@@ -9,18 +9,35 @@ import { Hotel } from '../models/hotel.model';
 @Injectable({
   providedIn: 'root',
 })
+
 export class HotelService {
   private apiUrl = 'http://localhost:3000/hotels';
 
-  constructor(private http: HttpClient) {}
+constructor(private http: HttpClient) {}
+ // BehaviorSubject to store search details
+ private searchDetailsSource = new BehaviorSubject<any>(null);
+ private selectedHotelSource = new BehaviorSubject<Hotel | null>(null);
+ private selectedRoomSource = new BehaviorSubject<any>(null);
 
-// for search-hotel Component
-  getHotels(): Observable<Hotel[]> {
+  /*** Search Hotel Component ***/
+
+// Save search details
+  setSearchDetails(details: any): void {
+    this.searchDetailsSource.next(details);
+  }
+
+// Get search details
+ getSearchDetails(): Observable<any> {
+  return this.searchDetailsSource.asObservable();
+}
+
+// get all hotels
+getHotels(): Observable<Hotel[]> {
     return this.http.get<Hotel[]>(this.apiUrl);
   }
 
 
-  // for hotel-results component
+  /*** Hotel Results Component ***/
 
   /**
    * Fetch hotels filtered by location
@@ -58,22 +75,35 @@ export class HotelService {
     });
   }
 
-//for hotel-details component
+  /*** Hotel Details Component ***/
 
-private selectedHotelSource = new BehaviorSubject<Hotel | null>(null);
-getHotelById(id: number): Observable<Hotel> {
-  return this.http.get<Hotel>(`${this.apiUrl}/${id}`);
-}
-
+// Save selected hotel
 setSelectedHotel(hotel: Hotel): void {
   this.selectedHotelSource.next(hotel);
 }
-
 getSelectedHotel(): Observable<Hotel | null> {
   return this.selectedHotelSource.asObservable();
 }
+getHotelById(id: number): Observable<Hotel> {
+  return this.http.get<Hotel>(`${this.apiUrl}/${id}`);
+}
+ /*** Hotel Booking Component ***/
+ // Save selected room
+ setSelectedRoom(room: any): void {
+  this.selectedRoomSource.next(room);
+}
+
+// Get selected room
+getSelectedRoom(): Observable<any> {
+  return this.selectedRoomSource.asObservable();
+}
+
+// Booking method to save booking data
+bookHotel(bookingData: any): Observable<any> {
+  const url = `http://localhost:3000/bookings`; // Booking endpoint in db.json
+  return this.http.post<any>(url, bookingData);
+}
 
 }
 
-//hotel booking service
 

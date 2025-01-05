@@ -1,0 +1,221 @@
+*
+{
+    font-family: poppins;
+}
+
+/* Booking page background and layout */
+.booking-page {
+    background: linear-gradient(to bottom right, #ffffff, #c9e3f7);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 50px 0;
+}
+
+/* Booking content styling */
+.booking-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    width: 80%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Form container styling */
+.form-container {
+    flex: 1;
+    padding: 25px;
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h1 {
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+/* Form input styling */
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Button styling */
+.btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    background: #007bff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #0056b3;
+}
+
+/* Confirmation message styling */
+.confirmation-message {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    padding: 30px;
+    background: #e9f7e9;
+    border: 1px solid #c3e6c3;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.confirmation-message h2 {
+    color: #28a745;
+    margin-bottom: 20px;
+}
+
+.confirmation-details {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.confirmation-details p {
+    margin: 10px 0;
+    color: #555;
+    font-size: 16px;
+}
+
+/* Room info and price details styling */
+.room-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.room-details, .price-details {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.room-details h2, .price-details h3 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* New Hotel Image and Room Details Styling */
+.room-details {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    transition: transform 0.3s ease;
+    max-width: 600px;
+    margin: auto;
+}
+
+/* Add hover effect */
+.room-details:hover {
+    transform: translateY(-5px);
+}
+
+/* Hotel image styling */
+.hotel-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Room content layout */
+.room-content {
+    padding: 20px;
+}
+
+/* Heading and paragraph styling */
+.room-details h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: #333;
+}
+
+.room-details p {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #555;
+}
+
+/* Price styling */
+.price {
+    font-size: 18px;
+    color: #007bff;
+    font-weight: bold;
+}
+
+/* Amenities section */
+.amenities {
+    margin: 15px 0;
+}
+
+.amenities h4 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #444;
+}
+
+/* Amenity badge styling */
+.amenities-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.amenity-badge {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #f1f1f1;
+    color: #333;
+    font-size: 14px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    transition: background-color 0.3s ease;
+}
+
+.amenity-badge:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .booking-content {
+        flex-direction: column;
+    }
+}

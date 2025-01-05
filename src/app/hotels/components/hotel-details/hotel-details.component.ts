@@ -1,53 +1,12 @@
+//hotel-details.component.ts
+
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { 
-  IconDefinition,
-  faStar,
-  faSwimmingPool, 
-  faSpa, 
-  faDumbbell, 
-  faCocktail, 
-  faHandSparkles, 
-  faUtensils, 
-  faBaby, 
-  faWifi, 
-  faMicrophone, 
-  faFutbol, 
-  faParking, 
-  faElevator, 
-  faHotTub, 
-  faChild, 
-  faSuitcase, 
-  faChalkboardTeacher, 
-  faChargingStation, 
-  faBroom, 
-  faTableTennis, 
-  faOm, 
-  faSmokingBan, 
-  faSmoking, 
-  faShower, 
-  faBath, 
-  faWind, 
-  faArchway, 
-  faWater, 
-  faSeedling, 
-  faConciergeBell, 
-  faCity, 
-  faMountain, 
-  faTree,
-  faBed,
-  faMapMarkerAlt,
-  faHotel,
-  faMapPin,
-  faPlane,
-  faTrain,
-  faBus,
-  faRulerCombined,
-  faUser,
-  faChildren,
-} from '@fortawesome/free-solid-svg-icons';
+import { Router } from '@angular/router';
+
+import { IconDefinition,faStar,faSwimmingPool,faSpa,faDumbbell, faCocktail, faHandSparkles, faUtensils, faBaby, faWifi, faMicrophone,faFutbol, faParking, faElevator, faHotTub, faChild, faSuitcase, faChalkboardTeacher, faChargingStation, faBroom, faTableTennis, faOm, faSmokingBan, faSmoking, faShower, faBath, faWind, faArchway, faWater, faSeedling, faConciergeBell, faCity, faMountain, faTree,faBed,faMapMarkerAlt,faHotel,faMapPin,faPlane,faTrain,faBus,faRulerCombined,faUser,faChildren,} from '@fortawesome/free-solid-svg-icons';
 
 import { HotelService } from '../../services/hotel.service';
 import { Hotel } from '../../models/hotel.model';
@@ -104,13 +63,10 @@ export class HotelDetailsComponent implements OnInit {
   faRulerCombined = faRulerCombined;
   faUser = faUser;
   faChildren = faChildren;
-
-
-
-
   constructor(
     private route: ActivatedRoute,
-    private hotelService: HotelService
+    private hotelService: HotelService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -219,5 +175,11 @@ export class HotelDetailsComponent implements OnInit {
       this.reviewsSection.nativeElement.scrollIntoView({ behavior: 'smooth' });
     }
   }
-}
 
+  navigateToBooking(room: any): void {
+  {
+    this.hotelService.setSelectedRoom(room);
+    this.router.navigate(['/hotel-booking']);
+  }
+}
+}
