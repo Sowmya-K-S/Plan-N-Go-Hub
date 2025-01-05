@@ -1,7 +1,7 @@
 {
   "hotels": [
     {
-      "id": 1,
+      "id": "1",
       "name": "The Oberoi Mumbai",
       "location": "Mumbai",
       "description": "Located on the iconic Marine Drive, The Oberoi Mumbai offers luxurious accommodations with panoramic views of the Arabian Sea.",
@@ -116,7 +116,7 @@
       ]
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "The Leela Palace Udaipur",
       "location": "Udaipur",
       "description": "Situated on the banks of Lake Pichola, this palace hotel recreates the grandeur of the Mewar dynasty, offering opulent rooms and stunning views. ",
@@ -232,7 +232,7 @@
       ]
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Taj Mahal Palace Hotel",
       "location": "Mumbai",
       "description": "A historic landmark in Mumbai, the Taj Mahal Palace Hotel combines old-world charm with modern luxury, overlooking the Arabian Sea.",
@@ -348,7 +348,7 @@
       ]
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "The Oberoi Rajvilas",
       "location": "Jaipur",
       "description": "Set amidst 32 acres of lush gardens, The Oberoi Rajvilas offers a regal experience with traditional Rajasthani architecture and modern amenities.",
@@ -465,7 +465,7 @@
       ]
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "The Leela Palace New Delhi",
       "location": "New Delhi",
       "description": "A blend of historic heritage and modern luxury, The Leela Palace New Delhi offers elegant rooms and exceptional service.",
@@ -581,7 +581,7 @@
       ]
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "The Oberoi Udaivilas",
       "location": "Udaipur",
       "description": "Overlooking Lake Pichola, The Oberoi Udaivilas is a luxurious resort set amidst 50 acres of landscaped gardens, offering a tranquil retreat.",
@@ -697,7 +697,7 @@
       ]
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "The Leela Palace Bengaluru",
       "location": "Bengaluru",
       "description": "Located in the heart of Bengaluru, The Leela Palace offers a blend of traditional Indian hospitality and modern luxury.",
@@ -812,7 +812,7 @@
       ]
     },
     {
-      "id": 8,
+      "id": "8",
       "name": "The Oberoi Grand",
       "location": "Kolkata",
       "description": "Known as the 'Grande Dame of Kolkata,' this hotel offers colonial charm with modern amenities in the city's heart.",
@@ -927,7 +927,7 @@
       ]
     },
     {
-      "id": 9,
+      "id": "9",
       "name": "The Leela Palace Chennai",
       "location": "Chennai",
       "description": "Overlooking the Bay of Bengal, The Leela Palace Chennai offers luxurious accommodations with a blend of traditional and contemporary design.",
@@ -1043,7 +1043,7 @@
       ]
     },
     {
-      "id": 10,
+      "id": "10",
       "name": "The Oberoi Sukhvilas Resort & Spa",
       "location": "Chandigarh",
       "description": "Nestled amidst 8,000 acres of natural forest, this resort offers a serene environment with luxury accommodations and wellness facilities.",
@@ -1159,7 +1159,7 @@
       ]
     },
     {
-      "id": 11,
+      "id": "11",
       "name": "Wildflower Hall",
       "location": "Shimla",
       "description": "Located in the Himalayas, Wildflower Hall offers a luxurious retreat amidst pine and cedar forests, with panoramic mountain views.",
@@ -1275,7 +1275,7 @@
       ]
     },
     {
-      "id": 12,
+      "id": "12",
       "name": "The Taj West End",
       "location": "Bengaluru",
       "description": "Set amidst 20 acres of lush gardens, The Taj West End offers a blend of colonial charm and modern luxury in the heart of Bengaluru.",
@@ -1390,7 +1390,7 @@
       ]
     },
     {
-      "id": 13,
+      "id": "13",
       "name": "Ananda in the Himalayas",
       "location": "Rishikesh",
       "description": "A luxury yoga and wellness retreat, Ananda offers panoramic views of the Himalayas and the Ganges River.",
@@ -1506,7 +1506,7 @@
       ]
     },
     {
-      "id": 14,
+      "id": "14",
       "name": "ITC Grand Bharat",
       "location": "Gurgaon",
       "description": "An all-suite luxury resort, ITC Grand Bharat offers a regal experience with traditional Indian architecture and modern amenities.",
@@ -1623,7 +1623,7 @@
       ]
     },
     {
-      "id": 15,
+      "id": "15",
       "name": "Park Hyatt Chennai",
       "location": "Chennai",
       "description": "Located in the heart of Chennai, Park Hyatt offers contemporary luxury with a focus on art and design.",
@@ -1738,7 +1738,7 @@
       ]
     },
     {
-      "id": 16,
+      "id": "16",
       "name": "Taj Falaknuma Palace",
       "location": "Hyderabad",
       "description": "Once the residence of the Nizam, this palace hotel offers a regal experience with opulent rooms and fine dining.",
@@ -1854,7 +1854,7 @@
       ]
     },
     {
-      "id": 17,
+      "id": "17",
       "name": "The Grand New Delhi",
       "location": "New Delhi",
       "description": "A luxury hotel offering modern accommodations and facilities, located in the diplomatic enclave of New Delhi.",
@@ -1969,7 +1969,7 @@
       ]
     },
     {
-      "id": 18,
+      "id": "18",
       "name": "ITC Maratha",
       "location": "Mumbai",
       "description": "A luxury hotel inspired by the Maratha dynasty's grandeur, offering refined accommodations and a range of dining options.",
@@ -2085,7 +2085,7 @@
       ]
     },
     {
-      "id": 19,
+      "id": "19",
       "name": "The St. Regis Mumbai",
       "location": "Mumbai",
       "description": "A five-star hotel located in the heart of Mumbai, offering panoramic city views, upscale dining, and personalized services.",
@@ -2200,7 +2200,7 @@
       ]
     },
     {
-      "id": 20,
+      "id": "20",
       "name": "Le Méridien Jaipur Resort & Spa",
       "location": "Jaipur",
       "description": "A resort blending traditional grandeur with modern amenities, featuring spacious rooms, a spa, and cultural experiences.",
@@ -2315,7 +2315,7 @@
       ]
     },
     {
-      "id": 21,
+      "id": "21",
       "name": "Rambagh Palace",
       "location": "Jaipur",
       "description": "Once the residence of Jaipur's royalty, this palace hotel offers opulent rooms, exquisite gardens, and a rich history.",
@@ -2431,7 +2431,7 @@
       ]
     },
     {
-      "id": 22,
+      "id": "22",
       "name": "The Park Chennai",
       "location": "Chennai",
       "description": "A contemporary hotel in Chennai's business district, known for its chic interiors, rooftop pool, and vibrant nightlife venues.",
@@ -2546,7 +2546,7 @@
       ]
     },
     {
-      "id": 23,
+      "id": "23",
       "name": "The Imperial New Delhi",
       "location": "New Delhi",
       "description": "A historic hotel offering a blend of Victorian, colonial, and art deco styles, with luxurious rooms and a renowned art collection.",
@@ -2662,7 +2662,7 @@
       ]
     },
     {
-      "id": 24,
+      "id": "24",
       "name": "JW Marriott Mussoorie Walnut Grove Resort & Spa",
       "location": "Mussoorie",
       "description": "A luxury resort nestled in the Himalayas, featuring elegant accommodations, a spa, and panoramic mountain views.",
@@ -2778,7 +2778,7 @@
       ]
     },
     {
-      "id": 25,
+      "id": "25",
       "name": "The Leela Goa",
       "location": "Goa",
       "description": "A beachfront resort set amidst 75 acres of landscaped gardens, offering a blend of South Indian architecture and Portuguese heritage.",
@@ -2896,7 +2896,7 @@
       ]
     },
     {
-      "id": 26,
+      "id": "26",
       "name": "The Ritz-Carlton Bangalore",
       "location": "Bengaluru",
       "description": "A luxury hotel in the city's heart, featuring elegant rooms, a rooftop bar, and a renowned spa.",
@@ -3011,7 +3011,7 @@
       ]
     },
     {
-      "id": 27,
+      "id": "27",
       "name": "Viceroy Hotel",
       "location": "Hyderabad",
       "description": "A hotel offering comfortable accommodations and views of the Hussain Sagar Lake, located near major city attractions.",
@@ -3125,7 +3125,7 @@
       ]
     },
     {
-      "id": 28,
+      "id": "28",
       "name": "Radisson Blu Resort Temple Bay Mamallapuram",
       "location": "Chennai",
       "description": "A seaside resort offering chalet-style accommodations, infinity pools, and proximity to UNESCO World Heritage sites.",
@@ -3238,7 +3238,7 @@
       ]
     },
     {
-      "id": 29,
+      "id": "29",
       "name": "The Taj Coromandel",
       "location": "Chennai",
       "description": "A premier luxury hotel in Chennai, known for its elegant interiors, fine dining, and exceptional service",
@@ -3354,7 +3354,7 @@
       ]
     },
     {
-      "id": 30,
+      "id": "30",
       "name": "The Oberoi Bangalore",
       "location": "Bengaluru",
       "description": "A luxury hotel set amidst lush gardens, offering spacious rooms, fine dining, and personalized service.",
@@ -3469,5 +3469,26 @@
       ]
     }
   ],
-  "bookings": []
+  "bookings": [
+    {
+      "id": "2bb1",
+      "firstName": "Sowmya",
+      "lastName": "K S",
+      "email": "sowmya68380@gmail.com",
+      "phone": "6363279347",
+      "hotelName": "The Oberoi Mumbai",
+      "roomType": "Luxury Room",
+      "totalPayable": 63720
+    },
+    {
+      "id": "bca8",
+      "firstName": "Sowmya",
+      "lastName": "K S",
+      "email": "sowmya68380@gmail.com",
+      "phone": "6363279347",
+      "hotelName": "Viceroy Hotel",
+      "roomType": "Standard Room",
+      "totalPayable": 33040
+    }
+  ]
 }

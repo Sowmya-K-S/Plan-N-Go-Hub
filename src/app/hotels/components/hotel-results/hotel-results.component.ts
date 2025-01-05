@@ -10,6 +10,7 @@ import { Hotel } from '../../models/hotel.model';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {faFilter} from'@fortawesome/free-solid-svg-icons';
 
+
 @Component({
   selector: 'app-search-results',
   standalone: true,
@@ -36,14 +37,20 @@ export class HotelResultsComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private hotelService: HotelService, private router: Router) {}
 
+  location: string = "";
+
   ngOnInit() {
+    
     this.hotelService.getSearchDetails().subscribe((details) => {
       if (details) {
         this.searchParams = details;
         this.fetchHotels(details['location']); 
       }
-    });
+ 
+  });
+    
   }
+  
   fetchHotels(location?: string) {
     if (!location?.trim()) {
       this.hotels = [];

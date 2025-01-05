@@ -73,7 +73,12 @@ export class SearchHotelComponent implements OnInit {
       console.error('Invalid location');
       return;
     }
-    this.router.navigate(['/search-results'], { queryParams: { location: location.trim() } });
+    this.router.navigate(['/search-results']);
   }
   
+  navigateWithParams(location: string): void {
+    this.searchParams.location = location;
+    this.hotelService.setSearchDetails(this.searchParams);
+    this.router.navigate(['/search-results']);
+  }
 }
