@@ -62,6 +62,18 @@ export class HotelBookingComponent {
   }
 
   onSubmit() {
+      // Validation: Ensure all required fields are filled
+      if (!this.firstName || !this.lastName || !this.email || !this.phone) {
+        alert('Please fill out all the required fields.');
+        return; // Prevent submission and redirection if validation fails
+      }
+
+      const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      if (!emailPattern.test(this.email)) {
+        alert('Please enter a valid email address.');
+        return; // Prevent submission if email is invalid
+      }
+  
     const bookingData = {
       firstName: this.firstName,
       lastName: this.lastName,
@@ -91,5 +103,3 @@ export class HotelBookingComponent {
     this.showConfirmation = true;
   }
 }
-
-

@@ -1,24 +1,23 @@
 <div class="booking-page">
     <div class="booking-content">
-
         <!-- Booking Form -->
         <div class="form-container" *ngIf="!showConfirmation">
             <h1>Book Your Stay</h1>
             <form (ngSubmit)="onSubmit()" #bookingForm="ngForm">
                 <div class="form-group">
-                    <label for="firstName">First Name:</label>
+                    <label for="firstName">First Name: <span class="required">*</span></label>
                     <input type="text" id="firstName" placeholder="Enter your first name" [(ngModel)]="firstName" name="firstName" required>
                 </div>
                 <div class="form-group">
-                    <label for="lastName">Last Name:</label>
+                    <label for="lastName">Last Name:  <span class="required">*</span></label>
                     <input type="text" id="lastName" placeholder="Enter your last name" [(ngModel)]="lastName" name="lastName" required>
                 </div>
                 <div class="form-group">
-                    <label for="email">Email:</label>
+                    <label for="email">Email: <span class="required">*</span></label>
                     <input type="email" id="email" placeholder="Enter your email" [(ngModel)]="email" name="email" required>
                 </div>
                 <div class="form-group">
-                    <label for="phone">Phone Number:</label>
+                    <label for="phone">Phone Number: <span class="required">*</span></label>
                     <input type="tel" id="phone" placeholder="Enter your phone number" [(ngModel)]="phone" name="phone" required>
                 </div>
                 <div class="form-actions">
@@ -36,6 +35,9 @@
                 <p><strong>Phone:</strong> {{ bookingDetails.phone }}</p>
                 <p><strong>Hotel:</strong> {{ hotel.name }}</p>
                 <p><strong>Room Type:</strong> {{ room.type }}</p>
+                <p><strong>Check-in:</strong> {{ checkIn.toLocaleDateString() }}</p>
+                <p><strong>Check-out:</strong> {{ checkOut.toLocaleDateString() }}</p>
+                <p><strong>Total Payable:</strong> ₹{{ totalPayable }}</p>
                 <p>Your booking has been successfully confirmed!</p>
             </div>
         </div>
@@ -59,15 +61,17 @@
                     </div>
             
                     <p class="price"><strong>Price Per Night:</strong> ₹{{ room.price }}</p>
+                    <p class="price"><strong>Check-in:</strong> ₹{{ checkIn.toLocaleDateString() }}</p>
+                    <p class="price"><strong>Check-out:</strong> ₹{{ checkOut.toLocaleDateString() }}</p>
                 </div>
             </div>
             
             <div class="price-details">
                 <h3>Total Price Breakdown</h3>
-                <p><strong>Number of Nights:</strong> {{ stayDuration }}</p>
-                <p><strong>Room Price:</strong> ₹{{ room.price }}</p>
+                <p><strong>Room Price:</strong> ₹{{ room.price }}</p> 
+                <p><strong>Number of Nights:</strong> {{ stayDuration }}</p>      
                 <p><strong>No of Rooms:</strong> {{ noOfRooms }}</p>
-                <p><strong>Total Price:</strong> ₹{{ totalPrice }}</p>
+                <p><strong>Total Price:</strong>₹{{ room.price }} * {{ stayDuration }} * {{ noOfRooms }} = ₹{{ totalPrice }}</p>
                 <p><strong>GST (18%):</strong> ₹{{ gstAmount }}</p>
                 <p><strong>Total Payable:</strong> ₹{{ totalPayable }}</p>
             </div>

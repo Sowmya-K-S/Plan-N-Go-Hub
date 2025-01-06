@@ -5,7 +5,7 @@
 
 /* Booking page background and layout */
 .booking-page {
-    background: linear-gradient(to bottom right, #ffffff, #c9e3f7);
+    background: linear-gradient(to bottom right, #e4c2c2, #c9e3f7);
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -53,6 +53,11 @@
     border: 1px solid #ccc;
     border-radius: 5px;
 }
+.required {
+    color: red;
+    font-weight: bold;
+}
+
 
 /* Button styling */
 .btn {
