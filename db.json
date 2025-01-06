@@ -3470,55 +3470,6 @@
     }
   ],
   "bookings": [
-    {
-      "id": "94f9",
-      "firstName": "Sowmya",
-      "lastName": "K S",
-      "email": "sowmya68380@gmail.com",
-      "phone": "6363279347",
-      "hotelName": "Rambagh Palace",
-      "roomType": "Heritage Room",
-      "totalPayable": 44840
-    },
-    {
-      "id": "f809",
-      "firstName": "Sowmya",
-      "lastName": "K S",
-      "email": "sowmya68380@gmail.com",
-      "phone": "6363279347",
-      "hotelName": "The Oberoi Mumbai",
-      "roomType": "Luxury Room",
-      "totalPayable": -21240
-    },
-    {
-      "id": "f1fb",
-      "firstName": "Sowmya",
-      "lastName": "K S",
-      "email": "sowmya68380@gmail.com",
-      "phone": "6363279347",
-      "hotelName": "Taj Mahal Palace Hotel",
-      "roomType": "Deluxe Room",
-      "totalPayable": 51920
-    },
-    {
-      "id": "2e25",
-      "firstName": "Sowmya",
-      "lastName": "K S",
-      "email": "sowmya68380@gmail.com",
-      "phone": "6363279347",
-      "hotelName": "ITC Maratha",
-      "roomType": "Presidential Suite",
-      "totalPayable": 200600
-    },
-    {
-      "id": "295d",
-      "firstName": "Sowmya",
-      "lastName": "K S",
-      "email": "sowmya68380@gmail.com",
-      "phone": "6363279347",
-      "hotelName": "ITC Maratha",
-      "roomType": "Executive Room",
-      "totalPayable": 23600
-    }
+
   ]
 }
