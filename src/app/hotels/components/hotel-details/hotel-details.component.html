@@ -43,7 +43,7 @@
         <span class="rating-label">{{ getRatingLabel(hotel.rating) }}</span>
         </div>
 
-        <p>{{ hotel['reviews'].slice(0,1)[0].comment }}</p>
+        <p>{{ getTruncatedReview(hotel['reviews'].slice(0,1)[0].comment) }}</p>
 
         <div class="more-btn">
           <p>{{ hotel['reviews'].slice(0,1)[0].username }}</p>
@@ -55,7 +55,7 @@
       <div class="nearby-attractions">
         <h3>Nearby Attractions</h3>
         <div class="hotel-nearby">
-          <li *ngFor="let attraction of hotel['nearbyAttractions']" class="amenity-item"> <i><fa-icon [icon]="faMapPin"></fa-icon></i> {{ getTruncatedSurrounding(attraction) }}</li>
+          <li *ngFor="let attraction of hotel['nearbyAttractions']" class="amenity-item"> <i><fa-icon [icon]="faMapPin"></fa-icon></i> {{ getTruncatedString(attraction) }}</li>
           </div>
       </div>
 
@@ -63,9 +63,9 @@
       <div class="surroundings">
         <h3>Surroundings</h3>
         <div class="hotel-surroundings">
-          <li> <i><fa-icon [icon]="faPlane"></fa-icon></i> {{ getTruncatedSurrounding(hotel['surroundings'].Airport) }}</li>
-          <li> <i><fa-icon [icon]="faTrain"></fa-icon></i> {{ getTruncatedSurrounding(hotel['surroundings'].Train) }}</li>
-          <li> <i><fa-icon [icon]="faBus"></fa-icon> </i> {{ getTruncatedSurrounding(hotel['surroundings'].Bus) }}</li>
+          <li> <i><fa-icon [icon]="faPlane"></fa-icon></i> {{ getTruncatedString(hotel['surroundings'].Airport) }}</li>
+          <li> <i><fa-icon [icon]="faTrain"></fa-icon></i> {{ getTruncatedString(hotel['surroundings'].Train) }}</li>
+          <li> <i><fa-icon [icon]="faBus"></fa-icon> </i> {{ getTruncatedString(hotel['surroundings'].Bus) }}</li>
           <li><a href="">View on map</a></li>
       </div>
       </div>
@@ -119,7 +119,7 @@
             <p class="comment"><strong>{{ review['rating'] }} </strong><i><fa-icon [icon]="faStar"></fa-icon></i></p>
           </div>
 
-          <p>{{ review['comment'] }}</p>
+          <p>{{ getTruncatedComments(review['comment'])}}</p>
 
         </div>
 

@@ -1,5 +1,6 @@
 <div class="booking-page">
     <div class="booking-content">
+
         <!-- Booking Form -->
         <div class="form-container" *ngIf="!showConfirmation">
             <h1>Book Your Stay</h1>
@@ -64,6 +65,8 @@
             <div class="price-details">
                 <h3>Total Price Breakdown</h3>
                 <p><strong>Number of Nights:</strong> {{ stayDuration }}</p>
+                <p><strong>Room Price:</strong> ₹{{ room.price }}</p>
+                <p><strong>No of Rooms:</strong> {{ noOfRooms }}</p>
                 <p><strong>Total Price:</strong> ₹{{ totalPrice }}</p>
                 <p><strong>GST (18%):</strong> ₹{{ gstAmount }}</p>
                 <p><strong>Total Payable:</strong> ₹{{ totalPayable }}</p>

@@ -3471,24 +3471,14 @@
   ],
   "bookings": [
     {
-      "id": "2bb1",
+      "id": "94f9",
       "firstName": "Sowmya",
       "lastName": "K S",
       "email": "sowmya68380@gmail.com",
       "phone": "6363279347",
-      "hotelName": "The Oberoi Mumbai",
-      "roomType": "Luxury Room",
-      "totalPayable": 63720
-    },
-    {
-      "id": "bca8",
-      "firstName": "Sowmya",
-      "lastName": "K S",
-      "email": "sowmya68380@gmail.com",
-      "phone": "6363279347",
-      "hotelName": "Viceroy Hotel",
-      "roomType": "Standard Room",
-      "totalPayable": 33040
+      "hotelName": "Rambagh Palace",
+      "roomType": "Heritage Room",
+      "totalPayable": 44840
     }
   ]
 }

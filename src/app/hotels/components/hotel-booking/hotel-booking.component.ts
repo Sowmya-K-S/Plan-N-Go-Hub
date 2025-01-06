@@ -30,6 +30,7 @@ export class HotelBookingComponent {
   checkIn : any;
   checkOut : any;
   stayDuration : any;
+  noOfRooms : number = 1;
 
   constructor(private hotelService: HotelService) {}
 
@@ -52,7 +53,8 @@ export class HotelBookingComponent {
      this.stayDuration = Math.ceil(
         (this.checkOut.getTime() - this.checkIn.getTime()) / (1000 * 60 * 60 * 24)
       );
-      this.totalPrice = this.stayDuration * this.room.price;
+      this.noOfRooms = this.searchDetails.rooms;
+      this.totalPrice = this.stayDuration * this.room.price * this.noOfRooms;
       this.gstAmount = this.totalPrice * 0.18;
       this.totalPayable = this.totalPrice + this.gstAmount;
 

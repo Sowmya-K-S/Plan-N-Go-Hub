@@ -134,8 +134,26 @@ export class HotelDetailsComponent implements OnInit {
 
 
   //code for trucating surroundings name
-  getTruncatedSurrounding(place: string): string {
+  getTruncatedString(place: string): string {
     const maxLength = 20; // Maximum length for the name
+    if (place.length > maxLength) {
+      const [name, distance] = place.match(/^(.*)\s\(([^)]+)\)$/)?.slice(1) || [place, ''];
+      return name.substring(0, maxLength) + '... ' + (distance ? `(${distance})` : '');
+    }
+    return place;
+  }
+
+  getTruncatedReview(place: string): string {
+    const maxLength = 100; // Maximum length for the name
+    if (place.length > maxLength) {
+      const [name, distance] = place.match(/^(.*)\s\(([^)]+)\)$/)?.slice(1) || [place, ''];
+      return name.substring(0, maxLength) + '... ' + (distance ? `(${distance})` : '');
+    }
+    return place;
+  }
+
+  getTruncatedComments(place: string): string {
+    const maxLength = 200; // Maximum length for the name
     if (place.length > maxLength) {
       const [name, distance] = place.match(/^(.*)\s\(([^)]+)\)$/)?.slice(1) || [place, ''];
       return name.substring(0, maxLength) + '... ' + (distance ? `(${distance})` : '');
