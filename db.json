@@ -3470,6 +3470,15 @@
     }
   ],
   "bookings": [
-
+    {
+      "id": "8f1f",
+      "firstName": "Sowmya",
+      "lastName": "K S",
+      "email": "sowmya68380@gmail.com",
+      "phone": "6363279347",
+      "hotelName": "The Oberoi Rajvilas",
+      "roomType": "Premier Room",
+      "totalPayable": 44840
+    }
   ]
 }
