@@ -1,15 +1,25 @@
 .bookings-container {
-  font-family: Arial, sans-serif;
+  font-family: poppins;
   margin: 20px;
 }
 
-h1, h2 {
-  text-align: center;
+h1 {
+  text-align: left; /* Align main heading to the left */
   color: #333;
+  font-size: 24px;
+  margin-bottom: 15px; /* Add spacing below the main heading */
+}
+
+h2 {
+  text-align: center; /* Keep section headings centered */
+  color: #333;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 15px;
 }
 
 .booking {
-  margin-bottom: 15px; /* Reduced margin between cards */
+  margin-bottom: 15px;
 }
 
 .booking-card {
@@ -20,14 +30,14 @@ h1, h2 {
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   margin: auto;
-  padding: 8px; /* Further reduced padding */
-  gap: 8px; /* Reduced gap for tighter alignment */
+  padding: 8px;
+  gap: 8px;
   align-items: center;
   background-color: #fff;
 }
 
 .booking-image {
-  flex: 0 0 100px; /* Reduced size for the image */
+  flex: 0 0 100px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -44,14 +54,14 @@ h1, h2 {
 .booking-details {
   display: flex;
   flex-wrap: nowrap;
-  gap: 10px; /* Slightly smaller spacing between columns */
+  gap: 10px;
   flex-grow: 1;
 }
 
 .detail-column {
   display: flex;
   flex-direction: column;
-  gap: 2px; /* Reduced gap between text */
+  gap: 2px;
   flex: 1;
 }
 
@@ -63,23 +73,20 @@ h1, h2 {
 
 .booking-buttons {
   display: flex;
-  gap: 8px; /* Reduced gap between buttons */
-  margin-top: 5px; /* Slightly smaller top margin */
+  gap: 8px;
+  margin-top: 5px;
   justify-content: flex-start;
 }
 
 button {
-  width: 110px; /* Slightly narrower button width */
-  height: 36px; /* Slightly shorter button height */
+  width: 110px;
+  height: 36px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 13px; /* Slightly smaller font size */
-  transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-button:hover {
-  transform: translateY(-2px);
+  font-size: 13px;
+  font-weight: 700;
+  font-family: poppins;
 }
 
 /* Button colors based on text */

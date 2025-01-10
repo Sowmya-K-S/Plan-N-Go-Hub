@@ -14,19 +14,19 @@
           <!-- Details columns -->
           <div class="booking-details">
             <div class="detail-column">
-              <p>{{ booking.hotelName }}</p>
-              <p>{{ booking.location }}</p>
+              <p><fa-icon [icon]="faHotel"></fa-icon> {{ booking.hotelName }}</p>
+              <p><fa-icon [icon]="faMapMarkerAlt"></fa-icon> {{ booking.location }}</p>
             </div>
             <div class="detail-column">
-              <p>{{ booking.checkIn }}</p>
-              <p>{{ booking.checkOut }}</p>
+              <p><fa-icon [icon]="faCalendarCheck"></fa-icon> {{ booking.checkIn }}</p>
+              <p><fa-icon [icon]="faCalendarMinus"></fa-icon> {{ booking.checkOut }}</p>
             </div>
             <div class="detail-column">
-              <p>{{ booking.roomType }}</p>
-              <p>{{ booking.status }}</p>
+              <p><fa-icon [icon]="faBed"></fa-icon>{{ booking.roomType }}</p>
+              <p><fa-icon [icon]="faCircle"></fa-icon> {{ booking.status }}</p>
             </div>
             <div class="detail-column">
-              <p>₹{{ booking.totalPayable }}</p>
+              <p><fa-icon [icon]="faMoneyBill"></fa-icon> ₹{{ booking.totalPayable }}</p>
             </div>
   
             <!-- Buttons -->
@@ -56,19 +56,19 @@
           <!-- Details columns -->
           <div class="booking-details">
             <div class="detail-column">
-              <p>{{ booking.hotelName }}</p>
-              <p>{{ booking.location }}</p>
+              <p><fa-icon [icon]="faHotel"></fa-icon> {{ booking.hotelName }}</p>
+              <p><fa-icon [icon]="faMapMarkerAlt"></fa-icon> {{ booking.location }}</p>
             </div>
             <div class="detail-column">
-              <p>{{ booking.checkIn }}</p>
-              <p>{{ booking.checkOut }}</p>
+              <p><fa-icon [icon]="faCalendarCheck"></fa-icon> {{ booking.checkIn }}</p>
+              <p><fa-icon [icon]="faCalendarMinus"></fa-icon> {{ booking.checkOut }}</p>
             </div>
             <div class="detail-column">
-              <p>{{ booking.roomType }}</p>
-              <p>{{ booking.status }}</p>
+              <p><fa-icon [icon]="faBed"></fa-icon> {{ booking.roomType }}</p>
+              <p><fa-icon [icon]="faCircle"></fa-icon> {{ booking.status }}</p>
             </div>
             <div class="detail-column">
-                <p>₹{{ booking.totalPayable }}</p>
+                <p><fa-icon [icon]="faMoneyBill"> </fa-icon> ₹{{ booking.totalPayable }}</p>
               </div>
   
             <!-- Buttons -->

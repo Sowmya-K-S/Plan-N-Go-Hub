@@ -2,10 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HotelService } from '../../services/hotel.service';
 
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faHotel, faMapMarkerAlt, faCalendarCheck, faCalendarMinus, faBed, faCircle, faMoneyBill } from '@fortawesome/free-solid-svg-icons';
+
+
 @Component({
   selector: 'app-my-bookings',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FontAwesomeModule],
   templateUrl: './my-bookings.component.html',
   styleUrls: ['./my-bookings.component.css']
 })
@@ -13,6 +17,14 @@ export class MyBookingsComponent implements OnInit {
   bookings: any[] = [];
   currentBookings: any[] = [];
   pastBookings: any[] = [];
+
+  faHotel = faHotel;
+  faMapMarkerAlt = faMapMarkerAlt;
+  faCalendarCheck = faCalendarCheck;
+  faCalendarMinus = faCalendarMinus;
+  faBed = faBed;
+  faCircle = faCircle;
+  faMoneyBill = faMoneyBill;
 
   constructor(private hotelService: HotelService) {}
 
