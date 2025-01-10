@@ -75,14 +75,22 @@ export class HotelBookingComponent {
       }
   
     const bookingData = {
+      hotelid : this.hotel.id,
+      hotelName: this.hotel.name,
+      hotelImage: this.hotel.images[0],
+      location: this.hotel.location,
       firstName: this.firstName,
       lastName: this.lastName,
       email: this.email,
       phone: this.phone,
-      hotelName: this.hotel.name,
       roomType: this.room.type,
       totalPayable: this.totalPayable,
-
+      checkIn: this.checkIn,
+      checkOut: this.checkOut,
+      status: 'booked',
+      rooms: this.noOfRooms,
+      stayDuration: this.stayDuration,
+   
     };
 
     this.bookingDetails = bookingData;

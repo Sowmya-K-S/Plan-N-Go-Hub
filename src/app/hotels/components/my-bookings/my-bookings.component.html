@@ -1,1 +1,88 @@
-<p>my-bookings works!</p>
+<div class="bookings-container">
+    <h1>My Bookings</h1>
+  
+    <!-- Current Bookings Section -->
+    <h2>Current Bookings</h2>
+    <div *ngIf="currentBookings.length; else noCurrentBookings">
+      <div *ngFor="let booking of currentBookings" class="booking">
+        <div class="booking-card">
+          <!-- Image column -->
+          <div class="booking-image">
+            <img src="{{ booking.hotelImage }}" alt="{{ booking.hotelName }}">
+          </div>
+  
+          <!-- Details columns -->
+          <div class="booking-details">
+            <div class="detail-column">
+              <p>{{ booking.hotelName }}</p>
+              <p>{{ booking.location }}</p>
+            </div>
+            <div class="detail-column">
+              <p>{{ booking.checkIn }}</p>
+              <p>{{ booking.checkOut }}</p>
+            </div>
+            <div class="detail-column">
+              <p>{{ booking.roomType }}</p>
+              <p>{{ booking.status }}</p>
+            </div>
+            <div class="detail-column">
+              <p>₹{{ booking.totalPayable }}</p>
+            </div>
+  
+            <!-- Buttons -->
+            <div class="booking-buttons">
+              <button>View Details</button>
+              <button (click)="cancelBooking(booking.hotelid)">Edit Booking</button>
+              <button (click)="giveReview(booking)">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ng-template #noCurrentBookings>
+      <p class="no-bookings">No current bookings available.</p>
+    </ng-template>
+  
+    <!-- Past Bookings Section -->
+    <h2>Past Bookings</h2>
+    <div *ngIf="pastBookings.length; else noPastBookings">
+      <div *ngFor="let booking of pastBookings" class="booking">
+        <div class="booking-card">
+          <!-- Image column -->
+          <div class="booking-image">
+            <img src="{{ booking.hotelImage }}" alt="{{ booking.hotelName }}">
+          </div>
+  
+          <!-- Details columns -->
+          <div class="booking-details">
+            <div class="detail-column">
+              <p>{{ booking.hotelName }}</p>
+              <p>{{ booking.location }}</p>
+            </div>
+            <div class="detail-column">
+              <p>{{ booking.checkIn }}</p>
+              <p>{{ booking.checkOut }}</p>
+            </div>
+            <div class="detail-column">
+              <p>{{ booking.roomType }}</p>
+              <p>{{ booking.status }}</p>
+            </div>
+            <div class="detail-column">
+                <p>₹{{ booking.totalPayable }}</p>
+              </div>
+  
+            <!-- Buttons -->
+            <div class="booking-buttons">
+              <button>View Details</button>
+              <button (click)="giveReview(booking)">Give Review</button>
+              <button>Book Again</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ng-template #noPastBookings>
+      <p class="no-bookings">No past bookings available.</p>
+    </ng-template>
+  </div>
+  

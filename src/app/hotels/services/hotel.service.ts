@@ -104,6 +104,20 @@ bookHotel(bookingData: any): Observable<any> {
   return this.http.post<any>(url, bookingData);
 }
 
+
+getBookings(): Observable<any[]> {
+  return this.http.get<any[]>(`http://localhost:3000/bookings`);
+}
+
+cancelBooking(id: string): Observable<void> {
+  return this.http.delete<void>(`http://localhost:3000/bookings`);
+}
+
+giveReview(booking: any): void {
+  console.log('Review for booking:', booking);
+  // Add review logic here
+}
+
 }
 
 

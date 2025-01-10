@@ -1,0 +1,119 @@
+.bookings-container {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+h1, h2 {
+  text-align: center;
+  color: #333;
+}
+
+.booking {
+  margin-bottom: 15px; /* Reduced margin between cards */
+}
+
+.booking-card {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: auto;
+  padding: 8px; /* Further reduced padding */
+  gap: 8px; /* Reduced gap for tighter alignment */
+  align-items: center;
+  background-color: #fff;
+}
+
+.booking-image {
+  flex: 0 0 100px; /* Reduced size for the image */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.booking-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.booking-details {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px; /* Slightly smaller spacing between columns */
+  flex-grow: 1;
+}
+
+.detail-column {
+  display: flex;
+  flex-direction: column;
+  gap: 2px; /* Reduced gap between text */
+  flex: 1;
+}
+
+.detail-column p {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.booking-buttons {
+  display: flex;
+  gap: 8px; /* Reduced gap between buttons */
+  margin-top: 5px; /* Slightly smaller top margin */
+  justify-content: flex-start;
+}
+
+button {
+  width: 110px; /* Slightly narrower button width */
+  height: 36px; /* Slightly shorter button height */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px; /* Slightly smaller font size */
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+/* Button colors based on text */
+button:nth-child(1) {
+  background-color: #007bff;
+  color: #fff;
+}
+
+button:nth-child(2) {
+  background-color: #28a745;
+  color: #fff;
+}
+
+button:nth-child(3) {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+/* Different hover colors */
+button:nth-child(1):hover {
+  background-color: #0056b3;
+}
+
+button:nth-child(2):hover {
+  background-color: #218838;
+}
+
+button:nth-child(3):hover {
+  background-color: #c82333;
+}
+
+.no-bookings {
+  font-size: 16px;
+  color: #555;
+  text-align: center;
+  margin-top: 20px;
+}

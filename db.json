@@ -3469,16 +3469,42 @@
       ]
     }
   ],
+
+
   "bookings": [
     {
-      "id": "8f1f",
+      "hotelid": "H001",
+      "hotelName": "The Oberoi Rajvilas",
+      "hotelImage": "assets/hotel/hotel-images/oberoi-rajvilas-jaipur.jpg",
+      "location": "Jaipur",
       "firstName": "Sowmya",
       "lastName": "K S",
       "email": "sowmya68380@gmail.com",
       "phone": "6363279347",
-      "hotelName": "The Oberoi Rajvilas",
       "roomType": "Premier Room",
-      "totalPayable": 44840
+      "totalPayable": 44840,
+      "checkIn": "2025-01-15",
+      "checkOut": "2025-01-20",
+      "status": "booked",
+      "rooms": 1,
+      "stayDuration": 5
+    },
+    {
+      "hotelid": "H002",
+      "hotelName": "The Taj Mahal Palace",
+      "hotelImage": "assets/hotel/hotel-images/taj-mahal-palace-mumbai.jpg",
+      "location": "Mumbai",
+      "firstName": "Sowmya",
+      "lastName": "K S",
+      "email": "sowmya68380@gmail.com",
+      "phone": "6363279347",
+      "roomType": "Luxury Suite",
+      "totalPayable": 55300,
+      "checkIn": "2024-12-25",
+      "checkOut": "2024-12-30",
+      "status": "completed",
+      "rooms": 1,
+      "stayDuration": 5
     }
   ]
 }
