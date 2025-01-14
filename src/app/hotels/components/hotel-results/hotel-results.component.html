@@ -1,81 +1,46 @@
-<!-- hotel-results.component.html -->
-
-<h2 *ngIf="filteredHotels.length">Showing {{ filteredHotels.length }} hotels in {{ searchParams.location }}</h2>
-<h2 *ngIf="!filteredHotels.length">No hotels in {{ searchParams.location }}</h2>
-
 <div class="container">
-  
+
+
   <!-- Filters Section -->
   <div class="filters-section">
+    <h2>Filters <i><fa-icon [icon]="faFilter"></fa-icon></i></h2>
 
-    <h3>Filters <i><fa-icon [icon]="faFilter"></fa-icon></i></h3>
-
-    <div class="filter-row">
-      <label>Price per night <br><br> </label>
-      <label for="minPriceRange">Min Price</label>
-      ₹<input
-        type="number"
-        id="minPriceRange"
-        [(ngModel)]="filters.minPrice"
-        placeholder="Enter min price"
-      />
-    </div>
-
-    <div class="filter-row">
-      <label for="priceRange">Max Price</label>
-      ₹<input
-        type="number"
-        id="priceRange"
-        [(ngModel)]="filters.price"
-        placeholder="Enter max price"
-      />
-    </div>
-
-    <div class="filter-row">
-      <label>Amenities</label>
-      <div class="amenity-checkbox" *ngFor="let amenity of availableAmenities">
-        <input
-          type="checkbox"
-          [value]="amenity"
-          (change)="onAmenityChange($event)"
-        />
-        <label>{{ amenity }}</label>
+    <div class="filter-content">
+      <div class="filter-row">
+        <label><strong>Price per night</strong> <br><br> </label>
+        <label for="minPriceRange">Min Price</label>
+        ₹<input type="number" id="minPriceRange" [(ngModel)]="filters.minPrice" placeholder="Enter min price" />
       </div>
-    </div>
 
-    <div class="filter-row">
-      <label>Star Category</label>
-      <div class="amenity-checkbox">
-        <input
-          type="checkbox"
-        />
-        <label>3 star</label>
-        <input
-        type="checkbox"
-      />
-      <label>4 star</label>
-      <input
-      type="checkbox"
-    />
-    <label>5 star</label>
+      <div class="filter-row">
+        <label for="priceRange">Max Price</label>
+        ₹<input type="number" id="priceRange" [(ngModel)]="filters.price" placeholder="Enter max price" />
       </div>
-    </div>
 
-    <div class="filter-row">
-      <label>User reviews</label>
-      <div class="amenity-checkbox">
-        <input
-          type="checkbox"
-        />
-        <label>Excellent(4.2+)</label>
-        <input
-        type="checkbox"
-      />
-      <label>Very Good(3.5+)</label>
-      <input
-      type="checkbox"
-    />
-    <label>Good(3.0+)</label>
+      <div class="filter-row">
+        <label><strong>Star Category</strong></label>
+        <div class="amenity-checkbox">
+          <input type="checkbox" /><label>3 star</label>
+          <input type="checkbox" /><label>4 star</label>
+          <input type="checkbox" /><label>5 star</label>
+        </div>
+      </div>
+
+      <div class="filter-row">
+        <label><strong>User reviews</strong></label>
+        <div class="amenity-checkbox">
+          <input type="checkbox" /><label>Excellent(4.2+) <br></label>
+          <input type="checkbox" /><label>Very Good(3.5+) <br></label>
+          <input type="checkbox" /><label>Good(3.0+)</label>
+        </div>
+      </div>
+
+      <div class="filter-row">
+        <label><strong>Amenities</strong></label>
+        <div class="amenity-checkbox" *ngFor="let amenity of availableAmenities">
+          <input type="checkbox" [value]="amenity" (change)="onAmenityChange($event)" />
+          <label>{{ amenity }}</label>
+        </div>
       </div>
     </div>
 
@@ -87,38 +52,32 @@
     <div class="card-container">
       <div *ngFor="let hotel of filteredHotels" class="card">
         <img [src]="hotel['images'].slice(0, 1)" alt="{{ hotel['name'] }}" class="card-img" />
+
         <div class="card-content">
-          <h3>{{ hotel['name'] }}</h3>
-          <p><strong>Location:</strong> {{ hotel['location'] }}</p>
-          <p><strong>Price:</strong> ₹{{ hotel['price'] }} / night</p>
-          <p><strong>Amenities:</strong> {{ hotel['amenities'].join(', ') }}</p>
+          <h3>{{ hotel['name'] }} <i style="color: gold" *ngFor="let star of getFilledStars(hotel.star)">
+            <fa-icon [icon]="faStar"></fa-icon></i></h3>
+          <div class="rating-label">
+            <p><strong>{{ hotel['rating'] }}/5</strong></p>
+            <p><strong>{{ getRatingLabel(hotel.rating) }}</strong></p>
+          </div>
+
+          <div class="location-price">
+            <p><i><fa-icon [icon]="faMapMarkerAlt"></fa-icon></i> {{ hotel['location'] }}</p>
+            <p>₹{{ hotel['price'] }} / night</p>
+          </div>
+
+          <p *ngIf="hotel['amenities']?.length">{{ getTruncatedAmenities(hotel['amenities'].join(', ')) }} <strong>more</strong></p>
+
         </div>
         <button class="know-more-btn" (click)="navigateToDetails(hotel)">Know More</button>
       </div>
     </div>
   </div>
 
-  <!-- Random results -->
+  <!-- No Results Template -->
   <ng-template #noResults>
     <p>Explore other places</p>
-    <!-- <div *ngIf="randomHotels.length; else noResults">
-      <div class="card-container">
-        <div *ngFor="let hotel of randomHotels" class="card">
-          <img [src]="hotel['images'].slice(0, 1)" alt="{{ hotel['name'] }}" class="card-img" />
-          <div class="card-content">
-            <h3>{{ hotel['name'] }}</h3>
-            <p><strong>Location:</strong> {{ hotel['location'] }}</p>
-            <p><strong>Price:</strong> ₹{{ hotel['price'] }} / night</p>
-            <p><strong>Amenities:</strong> {{ hotel['amenities'].join(', ') }}</p>
-          </div>
-          <button class="know-more-btn" (click)="navigateToDetails(hotel)">Know More</button>
-        </div>
-      </div>
-    </div> -->
   </ng-template>
+  
 
 </div>
-
-
-
-

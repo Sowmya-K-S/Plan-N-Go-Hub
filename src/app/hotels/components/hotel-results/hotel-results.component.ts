@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 import { HotelService } from '../../services/hotel.service';
 import { Hotel } from '../../models/hotel.model';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import {faFilter} from'@fortawesome/free-solid-svg-icons';
+import {faFilter, faStar, faMapMarkerAlt} from'@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -24,6 +24,9 @@ export class HotelResultsComponent implements OnInit {
   searchParams: any;
 
   faFilter = faFilter;
+  faStar = faStar;
+  faMapMarkerAlt = faMapMarkerAlt
+  
 
   filters = {
     price: 0,
@@ -87,10 +90,40 @@ export class HotelResultsComponent implements OnInit {
     }
     // Do not call applyFilters() here to avoid auto-filtering
   }
+
+
+    //to fill stars
+    getFilledStars(rating: number): number[] {
+    return Array(rating).fill(0); // Generate an array of the rating size
+  }
+
+    //for rating label
+    getRatingLabel(rating: number): string {
+      if (rating >= 4.2) {
+        return 'Excellent';
+      } else if (rating >= 3.5) {
+        return 'Very Good';
+      } else if (rating >= 3) {
+        return 'Good';
+      } else {
+        return '';
+      }
+    }
+
+    //truncation of amenities
+    getTruncatedAmenities(place: string): string {
+      const maxLength = 70; // Maximum length for the name
+      if (place.length > maxLength) {
+        const [name, distance] = place.match(/^(.*)\s\(([^)]+)\)$/)?.slice(1) || [place, ''];
+        return name.substring(0, maxLength) + '... ' + (distance ? `(${distance})` : '');
+      }
+      return place;
+    }
   
   navigateToDetails(hotel: Hotel): void {
     this.hotelService.setSelectedHotel(hotel);
     this.router.navigate(['/hotel-details', hotel.id]);
   }
+
 
 }

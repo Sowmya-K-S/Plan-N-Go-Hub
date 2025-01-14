@@ -1,71 +1,102 @@
 <!-- search-hotel.component.html -->
- 
+
 <!-- Search Hotel Form -->
 <div class="container">
   <div class="hotel-search-section">
     <h2>Search Hotels</h2>
-    <form class="form-container" (ngSubmit)="onSearch()">
+    <form class="form-container" #hotelSearchForm="ngForm" (ngSubmit)="onSearch()">
       <div class="form-row">
-        <label for="location">Location</label>
+        <div class="form-group">
+          <label for="location"><i><fa-icon [icon]="faLocation"></fa-icon></i> Location</label>
           <input 
-          type="text" 
-          id="location" 
-          [(ngModel)]="searchParams.location" 
-          name="location" 
-          placeholder="Enter location..." 
-          required 
-        />
-    
-        <label for="startDate">Check-in</label>
-        <input 
-          type="date" 
-          id="startDate" 
-          [(ngModel)]="searchParams.startDate" 
-          name="startDate" 
-          required 
-        />
-        
-        <label for="endDate">Check-out</label>
-        <input 
-          type="date" 
-          id="endDate" 
-          [(ngModel)]="searchParams.endDate" 
-          name="endDate" 
-          required 
-        />
+            type="text" 
+            id="location" 
+            [(ngModel)]="searchParams.location" 
+            name="location" 
+            placeholder="Enter location..." 
+            required 
+            #location="ngModel"
+            [ngClass]="{ 'invalid': location.invalid && location.touched }"
+          />
+          <div *ngIf="location.invalid && location.touched" class="error-msg">
+            Location is required.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="startDate"><i><fa-icon [icon]="faCalendarCheck"></fa-icon></i> Check-in</label>
+          <input 
+            type="date" 
+            id="startDate" 
+            [(ngModel)]="searchParams.startDate" 
+            [min]="minCheckinDate"
+            name="startDate" 
+            required 
+            #startDate="ngModel"
+            [ngClass]="{ 'invalid': startDate.invalid && startDate.touched }"
+          />
+
+          <div *ngIf="startDate.invalid && startDate.touched" class="error-msg">
+            Check-in date is required.
+          </div>
+          
+        </div>
+
+        <div class="form-group">
+          <label for="endDate"> <i><fa-icon [icon]="faCalendarMinus"></fa-icon></i> Check-out</label>
+          <input 
+            type="date" 
+            id="endDate" 
+            [(ngModel)]="searchParams.endDate"
+            [min]="searchParams.startDate || minCheckinDate" 
+            name="endDate" 
+            required 
+            #endDate="ngModel"
+            [ngClass]="{ 'invalid': endDate.invalid && endDate.touched }"
+          />
+          <div *ngIf="endDate.invalid && endDate.touched" class="error-msg">
+            Check-out date is required.
+          </div>
+        </div>
       </div>
 
       <div class="form-row">
-        <label for="rooms">Rooms</label>
-        <input 
-          type="number" 
-          id="rooms" 
-          min="1" 
-          [(ngModel)]="searchParams.rooms" 
-          name="rooms" 
-        />
-        
-        <label for="adults">Adults</label>
-        <input 
-          type="number" 
-          id="adults" 
-          min="1" 
-          [(ngModel)]="searchParams.adults" 
-          name="adults" 
-        />
-        
-        <label for="children">Children</label>
-        <input 
-          type="number" 
-          id="children" 
-          min="0" 
-          [(ngModel)]="searchParams.children" 
-          name="children" 
-        />
+        <div class="form-group">
+          <label for="rooms"><i><fa-icon [icon]="faBed"></fa-icon></i> Rooms</label>
+          <input 
+            type="number" 
+            id="rooms" 
+            min="1" 
+            [(ngModel)]="searchParams.rooms" 
+            name="rooms" 
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="adults"><i><fa-icon [icon]="faUser"></fa-icon></i> Adults</label>
+          <input 
+            type="number" 
+            id="adults" 
+            min="1" 
+            [(ngModel)]="searchParams.adults" 
+            name="adults" 
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="children"><i><fa-icon [icon]="faChild"></fa-icon></i> Children</label>
+          <input 
+            type="number" 
+            id="children" 
+            min="0" 
+            [(ngModel)]="searchParams.children" 
+            name="children" 
+          />
+        </div>
       </div>
 
       <div class="form-actions">
-        <button type="submit" class="search-btn">Search &nbsp;<i><fa-icon [icon]="faSearch"></fa-icon></i></button>
+        <button type="submit" [disabled]="hotelSearchForm.invalid" class="search-btn">Search &nbsp;<i><fa-icon [icon]="faSearch"></fa-icon></i></button>
       </div>
     </form>
   </div>
@@ -80,7 +111,7 @@
       <div class="card-content">
         <h3>New Delhi</h3>
       </div>
-      <button class="know-more-btn" (click)="navigateWithParams('New Delhi')">Explore</button>
+      <button class="know-more-btn" (click)="navigateWithParams('New Delhi')">Explore <i><fa-icon [icon]="faArrowRight"></fa-icon></i></button>
     </div>
 
     <div class="card">
@@ -88,7 +119,7 @@
       <div class="card-content">
         <h3>Mumbai</h3>
       </div>
-      <button class="know-more-btn" (click)="navigateWithParams('Mumbai')">Explore</button>
+      <button class="know-more-btn" (click)="navigateWithParams('Mumbai')">Explore <i><fa-icon [icon]="faArrowRight"></fa-icon></i></button>
     </div>
 
     <div class="card">
@@ -96,7 +127,7 @@
       <div class="card-content">
         <h3>Goa</h3>
       </div>
-      <button class="know-more-btn" (click)="navigateWithParams('Goa')">Explore</button>
+      <button class="know-more-btn" (click)="navigateWithParams('Goa')">Explore <i><fa-icon [icon]="faArrowRight"></fa-icon></i></button>
     </div>
 
     <div class="card">
@@ -104,7 +135,7 @@
       <div class="card-content">
         <h3>Bengaluru</h3>
       </div>
-      <button class="know-more-btn"  (click)="navigateWithParams('Bengaluru')">Explore</button>
+      <button class="know-more-btn"  (click)="navigateWithParams('Bengaluru')">Explore <i><fa-icon [icon]="faArrowRight"></fa-icon></i></button>
     </div>
   </div>
 </div>
@@ -116,12 +147,39 @@
     <div *ngFor="let hotel of topDeals" class="card">
       <img [src]="hotel['images'].slice(0, 1)" alt="{{ hotel['name'] }}" class="card-img" />
       <div class="card-content">
-        <h3>{{ hotel['name']}}</h3>
-        <p><strong>Location:</strong> {{ hotel['location'] }}</p>
-        <p><strong>Price:</strong> ₹{{ hotel['price'] }} / night</p>
-        <p *ngIf="hotel['amenities']?.length"><strong>Amenities:</strong> {{ hotel['amenities'].join(', ') }}</p>
+
+        <h3>{{ hotel['name']}} <i style="color: gold" *ngFor="let star of getFilledStars(hotel.star)"><fa-icon [icon]="faStar"></fa-icon></i></h3>
+
+        <div class="rating-label">
+          <p><strong>{{ hotel['rating'] }}/5</strong></p>
+          <p><strong>{{ getRatingLabel(hotel.rating) }}</strong></p>
+        </div>
+
+        <div class="location-price">
+
+          <p><i><fa-icon [icon]="faMapMarkerAlt"></fa-icon></i> {{ hotel['location'] }}</p>
+
+          <div class="price-offer">
+
+            <div class="price">
+            <p class="original-price" *ngIf="hotel.offerDescription"><s>₹{{ hotel.price }}</s></p>
+            <p class="discounted-price">₹{{ hotel.discountedPrice }}</p>
+            </div>
+
+            <div class = "description">
+              <p class="offer-description" *ngIf="hotel.offerDescription">
+                {{ hotel.offerDescription }}
+              </p>
+              <p>{{ hotel.specialOffers[0].discount}}% off</p>
+            </div>
+
+          </div>
+          
+        </div>
+        
+        <p *ngIf="hotel['amenities']?.length">{{ getTruncatedAmenities(hotel['amenities'].join(', ')) }} <strong>more</strong></p>
       </div>
-      <button class="know-more-btn" (click)="navigateToDetails(hotel)">Get Deal</button>
+      <button class="know-more-btn" (click)="navigateToDetails(hotel)">Get Deal <i><fa-icon [icon]="faArrowRight"></fa-icon></i></button>
     </div>
   </div>
 </div>

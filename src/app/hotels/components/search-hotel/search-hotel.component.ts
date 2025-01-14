@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faStar, faCalendarCheck, faCalendarMinus, faUser, faLocation, faBed, faChild, faArrowRight, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 
 import { HotelService } from '../../services/hotel.service';
 import { Hotel } from '../../models/hotel.model';
@@ -20,6 +20,7 @@ import { Hotel } from '../../models/hotel.model';
 export class SearchHotelComponent implements OnInit {
   hotels: Hotel[] = [];
   topDeals: Hotel[] = [];
+  minCheckinDate: string;
 
   searchParams = {
     location: '',
@@ -31,8 +32,22 @@ export class SearchHotelComponent implements OnInit {
   };
 
   faSearch = faSearch;
+  faMapMarkerAlt = faMapMarkerAlt;
+  faStar = faStar;
+  faCalendarCheck = faCalendarCheck;
+  faCalendarMinus = faCalendarMinus;
+  faUser = faUser;
+  faLocation = faLocation;
+  faBed = faBed;
+  faChild = faChild;
+  faArrowRight = faArrowRight;
 
-  constructor(private hotelService: HotelService, private router: Router) {}
+
+  constructor(private hotelService: HotelService, private router: Router) {
+
+    const today = new Date();
+    this.minCheckinDate = today.toISOString().split('T')[0];
+  }
 
   ngOnInit(): void {
     this.fetchHotels();
@@ -42,13 +57,28 @@ export class SearchHotelComponent implements OnInit {
     this.hotelService.getHotels().subscribe(
       (data) => {
         this.hotels = data;
-        this.topDeals = this.hotels.filter((hotel) => hotel.price < 18000);
+  
+        // Apply discount and filter top deals
+        this.topDeals = this.hotels.map((hotel) => {
+          if (hotel.specialOffers?.length > 0) {
+            // Apply the first offer's discount to the hotel price
+            const discount = hotel.specialOffers[0].discount || 0;
+            hotel.discountedPrice = Math.round(hotel.price - (hotel.price * discount) / 100);
+            hotel.offerDescription = hotel.specialOffers[0].description;
+          } else {
+            // If no offers, use the original price
+            hotel.discountedPrice = hotel.price;
+            hotel.offerDescription = "";
+          }
+          return hotel;
+        }).filter((hotel) => hotel.discountedPrice < hotel.price); // Filter hotels by discounted price
       },
       (error) => {
         console.error('Error fetching hotel data:', error);
       }
     );
   }
+  
 
   onSearch() {
 
@@ -81,4 +111,32 @@ export class SearchHotelComponent implements OnInit {
     this.hotelService.setSearchDetails(this.searchParams);
     this.router.navigate(['/search-results']);
   }
+
+   //to fill stars
+   getFilledStars(rating: number): number[] {
+    return Array(rating).fill(0); // Generate an array of the rating size
+  }
+
+    //for rating label
+    getRatingLabel(rating: number): string {
+      if (rating >= 4.2) {
+        return 'Excellent';
+      } else if (rating >= 3.5) {
+        return 'Very Good';
+      } else if (rating >= 3) {
+        return 'Good';
+      } else {
+        return '';
+      }
+    }
+
+    //truncation of amenities
+    getTruncatedAmenities(place: string): string {
+      const maxLength = 70; // Maximum length for the name
+      if (place.length > maxLength) {
+        const [name, distance] = place.match(/^(.*)\s\(([^)]+)\)$/)?.slice(1) || [place, ''];
+        return name.substring(0, maxLength) + '... ' + (distance ? `(${distance})` : '');
+      }
+      return place;
+    }
 }
