@@ -114,10 +114,7 @@ export class HotelResultsComponent implements OnInit {
   
   
   applyFilters() {
-    // Combine both default hotels and fetched hotels into a single list for filtering
-    const combinedHotels = [...this.hotels, ...this.defaultHotelsList];
-  
-    // If all filters are cleared, revert to the combined list
+    // If all filters are cleared, revert to the original list
     if (
       !this.filters.minPrice &&
       !this.filters.price &&
@@ -125,12 +122,12 @@ export class HotelResultsComponent implements OnInit {
       !this.filters.starCategories.length &&
       !this.filters.rating
     ) {
-      this.filteredHotels = [...combinedHotels];
+      this.filteredHotels = [...this.hotels];
       return;
     }
   
     // Apply filtering logic
-    this.filteredHotels = combinedHotels.filter((hotel) => {
+    this.filteredHotels = this.hotels.filter((hotel) => {
       // Use discounted price if available, otherwise use the regular price
       const priceToCheck = hotel.discountedPrice !== undefined ? hotel.discountedPrice : hotel.price;
   
