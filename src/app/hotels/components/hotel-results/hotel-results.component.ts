@@ -21,6 +21,7 @@ import {faFilter, faStar, faMapMarkerAlt} from'@fortawesome/free-solid-svg-icons
 export class HotelResultsComponent implements OnInit {
   hotels: Hotel[] = [];
   filteredHotels: Hotel[] = [];
+  defaultHotelsList: Hotel[] = []; // List for default hotels
   searchParams: any;
 
   faFilter = faFilter;
@@ -32,6 +33,8 @@ export class HotelResultsComponent implements OnInit {
     price: 0,
     minPrice: 0,
     amenities: [] as string[],
+    starCategories: [] as number[], // Array to store selected star categories
+    rating: 0, // Minimum rating
   };
 
   availableAmenities = [
@@ -49,8 +52,10 @@ export class HotelResultsComponent implements OnInit {
         this.searchParams = details;
         this.fetchHotels(details['location']); 
       }
- 
   });
+
+  // Load default hotels on initialization
+  this.fetchDefaultHotels();
     
   }
   
@@ -63,7 +68,17 @@ export class HotelResultsComponent implements OnInit {
     this.hotelService.getHotelsByLocation(location).subscribe(
       (data) => {
         this.hotels = data;
-        this.filteredHotels = [...this.hotels]; // Keep the original list for filtering
+  
+        // Add the offer-related properties to each hotel if available
+        this.hotels.forEach(hotel => {
+          if (hotel.specialOffers && hotel.specialOffers.length > 0) {
+            hotel.discountedPrice = this.calculateOfferPrice(hotel.price, hotel.specialOffers[0]?.discount);
+            hotel.offerDescription = hotel.specialOffers[0]?.description;
+          }
+        });
+  
+        // Now filter the hotels to make a fresh copy for `filteredHotels`
+        this.filteredHotels = [...this.hotels];
       },
       (error) => {
         console.error('Error fetching hotel data:', error);
@@ -74,10 +89,87 @@ export class HotelResultsComponent implements OnInit {
   }
   
   
-  applyFilters() {
-    // Apply both price and amenities filtering
-    this.filteredHotels = this.hotelService.filterHotels(this.hotels, this.filters);
+  fetchDefaultHotels() {
+    this.hotelService.getHotels().subscribe((data) => {
+      this.defaultHotelsList = data.slice(0, 18); // Restrict to 16 hotels
+  
+      // Add the offer-related properties to each hotel if available
+      this.defaultHotelsList.forEach(hotel => {
+        if (hotel.specialOffers && hotel.specialOffers.length > 0) {
+          hotel.discountedPrice = this.calculateOfferPrice(hotel.price, hotel.specialOffers[0]?.discount);
+          hotel.offerDescription = hotel.specialOffers[0]?.description;
+        }
+      });
+    });
   }
+
+
+  calculateOfferPrice(originalPrice: number, discount: number | undefined): number {
+    if (discount === undefined) {
+      return originalPrice; // If no discount, return original price
+    }
+    return originalPrice - (originalPrice * discount) / 100;
+  }
+  
+  
+  
+  applyFilters() {
+    // Combine both default hotels and fetched hotels into a single list for filtering
+    const combinedHotels = [...this.hotels, ...this.defaultHotelsList];
+  
+    // If all filters are cleared, revert to the combined list
+    if (
+      !this.filters.minPrice &&
+      !this.filters.price &&
+      !this.filters.amenities.length &&
+      !this.filters.starCategories.length &&
+      !this.filters.rating
+    ) {
+      this.filteredHotels = [...combinedHotels];
+      return;
+    }
+  
+    // Apply filtering logic
+    this.filteredHotels = combinedHotels.filter((hotel) => {
+      // Use discounted price if available, otherwise use the regular price
+      const priceToCheck = hotel.discountedPrice !== undefined ? hotel.discountedPrice : hotel.price;
+  
+      const matchesPrice =
+        (!this.filters.minPrice || priceToCheck >= this.filters.minPrice) &&
+        (!this.filters.price || priceToCheck <= this.filters.price);
+  
+      const matchesAmenities =
+        !this.filters.amenities.length ||
+        this.filters.amenities.every((amenity) => hotel.amenities.includes(amenity));
+  
+      const matchesStars =
+        !this.filters.starCategories.length ||
+        this.filters.starCategories.includes(hotel.star);
+  
+      const matchesRating =
+        !this.filters.rating || hotel.rating >= this.filters.rating;
+  
+      return matchesPrice && matchesAmenities && matchesStars && matchesRating;
+    });
+  }
+  
+  
+
+  onStarChange(event: Event) {
+    const checkbox = event.target as HTMLInputElement;
+    const star = parseInt(checkbox.value, 10);
+
+    if (checkbox.checked) {
+      this.filters.starCategories.push(star);
+    } else {
+      this.filters.starCategories = this.filters.starCategories.filter((s) => s !== star);
+    }
+  }
+
+  onRatingChange(event: Event) {
+    const select = event.target as HTMLSelectElement;
+    this.filters.rating = parseFloat(select.value);
+  }  
   
   onAmenityChange(event: Event) {
     const checkbox = event.target as HTMLInputElement;
@@ -88,9 +180,38 @@ export class HotelResultsComponent implements OnInit {
     } else {
       this.filters.amenities = this.filters.amenities.filter((a) => a !== amenity);
     }
-    // Do not call applyFilters() here to avoid auto-filtering
   }
 
+  resetFilters() {
+    // Reset all filters to their default values
+    this.filters = {
+      price: 0,
+      minPrice: 0,
+      amenities: [],
+      starCategories: [],
+      rating: 0,
+    };
+
+      // Clear all checkboxes
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    checkboxes.forEach((checkbox) => {
+      (checkbox as HTMLInputElement).checked = false;
+    });
+
+    // Clear price input boxes
+    const minPriceInput = document.getElementById('minPriceRange') as HTMLInputElement;
+    const maxPriceInput = document.getElementById('priceRange') as HTMLInputElement;
+    if (minPriceInput) minPriceInput.value = '';
+    if (maxPriceInput) maxPriceInput.value = '';
+
+    // Reset dropdown to initial value
+    const dropdown = document.querySelector('select') as HTMLSelectElement;
+    if (dropdown) dropdown.value = '0'; // Assuming "Any" corresponds to the value "0"
+    
+      // Reset the filteredHotels array to the full list of hotels
+      this.filteredHotels = [...this.hotels];
+  }
+  
 
     //to fill stars
     getFilledStars(rating: number): number[] {
@@ -119,6 +240,11 @@ export class HotelResultsComponent implements OnInit {
       }
       return place;
     }
+
+
+
+    
+    
   
   navigateToDetails(hotel: Hotel): void {
     this.hotelService.setSelectedHotel(hotel);

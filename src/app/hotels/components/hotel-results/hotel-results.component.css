@@ -2,41 +2,123 @@
   font-family: poppins;
 }
 
+
 .container {
+  width: 100%;
+  margin: 0 auto;
   display: flex;
   gap: 20px;
-  padding: 20px;
 }
 
 .filters-section {
-  width: 250px;
-  background-color: #f9f9f9;
-  padding: 15px;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 320px;
+  height:600px;
+  background-color: #FFEBCC;
+  padding: 20px;
+  padding-top: 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
 }
 
-.filters-section h3 {
-  margin-bottom: 15px;
+.filters-section h2 {
+  margin-bottom: 20px;
+  font-size: 24px; /* Increased font size */
+  font-weight: 700; /* Bold font weight */
+  text-align: left;
+  color: #333;
+}
+
+.btns {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.filters-section .filter-btn, .filters-section .reset-btn {
+  flex: 1;
+  text-align: center;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600; /* Medium font weight for better readability */
+  font-size: 14px; /* Slightly larger font size for buttons */
+  cursor: pointer;
+}
+
+.filters-section .filter-btn {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.filters-section .filter-btn:hover {
+  background-color: #218838;
+}
+
+.filters-section .reset-btn {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+.filters-section .reset-btn:hover {
+  background-color: #5a6268;
 }
 
 .filter-content {
-  overflow-y: auto; /* Allow scrolling for filters */
-  max-height: calc(100vh - 150px); /* Adjust for the space taken by header and button */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .filter-row {
   margin-bottom: 15px;
 }
 
+.price-inputs {
+  display: flex;
+  gap: 10px;
+}
+
+.price-inputs div {
+  flex: 1;
+}
+
+input[type="number"] {
+  width: 80%; /* Reduced width */
+  padding: 4px; /* Reduced padding */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 13px; /* Adjusted font size for better readability */
+  font-weight: 500; /* Medium weight for input text */
+  background-color: #fff;
+  margin: 5px 0; /* Added space around inputs */
+}
+
+select {
+  width: 80%; /* Reduced width */
+  padding: 4px; /* Reduced padding */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 13px; /* Adjusted font size */
+  font-weight: 500; /* Medium weight */
+  margin: 5px 0;
+}
+
+.amenity-scroll {
+  max-height: 120px; /* Limit height of the amenities div */
+  overflow-y: auto; /* Add scrolling to the amenities only */
+  border: 1px solid #ccc;
+  padding: 8px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
 .amenity-checkbox {
-  display: block;
-  margin-bottom: 10px;
-  font-size: 14px;
+  margin-bottom: 8px;
+  font-size: 14px; /* Maintain readability for amenity labels */
+  font-weight: 500; /* Medium weight for clarity */
 }
 
 .amenity-checkbox input {
@@ -44,37 +126,13 @@
   cursor: pointer;
 }
 
-.amenity-checkbox label {
-  color: #333;
-  font-size: 14px;
-  cursor: pointer;
-}
 
-input[type="number"] {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 14px;
-  color: #333;
-  background-color: #fff;
-  margin-top: 5px;
-  margin-bottom: 15px;
-  box-sizing: border-box;
-}
-
-input[type="number"]:focus {
-  border-color: #007bff;
-  outline: none;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
-}
 
 .card-container {
-  flex-grow: 1;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  justify-content: flex-start;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Display 3 cards per row */
+  gap: 20px; /* Maintain spacing between cards */
+  justify-items: center; /* Center align cards within the grid */
 }
 
 .card {
@@ -154,22 +212,44 @@ input[type="number"]:focus {
   transform: scale(1);
 }
 
-.filters-section .filter-btn {
-  background-color: #28a745;
-  color: #fff;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: bold;
+
+.location-price
+{
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.price-offer {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.price
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  transition: background-color 0.3s ease;
 }
 
-.filters-section .filter-btn:hover {
-  background-color: #218838;
+.original-price {
+  text-decoration: line-through;
+  color: gray;
 }
 
-.filters-section .filter-btn:active {
-  background-color: #1e7e34;
+.discounted-price {
+  font-size: 1.5em;
+  color: green;
+  font-weight: bold;
 }
+
+.offer-description {
+  font-size: 14px;
+  color: #666;
+}
+
+
+
+
