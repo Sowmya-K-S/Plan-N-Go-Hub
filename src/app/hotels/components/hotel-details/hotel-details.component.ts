@@ -89,6 +89,10 @@ export class HotelDetailsComponent implements OnInit {
   }
 
 
+  calculateOfferPrice(originalPrice: number, discount: number): number {
+    return Math.round(originalPrice - (originalPrice * discount) / 100);
+  }
+  
 
   getAmenityIcon(amenity: string): IconDefinition {
     const icons: Record<string, IconDefinition> = {

@@ -71,12 +71,12 @@
         <img [src]="hotel.images[0]" alt="{{ hotel.name }}" class="card-img" />
 
         <div class="card-content">
-          <h3>
-            {{ hotel.name }}
-            <i style="color: gold" *ngFor="let star of getFilledStars(hotel.star)">
-              <fa-icon [icon]="faStar"></fa-icon>
-            </i>
-          </h3>
+
+          <div class="name-star">
+            <h3>{{ hotel['name']}}</h3>
+            <div><i style="color: gold" *ngFor="let star of getFilledStars(hotel.star)"><fa-icon [icon]="faStar"></fa-icon></i></div>
+          </div>
+
           <div class="rating-label">
             <p><strong>{{ hotel.rating }}/5</strong></p>
             <p><strong>{{ getRatingLabel(hotel.rating) }}</strong></p>
@@ -121,12 +121,12 @@
           <img [src]="hotel.images[0]" alt="{{ hotel.name }}" class="card-img" />
 
           <div class="card-content">
-            <h3>
-              {{ hotel.name }}
-              <i style="color: gold" *ngFor="let star of getFilledStars(hotel.star)">
-                <fa-icon [icon]="faStar"></fa-icon>
-              </i>
-            </h3>
+
+            <div class="name-star">
+              <h3>{{ hotel['name']}}</h3>
+              <div><i style="color: gold" *ngFor="let star of getFilledStars(hotel.star)"><fa-icon [icon]="faStar"></fa-icon></i></div>
+            </div>
+            
             <div class="rating-label">
               <p><strong>{{ hotel.rating }}/5</strong></p>
               <p><strong>{{ getRatingLabel(hotel.rating) }}</strong></p>

@@ -144,11 +144,17 @@
 <div class="hotel-list-section">
   <h2>Hot hotel deals right now</h2>
   <div class="card-container">
+
     <div *ngFor="let hotel of topDeals" class="card">
+
       <img [src]="hotel['images'].slice(0, 1)" alt="{{ hotel['name'] }}" class="card-img" />
+
       <div class="card-content">
 
-        <h3>{{ hotel['name']}} <i style="color: gold" *ngFor="let star of getFilledStars(hotel.star)"><fa-icon [icon]="faStar"></fa-icon></i></h3>
+        <div class="name-star">
+          <h3>{{ hotel['name']}}</h3>
+          <div><i style="color: gold" *ngFor="let star of getFilledStars(hotel.star)"><fa-icon [icon]="faStar"></fa-icon></i></div>
+        </div>
 
         <div class="rating-label">
           <p><strong>{{ hotel['rating'] }}/5</strong></p>
@@ -178,8 +184,11 @@
         </div>
         
         <p *ngIf="hotel['amenities']?.length">{{ getTruncatedAmenities(hotel['amenities'].join(', ')) }} <strong>more</strong></p>
+
       </div>
+
       <button class="know-more-btn" (click)="navigateToDetails(hotel)">Get Deal <i><fa-icon [icon]="faArrowRight"></fa-icon></i></button>
+
     </div>
   </div>
 </div>

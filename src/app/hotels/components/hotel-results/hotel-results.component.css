@@ -139,6 +139,7 @@ select {
   width: 295px;
   border: 1px solid #ddd;
   border-radius: 5px;
+  padding: 10px;
   overflow: hidden;
   background-color: #fff;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -178,6 +179,20 @@ select {
 
 .card-content p strong {
   color: #007bff;
+}
+
+.name-star
+{
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  width:100%;
+}
+
+.name-star h3{
+  margin: 0;
+  padding: 0;
+  width: 60%;
 }
 
 .rating-label, .location-price {
@@ -241,13 +256,13 @@ select {
 
 .discounted-price {
   font-size: 1.5em;
-  color: green;
+  color: red !important;
   font-weight: bold;
 }
 
-.offer-description {
-  font-size: 14px;
-  color: #666;
+.description p {
+  color: green;
+  font-weight: 500;
 }
 
 

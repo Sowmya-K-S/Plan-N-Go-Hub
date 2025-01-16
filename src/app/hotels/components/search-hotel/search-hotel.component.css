@@ -164,6 +164,21 @@ input:focus {
   color: #007bff; /* Blue color for labels (Location, Price, etc.) */
 }
 
+.name-star
+{
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  width:100%;
+  margin:2px;
+}
+
+.name-star h3{
+  margin: 0;
+  padding: 0;
+  width: 60%;
+}
+
 .rating-label, .location-price {
   width: 100%;
   display: flex;
@@ -201,11 +216,23 @@ input:focus {
   color: #555; 
 }
 
+
+.discounted-price {
+  color: red!important;
+  font-weight: 600;
+}
+
 .description
 {
   display: flex;
   align-items: end;
   flex-direction: column;
+}
+
+.description p
+{
+  color:green;
+  font-weight: 500;
 }
 
 .know-more-btn {
