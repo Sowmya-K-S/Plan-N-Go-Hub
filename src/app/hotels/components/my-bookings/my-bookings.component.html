@@ -1,88 +1,198 @@
-<div class="bookings-container">
-    <h1>My Bookings</h1>
-  
-    <!-- Current Bookings Section -->
-    <h2>Current Bookings</h2>
-    <div *ngIf="currentBookings.length; else noCurrentBookings">
-      <div *ngFor="let booking of currentBookings" class="booking">
-        <div class="booking-card">
-          <!-- Image column -->
-          <div class="booking-image">
-            <img src="{{ booking.hotelImage }}" alt="{{ booking.hotelName }}">
+<div class="bookings-container"> 
+  <h1>My Bookings</h1>
+
+  <!-- Current Bookings Section -->
+  <h2>Current Bookings</h2>
+  <div *ngIf="currentBookings.length; else noCurrentBookings">
+    <div *ngFor="let booking of currentBookings" class="booking">
+      <div class="booking-card">
+        <!-- Image column -->
+        <div class="booking-image">
+          <img src="{{ booking.hotelImage }}" alt="{{ booking.hotelName }}">
+        </div>
+
+        <!-- Details columns -->
+        <div class="booking-details">
+          <div class="detail-column">
+            <p><fa-icon [icon]="faHotel"></fa-icon> {{ booking.hotelName }}</p>
+            <p><fa-icon [icon]="faMapMarkerAlt"></fa-icon> {{ booking.location }}</p>
           </div>
-  
-          <!-- Details columns -->
-          <div class="booking-details">
-            <div class="detail-column">
-              <p><fa-icon [icon]="faHotel"></fa-icon> {{ booking.hotelName }}</p>
-              <p><fa-icon [icon]="faMapMarkerAlt"></fa-icon> {{ booking.location }}</p>
-            </div>
-            <div class="detail-column">
-              <p><fa-icon [icon]="faCalendarCheck"></fa-icon> {{ booking.checkIn }}</p>
-              <p><fa-icon [icon]="faCalendarMinus"></fa-icon> {{ booking.checkOut }}</p>
-            </div>
-            <div class="detail-column">
-              <p><fa-icon [icon]="faBed"></fa-icon>{{ booking.roomType }}</p>
-              <p><fa-icon [icon]="faCircle"></fa-icon> {{ booking.status }}</p>
-            </div>
-            <div class="detail-column">
-              <p><fa-icon [icon]="faMoneyBill"></fa-icon> ₹{{ booking.totalPayable }}</p>
-            </div>
-  
-            <!-- Buttons -->
-            <div class="booking-buttons">
-              <button>View Details</button>
-              <button (click)="cancelBooking(booking.hotelid)">Edit Booking</button>
-              <button (click)="giveReview(booking)">Cancel</button>
-            </div>
+          <div class="detail-column">
+            <p><fa-icon [icon]="faCalendarCheck"></fa-icon> {{ booking.checkIn }}</p>
+            <p><fa-icon [icon]="faCalendarMinus"></fa-icon> {{ booking.checkOut }}</p>
+          </div>
+          <div class="detail-column">
+            <p><fa-icon [icon]="faBed"></fa-icon>{{ booking.roomType }}</p>
+            <p><fa-icon [icon]="faCircle"></fa-icon> {{ booking.status }}</p>
+          </div>
+          <div class="detail-column">
+            <p><fa-icon [icon]="faMoneyBill"></fa-icon> ₹{{ booking.totalPayable }}</p>
+          </div>
+
+          <!-- Buttons -->
+          <div class="booking-buttons">
+            <!--<button>View Details</button>
+            <button (click)="cancelBooking(booking.hotelid)">Edit Booking</button>
+            <button (click)="giveReview(booking)">Cancel</button>
+            <button (click)="openDetailsPopup(booking)">View Details</button>
+            <button (click)="editBooking(booking.hotelid)">Edit Booking</button>-->
+            <button (click)="openDetailsPopup(booking)">View Details</button>
+            <button (click)="openReviewForm(booking)">Cancel</button>
+            <button (click)="openEditPopup(booking)">Edit Booking</button>
           </div>
         </div>
       </div>
     </div>
-    <ng-template #noCurrentBookings>
-      <p class="no-bookings">No current bookings available.</p>
-    </ng-template>
-  
-    <!-- Past Bookings Section -->
-    <h2>Past Bookings</h2>
-    <div *ngIf="pastBookings.length; else noPastBookings">
-      <div *ngFor="let booking of pastBookings" class="booking">
-        <div class="booking-card">
-          <!-- Image column -->
-          <div class="booking-image">
-            <img src="{{ booking.hotelImage }}" alt="{{ booking.hotelName }}">
-          </div>
-  
-          <!-- Details columns -->
-          <div class="booking-details">
-            <div class="detail-column">
-              <p><fa-icon [icon]="faHotel"></fa-icon> {{ booking.hotelName }}</p>
-              <p><fa-icon [icon]="faMapMarkerAlt"></fa-icon> {{ booking.location }}</p>
-            </div>
-            <div class="detail-column">
-              <p><fa-icon [icon]="faCalendarCheck"></fa-icon> {{ booking.checkIn }}</p>
-              <p><fa-icon [icon]="faCalendarMinus"></fa-icon> {{ booking.checkOut }}</p>
-            </div>
-            <div class="detail-column">
-              <p><fa-icon [icon]="faBed"></fa-icon> {{ booking.roomType }}</p>
-              <p><fa-icon [icon]="faCircle"></fa-icon> {{ booking.status }}</p>
-            </div>
-            <div class="detail-column">
-                <p><fa-icon [icon]="faMoneyBill"> </fa-icon> ₹{{ booking.totalPayable }}</p>
-              </div>
-  
-            <!-- Buttons -->
-            <div class="booking-buttons">
-              <button>View Details</button>
-              <button (click)="giveReview(booking)">Give Review</button>
-              <button>Book Again</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <ng-template #noPastBookings>
-      <p class="no-bookings">No past bookings available.</p>
-    </ng-template>
   </div>
-  
+  <ng-template #noCurrentBookings>
+    <p class="no-bookings">No current bookings available.</p>
+  </ng-template>
+
+  <!-- Past Bookings Section -->
+  <h2>Past Bookings</h2>
+  <div *ngIf="pastBookings.length; else noPastBookings">
+    <div *ngFor="let booking of pastBookings" class="booking">
+      <div class="booking-card">
+        <!-- Image column -->
+        <div class="booking-image">
+          <img src="{{ booking.hotelImage }}" alt="{{ booking.hotelName }}">
+        </div>
+
+        <!-- Details columns -->
+        <div class="booking-details">
+          <div class="detail-column">
+            <p><fa-icon [icon]="faHotel"></fa-icon> {{ booking.hotelName }}</p>
+            <p><fa-icon [icon]="faMapMarkerAlt"></fa-icon> {{ booking.location }}</p>
+          </div>
+          <div class="detail-column">
+            <p><fa-icon [icon]="faCalendarCheck"></fa-icon> {{ booking.checkIn }}</p>
+            <p><fa-icon [icon]="faCalendarMinus"></fa-icon> {{ booking.checkOut }}</p>
+          </div>
+          <div class="detail-column">
+            <p><fa-icon [icon]="faBed"></fa-icon> {{ booking.roomType }}</p>
+            <p><fa-icon [icon]="faCircle"></fa-icon> {{ booking.status }}</p>
+          </div>
+          <div class="detail-column">
+              <p><fa-icon [icon]="faMoneyBill"> </fa-icon> ₹{{ booking.totalPayable }}</p>
+            </div>
+
+          <!-- Buttons -->
+          <div class="booking-buttons">
+           <!-- <button>View Details</button>
+            <button (click)="giveReview(booking)">Give Review</button>
+            <button>Book Again</button>-->
+            <button (click)="openDetailsPopup(booking)">View Details</button>
+            <button (click)="openReviewForm(booking)">Give Review</button>
+            <button (click)="openRebookPopup(booking)">Book Again</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ng-template #noPastBookings>
+    <p class="no-bookings">No past bookings available.</p>
+  </ng-template>
+<!--</div>-->
+
+<!-- Details Popup -->
+<div class="popup" *ngIf="showDetailsPopup">
+  <div class="popup-content">
+    <h3>Booking Details</h3>
+    <p><strong>Hotel:</strong> {{ selectedBooking?.hotelName }}</p>
+    <p><strong>Location:</strong> {{ selectedBooking?.location }}</p>
+    <p><strong>Room Type:</strong> {{ selectedBooking?.roomType }}</p>
+    <p><strong>Price:</strong> ₹{{ selectedBooking?.price }}</p>
+    <p><strong>Booking Dates:</strong> {{ selectedBooking?.startDate }} to {{ selectedBooking?.endDate }}</p>
+    <button (click)="closeDetailsPopup()">Close</button>
+  </div>
+</div>
+
+<!-- Review Form -->
+<div class="popup" *ngIf="showReviewForm">
+  <div class="popup-content">
+    <h3>Submit Review</h3>
+    <form (ngSubmit)="submitReview()">
+      <label>
+        Name:
+        <input type="text" [(ngModel)]="reviewForm.userName" name="userName" required />
+      </label>
+      <label>
+        Rating:
+        <select [(ngModel)]="reviewForm.rating" name="rating" required>
+          <option *ngFor="let r of [1, 2, 3, 4, 5]" [value]="r">{{ r }}</option>
+        </select>
+      </label>
+      <label>
+        Comment:
+        <textarea [(ngModel)]="reviewForm.comment" name="comment" required></textarea>
+      </label>
+      <button type="submit">Submit</button>
+      <button type="button" (click)="closeReviewForm()">Cancel</button>
+    </form>
+  </div>
+</div>
+
+<!-- Edit Booking Popup -->
+<div class="popup" *ngIf="showEditPopup">
+<div class="popup-content">
+  <h3>Edit Booking</h3>
+  <form (ngSubmit)="submitEditForm()">
+    <label>
+      Hotel Name:
+      <input type="text" [(ngModel)]="editForm.hotelName" name="hotelName" required />
+    </label>
+    <label>
+      Location:
+      <input type="text" [(ngModel)]="editForm.location" name="location" required />
+    </label>
+    <label>
+      Check-In Date:
+      <input type="date" [(ngModel)]="editForm.checkIn" name="checkIn" required />
+    </label>
+    <label>
+      Check-Out Date:
+      <input type="date" [(ngModel)]="editForm.checkOut" name="checkOut" required />
+    </label>
+    <label>
+      Room Type:
+      <input type="text" [(ngModel)]="editForm.roomType" name="roomType" required />
+    </label>
+    <label>
+      Total Payable:
+      <input type="number" [(ngModel)]="editForm.totalPayable" name="totalPayable" required />
+    </label>
+    <button type="submit">Submit</button>
+    <button type="button" (click)="closeEditPopup()">Cancel</button>
+  </form>
+</div>
+</div>
+
+<!-- Rebooking Popup -->
+<div *ngIf="showRebookPopup" class="popup">
+<div class="popup-content">
+  <h3>Rebook Hotel</h3>
+  <form (ngSubmit)="submitRebookForm()">
+    <label>Hotel Name:</label>
+    <input type="text" [(ngModel)]="rebookForm.hotelName" name="hotelName" readonly />
+
+    <label>Location:</label>
+    <input type="text" [(ngModel)]="rebookForm.location" name="location" readonly />
+
+    <label>Check-In:</label>
+    <input type="date" [(ngModel)]="rebookForm.checkIn" name="checkIn" required />
+
+    <label>Check-Out:</label>
+    <input type="date" [(ngModel)]="rebookForm.checkOut" name="checkOut" required />
+
+    <label>Room Type:</label>
+    <input type="text" [(ngModel)]="rebookForm.roomType" name="roomType" readonly />
+
+    <label>Total Payable:</label>
+    <input type="number" [(ngModel)]="rebookForm.totalPayable" name="totalPayable" readonly />
+
+    <button type="submit" class="btn btn-success">Confirm Rebooking</button>
+    <button type="button" (click)="closeRebookPopup()" class="btn btn-secondary">Cancel</button>
+  </form>
+</div>
+</div>
+</div>

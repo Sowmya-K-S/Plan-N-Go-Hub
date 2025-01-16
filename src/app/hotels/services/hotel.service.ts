@@ -44,16 +44,15 @@ getHotels(): Observable<Hotel[]> {
    * @param location Location to filter hotels
    * @returns Observable<Hotel[]>
    */
-  getHotelsByLocation(location?: string): Observable<Hotel[]> {
-    const trimmedLocation = location?.trim();
-    const url = trimmedLocation
-      ? `${this.apiUrl}?location=${encodeURIComponent(trimmedLocation)}`
-      : this.apiUrl;
+  // getHotelsByLocation(location?: string): Observable<Hotel[]> {
+  //   const trimmedLocation = location?.trim().toLowerCase(); // Convert to lowercase
+  //   const url = trimmedLocation
+  //     ? `${this.apiUrl}?location=${encodeURIComponent(trimmedLocation)}`
+  //     : this.apiUrl;
   
-    console.log('API URL:', url); // Debugging the API endpoint
-    return this.http.get<Hotel[]>(url);
-  }
-  
+  //   console.log('API URL:', url);
+  //   return this.http.get<Hotel[]>(url);
+  // }
   
 
   /**
@@ -116,6 +115,11 @@ cancelBooking(id: string): Observable<void> {
 giveReview(booking: any): void {
   console.log('Review for booking:', booking);
   // Add review logic here
+}
+
+editBooking(booking: any): Observable<any> {
+  // Replace with the actual API URL and booking ID
+  return this.http.put(`http://localhost:3000/bookings/${booking.hotelid}`, booking);
 }
 
 }

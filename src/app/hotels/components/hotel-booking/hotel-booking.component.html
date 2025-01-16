@@ -1,7 +1,7 @@
 <div class="booking-page">
     <div class="booking-content">
-        <!-- Booking Form -->
-        <div class="form-container" *ngIf="!showConfirmation">
+        <div class="form-container">
+            <!-- Booking Form -->
             <h1>Book Your Stay</h1>
             <form (ngSubmit)="onSubmit()" #bookingForm="ngForm">
                 <div class="form-group">
@@ -26,56 +26,52 @@
             </form>
         </div>
 
-        <!-- Confirmation Message -->
-        <div class="confirmation-message" *ngIf="showConfirmation">
-            <h2>🎉 Booking Confirmation 🎉</h2>
-            <div class="confirmation-details">
-                <p><strong>Name:</strong> {{ bookingDetails.firstName }} {{ bookingDetails.lastName }}</p>
-                <p><strong>Email:</strong> {{ bookingDetails.email }}</p>
-                <p><strong>Phone:</strong> {{ bookingDetails.phone }}</p>
-                <p><strong>Hotel:</strong> {{ hotel.name }}</p>
-                <p><strong>Room Type:</strong> {{ room.type }}</p>
-                <p><strong>Check-in:</strong> {{ checkIn.toLocaleDateString() }}</p>
-                <p><strong>Check-out:</strong> {{ checkOut.toLocaleDateString() }}</p>
-                <p><strong>Total Payable:</strong> ₹{{ totalPayable }}</p>
-                <p>Your booking has been successfully confirmed!</p>
-            </div>
-        </div>
-
-        <!-- Hotel and Pricing Info -->
-        <div class="room-info">
-
-            <div class="room-details">
-                <img [src]="hotel.images[0]" alt="Hotel Image" class="hotel-image">
-                <div class="room-content">
-                    <h2>{{ hotel.name }}</h2>
-                    <p><strong>Room Type:</strong> {{ room.type }}</p>
-                    
-                    <div class="amenities">
-                        <h4>Amenities:</h4>
-                        <div class="amenities-list">
-                            <span *ngFor="let amenity of hotel.amenities" class="amenity-badge">
-                                {{ amenity }}
-                            </span>
+        <!-- Right side content (Hotel details and Price Breakdown) -->
+        <div class="right-content">
+            <!-- Hotel and Room Info -->
+            <div class="room-info">
+                <div class="room-details">
+                    <img [src]="hotel.images[0]" alt="Hotel Image" class="hotel-image">
+                    <div class="room-content">
+                        <h2>{{ hotel.name }}</h2>
+                        <p><strong>Room Type:</strong> {{ room.type }}</p>
+                        <div class="amenities">
+                            <h4>Amenities:</h4>
+                            <div class="amenities-list">
+                                <span *ngFor="let amenity of hotel.amenities" class="amenity-badge">
+                                    {{ amenity }}
+                                </span>
+                            </div>
                         </div>
+                        <p class="price"><strong>Price Per Night:</strong> ₹{{ room.price }}</p>
+                        <p class="price"><strong>Check-in:</strong> {{ checkIn.toLocaleDateString() }}</p>
+                        <p class="price"><strong>Check-out:</strong> {{ checkOut.toLocaleDateString() }}</p>
                     </div>
-            
-                    <p class="price"><strong>Price Per Night:</strong> ₹{{ room.price }}</p>
-                    <p class="price"><strong>Check-in:</strong> {{ checkIn.toLocaleDateString() }}</p>
-                    <p class="price"><strong>Check-out:</strong> {{ checkOut.toLocaleDateString() }}</p>
                 </div>
             </div>
-            
+
+            <!-- Price Breakdown -->
             <div class="price-details">
                 <h3>Total Price Breakdown</h3>
                 <p><strong>Room Price:</strong> ₹{{ room.price }}</p> 
-                <p><strong>Number of Nights:</strong> {{ stayDuration }}</p>      
+                <p><strong>Number of Nights:</strong> {{ stayDuration }}</p>
                 <p><strong>No of Rooms:</strong> {{ noOfRooms }}</p>
-                <p><strong>Total Price:</strong>₹{{ room.price }} * {{ stayDuration }} * {{ noOfRooms }} = ₹{{ totalPrice }}</p>
+                <p><strong>Total Price:</strong> ₹{{ room.price }} * {{ stayDuration }} * {{ noOfRooms }} = ₹{{ totalPrice }}</p>
                 <p><strong>GST (18%):</strong> ₹{{ gstAmount }}</p>
                 <p><strong>Total Payable:</strong> ₹{{ totalPayable }}</p>
             </div>
+        </div>
 
+        <!-- Popup for confirmation -->
+        <div class="popup" *ngIf="showConfirmation">
+            <div class="popup-content">
+                <h2>🎉 Booking Successful 🎉</h2>
+                <p>Your booking has been successfully confirmed!</p>
+                <div class="popup-actions">
+                    <button class="btn btn-view-details" (click)="viewDetails()">View Details</button>
+                    <button class="btn btn-go-home" (click)="goToHome()">Go to Home</button>
+                </div>
+            </div>
         </div>
     </div>
 </div>

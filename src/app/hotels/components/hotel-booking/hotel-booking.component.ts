@@ -5,6 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { Hotel } from '../../models/hotel.model';
 import { HotelService } from '../../services/hotel.service';
 
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-hotel-booking',
   standalone: true,
@@ -32,7 +34,7 @@ export class HotelBookingComponent {
   stayDuration : any;
   noOfRooms : number = 1;
 
-  constructor(private hotelService: HotelService) {}
+  constructor(private hotelService: HotelService, private router: Router) {}
 
   ngOnInit() {
     this.hotelService.getSelectedHotel().subscribe((hotel) => (this.hotel = hotel!));
@@ -109,5 +111,13 @@ export class HotelBookingComponent {
     );
 
     this.showConfirmation = true;
+  }
+
+  viewDetails() {
+    this.router.navigate(['/my-bookings']);
+  }
+
+  goToHome() {
+    this.router.navigate(['/']);
   }
 }

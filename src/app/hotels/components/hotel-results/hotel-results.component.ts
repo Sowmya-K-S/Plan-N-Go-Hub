@@ -9,6 +9,7 @@ import { HotelService } from '../../services/hotel.service';
 import { Hotel } from '../../models/hotel.model';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {faFilter, faStar, faMapMarkerAlt} from'@fortawesome/free-solid-svg-icons';
+import { map } from 'rxjs/operators';
 
 
 @Component({
@@ -65,20 +66,29 @@ export class HotelResultsComponent implements OnInit {
       this.filteredHotels = [];
       return; // No location provided, don't fetch hotels
     }
-    this.hotelService.getHotelsByLocation(location).subscribe(
-      (data) => {
-        this.hotels = data;
   
-        // Add the offer-related properties to each hotel if available
-        this.hotels.forEach(hotel => {
+    const trimmedLocation = location.trim().toLowerCase();
+  
+    this.hotelService.getHotels().pipe(
+      map((hotels: Hotel[]) => {
+        // Filter hotels based on location
+        const filteredHotels = hotels.filter(hotel =>
+          hotel.location.toLowerCase() === trimmedLocation
+        );
+  
+        // Add offer-related properties to each hotel
+        return filteredHotels.map(hotel => {
           if (hotel.specialOffers && hotel.specialOffers.length > 0) {
             hotel.discountedPrice = this.calculateOfferPrice(hotel.price, hotel.specialOffers[0]?.discount);
             hotel.offerDescription = hotel.specialOffers[0]?.description;
           }
+          return hotel;
         });
-  
-        // Now filter the hotels to make a fresh copy for `filteredHotels`
-        this.filteredHotels = [...this.hotels];
+      })
+    ).subscribe(
+      (filteredHotels) => {
+        this.hotels = filteredHotels;
+        this.filteredHotels = [...filteredHotels]; // Create a fresh copy
       },
       (error) => {
         console.error('Error fetching hotel data:', error);

@@ -13,8 +13,11 @@
         "Colaba Causeway (Approx. 2 km)"
       ],
       "specialOffers": [
-        { "discount": 10, "description": "Exclusive Discount" }
-    ],
+        {
+          "discount": 10,
+          "description": "Exclusive Discount"
+        }
+      ],
       "price": 18000,
       "images": [
         "assets/hotel/hotel-images/oberoi-mumbai.jpg",
@@ -1056,7 +1059,12 @@
         "Sukhna Lake (Approx. 30 km)",
         "Pinjore Gardens (Approx. 20 km)"
       ],
-      "specialOffers": [{ "discount": 22, "description": "Exclusive Savings" }],
+      "specialOffers": [
+        {
+          "discount": 22,
+          "description": "Exclusive Savings"
+        }
+      ],
       "price": 25000,
       "images": [
         "assets/hotel/hotel-images/oberoi-sukhvilas-chandigarh.jpg",
@@ -1172,7 +1180,12 @@
         "Jakhoo Temple (Approx. 16 km)",
         "The Ridge (Approx. 15 km)"
       ],
-      "specialOffers": [{ "discount": 25, "description": "Premium Deal" }],
+      "specialOffers": [
+        {
+          "discount": 25,
+          "description": "Premium Deal"
+        }
+      ],
       "price": 22000,
       "images": [
         "assets/hotel/hotel-images/wildflower-hall-shimla.jpg",
@@ -1288,7 +1301,12 @@
         "Lalbagh Botanical Garden (Approx. 4 km)",
         "Bangalore Palace (Approx. 3 km)"
       ],
-      "specialOffers": [{ "discount": 15, "description": "Special Offer" }],
+      "specialOffers": [
+        {
+          "discount": 15,
+          "description": "Special Offer"
+        }
+      ],
       "price": 24000,
       "images": [
         "assets/hotel/hotel-images/taj-west-end-bengaluru.jpg",
@@ -1636,7 +1654,12 @@
         "Kapaleeshwarar Temple (Approx. 4 km)",
         "Phoenix Marketcity (Approx. 2 km)"
       ],
-      "specialOffers": [{ "discount": 35, "description": "Ultimate Offer" }],
+      "specialOffers": [
+        {
+          "discount": 35,
+          "description": "Ultimate Offer"
+        }
+      ],
       "price": 18000,
       "images": [
         "assets/hotel/hotel-images/park-hyatt-chennai.jpg",
@@ -1751,7 +1774,12 @@
         "Chowmahalla Palace (Approx. 2 km)",
         "Laad Bazaar (Approx. 2 km)"
       ],
-      "specialOffers": [{ "discount": 40, "description": "Mega Deal" }],
+      "specialOffers": [
+        {
+          "discount": 40,
+          "description": "Mega Deal"
+        }
+      ],
       "price": 30000,
       "images": [
         "assets/hotel/hotel-images/taj-falaknuma-palace-hyderabad.jpg",
@@ -1982,7 +2010,12 @@
         "Sanjay Gandhi National Park (Approx. 2 km)",
         "Powai Lake (Approx. 2 km)"
       ],
-      "specialOffers": [{ "discount": 28, "description": "Special Discount" }],
+      "specialOffers": [
+        {
+          "discount": 28,
+          "description": "Special Discount"
+        }
+      ],
       "price": 20000,
       "images": [
         "assets/hotel/hotel-images/itc-maratha-mumbai.jpg",
@@ -2791,7 +2824,12 @@
         "Dudhsagar Falls (Approx. 2 km)",
         "Anjuna Market (Approx. 2 km)"
       ],
-      "specialOffers": [{ "discount": 20, "description": "Hot deal" }],
+      "specialOffers": [
+        {
+          "discount": 20,
+          "description": "Hot deal"
+        }
+      ],
       "price": 32000,
       "images": [
         "assets/hotel/hotel-images/leela-goa.jpg",
@@ -3471,76 +3509,8 @@
       ]
     }
   ],
-
-
+  
   "bookings": [
-    {
-      "hotelid": "H001",
-      "hotelName": "The Oberoi Rajvilas",
-      "hotelImage": "assets/hotel/hotel-images/oberoi-rajvilas-jaipur.jpg",
-      "location": "Jaipur",
-      "firstName": "Sowmya",
-      "lastName": "K S",
-      "email": "sowmya68380@gmail.com",
-      "phone": "6363279347",
-      "roomType": "Premier Room",
-      "totalPayable": 44840,
-      "checkIn": "2025-01-15",
-      "checkOut": "2025-01-20",
-      "status": "booked",
-      "rooms": 1,
-      "stayDuration": 5
-    },
-    {
-      "hotelid": "H002",
-      "hotelName": "The Taj Mahal Palace",
-      "hotelImage": "assets/hotel/hotel-images/taj-mahal-palace-mumbai.jpg",
-      "location": "Mumbai",
-      "firstName": "Sowmya",
-      "lastName": "K S",
-      "email": "sowmya68380@gmail.com",
-      "phone": "6363279347",
-      "roomType": "Luxury Suite",
-      "totalPayable": 55300,
-      "checkIn": "2024-12-25",
-      "checkOut": "2024-12-30",
-      "status": "completed",
-      "rooms": 1,
-      "stayDuration": 5
-    },
-    {
-      "hotelid": "H002",
-      "hotelName": "The Taj Mahal Palace",
-      "hotelImage": "assets/hotel/hotel-images/taj-mahal-palace-mumbai.jpg",
-      "location": "Mumbai",
-      "firstName": "Sowmya",
-      "lastName": "K S",
-      "email": "sowmya68380@gmail.com",
-      "phone": "6363279347",
-      "roomType": "Luxury Suite",
-      "totalPayable": 55300,
-      "checkIn": "2024-12-25",
-      "checkOut": "2024-12-30",
-      "status": "completed",
-      "rooms": 1,
-      "stayDuration": 5
-    },
-    {
-      "hotelid": "H001",
-      "hotelName": "The Oberoi Rajvilas",
-      "hotelImage": "assets/hotel/hotel-images/oberoi-rajvilas-jaipur.jpg",
-      "location": "Jaipur",
-      "firstName": "Sowmya",
-      "lastName": "K S",
-      "email": "sowmya68380@gmail.com",
-      "phone": "6363279347",
-      "roomType": "Premier Room",
-      "totalPayable": 44840,
-      "checkIn": "2025-01-15",
-      "checkOut": "2025-01-20",
-      "status": "booked",
-      "rooms": 1,
-      "stayDuration": 5
-    }
+   
   ]
 }
