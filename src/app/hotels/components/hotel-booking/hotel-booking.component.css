@@ -1,39 +1,34 @@
 * {
     font-family: Poppins, sans-serif;
-    box-sizing: border-box;
 }
 
-body, html {
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-}
 
 /* Main container for the booking page */
 .booking-page {
-    background: linear-gradient(to bottom right, #e4c2c2, #c9e3f7);
-    min-height: 100vh;
+    width: 100%;
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 50px 0;
+    align-items: center;
+    justify-content: center !important;
 }
 
 /* Content inside booking page */
 .booking-content {
     display: flex;
-    gap: 20px;
-    width: 100%;
-    max-width: 1200px;
+    align-items: start;
+    justify-content: space-around;
+    width: 72%;
+    margin-top: 10px;
+    margin-left: 120px;
+
 }
 
 /* Form container on the left side */
 .form-container {
     width: 100%;
     max-width: 450px;
-    padding: 20px;
+    padding: 30px;
     border-radius: 10px;
-    background: #ffffff;
+    background-color: #cce8ff;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -48,12 +43,11 @@ body, html {
 .form-group label {
     display: block;
     margin-bottom: 5px;
-    font-weight: bold;
-    color: #555;
+    color: #000;
 }
 
 .form-group input {
-    width: 100%;
+    width: 90%;
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
@@ -71,10 +65,10 @@ body, html {
     display: inline-block;
     width: 48%;
     padding: 12px;
-    font-size: 14px;
-    font-weight: bold;
+    font-size: 18px;
+    font-weight: 700;
     color: #ffffff;
-    background: #007bff;
+    background: #00b31b;
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -82,7 +76,7 @@ body, html {
 }
 
 .btn:hover {
-    background: #0056b3;
+    background: #3fb300;
 }
 
 .btn:focus {
@@ -90,7 +84,7 @@ body, html {
 }
 
 .btn-view-details {
-    background: #28a745;
+    background: #37a728;
 }
 
 .btn-view-details:hover {
@@ -105,6 +99,10 @@ body, html {
     background: #c82333;
 }
 
+.confirm-btn
+{
+    width: 95%;
+}
 /* Right content for hotel details and price breakdown */
 .right-content {
     display: flex;
@@ -115,7 +113,8 @@ body, html {
 
 /* Hotel and Room Info */
 .room-info {
-    background: #ffffff;
+    background-color: #FFEBCC;;
+    width:65%;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     padding: 15px;
@@ -146,12 +145,13 @@ body, html {
 }
 
 .room-details p {
-    color: #555;
+    color: #000;
 }
 
 /* Price Breakdown Section */
 .price-details {
-    background: #ffffff;
+    background-color: #cbffcb;
+    width: 65%;
     padding: 15px;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -160,7 +160,7 @@ body, html {
 .price-details h3 {
     font-size: 18px;
     font-weight: bold;
-    color: #007bff;
+    color: #000;
     margin-bottom: 15px;
 }
 
@@ -200,6 +200,12 @@ body, html {
     margin-top: 20px;
 }
 
+.error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .booking-content {
@@ -214,4 +220,8 @@ body, html {
     .room-details {
         width: 100%;
     }
+
 }
+
+
+

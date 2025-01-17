@@ -1,29 +1,135 @@
 <div class="booking-page">
     <div class="booking-content">
+
+        <!-- booking form -->
         <div class="form-container">
             <!-- Booking Form -->
             <h1>Book Your Stay</h1>
-            <form (ngSubmit)="onSubmit()" #bookingForm="ngForm">
+        
+            <form #bookingForm="ngForm" (ngSubmit)="onSubmit(bookingForm)" novalidate>
+                <!-- Guest Details -->
+                <h3>Guest Details</h3>
                 <div class="form-group">
-                    <label for="firstName">First Name: <span class="required">*</span></label>
-                    <input type="text" id="firstName" placeholder="Enter your first name" [(ngModel)]="firstName" name="firstName" required>
+                  <label for="name">Name</label>
+                  <input
+                    type="text"
+                    id="name"
+                    [(ngModel)]="name"
+                    name="name"
+                    placeholder="Enter your name"
+                    required
+                    #nameInput="ngModel"
+                  />
+                  <div *ngIf="nameInput.invalid && nameInput.touched" class="error">
+                    Name is required.
+                  </div>
                 </div>
+              
                 <div class="form-group">
-                    <label for="lastName">Last Name:  <span class="required">*</span></label>
-                    <input type="text" id="lastName" placeholder="Enter your last name" [(ngModel)]="lastName" name="lastName" required>
+                  <label for="age">Age</label>
+                  <input
+                    type="number"
+                    id="age"
+                    [(ngModel)]="age"
+                    name="age"
+                    placeholder="Enter your age"
+                    required
+                    min="1"
+                    max="150"
+                    #ageInput="ngModel"
+                  />
+                  <div *ngIf="ageInput.invalid && ageInput.touched" class="error">
+                    <div *ngIf="ageInput.errors?.['required']">Age is required.</div>
+                    <div *ngIf="ageInput.errors?.['min'] || ageInput.errors?.['max']">
+                      Age must be between 1 and 150.
+                    </div>
+                  </div>
                 </div>
+              
                 <div class="form-group">
-                    <label for="email">Email: <span class="required">*</span></label>
-                    <input type="email" id="email" placeholder="Enter your email" [(ngModel)]="email" name="email" required>
+                  <label for="email">Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    [(ngModel)]="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required
+                    email
+                    #emailInput="ngModel"
+                  />
+                  <div *ngIf="emailInput.invalid && emailInput.touched" class="error">
+                    <div *ngIf="emailInput.errors?.['required']">Email is required.</div>
+                    <div *ngIf="emailInput.errors?.['email']">Please enter a valid email address.</div>
+                  </div>
                 </div>
+              
                 <div class="form-group">
-                    <label for="phone">Phone Number: <span class="required">*</span></label>
-                    <input type="tel" id="phone" placeholder="Enter your phone number" [(ngModel)]="phone" name="phone" required>
+                  <label for="phone">Phone</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    [(ngModel)]="phone"
+                    name="phone"
+                    placeholder="Enter your phone number"
+                    required
+                    pattern="^[0-9]{10,12}$"
+                    maxlength="12"
+                    #phoneInput="ngModel"
+                  />
+                  <div *ngIf="phoneInput.invalid && phoneInput.touched" class="error">
+                    <div *ngIf="phoneInput.errors?.['required']">Phone number is required.</div>
+                    <div *ngIf="phoneInput.errors?.['pattern']">Phone number must be 10-12 digits.</div>
+                  </div>
                 </div>
+              
+                <!-- Additional Guest Details -->
+                <h3>Other Guests</h3>
+                <div *ngFor="let guest of otherGuests; let i = index" class="form-group">
+                  <label>Guest {{ i + 1 }} Name:</label>
+                  <input
+                    type="text"
+                    [(ngModel)]="guest.name"
+                    [name]="'guestName' + i"
+                    placeholder="Enter guest name"
+                    required
+                    #guestNameInput="ngModel"
+                  />
+                  <div *ngIf="guestNameInput.invalid && guestNameInput.touched" class="error">
+                    Guest name is required.
+                  </div>
+              
+                  <label>Guest {{ i + 1 }} Age:</label>
+                  <input
+                    type="number"
+                    [(ngModel)]="guest.age"
+                    [name]="'guestAge' + i"
+                    placeholder="Enter guest age"
+                    required
+                    min="1"
+                    max="150"
+                    #guestAgeInput="ngModel"
+                  />
+                  <div *ngIf="guestAgeInput.invalid && guestAgeInput.touched" class="error">
+                    <div *ngIf="guestAgeInput.errors?.['required']">Age is required.</div>
+                    <div *ngIf="guestAgeInput.errors?.['min'] || guestAgeInput.errors?.['max']">
+                      Age must be between 1 and 150.
+                    </div>
+                  </div>
+                </div>
+              
                 <div class="form-actions">
-                    <button type="submit" class="btn btn-primary">Confirm Booking</button>
+                  <button
+                    type="submit"
+                    class="btn btn-primary confirm-btn"
+                    [disabled]="bookingForm.invalid"
+                  >
+                    Confirm Booking <fa-icon [icon]="faCheckCircle"></fa-icon>
+                  </button>
                 </div>
-            </form>
+              </form>
+              
+              
         </div>
 
         <!-- Right side content (Hotel details and Price Breakdown) -->
@@ -34,16 +140,14 @@
                     <img [src]="hotel.images[0]" alt="Hotel Image" class="hotel-image">
                     <div class="room-content">
                         <h2>{{ hotel.name }}</h2>
-                        <p><strong>Room Type:</strong> {{ room.type }}</p>
+                        <p>{{ room.type }}</p> <p class="price">₹{{ room.price }}/night</p>
                         <div class="amenities">
-                            <h4>Amenities:</h4>
                             <div class="amenities-list">
-                                <span *ngFor="let amenity of hotel.amenities" class="amenity-badge">
-                                    {{ amenity }}
+                                <strong>Amenities:</strong><span *ngFor="let amenity of hotel.amenities" class="amenity-badge">
+                                    {{ amenity }},
                                 </span>
                             </div>
                         </div>
-                        <p class="price"><strong>Price Per Night:</strong> ₹{{ room.price }}</p>
                         <p class="price"><strong>Check-in:</strong> {{ checkIn.toLocaleDateString() }}</p>
                         <p class="price"><strong>Check-out:</strong> {{ checkOut.toLocaleDateString() }}</p>
                     </div>
@@ -56,8 +160,8 @@
                 <p><strong>Room Price:</strong> ₹{{ room.price }}</p> 
                 <p><strong>Number of Nights:</strong> {{ stayDuration }}</p>
                 <p><strong>No of Rooms:</strong> {{ noOfRooms }}</p>
-                <p><strong>Total Price:</strong> ₹{{ room.price }} * {{ stayDuration }} * {{ noOfRooms }} = ₹{{ totalPrice }}</p>
-                <p><strong>GST (18%):</strong> ₹{{ gstAmount }}</p>
+                <p><strong>Total Price:</strong> ₹{{ totalPrice }}</p>
+                <p><strong>Taxes (18%):</strong> ₹{{ gstAmount }}</p>
                 <p><strong>Total Payable:</strong> ₹{{ totalPayable }}</p>
             </div>
         </div>
@@ -75,3 +179,4 @@
         </div>
     </div>
 </div>
+

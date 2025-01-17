@@ -220,4 +220,25 @@ submitRebookForm(): void {
   });
 }
 
+
+// Cancel Popup State
+showCancelPopup = false;
+
+// Open Cancel Popup
+openCancelPopup(): void {
+  this.showCancelPopup = true;
+}
+
+// Close Cancel Popup
+closeCancelPopup(): void {
+  this.showCancelPopup = false;
+}
+
+// Confirm Cancellation
+confirmCancellation(): void {
+  console.log('Cancellation confirmed.');
+  this.closeCancelPopup();
+}
+
+
 }

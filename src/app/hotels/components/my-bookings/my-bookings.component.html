@@ -6,6 +6,7 @@
   <div *ngIf="currentBookings.length; else noCurrentBookings">
     <div *ngFor="let booking of currentBookings" class="booking">
       <div class="booking-card">
+
         <!-- Image column -->
         <div class="booking-image">
           <img src="{{ booking.hotelImage }}" alt="{{ booking.hotelName }}">
@@ -31,13 +32,8 @@
 
           <!-- Buttons -->
           <div class="booking-buttons">
-            <!--<button>View Details</button>
-            <button (click)="cancelBooking(booking.hotelid)">Edit Booking</button>
-            <button (click)="giveReview(booking)">Cancel</button>
             <button (click)="openDetailsPopup(booking)">View Details</button>
-            <button (click)="editBooking(booking.hotelid)">Edit Booking</button>-->
-            <button (click)="openDetailsPopup(booking)">View Details</button>
-            <button (click)="openReviewForm(booking)">Cancel</button>
+            <button (click)="openCancelPopup()">Cancel</button>
             <button (click)="openEditPopup(booking)">Edit Booking</button>
           </div>
         </div>
@@ -92,17 +88,21 @@
   <ng-template #noPastBookings>
     <p class="no-bookings">No past bookings available.</p>
   </ng-template>
-<!--</div>-->
+
 
 <!-- Details Popup -->
 <div class="popup" *ngIf="showDetailsPopup">
   <div class="popup-content">
     <h3>Booking Details</h3>
+    <p><strong>Booking id</strong> {{ selectedBooking?.id }}</p>
+    <p><strong>Hotel id:</strong> {{ selectedBooking?.hotelid }}</p>
     <p><strong>Hotel:</strong> {{ selectedBooking?.hotelName }}</p>
     <p><strong>Location:</strong> {{ selectedBooking?.location }}</p>
     <p><strong>Room Type:</strong> {{ selectedBooking?.roomType }}</p>
-    <p><strong>Price:</strong> ₹{{ selectedBooking?.price }}</p>
-    <p><strong>Booking Dates:</strong> {{ selectedBooking?.startDate }} to {{ selectedBooking?.endDate }}</p>
+    <p><strong>No of Rooms:</strong> {{ selectedBooking?.rooms }}</p>
+    <p><strong>Total Price (incl. taxes):</strong> ₹{{ selectedBooking?.totalPayable }}</p>
+    <p><strong>Booking Dates:</strong> {{ selectedBooking?.checkIn }} to {{ selectedBooking?.checkOut }}</p>
+    <p><strong>Stay Duration:</strong> {{ selectedBooking?.stayDuration }} night(s) </p>
     <button (click)="closeDetailsPopup()">Close</button>
   </div>
 </div>
@@ -195,4 +195,16 @@
   </form>
 </div>
 </div>
+</div>
+
+<!-- Cancel Confirmation Popup -->
+<div *ngIf="showCancelPopup" class="popup">
+  <div class=" popup-content popup-content-cancel">
+    <h3>Confirm Cancellation</h3>
+    <p>Are you sure you want to cancel this booking?</p>
+    <div class="popup-buttons">
+      <button type="button" (click)="closeCancelPopup()" class="btn">No</button>
+      <button type="submit" (click)="confirmCancellation()" class="btn">Yes</button>
+    </div>
+  </div>
 </div>
