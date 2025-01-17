@@ -24,6 +24,7 @@ export class HotelBookingComponent {
   age!: string;
   email!: string;
   phone!: string;
+  gender: string = '';
   hotel!: Hotel;
   room: any;
   searchDetails: any;
@@ -37,7 +38,7 @@ export class HotelBookingComponent {
   checkOut : any;
   stayDuration : number = 0;
   noOfRooms : number = 1;
-  otherGuests: { name: string; age: number }[] = [];
+  otherGuests: { name: string; age: number; gender: string }[] = [];
 
   //icons
   faCheckCircle = faCheckCircle;
@@ -60,7 +61,7 @@ export class HotelBookingComponent {
 
   initializeGuestFields(adults: number, children: number) {
     const totalGuests = adults + children - 1; // Exclude main guest
-    this.otherGuests = Array.from({ length: totalGuests }, () => ({ name: '', age: 0 }));
+    this.otherGuests = Array.from({ length: totalGuests }, () => ({ name: '', age: 0, gender: '' }));
   }
 
   calculateTotalPrice() {
@@ -90,6 +91,7 @@ export class HotelBookingComponent {
       location: this.hotel.location,
       name: this.name,
       age: this.age,
+      gender: this.gender,  
       email: this.email,
       phone: this.phone,
       guests: this.otherGuests,
@@ -100,6 +102,7 @@ export class HotelBookingComponent {
       status: 'booked',
       rooms: this.noOfRooms,
       stayDuration: this.stayDuration,
+      noOfGuests: this.otherGuests.length + 1,
     }
 
     this.bookingDetails = bookingData;

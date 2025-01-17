@@ -25,27 +25,50 @@
                   </div>
                 </div>
               
-                <div class="form-group">
-                  <label for="age">Age</label>
-                  <input
-                    type="number"
-                    id="age"
-                    [(ngModel)]="age"
-                    name="age"
-                    placeholder="Enter your age"
-                    required
-                    min="1"
-                    max="150"
-                    #ageInput="ngModel"
-                  />
-                  <div *ngIf="ageInput.invalid && ageInput.touched" class="error">
-                    <div *ngIf="ageInput.errors?.['required']">Age is required.</div>
-                    <div *ngIf="ageInput.errors?.['min'] || ageInput.errors?.['max']">
-                      Age must be between 1 and 150.
+                <div class="form-group form-row">
+                  <!-- Age Input -->
+                  <div class="form-item">
+                    <label for="age">Age</label>
+                    <input
+                      type="number"
+                      id="age"
+                      [(ngModel)]="age"
+                      name="age"
+                      placeholder="Enter your age"
+                      required
+                      min="1"
+                      max="150"
+                      #ageInput="ngModel"
+                    />
+                    <div *ngIf="ageInput.invalid && ageInput.touched" class="error">
+                      <div *ngIf="ageInput.errors?.['required']">Age is required.</div>
+                      <div *ngIf="ageInput.errors?.['min'] || ageInput.errors?.['max']">
+                        Age must be between 1 and 150.
+                      </div>
+                    </div>
+                  </div>
+                
+                  <!-- Gender Dropdown -->
+                  <div class="form-item">
+                    <label for="gender">Gender</label>
+                    <select
+                      id="gender"
+                      [(ngModel)]="gender"
+                      name="gender"
+                      required
+                      #genderInput="ngModel"
+                    >
+                      <option value="" disabled selected>Select Gender</option>
+                      <option value="male">Male</option>
+                      <option value="female">Female</option>
+                      <option value="other">Other</option>
+                    </select>
+                    <div *ngIf="genderInput.invalid && genderInput.touched" class="error">
+                      Gender is required.
                     </div>
                   </div>
                 </div>
-              
+                
                 <div class="form-group">
                   <label for="email">Email</label>
                   <input
@@ -83,41 +106,70 @@
                   </div>
                 </div>
               
-                <!-- Additional Guest Details -->
                 <h3>Other Guests</h3>
                 <div *ngFor="let guest of otherGuests; let i = index" class="form-group">
-                  <label>Guest {{ i + 1 }} Name:</label>
-                  <input
-                    type="text"
-                    [(ngModel)]="guest.name"
-                    [name]="'guestName' + i"
-                    placeholder="Enter guest name"
-                    required
-                    #guestNameInput="ngModel"
-                  />
-                  <div *ngIf="guestNameInput.invalid && guestNameInput.touched" class="error">
-                    Guest name is required.
-                  </div>
-              
-                  <label>Guest {{ i + 1 }} Age:</label>
-                  <input
-                    type="number"
-                    [(ngModel)]="guest.age"
-                    [name]="'guestAge' + i"
-                    placeholder="Enter guest age"
-                    required
-                    min="1"
-                    max="150"
-                    #guestAgeInput="ngModel"
-                  />
-                  <div *ngIf="guestAgeInput.invalid && guestAgeInput.touched" class="error">
-                    <div *ngIf="guestAgeInput.errors?.['required']">Age is required.</div>
-                    <div *ngIf="guestAgeInput.errors?.['min'] || guestAgeInput.errors?.['max']">
-                      Age must be between 1 and 150.
+                  <!-- Guest Name Row -->
+                  <div class="form-row">
+                    <div class="form-item">
+                      <label>Guest {{ i + 1 }} Name</label>
+                      <input
+                        type="text"
+                        [(ngModel)]="guest.name"
+                        [name]="'guestName' + i"
+                        placeholder="Enter name"
+                        required
+                        #guestNameInput="ngModel"
+                      />
+                      <div *ngIf="guestNameInput.invalid && guestNameInput.touched" class="error">
+                        Guest name is required.
+                      </div>
                     </div>
                   </div>
+
+                      <!-- Guest Age and Gender Row -->
+                      <div class="form-row">
+                        <!-- Guest Age -->
+                        <div class="form-item">
+                          <label>Guest {{ i + 1 }} Age</label>
+                          <input
+                            type="number"
+                            [(ngModel)]="guest.age"
+                            [name]="'guestAge' + i"
+                            placeholder="Enter age"
+                            required
+                            min="1"
+                            max="150"
+                            #guestAgeInput="ngModel"
+                          />
+                          <div *ngIf="guestAgeInput.invalid && guestAgeInput.touched" class="error">
+                            <div *ngIf="guestAgeInput.errors?.['required']">Age is required.</div>
+                            <div *ngIf="guestAgeInput.errors?.['min'] || guestAgeInput.errors?.['max']">
+                              Age must be between 1 and 150.
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- Guest Gender -->
+                        <div class="form-item">
+                          <label>Guest {{ i + 1 }} Gender</label>
+                          <select
+                            [(ngModel)]="guest.gender"
+                            [name]="'guestGender' + i"
+                            required
+                            #guestGenderInput="ngModel"
+                          >
+                            <option value="" disabled selected>Select Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                          </select>
+                          <div *ngIf="guestGenderInput.invalid && guestGenderInput.touched" class="error">
+                            Gender is required.
+                          </div>
+                        </div>
+                      </div>
                 </div>
-              
+
                 <div class="form-actions">
                   <button
                     type="submit"
@@ -127,9 +179,7 @@
                     Confirm Booking <fa-icon [icon]="faCheckCircle"></fa-icon>
                   </button>
                 </div>
-              </form>
-              
-              
+          </form>    
         </div>
 
         <!-- Right side content (Hotel details and Price Breakdown) -->

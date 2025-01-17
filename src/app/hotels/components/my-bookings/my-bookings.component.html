@@ -14,19 +14,24 @@
 
         <!-- Details columns -->
         <div class="booking-details">
+
           <div class="detail-column">
             <p><fa-icon [icon]="faHotel"></fa-icon> {{ booking.hotelName }}</p>
             <p><fa-icon [icon]="faMapMarkerAlt"></fa-icon> {{ booking.location }}</p>
           </div>
+
           <div class="detail-column">
-            <p><fa-icon [icon]="faCalendarCheck"></fa-icon> {{ booking.checkIn }}</p>
-            <p><fa-icon [icon]="faCalendarMinus"></fa-icon> {{ booking.checkOut }}</p>
+            <p><fa-icon [icon]="faCalendarCheck"></fa-icon> {{ booking.checkIn }} -> <fa-icon [icon]="faCalendarMinus"></fa-icon> {{ booking.checkOut }}</p>
+            <p><fa-icon [icon]="faUsers"></fa-icon> {{ booking.noOfGuests }} Guests</p>
           </div>
+
           <div class="detail-column">
             <p><fa-icon [icon]="faBed"></fa-icon>{{ booking.roomType }}</p>
             <p><fa-icon [icon]="faCircle"></fa-icon> {{ booking.status }}</p>
           </div>
+          
           <div class="detail-column">
+            <p><fa-icon [icon]="faCloudMoon"></fa-icon> {{ booking.stayDuration }} night(s)</p>
             <p><fa-icon [icon]="faMoneyBill"></fa-icon> ₹{{ booking.totalPayable }}</p>
           </div>
 
@@ -61,15 +66,16 @@
             <p><fa-icon [icon]="faMapMarkerAlt"></fa-icon> {{ booking.location }}</p>
           </div>
           <div class="detail-column">
-            <p><fa-icon [icon]="faCalendarCheck"></fa-icon> {{ booking.checkIn }}</p>
-            <p><fa-icon [icon]="faCalendarMinus"></fa-icon> {{ booking.checkOut }}</p>
+            <p><fa-icon [icon]="faCalendarCheck"></fa-icon> {{ booking.checkIn }} -> <fa-icon [icon]="faCalendarMinus"></fa-icon> {{ booking.checkOut }}</p>
+            <p><fa-icon [icon]="faUsers"></fa-icon> {{ booking.noOfGuests }} Guests</p>
           </div>
           <div class="detail-column">
             <p><fa-icon [icon]="faBed"></fa-icon> {{ booking.roomType }}</p>
             <p><fa-icon [icon]="faCircle"></fa-icon> {{ booking.status }}</p>
           </div>
           <div class="detail-column">
-              <p><fa-icon [icon]="faMoneyBill"> </fa-icon> ₹{{ booking.totalPayable }}</p>
+            <p><fa-icon [icon]="faCloudMoon"></fa-icon> {{ booking.stayDuration }} night(s)</p>
+            <p><fa-icon [icon]="faMoneyBill"></fa-icon> ₹{{ booking.totalPayable }}</p>
             </div>
 
           <!-- Buttons -->
@@ -94,15 +100,17 @@
 <div class="popup" *ngIf="showDetailsPopup">
   <div class="popup-content">
     <h3>Booking Details</h3>
-    <p><strong>Booking id</strong> {{ selectedBooking?.id }}</p>
+    <p><strong>Booking id:</strong> {{ selectedBooking?.id }}</p>
     <p><strong>Hotel id:</strong> {{ selectedBooking?.hotelid }}</p>
     <p><strong>Hotel:</strong> {{ selectedBooking?.hotelName }}</p>
     <p><strong>Location:</strong> {{ selectedBooking?.location }}</p>
+    <p><strong>Booking Dates:</strong> {{ selectedBooking?.checkIn }} to {{ selectedBooking?.checkOut }}</p>
     <p><strong>Room Type:</strong> {{ selectedBooking?.roomType }}</p>
     <p><strong>No of Rooms:</strong> {{ selectedBooking?.rooms }}</p>
-    <p><strong>Total Price (incl. taxes):</strong> ₹{{ selectedBooking?.totalPayable }}</p>
-    <p><strong>Booking Dates:</strong> {{ selectedBooking?.checkIn }} to {{ selectedBooking?.checkOut }}</p>
+    <p><strong>No of Guests:</strong> {{ selectedBooking?.noOfGuests }}</p>
     <p><strong>Stay Duration:</strong> {{ selectedBooking?.stayDuration }} night(s) </p>
+    <p><strong>Total Price (incl. taxes):</strong> ₹{{ selectedBooking?.totalPayable }}</p>
+  
     <button (click)="closeDetailsPopup()">Close</button>
   </div>
 </div>

@@ -84,12 +84,20 @@ input:focus {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease, cursor 0.3s ease;
 }
 
 .search-btn:hover {
   background: linear-gradient(135deg, #ff6347, #ff4500);
 }
+
+.search-btn:disabled {
+  background: #d3d3d3; /* Light grey */
+  color: #a9a9a9; /* Dim grey for text */
+  cursor: not-allowed; /* Indicates the button is not clickable */
+  opacity: 0.6; /* Makes the button look 'frozen' */
+}
+
 
 .invalid {
   border: 1px solid red;

@@ -43,12 +43,14 @@
         </div>
 
         <div class="form-group">
-          <label for="endDate"> <i><fa-icon [icon]="faCalendarMinus"></fa-icon></i> Check-out</label>
+          <label for="endDate">
+            <i><fa-icon [icon]="faCalendarMinus"></fa-icon></i> Check-out
+          </label>
           <input 
             type="date" 
             id="endDate" 
             [(ngModel)]="searchParams.endDate"
-            [min]="searchParams.startDate || minCheckinDate" 
+            [min]="getNextDate(searchParams.startDate || minCheckinDate)" 
             name="endDate" 
             required 
             #endDate="ngModel"
@@ -58,6 +60,7 @@
             Check-out date is required.
           </div>
         </div>
+      
       </div>
 
       <div class="form-row">

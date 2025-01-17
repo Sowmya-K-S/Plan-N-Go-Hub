@@ -139,4 +139,17 @@ export class SearchHotelComponent implements OnInit {
       }
       return place;
     }
+
+
+    //for getting next date for checkout date
+    getNextDate(date: string | null): string {
+      if (!date) {
+        return ''; // Return empty string if date is not provided
+      }
+      const selectedDate = new Date(date);
+      const nextDate = new Date(selectedDate);
+      nextDate.setDate(selectedDate.getDate() + 1); // Add one day
+      return nextDate.toISOString().split('T')[0]; // Format as 'YYYY-MM-DD'
+    }
+    
 }

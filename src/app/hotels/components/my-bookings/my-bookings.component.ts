@@ -4,7 +4,7 @@ import { Router } from '@angular/router'; // Import Router
 import { HotelService } from '../../services/hotel.service';
 import { FormsModule } from '@angular/forms'; // Import FormsModule
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faHotel, faMapMarkerAlt, faCalendarCheck, faCalendarMinus, faBed, faCircle, faMoneyBill } from '@fortawesome/free-solid-svg-icons';
+import { faHotel, faMapMarkerAlt, faCalendarCheck, faCalendarMinus, faBed, faCircle, faMoneyBill, faCloudMoon, faUsers } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -26,6 +26,8 @@ export class MyBookingsComponent implements OnInit {
   faBed = faBed;
   faCircle = faCircle;
   faMoneyBill = faMoneyBill;
+  faCloudMoon = faCloudMoon;
+  faUsers = faUsers;
 
    // Popup and Review Form State
    showDetailsPopup = false;
