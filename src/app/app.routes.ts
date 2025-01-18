@@ -8,11 +8,11 @@ import { HotelBookingComponent } from './hotels/components/hotel-booking/hotel-b
 import { MyBookingsComponent } from './hotels/components/my-bookings/my-bookings.component';
 
 export const routes: Routes = [
-  { path: '', component: SearchHotelComponent },
-  { path: 'search-results', component: HotelResultsComponent },
-  { path: 'hotel-details/:id', component: HotelDetailsComponent },
-  { path: 'hotel-booking', component: HotelBookingComponent },
-  { path: 'my-bookings', component: MyBookingsComponent }
+  { path: 'hotels', component: SearchHotelComponent },
+  { path: 'hotels/search-results', component: HotelResultsComponent },
+  { path: 'hotels/hotel-details/:id', component: HotelDetailsComponent },
+  { path: 'hotels/hotel-booking', component: HotelBookingComponent },
+  { path: 'hotels/my-bookings', component: MyBookingsComponent }
 ];
 
 

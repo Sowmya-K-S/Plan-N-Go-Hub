@@ -96,13 +96,15 @@ export class HotelBookingComponent {
       phone: this.phone,
       guests: this.otherGuests,
       roomType: this.room.type,
+      roomPrice: this.room.price,
+      noOfrooms: this.noOfRooms,
+      stayDuration: this.stayDuration,
+      noOfGuests: this.otherGuests.length + 1,
+      totalPrice:this.totalPrice,
       totalPayable: this.totalPayable,
       checkIn: this.checkIn.toLocaleDateString(),
       checkOut: this.checkOut.toLocaleDateString(),
       status: 'booked',
-      rooms: this.noOfRooms,
-      stayDuration: this.stayDuration,
-      noOfGuests: this.otherGuests.length + 1,
     }
 
     this.bookingDetails = bookingData;
@@ -127,11 +129,11 @@ export class HotelBookingComponent {
   }
 
   viewDetails() {
-    this.router.navigate(['/my-bookings']);
+    this.router.navigate(['/hotels/my-bookings']);
   }
 
   goToHome() {
-    this.router.navigate(['/']);
+    this.router.navigate(['/hotels']);
   }
 
   

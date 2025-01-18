@@ -6,6 +6,11 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, BehaviorSubject} from 'rxjs';
 import { Hotel } from '../models/hotel.model';
 
+import { switchMap } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
+
+
+
 @Injectable({
   providedIn: 'root',
 })
@@ -108,19 +113,43 @@ getBookings(): Observable<any[]> {
   return this.http.get<any[]>(`http://localhost:3000/bookings`);
 }
 
-cancelBooking(id: string): Observable<void> {
-  return this.http.delete<void>(`http://localhost:3000/bookings`);
+cancelBooking(id: string, updatedBooking: any): Observable<any> {
+  const url = `http://localhost:3000/bookings/${id}`;
+  return this.http.put(url, updatedBooking);
 }
 
-giveReview(booking: any): void {
-  console.log('Review for booking:', booking);
-  // Add review logic here
+addReviewToHotel(hotelId: number, review: any): Observable<any> {
+  const url = `${this.apiUrl}/${hotelId}`;
+  return this.http.get<Hotel>(url).pipe(
+    switchMap((hotel) => {
+      const updatedReviews = hotel.reviews ? [...hotel.reviews, review] : [review];
+      const updatedHotel = { ...hotel, reviews: updatedReviews };
+      return this.http.put<any>(url, updatedHotel);
+    })
+  );
 }
+
+
+updateBookingStatus(booking: any): Observable<any> {
+  const url = `http://localhost:3000/bookings/${booking.id}`;
+  return this.http.put(url, booking); // Updates the booking status
+}
+
+
+getRoomTypesByHotelId(hotelId: string): Observable<any[]> {
+  return this.http.get<any>(`${this.apiUrl}/${hotelId}`).pipe(
+    map((hotel) => hotel.rooms || []) // Extract room types or return an empty array
+  );
+}
+
+
+
 
 editBooking(booking: any): Observable<any> {
-  // Replace with the actual API URL and booking ID
-  return this.http.put(`http://localhost:3000/bookings/${booking.hotelid}`, booking);
+  const url = `http://localhost:3000/bookings/${booking.id}`;
+  return this.http.put<any>(url, booking);
 }
+
 
 }
 

@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faSearch, faStar, faCalendarCheck, faCalendarMinus, faUser, faLocation, faBed, faChild, faArrowRight, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faStar, faCalendarCheck, faCalendarMinus, faUser, faLocation, faBed, faChild, faArrowRight, faMapMarkerAlt, faBars, faClipboardList, faHome } from '@fortawesome/free-solid-svg-icons';
 
 import { HotelService } from '../../services/hotel.service';
 import { Hotel } from '../../models/hotel.model';
@@ -41,6 +41,9 @@ export class SearchHotelComponent implements OnInit {
   faBed = faBed;
   faChild = faChild;
   faArrowRight = faArrowRight;
+  faBars = faBars;
+  faClipboardList = faClipboardList;
+  faHome = faHome;
 
 
   constructor(private hotelService: HotelService, private router: Router) {
@@ -88,13 +91,13 @@ export class SearchHotelComponent implements OnInit {
     if (!location.trim()) {
       return; // Prevent empty location searches
     }
-    this.router.navigate(['/search-results']);
+    this.router.navigate(['/hotels/search-results']);
   }
   
 
   navigateToDetails(hotel: Hotel): void {
     this.hotelService.setSelectedHotel(hotel);
-    this.router.navigate(['/hotel-details', hotel.id]);
+    this.router.navigate(['/hotels/hotel-details', hotel.id]);
   }
 
 
@@ -103,13 +106,13 @@ export class SearchHotelComponent implements OnInit {
       console.error('Invalid location');
       return;
     }
-    this.router.navigate(['/search-results']);
+    this.router.navigate(['/hotels/search-results']);
   }
   
   navigateWithParams(location: string): void {
     this.searchParams.location = location;
     this.hotelService.setSearchDetails(this.searchParams);
-    this.router.navigate(['/search-results']);
+    this.router.navigate(['/hotels/search-results']);
   }
 
    //to fill stars
@@ -151,5 +154,25 @@ export class SearchHotelComponent implements OnInit {
       nextDate.setDate(selectedDate.getDate() + 1); // Add one day
       return nextDate.toISOString().split('T')[0]; // Format as 'YYYY-MM-DD'
     }
-    
+
+
+
+    //toggle functions
+    isMenuOpen = false; // To track the toggle state
+
+
+  toggleMenu(): void {
+    this.isMenuOpen = !this.isMenuOpen; // Toggle the menu state
+  }
+
+  navigateToHome(): void {
+    this.router.navigate(['/hotels']); // Navigate to home
+    this.isMenuOpen = false; // Close the menu after navigation
+  }
+
+  navigateToMyBookings(): void {
+    this.router.navigate(['/hotels/my-bookings']); // Navigate to my bookings page
+    this.isMenuOpen = false; // Close the menu after navigation
+  }
+
 }

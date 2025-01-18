@@ -27,7 +27,7 @@
 
           <div class="detail-column">
             <p><fa-icon [icon]="faBed"></fa-icon>{{ booking.roomType }}</p>
-            <p><fa-icon [icon]="faCircle"></fa-icon> {{ booking.status }}</p>
+            <p><fa-icon [icon]="faCircle" [style.color]="getStatusColor(booking.status)"></fa-icon> {{ booking.status }}</p>
           </div>
           
           <div class="detail-column">
@@ -38,7 +38,7 @@
           <!-- Buttons -->
           <div class="booking-buttons">
             <button (click)="openDetailsPopup(booking)">View Details</button>
-            <button (click)="openCancelPopup()">Cancel</button>
+            <button (click)="openCancelPopup(booking)">Cancel</button>
             <button (click)="openEditPopup(booking)">Edit Booking</button>
           </div>
         </div>
@@ -71,7 +71,7 @@
           </div>
           <div class="detail-column">
             <p><fa-icon [icon]="faBed"></fa-icon> {{ booking.roomType }}</p>
-            <p><fa-icon [icon]="faCircle"></fa-icon> {{ booking.status }}</p>
+            <p><fa-icon [icon]="faCircle" [style.color]="getStatusColor(booking.status)"></fa-icon>  {{ booking.status }}</p>
           </div>
           <div class="detail-column">
             <p><fa-icon [icon]="faCloudMoon"></fa-icon> {{ booking.stayDuration }} night(s)</p>
@@ -84,7 +84,7 @@
             <button (click)="giveReview(booking)">Give Review</button>
             <button>Book Again</button>-->
             <button (click)="openDetailsPopup(booking)">View Details</button>
-            <button (click)="openReviewForm(booking)">Give Review</button>
+            <button [disabled]="booking.status === 'cancelled'" [class.disabled]="booking.status === 'cancelled'" (click)="openReviewForm(booking)">Give Review</button>
             <button (click)="openRebookPopup(booking)">Book Again</button>
           </div>
         </div>
@@ -96,123 +96,212 @@
   </ng-template>
 
 
-<!-- Details Popup -->
-<div class="popup" *ngIf="showDetailsPopup">
-  <div class="popup-content">
-    <h3>Booking Details</h3>
-    <p><strong>Booking id:</strong> {{ selectedBooking?.id }}</p>
-    <p><strong>Hotel id:</strong> {{ selectedBooking?.hotelid }}</p>
-    <p><strong>Hotel:</strong> {{ selectedBooking?.hotelName }}</p>
-    <p><strong>Location:</strong> {{ selectedBooking?.location }}</p>
-    <p><strong>Booking Dates:</strong> {{ selectedBooking?.checkIn }} to {{ selectedBooking?.checkOut }}</p>
-    <p><strong>Room Type:</strong> {{ selectedBooking?.roomType }}</p>
-    <p><strong>No of Rooms:</strong> {{ selectedBooking?.rooms }}</p>
-    <p><strong>No of Guests:</strong> {{ selectedBooking?.noOfGuests }}</p>
-    <p><strong>Stay Duration:</strong> {{ selectedBooking?.stayDuration }} night(s) </p>
-    <p><strong>Total Price (incl. taxes):</strong> ₹{{ selectedBooking?.totalPayable }}</p>
-  
-    <button (click)="closeDetailsPopup()">Close</button>
+  <!-- Details Popup -->
+  <div class="popup" *ngIf="showDetailsPopup">
+    <div class="popup-content">
+      <h3>Booking Details</h3>
+      <p><strong>Booking id:</strong> {{ selectedBooking?.id }}</p>
+      <p><strong>Hotel id:</strong> {{ selectedBooking?.hotelid }}</p>
+      <p><strong>Hotel:</strong> {{ selectedBooking?.hotelName }}</p>
+      <p><strong>Location:</strong> {{ selectedBooking?.location }}</p>
+      <p><strong>Booking Dates:</strong> {{ selectedBooking?.checkIn }} to {{ selectedBooking?.checkOut }}</p>
+      <p><strong>Room Type:</strong> {{ selectedBooking?.roomType }}</p>
+      <p><strong>No of Rooms:</strong> {{ selectedBooking?.rooms }}</p>
+      <p><strong>No of Guests:</strong> {{ selectedBooking?.noOfGuests }}</p>
+      <p><strong>Stay Duration:</strong> {{ selectedBooking?.stayDuration }} night(s) </p>
+      <p><strong>Total Price (incl. taxes):</strong> ₹{{ selectedBooking?.totalPayable }}</p>
+      <p><strong>Status:</strong> {{ selectedBooking?.status }}</p>
+      
+    
+      <button (click)="closeDetailsPopup()" style="color: white;">Close</button>
+    </div>
   </div>
-</div>
 
-<!-- Review Form -->
-<div class="popup" *ngIf="showReviewForm">
+  <!-- Review Form -->
+  <div class="popup" *ngIf="showReviewForm">
+    <div class="popup-content">
+      <h3>Submit Review</h3>
+      <form (ngSubmit)="submitReview()">
+        <label>
+          Name:
+          <input type="text" [(ngModel)]="reviewForm.username" name="username" required />
+        </label>
+        <label>
+          Rating:
+          <select [(ngModel)]="reviewForm.rating" name="rating" required>
+            <option *ngFor="let r of [1, 2, 3, 4, 5]" [value]="r">{{ r }}</option>
+          </select>
+        </label>
+        <label>
+          Comment:
+          <textarea [(ngModel)]="reviewForm.comment" name="comment" required></textarea>
+        </label>
+        <button type="submit">Submit</button>
+        <button type="button" (click)="closeReviewForm()">Cancel</button>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- Edit Booking Popup -->
+<div class="popup" *ngIf="showEditPopup">
   <div class="popup-content">
-    <h3>Submit Review</h3>
-    <form (ngSubmit)="submitReview()">
+    <h3>Edit Booking</h3>
+    <form (ngSubmit)="submitEditForm()">
+      <!-- Main Guest Information -->
       <label>
         Name:
-        <input type="text" [(ngModel)]="reviewForm.userName" name="userName" required />
+        <input type="text" [(ngModel)]="editForm.name" name="name" required />
       </label>
       <label>
-        Rating:
-        <select [(ngModel)]="reviewForm.rating" name="rating" required>
-          <option *ngFor="let r of [1, 2, 3, 4, 5]" [value]="r">{{ r }}</option>
+        Age:
+        <input type="number" [(ngModel)]="editForm.age" name="age" required />
+      </label>
+      <label>
+        Gender:
+        <select [(ngModel)]="editForm.gender" name="gender" required>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
         </select>
       </label>
       <label>
-        Comment:
-        <textarea [(ngModel)]="reviewForm.comment" name="comment" required></textarea>
+        Email:
+        <input type="email" [(ngModel)]="editForm.email" name="email" required />
       </label>
+      <label>
+        Phone:
+        <input type="tel" [(ngModel)]="editForm.phone" name="phone" required />
+      </label>
+
+      <!-- Room Type Dropdown -->
+      <label>
+        Room Type:
+        <select [(ngModel)]="editForm.roomType" name="roomType" (change)="onRoomTypeChange($event)" required>
+          <option *ngFor="let room of availableRooms" [value]="room.type">
+            {{ room.type }} (₹{{ room.price }})
+          </option>
+        </select>
+      </label>
+
+      <!-- Guest Details -->
+      <div>
+        <h4>Guests</h4>
+        <div *ngFor="let guest of editForm.guests; let i = index" class="guest-entry">
+          <label>
+            Name:
+            <input type="text" [(ngModel)]="guest.name" [name]="'guestName' + i" required />
+          </label>
+          <label>
+            Age:
+            <input type="number" [(ngModel)]="guest.age" [name]="'guestAge' + i" required />
+          </label>
+          <label>
+            Gender:
+            <select [(ngModel)]="guest.gender" [name]="'guestGender' + i" required>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </label>
+          <button type="button" (click)="removeGuest(i)">Remove</button>
+        </div>
+        <button type="button" (click)="addGuest()">Add Guest</button>
+      </div>
+
+      <!-- Price and Dates -->
+      <label>
+        Check-In Date:
+        <input type="date" [(ngModel)]="editForm.checkIn" name="checkIn" (change)="updatePrice()" required />
+      </label>
+      <label>
+        Check-Out Date:
+        <input type="date" [(ngModel)]="editForm.checkOut" name="checkOut" (change)="updatePrice()" required />
+      </label>
+      <label>
+        Total Payable: ₹{{ editForm.totalPayable }}
+      </label>
+
       <button type="submit">Submit</button>
-      <button type="button" (click)="closeReviewForm()">Cancel</button>
+      <button type="button" (click)="closeEditPopup()">Cancel</button>
     </form>
   </div>
 </div>
 
-<!-- Edit Booking Popup -->
-<div class="popup" *ngIf="showEditPopup">
-<div class="popup-content">
-  <h3>Edit Booking</h3>
-  <form (ngSubmit)="submitEditForm()">
-    <label>
-      Hotel Name:
-      <input type="text" [(ngModel)]="editForm.hotelName" name="hotelName" required />
-    </label>
-    <label>
-      Location:
-      <input type="text" [(ngModel)]="editForm.location" name="location" required />
-    </label>
-    <label>
-      Check-In Date:
-      <input type="date" [(ngModel)]="editForm.checkIn" name="checkIn" required />
-    </label>
-    <label>
-      Check-Out Date:
-      <input type="date" [(ngModel)]="editForm.checkOut" name="checkOut" required />
-    </label>
-    <label>
-      Room Type:
-      <input type="text" [(ngModel)]="editForm.roomType" name="roomType" required />
-    </label>
-    <label>
-      Total Payable:
-      <input type="number" [(ngModel)]="editForm.totalPayable" name="totalPayable" required />
-    </label>
-    <button type="submit">Submit</button>
-    <button type="button" (click)="closeEditPopup()">Cancel</button>
-  </form>
-</div>
-</div>
 
-<!-- Rebooking Popup -->
-<div *ngIf="showRebookPopup" class="popup">
-<div class="popup-content">
-  <h3>Rebook Hotel</h3>
-  <form (ngSubmit)="submitRebookForm()">
-    <label>Hotel Name:</label>
-    <input type="text" [(ngModel)]="rebookForm.hotelName" name="hotelName" readonly />
+  <!-- Rebooking Popup -->
+  <!-- <div *ngIf="showRebookPopup" class="popup">
+  <div class="popup-content">
+    <h3>Rebook Hotel</h3>
+    <form (ngSubmit)="submitRebookForm()">
+      <label>Hotel Name:</label>
+      <input type="text" [(ngModel)]="rebookForm.hotelName" name="hotelName" readonly />
 
-    <label>Location:</label>
-    <input type="text" [(ngModel)]="rebookForm.location" name="location" readonly />
+      <label>Location:</label>
+      <input type="text" [(ngModel)]="rebookForm.location" name="location" readonly />
 
-    <label>Check-In:</label>
-    <input type="date" [(ngModel)]="rebookForm.checkIn" name="checkIn" required />
+      <label>Check-In:</label>
+      <input type="date" [(ngModel)]="rebookForm.checkIn" name="checkIn" required />
 
-    <label>Check-Out:</label>
-    <input type="date" [(ngModel)]="rebookForm.checkOut" name="checkOut" required />
+      <label>Check-Out:</label>
+      <input type="date" [(ngModel)]="rebookForm.checkOut" name="checkOut" required />
 
-    <label>Room Type:</label>
-    <input type="text" [(ngModel)]="rebookForm.roomType" name="roomType" readonly />
+      <label>Room Type:</label>
+      <input type="text" [(ngModel)]="rebookForm.roomType" name="roomType" readonly />
 
-    <label>Total Payable:</label>
-    <input type="number" [(ngModel)]="rebookForm.totalPayable" name="totalPayable" readonly />
+      <label>Total Payable:</label>
+      <input type="number" [(ngModel)]="rebookForm.totalPayable" name="totalPayable" readonly />
 
-    <button type="submit" class="btn btn-success">Confirm Rebooking</button>
-    <button type="button" (click)="closeRebookPopup()" class="btn btn-secondary">Cancel</button>
-  </form>
-</div>
-</div>
-</div>
+      <button type="submit" class="btn btn-success">Confirm Rebooking</button>
+      <button type="button" (click)="closeRebookPopup()" class="btn btn-secondary">Cancel</button>
+    </form>
+  </div>
+  </div>
+  </div> -->
 
-<!-- Cancel Confirmation Popup -->
-<div *ngIf="showCancelPopup" class="popup">
-  <div class=" popup-content popup-content-cancel">
-    <h3>Confirm Cancellation</h3>
-    <p>Are you sure you want to cancel this booking?</p>
-    <div class="popup-buttons">
-      <button type="button" (click)="closeCancelPopup()" class="btn">No</button>
-      <button type="submit" (click)="confirmCancellation()" class="btn">Yes</button>
+  <div *ngIf="showCancelPopup" class="popup">
+    <div class="popup-content popup-content-cancel">
+      <h3>Confirm Cancellation</h3>
+      <p>Are you sure you want to cancel this booking?</p>
+      <div class="popup-buttons">
+        <button type="button" (click)="closeCancelPopup()" class="btn">No</button>
+        <button type="submit" (click)="confirmCancellation()" class="btn">Yes</button>
+      </div>
     </div>
   </div>
+
+
+  <!-- Review Submission Success Popup -->
+  <div *ngIf="showReviewSuccessPopup" class="popup">
+    <div class="popup-content">
+      <h3>Sucess</h3>
+      <p>Review submitted successfully</p>
+      <button (click)="closeReviewSuccessPopup()">OK</button>
+    </div>
+  </div>
+
+  <!-- Cancellation Success Popup -->
+  <div *ngIf="showCancelSuccessPopup" class="popup">
+    <div class="popup-content">
+      <h3>Booking Cancelled Successfully</h3>
+      <button (click)="closeCancelSuccessPopup()">OK</button>
+    </div>
+  </div>
+
+  <!-- Update Success Popup -->
+  <div *ngIf="showUpdateSuccessPopup" class="popup">
+    <div class="popup-content">
+      <h3>Booking Updated Successfully</h3>
+      <button (click)="closeUpdateSuccessPopup()">OK</button>
+    </div>
+  </div>
+  
+
+  <!-- Floating Toggle Button -->
+<div class="toggle-btn" (click)="toggleMenu()">
+  <i><fa-icon [icon]="faBars"></fa-icon></i>
+</div>
+
+<!-- Navigation Buttons -->
+<div class="circle-menu" *ngIf="isMenuOpen">
+  <button (click)="navigateToHome()" class="circle-btn"><i><fa-icon [icon]="faHome"></fa-icon></i></button>
+  <button (click)="navigateToMyBookings()" class="circle-btn"><i><fa-icon [icon]="faClipboardList"></fa-icon></i></button>
 </div>

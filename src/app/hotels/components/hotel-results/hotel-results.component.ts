@@ -28,6 +28,8 @@ export class HotelResultsComponent implements OnInit {
   faFilter = faFilter;
   faStar = faStar;
   faMapMarkerAlt = faMapMarkerAlt
+
+  
   
 
   filters = {
@@ -247,16 +249,29 @@ export class HotelResultsComponent implements OnInit {
       }
       return place;
     }
-
-
-
-    
-    
   
   navigateToDetails(hotel: Hotel): void {
     this.hotelService.setSelectedHotel(hotel);
-    this.router.navigate(['/hotel-details', hotel.id]);
+    this.router.navigate(['/hotels/hotel-details', hotel.id]);
   }
 
+
+      //toggle functions
+      isMenuOpen = false; // To track the toggle state
+
+
+      toggleMenu(): void {
+        this.isMenuOpen = !this.isMenuOpen; // Toggle the menu state
+      }
+    
+      navigateToHome(): void {
+        this.router.navigate(['/hotels']); // Navigate to home
+        this.isMenuOpen = false; // Close the menu after navigation
+      }
+    
+      navigateToMyBookings(): void {
+        this.router.navigate(['/hotels/my-bookings']); // Navigate to my bookings page
+        this.isMenuOpen = false; // Close the menu after navigation
+      }
 
 }

@@ -201,7 +201,7 @@ export class HotelDetailsComponent implements OnInit {
   navigateToBooking(room: any): void {
   {
     this.hotelService.setSelectedRoom(room);
-    this.router.navigate(['/hotel-booking']);
+    this.router.navigate(['/hotels/hotel-booking']);
   }
 }
 }
