@@ -58,3 +58,33 @@ export interface Hotel {
     ];
   }
   
+  export interface Guest {
+    name: string;
+    age: number;
+    gender: string;
+  }
+  
+  export interface Booking {
+    id: string;
+    hotelid: string;
+    hotelName: string;
+    hotelImage: string;
+    location: string;
+    name: string;
+    age: number;
+    gender: string;
+    email: string;
+    phone: string;
+    guests: Guest[];
+    roomType: string;
+    roomPrice: number;
+    noOfrooms: number;
+    stayDuration: number;
+    noOfGuests: number;
+    totalPrice: number;
+    totalPayable: number;
+    checkIn: string;
+    checkOut: string;
+    status: string;
+  }
+  
