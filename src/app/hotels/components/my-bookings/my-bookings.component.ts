@@ -6,12 +6,14 @@ import { FormsModule } from '@angular/forms'; // Import FormsModule
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faHotel, faMapMarkerAlt, faCalendarCheck, faCalendarMinus, faBed, faCircle, faMoneyBill, faCloudMoon, faUsers, faBars, faClipboardList, faHome } from '@fortawesome/free-solid-svg-icons';
 
+import { NavigationToggleComponent } from '../navigation-toggle/navigation-toggle.component';
+
 
 
 @Component({
   selector: 'app-my-bookings',
   standalone: true,
-  imports: [CommonModule,  FormsModule, FontAwesomeModule],
+  imports: [CommonModule,  FormsModule, FontAwesomeModule, NavigationToggleComponent],
   templateUrl: './my-bookings.component.html',
   styleUrls: ['./my-bookings.component.css']
 })

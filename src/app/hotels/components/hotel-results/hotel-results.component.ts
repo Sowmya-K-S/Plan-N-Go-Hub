@@ -11,11 +11,13 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {faFilter, faStar, faMapMarkerAlt} from'@fortawesome/free-solid-svg-icons';
 import { map } from 'rxjs/operators';
 
+import { NavigationToggleComponent } from '../navigation-toggle/navigation-toggle.component';
+
 
 @Component({
   selector: 'app-search-results',
   standalone: true,
-  imports: [CommonModule, FormsModule, FontAwesomeModule],
+  imports: [CommonModule, FormsModule, FontAwesomeModule, NavigationToggleComponent],
   templateUrl: './hotel-results.component.html',
   styleUrls: ['./hotel-results.component.css'],
 })

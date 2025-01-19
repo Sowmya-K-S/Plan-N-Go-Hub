@@ -10,10 +10,12 @@ import { faSearch, faStar, faCalendarCheck, faCalendarMinus, faUser, faLocation,
 import { HotelService } from '../../services/hotel.service';
 import { Hotel } from '../../models/hotel.model';
 
+import { NavigationToggleComponent } from '../navigation-toggle/navigation-toggle.component';
+
 @Component({
   selector: 'app-hotel-search',
   standalone: true,
-  imports: [FormsModule, CommonModule, FontAwesomeModule],
+  imports: [FormsModule, CommonModule, FontAwesomeModule, NavigationToggleComponent],
   templateUrl: './search-hotel.component.html',
   styleUrls: ['./search-hotel.component.css'],
 })
@@ -154,25 +156,5 @@ export class SearchHotelComponent implements OnInit {
       nextDate.setDate(selectedDate.getDate() + 1); // Add one day
       return nextDate.toISOString().split('T')[0]; // Format as 'YYYY-MM-DD'
     }
-
-
-
-    //toggle functions
-    isMenuOpen = false; // To track the toggle state
-
-
-  toggleMenu(): void {
-    this.isMenuOpen = !this.isMenuOpen; // Toggle the menu state
-  }
-
-  navigateToHome(): void {
-    this.router.navigate(['/hotels']); // Navigate to home
-    this.isMenuOpen = false; // Close the menu after navigation
-  }
-
-  navigateToMyBookings(): void {
-    this.router.navigate(['/hotels/my-bookings']); // Navigate to my bookings page
-    this.isMenuOpen = false; // Close the menu after navigation
-  }
 
 }

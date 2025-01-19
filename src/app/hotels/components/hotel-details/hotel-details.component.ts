@@ -11,10 +11,12 @@ import { IconDefinition,faStar,faSwimmingPool,faSpa,faDumbbell, faCocktail, faHa
 import { HotelService } from '../../services/hotel.service';
 import { Hotel } from '../../models/hotel.model';
 
+import { NavigationToggleComponent } from '../navigation-toggle/navigation-toggle.component';
+
 @Component({
   selector: 'app-hotel-details',
   standalone: true,
-  imports: [CommonModule, FontAwesomeModule],
+  imports: [CommonModule, FontAwesomeModule, NavigationToggleComponent],
   templateUrl: './hotel-details.component.html',
   styleUrls: ['./hotel-details.component.css'],
 })

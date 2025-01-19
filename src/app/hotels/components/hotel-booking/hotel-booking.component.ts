@@ -11,10 +11,12 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 
+import { NavigationToggleComponent } from '../navigation-toggle/navigation-toggle.component';
+
 @Component({
   selector: 'app-hotel-booking',
   standalone: true,
-  imports: [FormsModule, CommonModule, FontAwesomeModule],
+  imports: [FormsModule, CommonModule, FontAwesomeModule, NavigationToggleComponent],
   templateUrl: './hotel-booking.component.html',
   styleUrl: './hotel-booking.component.css'
 })
