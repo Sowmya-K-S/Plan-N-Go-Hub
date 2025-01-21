@@ -48,6 +48,7 @@ export class MyBookingsComponent implements OnInit {
    editForm : any = {};
   
     rebookForm = {
+    id: '',
     hotelName: '',
     location: '',
     name: '',
@@ -65,11 +66,16 @@ export class MyBookingsComponent implements OnInit {
     totalPayable: 0,
     checkIn: '',
     checkOut: '',
+    status: 'booked',
   };
   
 
 
-  constructor(private hotelService: HotelService, private router: Router) {}
+  constructor(private hotelService: HotelService, private router: Router) 
+  {
+    const today = new Date();
+    this.todayDate = today.toISOString().split('T')[0];
+  }
 
   ngOnInit(): void {
     this.fetchBookings();
@@ -151,9 +157,12 @@ export class MyBookingsComponent implements OnInit {
     }
   }
 
-  private convertToISODate(date: string): string {
-    const [month, day, year] = date.split('/');
-    return `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
+  private convertToDBDate(date: string): string {
+    const dateObj = new Date(date);
+    const day = String(dateObj.getDate()).padStart(2, '0');
+    const month = String(dateObj.getMonth() + 1).padStart(2, '0');
+    const year = dateObj.getFullYear();
+    return `${month}/${day}/${year}`; // Format: MM/DD/YYYY
   }
 
 //--------------------------other functions section-------------------------------------------------
@@ -331,16 +340,35 @@ removeGuest(index: number): void {
 }
 
 
-onRoomTypeChange(event: Event): void {
-  const selectedRoomType = (event.target as HTMLSelectElement).value;
-  const room = this.availableRooms.find((r) => r.type === selectedRoomType);
-  if (room) {
-    this.editForm.roomType = room.type;
-    this.editForm.totalPayable = room.price * this.editForm.stayDuration;
-  }
+// onRoomTypeChange(event: Event): void {
+//   const selectedRoomType = (event.target as HTMLSelectElement).value;
+//   const room = this.availableRooms.find((r) => r.type === selectedRoomType);
+//   if (room) {
+//     this.editForm.roomType = room.type;
+//     this.editForm.totalPayable = room.price * this.editForm.stayDuration;
+//   }
+// }
+
+// updatePrice(): void {
+//   const checkIn = new Date(this.editForm.checkIn);
+//   const checkOut = new Date(this.editForm.checkOut);
+//   const stayDuration = Math.ceil((checkOut.getTime() - checkIn.getTime()) / (1000 * 60 * 60 * 24)) ||1;
+//   const room = this.availableRooms.find((r) => r.type === this.editForm.roomType);
+
+//   if (stayDuration > 0 && room) {
+//     this.editForm.stayDuration = stayDuration;
+//     const totalPrice = room.price * stayDuration;
+//     this.editForm.totalPayable = totalPrice + (0.18 * totalPrice);
+//   }
+// }
+
+
+closeEditPopup(): void {
+  this.showEditPopup = false;
 }
 
-updatePrice(): void {
+submitEditForm(): void {
+  // Ensure no price updates until final submission
   const checkIn = new Date(this.editForm.checkIn);
   const checkOut = new Date(this.editForm.checkOut);
   const stayDuration = Math.ceil((checkOut.getTime() - checkIn.getTime()) / (1000 * 60 * 60 * 24));
@@ -349,18 +377,16 @@ updatePrice(): void {
   if (stayDuration > 0 && room) {
     this.editForm.stayDuration = stayDuration;
     const totalPrice = room.price * stayDuration;
-    this.editForm.totalPayable = totalPrice + (0.18 * totalPrice);
+    this.editForm.totalPayable = totalPrice + totalPrice * 0.18; // Apply 18% tax
   }
-}
 
-
-closeEditPopup(): void {
-  this.showEditPopup = false;
-}
-
-submitEditForm(): void {
   const totalGuests = this.editForm.guests?.length + 1 || 0;
   this.editForm.noOfGuests = totalGuests;
+
+  // Format dates as per DB before saving
+  this.editForm.checkIn = this.convertToDBDate(this.editForm.checkIn);
+  this.editForm.checkOut = this.convertToDBDate(this.editForm.checkOut);
+
   this.hotelService.editBooking(this.editForm).subscribe({
     next: () => {
       console.log('Booking updated successfully');
@@ -409,28 +435,28 @@ closeRebookPopup(): void {
 }
 
 
-updateRebookPrice(): void {
-  const checkIn = new Date(this.rebookForm.checkIn);
-  const checkOut = new Date(this.rebookForm.checkOut);
-  const stayDuration = Math.ceil((checkOut.getTime() - checkIn.getTime()) / (1000 * 60 * 60 * 24));
-  const room = this.availableRooms.find((r) => r.type === this.rebookForm.roomType);
+// updateRebookPrice(): void {
+//   const checkIn = new Date(this.rebookForm.checkIn);
+//   const checkOut = new Date(this.rebookForm.checkOut);
+//   const stayDuration = Math.ceil((checkOut.getTime() - checkIn.getTime()) / (1000 * 60 * 60 * 24));
+//   const room = this.availableRooms.find((r) => r.type === this.rebookForm.roomType);
 
-  if (stayDuration > 0 && room) {
-    this.rebookForm.stayDuration = stayDuration;
-    const totalPrice = room.price * stayDuration;
-    this.rebookForm.totalPayable = totalPrice + totalPrice * 0.18; // 18% tax
-  }
-}
+//   if (stayDuration > 0 && room) {
+//     this.rebookForm.stayDuration = stayDuration;
+//     const totalPrice = room.price * stayDuration;
+//     this.rebookForm.totalPayable = totalPrice + totalPrice * 0.18; // 18% tax
+//   }
+// }
 
-onRebookRoomTypeChange(event: Event): void {
-  const selectedRoomType = (event.target as HTMLSelectElement).value;
-  const room = this.availableRooms.find((r) => r.type === selectedRoomType);
-  if (room) {
-    this.rebookForm.roomType = room.type;
-    this.rebookForm.roomPrice = room.price;
-    this.updateRebookPrice();
-  }
-}
+// onRebookRoomTypeChange(event: Event): void {
+//   const selectedRoomType = (event.target as HTMLSelectElement).value;
+//   const room = this.availableRooms.find((r) => r.type === selectedRoomType);
+//   if (room) {
+//     this.rebookForm.roomType = room.type;
+//     this.rebookForm.roomPrice = room.price;
+//     this.updateRebookPrice();
+//   }
+// }
 
 removeRebookGuest(index: number): void {
   this.rebookForm.guests.splice(index, 1);
@@ -442,18 +468,26 @@ addRebookGuest(): void {
 
 
 submitRebookForm(): void {
-  // Generate a new unique ID for rebooking
-  // const newBookingId = Math.random().toString(36).substr(2, 9); // Generate a random string for ID
+  const checkIn = new Date(this.rebookForm.checkIn);
+  const checkOut = new Date(this.rebookForm.checkOut);
+  const stayDuration = Math.ceil((checkOut.getTime() - checkIn.getTime()) / (1000 * 60 * 60 * 24));
+  const room = this.availableRooms.find((r) => r.type === this.rebookForm.roomType);
+
+  if (stayDuration > 0 && room) {
+    this.rebookForm.stayDuration = stayDuration;
+    const totalPrice = room.price * stayDuration;
+    this.rebookForm.totalPayable = totalPrice + totalPrice * 0.18; // Apply 18% tax
+  }
+
   const totalGuests = this.rebookForm.guests?.length + 1 || 0;
   this.rebookForm.noOfGuests = totalGuests;
-  
-  const newBooking = {
-    ...this.rebookForm, // Copy form data
-    status: 'booked', // Reset status to 'booked'
-    checkIn: this.rebookForm.checkIn,
-    checkOut: this.rebookForm.checkOut,
-  };
 
+  // Format dates as per DB before saving
+  this.rebookForm.checkIn = this.convertToDBDate(this.rebookForm.checkIn);
+  this.rebookForm.checkOut = this.convertToDBDate(this.rebookForm.checkOut);
+  this.rebookForm.status = 'booked';
+
+  const { id, ...newBooking } = this.rebookForm;
   this.hotelService.bookHotel(newBooking).subscribe({
     next: () => {
       console.log('Rebooking completed successfully');
@@ -467,6 +501,7 @@ submitRebookForm(): void {
     },
   });
 }
+
 
 
 showRebookingSuccessPopup = false;
@@ -504,4 +539,34 @@ closeRebookingSuccessPopup(): void {
 
   
 
+
+
+
+  // -------------------------Validation section---------------------------------------------  
+
+  todayDate: string = ''; // Minimum date for check-in
+  minCheckInDate = new Date().toISOString().split('T')[0];
+  minCheckOutDate = '';
+
+  minCheckoutDate: string = '';
+
+
+
+  onCheckInDateChange(): void {
+    if (this.editForm.checkIn) {
+      const checkInDate = new Date(this.editForm.checkIn);
+      const minDate = new Date(checkInDate);
+      minDate.setDate(checkInDate.getDate() + 1);
+      this.minCheckoutDate = minDate.toISOString().split('T')[0];
+    }
+  }
+
+  onRebookCheckInDateChange(): void {
+    if (this.rebookForm.checkIn) {
+      const checkInDate = new Date(this.rebookForm.checkIn);
+      const minDate = new Date(checkInDate);
+      minDate.setDate(checkInDate.getDate() + 1);
+      this.minCheckoutDate = minDate.toISOString().split('T')[0];
+    }
+  }
 }

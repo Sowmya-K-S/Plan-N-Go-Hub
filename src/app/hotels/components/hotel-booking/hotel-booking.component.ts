@@ -71,9 +71,7 @@ export class HotelBookingComponent {
 
      this.checkIn = new Date(this.searchDetails.startDate);
      this.checkOut = new Date(this.searchDetails.endDate);
-     this.stayDuration = Math.ceil(
-        (this.checkOut.getTime() - this.checkIn.getTime()) / (1000 * 60 * 60 * 24)
-      );
+     this.stayDuration = Math.ceil((this.checkOut.getTime() - this.checkIn.getTime()) / (1000 * 60 * 60 * 24)) || 1;
       this.noOfRooms = this.searchDetails.rooms;
       this.totalPrice = this.stayDuration * this.room.price * this.noOfRooms;
       this.gstAmount = this.totalPrice * 0.18;

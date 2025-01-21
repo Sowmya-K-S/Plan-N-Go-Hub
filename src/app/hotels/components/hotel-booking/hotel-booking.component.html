@@ -96,15 +96,19 @@
                     name="phone"
                     placeholder="Enter your phone number"
                     required
-                    pattern="^[0-9]{10,12}$"
-                    maxlength="12"
+                    pattern="^[0-9]*$" 
+                    maxlength="10"
+                    minlength="10"
                     #phoneInput="ngModel"
-                  />
+                   />
                   <div *ngIf="phoneInput.invalid && phoneInput.touched" class="error">
                     <div *ngIf="phoneInput.errors?.['required']">Phone number is required.</div>
-                    <div *ngIf="phoneInput.errors?.['pattern']">Phone number must be 10-12 digits.</div>
+                    <div *ngIf="phoneInput.errors?.['pattern']">Only numbers are allowed.</div>
+                    <div *ngIf="phoneInput.errors?.['maxlength']">Phone number must be 10 digits.</div>
+                    <div *ngIf="phoneInput.errors?.['minlength']">Phone number must be 10 digits.</div>
                   </div>
                 </div>
+                
               
                 <h3>Other Guests</h3>
                 <div *ngFor="let guest of otherGuests; let i = index" class="form-group">

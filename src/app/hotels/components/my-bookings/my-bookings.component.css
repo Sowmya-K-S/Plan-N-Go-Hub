@@ -1,3 +1,8 @@
+*
+{
+  font-family: poppins;
+}
+
 .bookings-container {
   font-family: poppins;
   margin: 20px;
@@ -305,3 +310,23 @@ button {
   background-color: grey;
   cursor: not-allowed;
 }
+
+
+.error {
+  color: red;
+  font-size: 0.9em;
+}
+
+button:disabled {
+  background: #d3d3d3;
+  color: #a9a9a9;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+button:hover:disabled {
+  background: #d3d3d3;
+  color: #a9a9a9;
+  cursor: not-allowed;
+  opacity: 0.6;
+} 
