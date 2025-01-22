@@ -67,6 +67,8 @@ export class MyBookingsComponent implements OnInit {
     checkIn: '',
     checkOut: '',
     status: 'booked',
+    offer: 0,
+    netPrice: 0
   };
   
 
@@ -165,6 +167,11 @@ export class MyBookingsComponent implements OnInit {
     return `${month}/${day}/${year}`; // Format: MM/DD/YYYY
   }
 
+
+  calculateOfferPrice(totalPrice: number, discount: number): number {
+    return (totalPrice * discount) / 100; // Calculate offer amount
+  }
+  
 //--------------------------other functions section-------------------------------------------------
 
 
@@ -368,7 +375,6 @@ closeEditPopup(): void {
 }
 
 submitEditForm(): void {
-  // Ensure no price updates until final submission
   const checkIn = new Date(this.editForm.checkIn);
   const checkOut = new Date(this.editForm.checkOut);
   const stayDuration = Math.ceil((checkOut.getTime() - checkIn.getTime()) / (1000 * 60 * 60 * 24));
@@ -377,20 +383,28 @@ submitEditForm(): void {
   if (stayDuration > 0 && room) {
     this.editForm.stayDuration = stayDuration;
     const totalPrice = room.price * stayDuration;
-    this.editForm.totalPayable = totalPrice + totalPrice * 0.18; // Apply 18% tax
+
+    // Check for offer
+    const specialOffer = room.specialOffers?.[0]; // Assuming specialOffers array exists
+    const offerApplied = specialOffer ? this.calculateOfferPrice(totalPrice, specialOffer.discount) : 0;
+
+    this.editForm.totalPrice = totalPrice; // Store the total price
+    this.editForm.offer = offerApplied; // Store the offer amount
+    this.editForm.netPrice = totalPrice - offerApplied; // Calculate net price
+    this.editForm.totalPayable = this.editForm.netPrice + this.editForm.netPrice * 0.18; // Add 18% GST
   }
 
   const totalGuests = this.editForm.guests?.length + 1 || 0;
   this.editForm.noOfGuests = totalGuests;
 
-  // Format dates as per DB before saving
+  // Format dates for DB
   this.editForm.checkIn = this.convertToDBDate(this.editForm.checkIn);
   this.editForm.checkOut = this.convertToDBDate(this.editForm.checkOut);
 
   this.hotelService.editBooking(this.editForm).subscribe({
     next: () => {
       console.log('Booking updated successfully');
-      this.fetchBookings(); // Refresh bookings
+      this.fetchBookings();
       this.showUpdateSuccessPopup = true;
       this.closeEditPopup();
     },
@@ -400,6 +414,7 @@ submitEditForm(): void {
     },
   });
 }
+
 
 
 showUpdateSuccessPopup = false;
@@ -435,29 +450,6 @@ closeRebookPopup(): void {
 }
 
 
-// updateRebookPrice(): void {
-//   const checkIn = new Date(this.rebookForm.checkIn);
-//   const checkOut = new Date(this.rebookForm.checkOut);
-//   const stayDuration = Math.ceil((checkOut.getTime() - checkIn.getTime()) / (1000 * 60 * 60 * 24));
-//   const room = this.availableRooms.find((r) => r.type === this.rebookForm.roomType);
-
-//   if (stayDuration > 0 && room) {
-//     this.rebookForm.stayDuration = stayDuration;
-//     const totalPrice = room.price * stayDuration;
-//     this.rebookForm.totalPayable = totalPrice + totalPrice * 0.18; // 18% tax
-//   }
-// }
-
-// onRebookRoomTypeChange(event: Event): void {
-//   const selectedRoomType = (event.target as HTMLSelectElement).value;
-//   const room = this.availableRooms.find((r) => r.type === selectedRoomType);
-//   if (room) {
-//     this.rebookForm.roomType = room.type;
-//     this.rebookForm.roomPrice = room.price;
-//     this.updateRebookPrice();
-//   }
-// }
-
 removeRebookGuest(index: number): void {
   this.rebookForm.guests.splice(index, 1);
 }
@@ -473,16 +465,25 @@ submitRebookForm(): void {
   const stayDuration = Math.ceil((checkOut.getTime() - checkIn.getTime()) / (1000 * 60 * 60 * 24));
   const room = this.availableRooms.find((r) => r.type === this.rebookForm.roomType);
 
-  if (stayDuration > 0 && room) {
+  if (stayDuration > 0 && room) 
+  {
     this.rebookForm.stayDuration = stayDuration;
     const totalPrice = room.price * stayDuration;
-    this.rebookForm.totalPayable = totalPrice + totalPrice * 0.18; // Apply 18% tax
+
+    // Check for offer
+    const specialOffer = room.specialOffers?.[0]; // Assuming specialOffers array exists
+    const offerApplied = specialOffer ? this.calculateOfferPrice(totalPrice, specialOffer.discount) : 0;
+
+    this.rebookForm.totalPrice = totalPrice; // Store the total price
+    this.rebookForm.offer = offerApplied; // Store the offer amount
+    this.rebookForm.netPrice = totalPrice - offerApplied; // Calculate net price
+    this.rebookForm.totalPayable = this.rebookForm.netPrice + this.rebookForm.netPrice * 0.18; // Add 18% GST
   }
 
   const totalGuests = this.rebookForm.guests?.length + 1 || 0;
   this.rebookForm.noOfGuests = totalGuests;
 
-  // Format dates as per DB before saving
+  // Format dates for DB
   this.rebookForm.checkIn = this.convertToDBDate(this.rebookForm.checkIn);
   this.rebookForm.checkOut = this.convertToDBDate(this.rebookForm.checkOut);
   this.rebookForm.status = 'booked';
@@ -491,9 +492,9 @@ submitRebookForm(): void {
   this.hotelService.bookHotel(newBooking).subscribe({
     next: () => {
       console.log('Rebooking completed successfully');
-      this.fetchBookings(); // Refresh the bookings list
-      this.showRebookingSuccessPopup = true; // Show success popup
-      this.closeRebookPopup(); // Close rebook popup
+      this.fetchBookings();
+      this.showRebookingSuccessPopup = true;
+      this.closeRebookPopup();
     },
     error: (err) => {
       console.error('Error during rebooking:', err);
@@ -501,6 +502,7 @@ submitRebookForm(): void {
     },
   });
 }
+
 
 
 

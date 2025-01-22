@@ -42,6 +42,11 @@ export class HotelBookingComponent {
   noOfRooms : number = 1;
   otherGuests: { name: string; age: number; gender: string }[] = [];
 
+
+   // Offer details
+   offerApplied: number = 0; // To display the offer applied
+   netPrice: number = 0; // Net price after applying the offer
+
   //icons
   faCheckCircle = faCheckCircle;
 
@@ -74,8 +79,22 @@ export class HotelBookingComponent {
      this.stayDuration = Math.ceil((this.checkOut.getTime() - this.checkIn.getTime()) / (1000 * 60 * 60 * 24)) || 1;
       this.noOfRooms = this.searchDetails.rooms;
       this.totalPrice = this.stayDuration * this.room.price * this.noOfRooms;
-      this.gstAmount = this.totalPrice * 0.18;
-      this.totalPayable = this.totalPrice + this.gstAmount;
+ 
+    // Check if the hotel has special offers
+    const specialOffer = this.hotel.specialOffers.find(offer => offer.discount > 0);
+    if (specialOffer) {
+      // Calculate offer amount based on the discount percentage
+      this.offerApplied = (this.totalPrice * specialOffer.discount) / 100;
+      this.netPrice = this.totalPrice - this.offerApplied;
+    } else {
+      // No discount available
+      this.offerApplied = 0;
+      this.netPrice = this.totalPrice;
+    }
+
+    // Calculate GST and total payable
+    this.gstAmount = this.netPrice * 0.18;
+    this.totalPayable = this.netPrice + this.gstAmount;
 
     }
   }
@@ -101,10 +120,13 @@ export class HotelBookingComponent {
       stayDuration: this.stayDuration,
       noOfGuests: this.otherGuests.length + 1,
       totalPrice:this.totalPrice,
+      offer: this.offerApplied, 
+      netPrice: this.netPrice,
       totalPayable: this.totalPayable,
       checkIn: this.checkIn.toLocaleDateString(),
       checkOut: this.checkOut.toLocaleDateString(),
       status: 'booked',
+
     }
 
     this.bookingDetails = bookingData;

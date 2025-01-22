@@ -188,36 +188,72 @@
 
         <!-- Right side content (Hotel details and Price Breakdown) -->
         <div class="right-content">
+        
             <!-- Hotel and Room Info -->
             <div class="room-info">
-                <div class="room-details">
-                    <img [src]="hotel.images[0]" alt="Hotel Image" class="hotel-image">
-                    <div class="room-content">
-                        <h2>{{ hotel.name }}</h2>
-                        <p>{{ room.type }}</p> <p class="price">₹{{ room.price }}/night</p>
-                        <div class="amenities">
-                            <div class="amenities-list">
-                                <strong>Amenities:</strong><span *ngFor="let amenity of hotel.amenities" class="amenity-badge">
-                                    {{ amenity }},
-                                </span>
-                            </div>
-                        </div>
-                        <p class="price"><strong>Check-in:</strong> {{ checkIn.toLocaleDateString() }}</p>
-                        <p class="price"><strong>Check-out:</strong> {{ checkOut.toLocaleDateString() }}</p>
+            <div class="room-details">
+                <img [src]="hotel.images[0]" alt="Hotel Image" class="hotel-image">
+                <div class="room-content">
+                    <h2 class="hotel-name">{{ hotel.name }}</h2>
+                    <p class="room-type">{{ room.type }}</p>
+                    <div class="amenities">
+                        <strong>Amenities</strong>
+                        <ul class="amenities-list">
+                            <li *ngFor="let amenity of hotel.amenities">{{ amenity }}</li>
+                        </ul>
+                    </div>
+                    <div class="date-info">
+                      <div class="price-row">
+                        <span class="label"><strong>Check-in</strong></span>
+                        <span class="value">{{ checkIn.toLocaleDateString() }}</span>
+                      </div>
+                      <div class="price-row">
+                        <span class="label"><strong>Check-out</strong></span>
+                        <span class="value">{{ checkOut.toLocaleDateString() }}</span>
+                      </div>
                     </div>
                 </div>
+            </div>
             </div>
 
             <!-- Price Breakdown -->
             <div class="price-details">
-                <h3>Total Price Breakdown</h3>
-                <p><strong>Room Price:</strong> ₹{{ room.price }}</p> 
-                <p><strong>Number of Nights:</strong> {{ stayDuration }}</p>
-                <p><strong>No of Rooms:</strong> {{ noOfRooms }}</p>
-                <p><strong>Total Price:</strong> ₹{{ totalPrice }}</p>
-                <p><strong>Taxes (18%):</strong> ₹{{ gstAmount }}</p>
-                <p><strong>Total Payable:</strong> ₹{{ totalPayable }}</p>
+              <h3>Total Price Breakdown</h3>
+              <div class="price-row">
+                  <span class="label"><strong>Room Price</strong></span>
+                  <span class="value">₹{{ room.price }}</span>
+              </div>
+              <div class="price-row">
+                  <span class="label"><strong>Number of Nights</strong></span>
+                  <span class="value">{{ stayDuration }}</span>
+              </div>
+              <div class="price-row">
+                  <span class="label"><strong>No of Rooms</strong></span>
+                  <span class="value">{{ noOfRooms }}</span>
+              </div>
+              <div class="price-row">
+                  <span class="label"><strong>Total Price</strong></span>
+                  <span class="value">₹{{ totalPrice }}</span>
+              </div>
+              <div class="price-row">
+                  <span class="label"><strong>Offer Applied</strong></span>
+                  <span class="value">₹{{ offerApplied }}</span>
+              </div>
+              <div class="price-row">
+                  <span class="label"><strong>Net Price</strong></span>
+                  <span class="value">₹{{ netPrice }}</span>
+              </div>
+              <div class="price-row">
+                  <span class="label"><strong>Taxes (18%)</strong></span>
+                  <span class="value">₹{{ gstAmount }}</span>
+              </div>
+              <!-- Highlighted Total Payable -->
+              <div class="price-row highlighted">
+                  <span class="label"><strong>Total Payable</strong></span>
+                  <span class="value">₹{{ totalPayable }}</span>
+              </div>
             </div>
+
         </div>
 
         <!-- Popup for confirmation -->
