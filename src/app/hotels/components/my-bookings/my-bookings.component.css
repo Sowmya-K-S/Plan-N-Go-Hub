@@ -153,14 +153,14 @@ button:nth-child(3):hover {
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  /*padding: 20px 30px;
+  padding: 20px 30px;
   border-radius: 5px;
-  width: 90%
+  width: 90%;
   max-width: 400px;
   max-height: 80%;
   text-align: center;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  animation: popupAnimation 0.3s ease-in-out;*/
+  animation: popupAnimation 0.3s ease-in-out;
   width: 90%; /* Makes it responsive */
   max-width: 350px; /* Reduce maximum width for better UI on small screens */
   padding: 20px 30px; /* Adjusted padding for compact layout */
@@ -196,6 +196,18 @@ label {
   color: #555555; /* Softer text color */
   margin-bottom: 10px;
   text-align: justify;
+}
+
+.details-grid {
+  width: 95%;
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* 1 part for keys, 2 parts for values */
+  gap: 15px; /* Space between rows and columns */
+  margin-bottom: 20px;
+}
+
+.details-grid p {
+  margin: 0;
 }
 
 label {

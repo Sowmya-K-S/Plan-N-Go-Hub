@@ -22,6 +22,7 @@ export class MyBookingsComponent implements OnInit {
   currentBookings: any[] = [];
   pastBookings: any[] = [];
   availableRooms: any[] = []; // Store room types fetched from hotel database
+  specialOffers: any[] = [];
 
   faHotel = faHotel;
   faMapMarkerAlt = faMapMarkerAlt;
@@ -72,11 +73,13 @@ export class MyBookingsComponent implements OnInit {
   };
   
 
+  minCheckInDate: string;
+
 
   constructor(private hotelService: HotelService, private router: Router) 
   {
     const today = new Date();
-    this.todayDate = today.toISOString().split('T')[0];
+    this.minCheckInDate = today.toISOString().split('T')[0];
   }
 
   ngOnInit(): void {
@@ -85,6 +88,8 @@ export class MyBookingsComponent implements OnInit {
 
   
   //--------------------------Other functions section-------------------------------------------------
+
+  
   fetchBookings(): void {
     this.hotelService.getBookings().subscribe({
       next: (data) => {
@@ -145,7 +150,6 @@ export class MyBookingsComponent implements OnInit {
   }
   
   
-  
   getStatusColor(status: string): string {
     switch (status) {
       case 'booked':
@@ -171,6 +175,17 @@ export class MyBookingsComponent implements OnInit {
   calculateOfferPrice(totalPrice: number, discount: number): number {
     return (totalPrice * discount) / 100; // Calculate offer amount
   }
+
+      //for getting next date for checkout date
+      getNextDate(date: string | null): string {
+        if (!date) {
+          return ''; // Return empty string if date is not provided
+        }
+        const selectedDate = new Date(date);
+        const nextDate = new Date(selectedDate);
+        nextDate.setDate(selectedDate.getDate() + 1); // Add one day
+        return nextDate.toISOString().split('T')[0]; // Format as 'YYYY-MM-DD'
+      }
   
 //--------------------------other functions section-------------------------------------------------
 
@@ -323,6 +338,19 @@ closeReviewSuccessPopup(): void {
  openEditPopup(booking: any): void {
   this.editForm = booking;
 
+  this.editForm = {
+    ...booking,
+    checkIn: new Date(booking.checkIn).toISOString().split('T')[0], // Convert to YYYY-MM-DD
+    checkOut: new Date(booking.checkOut).toISOString().split('T')[0], // Convert to YYYY-MM-DD
+  };
+
+  this.hotelService.getSpecialOffersByHotelId(booking.hotelid).subscribe({
+    next: (offers) => {
+      this.specialOffers = offers;
+    },
+    error: (err) => console.error('Error fetching special offers:', err),
+  })
+
   this.hotelService.getRoomTypesByHotelId(booking.hotelid).subscribe({
     next: (rooms) => {
       this.availableRooms = rooms;
@@ -347,29 +375,6 @@ removeGuest(index: number): void {
 }
 
 
-// onRoomTypeChange(event: Event): void {
-//   const selectedRoomType = (event.target as HTMLSelectElement).value;
-//   const room = this.availableRooms.find((r) => r.type === selectedRoomType);
-//   if (room) {
-//     this.editForm.roomType = room.type;
-//     this.editForm.totalPayable = room.price * this.editForm.stayDuration;
-//   }
-// }
-
-// updatePrice(): void {
-//   const checkIn = new Date(this.editForm.checkIn);
-//   const checkOut = new Date(this.editForm.checkOut);
-//   const stayDuration = Math.ceil((checkOut.getTime() - checkIn.getTime()) / (1000 * 60 * 60 * 24)) ||1;
-//   const room = this.availableRooms.find((r) => r.type === this.editForm.roomType);
-
-//   if (stayDuration > 0 && room) {
-//     this.editForm.stayDuration = stayDuration;
-//     const totalPrice = room.price * stayDuration;
-//     this.editForm.totalPayable = totalPrice + (0.18 * totalPrice);
-//   }
-// }
-
-
 closeEditPopup(): void {
   this.showEditPopup = false;
 }
@@ -385,7 +390,7 @@ submitEditForm(): void {
     const totalPrice = room.price * stayDuration;
 
     // Check for offer
-    const specialOffer = room.specialOffers?.[0]; // Assuming specialOffers array exists
+    const specialOffer = this.specialOffers?.[0]; // Assuming specialOffers array exists
     const offerApplied = specialOffer ? this.calculateOfferPrice(totalPrice, specialOffer.discount) : 0;
 
     this.editForm.totalPrice = totalPrice; // Store the total price
@@ -433,7 +438,7 @@ closeUpdateSuccessPopup(): void {
 //--------------------------rebook section-------------------------------------------------
 showRebookPopup = false;
 openRebookPopup(booking: any): void {
-  this.rebookForm = { ...booking }; // Pre-fill the form with existing booking details
+  
   this.hotelService.getRoomTypesByHotelId(booking.hotelid).subscribe({
     next: (rooms) => {
       this.availableRooms = rooms; // Store available rooms
@@ -471,7 +476,7 @@ submitRebookForm(): void {
     const totalPrice = room.price * stayDuration;
 
     // Check for offer
-    const specialOffer = room.specialOffers?.[0]; // Assuming specialOffers array exists
+    const specialOffer = this.specialOffers?.[0]; // Assuming specialOffers array exists
     const offerApplied = specialOffer ? this.calculateOfferPrice(totalPrice, specialOffer.discount) : 0;
 
     this.rebookForm.totalPrice = totalPrice; // Store the total price
@@ -502,9 +507,6 @@ submitRebookForm(): void {
     },
   });
 }
-
-
-
 
 showRebookingSuccessPopup = false;
 
@@ -539,36 +541,5 @@ closeRebookingSuccessPopup(): void {
   //--------------------------toggle section-------------------------------------------------
 
 
-  
 
-
-
-
-  // -------------------------Validation section---------------------------------------------  
-
-  todayDate: string = ''; // Minimum date for check-in
-  minCheckInDate = new Date().toISOString().split('T')[0];
-  minCheckOutDate = '';
-
-  minCheckoutDate: string = '';
-
-
-
-  onCheckInDateChange(): void {
-    if (this.editForm.checkIn) {
-      const checkInDate = new Date(this.editForm.checkIn);
-      const minDate = new Date(checkInDate);
-      minDate.setDate(checkInDate.getDate() + 1);
-      this.minCheckoutDate = minDate.toISOString().split('T')[0];
-    }
-  }
-
-  onRebookCheckInDateChange(): void {
-    if (this.rebookForm.checkIn) {
-      const checkInDate = new Date(this.rebookForm.checkIn);
-      const minDate = new Date(checkInDate);
-      minDate.setDate(checkInDate.getDate() + 1);
-      this.minCheckoutDate = minDate.toISOString().split('T')[0];
-    }
-  }
 }

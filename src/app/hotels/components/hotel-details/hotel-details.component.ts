@@ -4,9 +4,10 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 
-import { IconDefinition,faStar,faSwimmingPool,faSpa,faDumbbell, faCocktail, faHandSparkles, faUtensils, faBaby, faWifi, faMicrophone,faFutbol, faParking, faElevator, faHotTub, faChild, faSuitcase, faChalkboardTeacher, faChargingStation, faBroom, faTableTennis, faOm, faSmokingBan, faSmoking, faShower, faBath, faWind, faArchway, faWater, faSeedling, faConciergeBell, faCity, faMountain, faTree,faBed,faMapMarkerAlt,faHotel,faMapPin,faPlane,faTrain,faBus,faRulerCombined,faUser,faChildren,} from '@fortawesome/free-solid-svg-icons';
+import { IconDefinition,faStar,faSwimmingPool,faSpa,faDumbbell, faCocktail, faHandSparkles, faUtensils, faBaby, faWifi, faMicrophone,faFutbol, faParking, faElevator, faHotTub, faChild, faSuitcase, faChalkboardTeacher, faChargingStation, faBroom, faTableTennis, faOm, faSmokingBan, faSmoking, faShower, faBath, faWind, faArchway, faWater, faSeedling, faConciergeBell, faCity, faMountain, faTree,faBed,faMapMarkerAlt,faHotel,faMapPin,faPlane,faTrain,faBus,faRulerCombined,faUser,faChildren,faCalendarCheck,faCalendarMinus} from '@fortawesome/free-solid-svg-icons';
 
 import { HotelService } from '../../services/hotel.service';
 import { Hotel } from '../../models/hotel.model';
@@ -16,11 +17,12 @@ import { NavigationToggleComponent } from '../navigation-toggle/navigation-toggl
 @Component({
   selector: 'app-hotel-details',
   standalone: true,
-  imports: [CommonModule, FontAwesomeModule, NavigationToggleComponent],
+  imports: [CommonModule, FontAwesomeModule, NavigationToggleComponent, FormsModule],
   templateUrl: './hotel-details.component.html',
   styleUrls: ['./hotel-details.component.css'],
 })
 export class HotelDetailsComponent implements OnInit {
+
   hotel: Hotel | null = null;
   faStar = faStar;
   faSwimmingPool = faSwimmingPool;
@@ -65,11 +67,15 @@ export class HotelDetailsComponent implements OnInit {
   faRulerCombined = faRulerCombined;
   faUser = faUser;
   faChildren = faChildren;
-  constructor(
-    private route: ActivatedRoute,
-    private hotelService: HotelService,
-    private router: Router
-  ) {}
+  faCalendarCheck = faCalendarCheck;
+  faCalendarMinus = faCalendarMinus;
+
+  minCheckinDate: string;
+  constructor(private route: ActivatedRoute, private hotelService: HotelService,private router: Router) 
+  {
+    const today = new Date();
+    this.minCheckinDate = today.toISOString().split('T')[0];
+  }
 
   ngOnInit(): void {
     this.hotelService.getSelectedHotel().subscribe((data) => {
@@ -203,7 +209,61 @@ export class HotelDetailsComponent implements OnInit {
   navigateToBooking(room: any): void {
   {
     this.hotelService.setSelectedRoom(room);
+    this.hotelService.getSearchDetails().subscribe((details) => {
+      if (details.checkIn == '' || details.checkOut == '' || details.children == 0 || details.adults == 1 || details.noOfRooms == 0) {
+        this.openDetailsUpdateForm();
+    }
+    });
+    
     this.router.navigate(['/hotels/hotel-booking']);
   }
 }
+
+detailsUpdateForm = {
+  checkIn: '',
+  checkOut: null,
+  adults: 1,
+  children: 0,
+  noOfRooms: 1
+};
+
+showDetailsUpdateForm = false;
+  openDetailsUpdateForm(): void {
+    
+    this.detailsUpdateForm = {
+      checkIn: '',
+      checkOut: null,
+      adults: 1,
+      children: 0,
+      noOfRooms: 1
+    };
+    this.showDetailsUpdateForm = true;
+  }
+
+  closeDetailsUpdateForm(): void {
+    this.showDetailsUpdateForm = false;
+  }
+
+  submitUpdatedDetails(): void {
+    this.showDetailsUpdateSuccessPopup = true;
+  }
+  
+
+  showDetailsUpdateSuccessPopup = false;
+  closeReviewSuccessPopup(): void {
+    this.showDetailsUpdateSuccessPopup = false;
+    this.router.navigate(['/hotels/hotel-booking']);
+  }
+
+  //for getting next date for checkout date
+  getNextDate(date: string | null): string {
+    if (!date) {
+      return ''; // Return empty string if date is not provided
+    }
+    const selectedDate = new Date(date);
+    const nextDate = new Date(selectedDate);
+    nextDate.setDate(selectedDate.getDate() + 1); // Add one day
+    return nextDate.toISOString().split('T')[0]; // Format as 'YYYY-MM-DD'
+  }
+
 }

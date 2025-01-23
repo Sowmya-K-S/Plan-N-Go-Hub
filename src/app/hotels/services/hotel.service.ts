@@ -1,4 +1,3 @@
-
 //hotel.service.ts
 
 import { Injectable } from '@angular/core';
@@ -44,29 +43,6 @@ getHotels(): Observable<Hotel[]> {
 
   /*** Hotel Results Component ***/
 
-  /**
-   * Fetch hotels filtered by location
-   * @param location Location to filter hotels
-   * @returns Observable<Hotel[]>
-   */
-  // getHotelsByLocation(location?: string): Observable<Hotel[]> {
-  //   const trimmedLocation = location?.trim().toLowerCase(); // Convert to lowercase
-  //   const url = trimmedLocation
-  //     ? `${this.apiUrl}?location=${encodeURIComponent(trimmedLocation)}`
-  //     : this.apiUrl;
-  
-  //   console.log('API URL:', url);
-  //   return this.http.get<Hotel[]>(url);
-  // }
-  
-
-  /**
-   * Filter hotels based on price and amenities
-   * @param hotels The list of hotels to filter
-   * @param filters Object containing filter criteria
-   * @returns Filtered list of hotels
-   */
-
   filterHotels(hotels: Hotel[], filters: { price: number; minPrice: number; amenities: string[] }): Hotel[] {
     return hotels.filter((hotel) => {
       const matchesMaxPrice = filters.price ? hotel.price <= filters.price : true;
@@ -79,7 +55,8 @@ getHotels(): Observable<Hotel[]> {
     });
   }
 
-  /*** Hotel Details Component ***/
+
+/*** Hotel Details Component ***/
 
 // Save selected hotel
 setSelectedHotel(hotel: Hotel): void {
@@ -142,14 +119,16 @@ getRoomTypesByHotelId(hotelId: string): Observable<any[]> {
   );
 }
 
-
-
-
+getSpecialOffersByHotelId(hotelId: string): Observable<any[]> {
+  return this.http.get<any>(`${this.apiUrl}/${hotelId}`).pipe(
+    map((hotel) => hotel.specialOffers || []) // Extract special offers or return an empty array
+  );
+}
+ 
 editBooking(booking: any): Observable<any> {
   const url = `http://localhost:3000/bookings/${booking.id}`;
   return this.http.put<any>(url, booking);
 }
-
 
 }
 

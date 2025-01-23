@@ -101,20 +101,40 @@
 <!-- Details Popup -->
 <div class="popup" *ngIf="showDetailsPopup">
   <div class="popup-content">
-    <h3>Booking Details</h3>
-    <p><strong>Booking id:</strong> {{ selectedBooking?.id }}</p>
-    <p><strong>Hotel id:</strong> {{ selectedBooking?.hotelid }}</p>
-    <p><strong>Hotel:</strong> {{ selectedBooking?.hotelName }}</p>
-    <p><strong>Location:</strong> {{ selectedBooking?.location }}</p>
-    <p><strong>Booking Dates:</strong> {{ selectedBooking?.checkIn }} to {{ selectedBooking?.checkOut }}</p>
-    <p><strong>Room Type:</strong> {{ selectedBooking?.roomType }}</p>
-    <p><strong>No of Rooms:</strong> {{ selectedBooking?.rooms }}</p>
-    <p><strong>No of Guests:</strong> {{ selectedBooking?.noOfGuests }}</p>
-    <p><strong>Stay Duration:</strong> {{ selectedBooking?.stayDuration }} night(s) </p>
-    <p><strong>Total Price (incl. taxes):</strong> ₹{{ selectedBooking?.totalPayable }}</p>
-    <p><strong>Status:</strong> {{ selectedBooking?.status }}</p>
     
-  
+    <h3>Booking Details</h3>
+
+    <div class="details-grid">
+      <p><strong>Booking ID</strong></p>
+      <p>{{ selectedBooking?.id }}</p>
+      <p><strong>Hotel ID</strong></p>
+      <p>{{ selectedBooking?.hotelid }}</p>
+      <p><strong>Hotel</strong></p>
+      <p>{{ selectedBooking?.hotelName }}</p>
+      <p><strong>Location</strong></p>
+      <p>{{ selectedBooking?.location }}</p>
+      <p><strong>Booking Dates</strong></p>
+      <p>{{ selectedBooking?.checkIn }} to {{ selectedBooking?.checkOut }}</p>
+      <p><strong>Room Type</strong></p>
+      <p>{{ selectedBooking?.roomType }}</p>
+      <p><strong>No of Rooms</strong></p>
+      <p>{{ selectedBooking?.noOfrooms }}</p>
+      <p><strong>No of Guests</strong></p>
+      <p>{{ selectedBooking?.noOfGuests }}</p>
+      <p><strong>Stay Duration</strong></p>
+      <p>{{ selectedBooking?.stayDuration }} night(s)</p>
+      <p><strong>Total Price</strong></p>
+      <p>₹{{ selectedBooking?.totalPrice }}</p>
+      <p><strong>Offer Price</strong></p>
+      <p>₹{{ selectedBooking?.offer }}</p>
+      <p><strong>Net Price</strong></p>
+      <p>₹{{ selectedBooking?.netPrice }}</p>
+      <p><strong>Total Payable</strong></p>
+      <p>₹{{ selectedBooking?.totalPayable }}</p>
+      <p><strong>Status</strong></p>
+      <p>{{ selectedBooking?.status }}</p>
+    </div>
+    
     <button (click)="closeDetailsPopup()" style="color: white;">Close</button>
   </div>
 </div>
@@ -344,9 +364,8 @@
           type="date"
           [(ngModel)]="editForm.checkIn"
           name="checkIn"
-          (change)="onCheckInDateChange()"
           required
-          [min]="todayDate"
+          [min]="minCheckInDate"
           #checkIn="ngModel"
         />
         <div *ngIf="checkIn.invalid && checkIn.touched" class="error">Check-In is required.</div>
@@ -359,7 +378,7 @@
           [(ngModel)]="editForm.checkOut"
           name="checkOut"
           required
-          [min]="minCheckoutDate||todayDate"
+          [min]="getNextDate(minCheckInDate||editForm.checkIn)"
           #checkOut="ngModel"
         />
         <div *ngIf="checkOut.invalid && checkOut.touched" class="error">Check-Out is required.</div>
@@ -472,33 +491,36 @@
       </div>
 
       <!-- Price and Dates -->
+    
       <label>
         Check-In Date:
         <input
           type="date"
-          [(ngModel)]="rebookForm.checkIn"
+          [(ngModel)]="editForm.checkIn"
           name="checkIn"
-          (change)="onRebookCheckInDateChange()"
           required
-          [min]="todayDate"
+          [min]="minCheckInDate"
           #checkIn="ngModel"
         />
-        <div *ngIf="checkIn.invalid && checkIn.touched" class="error">Check-In is required.</div>
+        <div *ngIf="checkIn.invalid && checkIn.touched" class="error">
+          Check-In is required and must be a future date.
+        </div>
       </label>
 
       <label>
         Check-Out Date:
         <input
           type="date"
-          [(ngModel)]="rebookForm.checkOut"
+          [(ngModel)]="editForm.checkOut"
           name="checkOut"
           required
-          [min]="minCheckoutDate||todayDate"
+          [min]="getNextDate(minCheckInDate || editForm.checkIn)"
           #checkOut="ngModel"
         />
-        <div *ngIf="checkOut.invalid && checkOut.touched" class="error">Check-Out is required.</div>
+        <div *ngIf="checkOut.invalid && checkOut.touched" class="error">
+          Check-Out is required and must be after Check-In.
+        </div>
       </label>
-      
       <label>
         Total Payable: ₹{{ rebookForm.totalPayable }}
       </label>
