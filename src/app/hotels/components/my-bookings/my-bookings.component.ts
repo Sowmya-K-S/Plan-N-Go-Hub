@@ -186,12 +186,18 @@ export class MyBookingsComponent implements OnInit {
         nextDate.setDate(selectedDate.getDate() + 1); // Add one day
         return nextDate.toISOString().split('T')[0]; // Format as 'YYYY-MM-DD'
       }
+
+      private formatToDateInput(date: string): string {
+        const dateObj = new Date(date);
+        const year = dateObj.getFullYear();
+        const month = String(dateObj.getMonth() + 1).padStart(2, '0'); // Months are 0-indexed
+        const day = String(dateObj.getDate()).padStart(2, '0');
+        return `${year}-${month}-${day}`; // Format: YYYY-MM-DD
+      }
+      
+      
   
 //--------------------------other functions section-------------------------------------------------
-
-
-
-
 
 
 
@@ -340,8 +346,8 @@ closeReviewSuccessPopup(): void {
 
   this.editForm = {
     ...booking,
-    checkIn: new Date(booking.checkIn).toISOString().split('T')[0], // Convert to YYYY-MM-DD
-    checkOut: new Date(booking.checkOut).toISOString().split('T')[0], // Convert to YYYY-MM-DD
+    checkIn: this.formatToDateInput(booking.checkIn), // Convert to YYYY-MM-DD
+    checkOut: this.formatToDateInput(booking.checkOut), // Convert to YYYY-MM-DD
   };
 
   this.hotelService.getSpecialOffersByHotelId(booking.hotelid).subscribe({
@@ -432,12 +438,14 @@ closeUpdateSuccessPopup(): void {
 
 
 
-
-
-
 //--------------------------rebook section-------------------------------------------------
 showRebookPopup = false;
 openRebookPopup(booking: any): void {
+  this.rebookForm = {
+    ...booking,
+    checkIn: '', 
+    checkOut: '', 
+  };
   
   this.hotelService.getRoomTypesByHotelId(booking.hotelid).subscribe({
     next: (rooms) => {
@@ -515,9 +523,6 @@ closeRebookingSuccessPopup(): void {
 }
 
 //--------------------------rebook section-------------------------------------------------
-
-
-
 
 
 //--------------------------toggle section-------------------------------------------------

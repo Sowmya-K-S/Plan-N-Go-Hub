@@ -199,92 +199,104 @@
     <p>Loading hotel details...</p> 
 </div>
 
-
+<!-- Details Update Popup -->
 <div class="popup" *ngIf="showDetailsUpdateForm">
-
   <div class="popup-content">
-
-    <h3>Enter the details</h3>
-
-
+    <h3>Enter the Details</h3>
     <form #detailsUpdateFormRef="ngForm" (ngSubmit)="submitUpdatedDetails()" novalidate>
-
-    <label for="startDate"><i><fa-icon [icon]="faCalendarCheck"></fa-icon></i> Check-in</label>
-
-        <input 
-          type="date" 
-          id="startDate" 
-          [(ngModel)]="detailsUpdateForm.checkIn" 
+      <!-- Check-in Date -->
+      <div class="form-group">
+        <label for="startDate">
+          <i><fa-icon [icon]="faCalendarCheck"></fa-icon></i> Check-in
+        </label>
+        <input
+          type="date"
+          id="startDate"
+          [(ngModel)]="detailsUpdateForm.startDate"
           [min]="minCheckinDate"
-          name="startDate" 
-          required 
+          name="startDate"
+          required
           #startDate="ngModel"
           [ngClass]="{ 'invalid': startDate.invalid && startDate.touched }"
         />
-        <div *ngIf="startDate.invalid && startDate.touched" class="error-msg">
+        <div *ngIf="startDate.invalid && startDate.touched" class="error">
           Check-in date is required.
         </div>
+      </div>
 
-
+      <!-- Check-out Date -->
+      <div class="form-group">
         <label for="endDate">
           <i><fa-icon [icon]="faCalendarMinus"></fa-icon></i> Check-out
-        </label> 
-        <input 
-          type="date" 
-          id="endDate" 
-          [(ngModel)]="detailsUpdateForm.checkOut"
-          [min]="getNextDate(detailsUpdateForm.checkIn || minCheckinDate)" 
-          name="endDate" 
-          required 
+        </label>
+        <input
+          type="date"
+          id="endDate"
+          [(ngModel)]="detailsUpdateForm.endDate"
+          [min]="getNextDate(detailsUpdateForm.startDate || minCheckinDate)"
+          name="endDate"
+          required
           #endDate="ngModel"
           [ngClass]="{ 'invalid': endDate.invalid && endDate.touched }"
         />
-        <div *ngIf="endDate.invalid && endDate.touched" class="error-msg">
+        <div *ngIf="endDate.invalid && endDate.touched" class="error">
           Check-out date is required.
         </div>
+      </div>
 
-        <label for="rooms"><i><fa-icon [icon]="faBed"></fa-icon></i> Rooms</label>
-        <input 
-            type="number" 
-            id="rooms" 
-            min="1" 
-            [(ngModel)]="detailsUpdateForm.noOfRooms" 
-            name="rooms" 
-          />
-       
-        <label for="adults"><i><fa-icon [icon]="faUser"></fa-icon></i> Adults</label>
-        <input 
-          type="number" 
-          id="adults" 
-          min="1" 
-          [(ngModel)]="detailsUpdateForm.adults" 
-          name="adults" 
+      <!-- Rooms -->
+      <div class="form-group">
+        <label for="rooms">
+          <i><fa-icon [icon]="faBed"></fa-icon></i> Rooms
+        </label>
+        <input
+          type="number"
+          id="rooms"
+          min="1"
+          [(ngModel)]="detailsUpdateForm.rooms"
+          name="rooms"
         />
+      </div>
 
-        <label for="children"><i><fa-icon [icon]="faChild"></fa-icon></i> Children</label>
-        <input 
-          type="number" 
-          id="children" 
-          min="0" 
-          [(ngModel)]="detailsUpdateForm.children" 
-          name="children" 
+      <!-- Adults -->
+      <div class="form-group">
+        <label for="adults">
+          <i><fa-icon [icon]="faUser"></fa-icon></i> Adults
+        </label>
+        <input
+          type="number"
+          id="adults"
+          min="1"
+          [(ngModel)]="detailsUpdateForm.adults"
+          name="adults"
         />
+      </div>
 
+      <!-- Children -->
+      <div class="form-group">
+        <label for="children">
+          <i><fa-icon [icon]="faChild"></fa-icon></i> Children
+        </label>
+        <input
+          type="number"
+          id="children"
+          min="0"
+          [(ngModel)]="detailsUpdateForm.children"
+          name="children"
+        />
+      </div>
 
-      <button type="submit" [disabled]="detailsUpdateFormRef.invalid">Submit</button>
+      <!-- Submit Button -->
+      <button type="submit" [disabled]="detailsUpdateFormRef.invalid" class="btn-submit">
+        Proceed
+      </button>
+      <button type="button" (click)="closeDetailsUpdateForm()" class="btn-cancel">
+        Cancel
+      </button>
     </form>
-
   </div>
 </div>
 
-<!-- details update success Popup -->
-<div *ngIf="showDetailsUpdateSuccessPopup" class="popup">
-  <div class="popup-content popup-content-cancel">
-    <h3>Sucess</h3>
-    <p>Booking details updated successfully</p>
-    <button (click)="showDetailsUpdateSuccessPopup" style="width: 40%;">Proceed</button>
-  </div>
-</div>
 
 
 <app-navigation-toggle></app-navigation-toggle>

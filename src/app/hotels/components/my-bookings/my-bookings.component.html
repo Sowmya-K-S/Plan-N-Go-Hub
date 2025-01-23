@@ -492,37 +492,40 @@
 
       <!-- Price and Dates -->
     
+      <!-- Check-In Date -->
       <label>
         Check-In Date:
         <input
           type="date"
-          [(ngModel)]="editForm.checkIn"
+          [(ngModel)]="rebookForm.checkIn"
           name="checkIn"
           required
           [min]="minCheckInDate"
           #checkIn="ngModel"
         />
+        <!-- Validation Errors for Check-In -->
         <div *ngIf="checkIn.invalid && checkIn.touched" class="error">
-          Check-In is required and must be a future date.
+          <div *ngIf="checkIn.errors?.['required']">Check-In date is required.</div>
+          <div *ngIf="checkIn.errors?.['min']">Check-In date cannot be in the past.</div>
         </div>
       </label>
 
+      <!-- Check-Out Date -->
       <label>
         Check-Out Date:
         <input
           type="date"
-          [(ngModel)]="editForm.checkOut"
+          [(ngModel)]="rebookForm.checkOut"
           name="checkOut"
           required
-          [min]="getNextDate(minCheckInDate || editForm.checkIn)"
+          [min]="getNextDate(rebookForm.checkIn || minCheckInDate)"
           #checkOut="ngModel"
         />
+        <!-- Validation Errors for Check-Out -->
         <div *ngIf="checkOut.invalid && checkOut.touched" class="error">
-          Check-Out is required and must be after Check-In.
+          <div *ngIf="checkOut.errors?.['required']">Check-Out date is required.</div>
+          <div *ngIf="checkOut.errors?.['min']">Check-Out date must be after Check-In date.</div>
         </div>
-      </label>
-      <label>
-        Total Payable: ₹{{ rebookForm.totalPayable }}
       </label>
 
       <button type="submit" [disabled]="rebookFormRef.invalid">Confirm Rebooking</button>
@@ -533,8 +536,9 @@
  
 <!-- Rebooking Success Popup -->
 <div *ngIf="showRebookingSuccessPopup" class="popup">
-  <div class="popup-content">
-    <h3>Rebooking Successful</h3>
+  <div class="popup-content popup-content-cancel">
+    <h3>Success</h3>
+    <p>Rebooking successful</p>
     <button (click)="closeRebookingSuccessPopup()">OK</button>
   </div>
 </div>
@@ -554,7 +558,7 @@
 <!-- Review Submission Success Popup -->
 <div *ngIf="showReviewSuccessPopup" class="popup">
   <div class="popup-content popup-content-cancel">
-    <h3>Sucess</h3>
+    <h3>Success</h3>
     <p>Review submitted successfully</p>
     <button (click)="closeReviewSuccessPopup()" style="width: 40%;">OK</button>
   </div>
@@ -562,16 +566,18 @@
 
 <!-- Cancellation Success Popup -->
 <div *ngIf="showCancelSuccessPopup" class="popup">
-  <div class="popup-content">
-    <h3>Booking Cancelled Successfully</h3>
+  <div class="popup-content popup-content-cancel">
+    <h3>Success</h3>
+    <p>Booking cancelled successfully</p>
     <button (click)="closeCancelSuccessPopup()">OK</button>
   </div>
 </div>
 
 <!-- Update Success Popup -->
 <div *ngIf="showUpdateSuccessPopup" class="popup">
-  <div class="popup-content">
-    <h3>Booking Updated Successfully</h3>
+  <div class="popup-content popup-content-cancel">
+    <h3>Success</h3>
+    <p>Booking data updated successfully</p>
     <button (click)="closeUpdateSuccessPopup()">OK</button>
   </div>
 </div>

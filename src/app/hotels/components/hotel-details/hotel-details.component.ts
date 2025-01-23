@@ -206,37 +206,54 @@ export class HotelDetailsComponent implements OnInit {
     }
   }
 
+
   navigateToBooking(room: any): void {
   {
     this.hotelService.setSelectedRoom(room);
     this.hotelService.getSearchDetails().subscribe((details) => {
-      if (details.checkIn == '' || details.checkOut == '' || details.children == 0 || details.adults == 1 || details.noOfRooms == 0) {
-        this.openDetailsUpdateForm();
+      
+      this.details = details;
+      const isIncomplete = 
+      !details?.startDate || 
+      !details?.endDate || 
+      !details?.rooms || 
+      details?.adults < 1;
+      
+
+    if (isIncomplete) {
+      // Open the popup if search details are incomplete
+      this.openDetailsUpdateForm();
+    } else {
+      // Save the selected hotel and navigate to details page
+      this.hotelService.setSelectedRoom(room);
+      this.router.navigate(['/hotels/hotel-booking']);
+
     }
     });
     
-    this.router.navigate(['/hotels/hotel-booking']);
   }
 }
 
 detailsUpdateForm = {
-  checkIn: '',
-  checkOut: null,
+
+  startDate: '',
+  endDate: '',
   adults: 1,
   children: 0,
-  noOfRooms: 1
+  rooms: 1
+};
+
+details = {
+  location: '',
+  startDate: '',
+  endDate: '',
+  adults: 1,
+  children: 0,
+  rooms: 1
 };
 
 showDetailsUpdateForm = false;
   openDetailsUpdateForm(): void {
-    
-    this.detailsUpdateForm = {
-      checkIn: '',
-      checkOut: null,
-      adults: 1,
-      children: 0,
-      noOfRooms: 1
-    };
     this.showDetailsUpdateForm = true;
   }
 
@@ -245,15 +262,21 @@ showDetailsUpdateForm = false;
   }
 
   submitUpdatedDetails(): void {
-    this.showDetailsUpdateSuccessPopup = true;
-  }
-  
 
-  showDetailsUpdateSuccessPopup = false;
-  closeReviewSuccessPopup(): void {
-    this.showDetailsUpdateSuccessPopup = false;
-    this.router.navigate(['/hotels/hotel-booking']);
+    this.detailsUpdateForm = {
+      ...this.details,
+      startDate: this.detailsUpdateForm.startDate,
+      endDate: this.detailsUpdateForm.endDate,
+      adults: this.detailsUpdateForm.adults,
+      children: this.detailsUpdateForm.children,
+      rooms: this.detailsUpdateForm.rooms
+
+    }
+    this.hotelService.setSearchDetails(this.detailsUpdateForm);
+    this.showDetailsUpdateForm = false;
+    console.log(this.detailsUpdateForm);
   }
+
 
   //for getting next date for checkout date
   getNextDate(date: string | null): string {
