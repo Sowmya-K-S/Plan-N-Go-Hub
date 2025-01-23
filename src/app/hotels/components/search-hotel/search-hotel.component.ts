@@ -115,6 +115,7 @@ export class SearchHotelComponent implements OnInit {
     this.searchParams.location = location;
     this.hotelService.setSearchDetails(this.searchParams);
     this.router.navigate(['/hotels/search-results']);
+
   }
 
    //to fill stars

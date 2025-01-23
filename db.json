@@ -4002,6 +4002,31 @@
       "checkIn": "1/25/2025",
       "checkOut": "1/26/2025",
       "status": "booked"
+    },
+    {
+      "id": "14af",
+      "hotelid": "1",
+      "hotelName": "The Oberoi Mumbai",
+      "hotelImage": "assets/hotel/hotel-images/oberoi-mumbai.jpg",
+      "location": "Mumbai",
+      "name": "sweetie",
+      "age": 25,
+      "gender": "female",
+      "email": "abc@gmail.com",
+      "phone": "6363279323",
+      "guests": [],
+      "roomType": "Luxury Room",
+      "roomPrice": 18000,
+      "noOfrooms": 1,
+      "stayDuration": 2,
+      "noOfGuests": 1,
+      "totalPrice": 36000,
+      "offer": 3600,
+      "netPrice": 32400,
+      "totalPayable": 38232,
+      "checkIn": "1/25/2025",
+      "checkOut": "1/27/2025",
+      "status": "booked"
     }
   ]
 }

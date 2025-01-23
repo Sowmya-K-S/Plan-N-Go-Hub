@@ -7,14 +7,30 @@ import { HotelResultsComponent } from './hotels/components/hotel-results/hotel-r
 import { HotelDetailsComponent } from './hotels/components/hotel-details/hotel-details.component';
 import { HotelBookingComponent } from './hotels/components/hotel-booking/hotel-booking.component';
 import { MyBookingsComponent } from './hotels/components/my-bookings/my-bookings.component';
+import { AdminHotelsComponent } from './hotels/components/admin-hotels/admin-hotels.component';
+import { AdminDashboardComponent } from './hotels/components/admin-dashboard/admin-dashboard.component';
+import { AdminBookingsComponent } from './hotels/components/admin-bookings/admin-bookings.component';
+
 
 export const routes: Routes = [
   { path: '', component: LoginPageComponent },
-  { path: 'hotels', component: SearchHotelComponent },
-  { path: 'hotels/search-results', component: HotelResultsComponent },
-  { path: 'hotels/hotel-details/:id', component: HotelDetailsComponent },
-  { path: 'hotels/hotel-booking', component: HotelBookingComponent },
-  { path: 'hotels/my-bookings', component: MyBookingsComponent }
+  {
+    path: 'hotels',
+    children: [
+      { path: 'search', component: SearchHotelComponent },
+      { path: 'search-results', component: HotelResultsComponent },
+      { path: 'hotel-details/:id', component: HotelDetailsComponent },
+      { path: 'hotel-booking', component: HotelBookingComponent },
+      { path: 'my-bookings', component: MyBookingsComponent },
+      { path: 'admin',
+        children: [
+          { path: 'hotels', component: AdminHotelsComponent },
+          { path: 'dashboard', component: AdminDashboardComponent },
+          { path: 'bookings', component: AdminBookingsComponent },
+        ]
+      }
+    ],
+  },
 ];
 
 

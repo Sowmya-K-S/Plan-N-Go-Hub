@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
+import { ActivatedRoute } from '@angular/router';
+
 @Component({
   selector: 'app-login-page',
   standalone: true,
@@ -13,7 +15,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class LoginPageComponent {
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private route: ActivatedRoute) {}
 
   selectedRole: string = '';
 
@@ -27,7 +29,7 @@ export class LoginPageComponent {
     if (this.selectedRole === 'admin') {
       this.router.navigate(['/hotels/admin']); // Replace with the actual route for admin
     } else if (this.selectedRole === 'user') {
-      this.router.navigate(['/hotels']); // Replace with the actual route for user
+      this.router.navigate(['/hotels/search']); // Replace with the actual route for user
     } else {
       alert('Invalid role selected!');
     }
