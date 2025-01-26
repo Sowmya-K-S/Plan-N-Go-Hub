@@ -3,9 +3,12 @@
   font-family: poppins;
 }
 
+
+
 .bookings-container {
   font-family: poppins;
   margin: 20px;
+  width: 100%;
 }
 
 h1 {
@@ -23,11 +26,6 @@ h2 {
   margin-bottom: 15px;
 }
 
-.booking {
-  margin-bottom: 15px;
-  padding: 10px; /* Include padding for consistent look */
-}
-
 .booking-card {
   display: flex;
   flex-direction: row;
@@ -35,11 +33,12 @@ h2 {
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin: auto;
+  margin-bottom: 5px;
   padding: 8px;
   gap: 8px;
   align-items: center;
   background-color: #fcf9a3;
+  width:95%;
 }
 
 .booking-image {

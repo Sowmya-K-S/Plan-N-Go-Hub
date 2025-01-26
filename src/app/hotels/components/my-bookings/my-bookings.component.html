@@ -5,8 +5,8 @@
 <!-- Current Bookings Section -->
 <h2>Current Bookings</h2>
 <div *ngIf="currentBookings.length; else noCurrentBookings">
-  <div *ngFor="let booking of currentBookings" class="booking">
-    <div class="booking-card">
+  <div *ngFor="let booking of currentBookings">
+    <div *ngIf="booking.userid === userid" class="booking-card">
 
       <!-- Image column -->
       <div class="booking-image">
@@ -53,8 +53,8 @@
 <!-- Past Bookings Section -->
 <h2>Past Bookings</h2>
 <div *ngIf="pastBookings.length; else noPastBookings">
-  <div *ngFor="let booking of pastBookings" class="booking">
-    <div class="booking-card">
+  <div *ngFor="let booking of pastBookings">
+    <div  class="booking-card">
       <!-- Image column -->
       <div class="booking-image">
         <img src="{{ booking.hotelImage }}" alt="{{ booking.hotelName }}">
@@ -95,7 +95,6 @@
 <ng-template #noPastBookings>
   <p class="no-bookings">No past bookings available.</p>
 </ng-template>
-
 </div>
 
 <!-- Details Popup -->
@@ -106,33 +105,33 @@
 
     <div class="details-grid">
       <p><strong>Booking ID</strong></p>
-      <p>{{ selectedBooking?.id }}</p>
+      <p>{{ selectedBooking.id }}</p>
       <p><strong>Hotel ID</strong></p>
-      <p>{{ selectedBooking?.hotelid }}</p>
+      <p>{{ selectedBooking.hotelid }}</p>
       <p><strong>Hotel</strong></p>
-      <p>{{ selectedBooking?.hotelName }}</p>
+      <p>{{ selectedBooking.hotelName }}</p>
       <p><strong>Location</strong></p>
-      <p>{{ selectedBooking?.location }}</p>
+      <p>{{ selectedBooking.location }}</p>
       <p><strong>Booking Dates</strong></p>
-      <p>{{ selectedBooking?.checkIn }} to {{ selectedBooking?.checkOut }}</p>
+      <p>{{ selectedBooking.checkIn }} to {{ selectedBooking.checkOut }}</p>
       <p><strong>Room Type</strong></p>
-      <p>{{ selectedBooking?.roomType }}</p>
+      <p>{{ selectedBooking.roomType }}</p>
       <p><strong>No of Rooms</strong></p>
-      <p>{{ selectedBooking?.noOfrooms }}</p>
+      <p>{{ selectedBooking.noOfrooms }}</p>
       <p><strong>No of Guests</strong></p>
-      <p>{{ selectedBooking?.noOfGuests }}</p>
+      <p>{{ selectedBooking.noOfGuests }}</p>
       <p><strong>Stay Duration</strong></p>
-      <p>{{ selectedBooking?.stayDuration }} night(s)</p>
+      <p>{{ selectedBooking.stayDuration }} night(s)</p>
       <p><strong>Total Price</strong></p>
-      <p>₹{{ selectedBooking?.totalPrice }}</p>
+      <p>₹{{ selectedBooking.totalPrice }}</p>
       <p><strong>Offer Price</strong></p>
-      <p>₹{{ selectedBooking?.offer }}</p>
+      <p>₹{{ selectedBooking.offer }}</p>
       <p><strong>Net Price</strong></p>
-      <p>₹{{ selectedBooking?.netPrice }}</p>
+      <p>₹{{ selectedBooking.netPrice }}</p>
       <p><strong>Total Payable</strong></p>
-      <p>₹{{ selectedBooking?.totalPayable }}</p>
+      <p>₹{{ selectedBooking.totalPayable }}</p>
       <p><strong>Status</strong></p>
-      <p>{{ selectedBooking?.status }}</p>
+      <p>{{ selectedBooking.status }}</p>
     </div>
     
     <button (click)="closeDetailsPopup()" style="color: white;">Close</button>

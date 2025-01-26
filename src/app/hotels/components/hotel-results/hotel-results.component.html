@@ -68,45 +68,45 @@
   <div *ngIf="filteredHotels.length; else defaultHotels">
     <div class="card-container">
       <div *ngFor="let hotel of filteredHotels" class="card">
-        <img [src]="hotel.images[0]" alt="{{ hotel.name }}" class="card-img" />
+        <img [src]="hotel['images'][0]" alt="{{ hotel['name'] }}" class="card-img" />
 
         <div class="card-content">
 
           <div class="name-star">
             <h3>{{ hotel['name']}}</h3>
-            <div><i style="color: gold" *ngFor="let star of getFilledStars(hotel.star)"><fa-icon [icon]="faStar"></fa-icon></i></div>
+            <div><i style="color: gold" *ngFor="let star of getFilledStars(hotel['star'])"><fa-icon [icon]="faStar"></fa-icon></i></div>
           </div>
 
           <div class="rating-label">
-            <p><strong>{{ hotel.rating }}/5</strong></p>
-            <p><strong>{{ getRatingLabel(hotel.rating) }}</strong></p>
+            <p><strong>{{ hotel['rating'] }}/5</strong></p>
+            <p><strong>{{ getRatingLabel(hotel['rating']) }}</strong></p>
           </div>
 
           <div class="location-price">
-            <p><i><fa-icon [icon]="faMapMarkerAlt"></fa-icon></i> {{ hotel.location }}</p>
+            <p><i><fa-icon [icon]="faMapMarkerAlt"></fa-icon></i> {{ hotel['location'] }}</p>
 
             <!-- Display offer price section if offerDescription exists -->
             <div *ngIf="hotel.offerDescription; else normalPrice">
               <div class="price-offer">
                 <div class="price">
-                  <p class="original-price"><s>₹{{ hotel.price }}</s></p>
-                  <p class="discounted-price">₹{{ hotel.discountedPrice }}</p>
+                  <p class="original-price"><s>₹{{ hotel['price'] }}</s></p>
+                  <p class="discounted-price">₹{{ hotel['discountedPrice'] }}</p>
                 </div>
                 <div class="description">
-                  <p class="offer-description">{{ hotel.offerDescription }}</p>
-                  <p>{{ hotel.specialOffers[0].discount }}% off</p>
+                  <p class="offer-description">{{ hotel['offerDescription'] }}</p>
+                  <p>{{ hotel['specialOffers'][0].discount }}% off</p>
                 </div>
               </div>
             </div>
 
             <!-- Normal price if no offer -->
             <ng-template #normalPrice>
-              <p>₹{{ hotel.price }} / night</p>
+              <p>₹{{ hotel['price'] }} / night</p>
             </ng-template>
           </div>
 
           <p *ngIf="hotel.amenities?.length">
-            {{ getTruncatedAmenities(hotel.amenities.join(', ')) }} <strong>more</strong>
+            {{ getTruncatedAmenities(hotel['amenities'].join(', ')) }} <strong>more</strong>
           </p>
         </div>
         <button class="know-more-btn" (click)="navigateToDetails(hotel)">Know More</button>

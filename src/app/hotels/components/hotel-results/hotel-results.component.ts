@@ -32,7 +32,6 @@ export class HotelResultsComponent implements OnInit {
   faMapMarkerAlt = faMapMarkerAlt
 
   
-  
 
   filters = {
     price: 0,

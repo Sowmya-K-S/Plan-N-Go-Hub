@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
-import { Hotel } from '../../models/hotel.model';
+import { Hotel, Room, specialOffers, Guest, Booking } from '../../models/hotel.model';
 import { HotelService } from '../../services/hotel.service';
 
 import { Router } from '@angular/router';
@@ -23,18 +23,18 @@ import { NavigationToggleComponent } from '../navigation-toggle/navigation-toggl
 export class HotelBookingComponent {
 
   name!: string;
-  age!: string;
+  age!: number;
   email!: string;
   phone!: string;
   gender: string = '';
   hotel!: Hotel;
-  room: any;
+  room: Room = {} as Room;
   searchDetails: any;
   totalPrice: number = 0;
   gstAmount: number = 0;
   totalPayable: number = 0;
   bookingStatus: string = '';
-  bookingDetails: any = {};
+  bookingDetails: Booking = {} as Booking;
   showConfirmation: boolean = false;
   checkIn : any;
   checkOut : any;
@@ -100,10 +100,14 @@ export class HotelBookingComponent {
   }
 
   onSubmit(bookingForm: any) {
+
+    const userid = 'USER001';
    
     if (bookingForm.valid) {
   
     const bookingData = {
+      id: Math.random().toString(36).substring(2, 9),
+      userid: userid,
       hotelid : this.hotel.id,
       hotelName: this.hotel.name,
       hotelImage: this.hotel.images[0],

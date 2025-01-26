@@ -6,6 +6,7 @@ import { FormsModule} from '@angular/forms'; // Import FormsModule
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faHotel, faMapMarkerAlt, faCalendarCheck, faCalendarMinus, faBed, faCircle, faMoneyBill, faCloudMoon, faUsers, faBars, faClipboardList, faHome } from '@fortawesome/free-solid-svg-icons';
 import { NavigationToggleComponent } from '../navigation-toggle/navigation-toggle.component';
+import { Booking, Room, specialOffers } from '../../models/hotel.model';
 
 
 
@@ -18,12 +19,17 @@ import { NavigationToggleComponent } from '../navigation-toggle/navigation-toggl
   styleUrls: ['./my-bookings.component.css']
 })
 export class MyBookingsComponent implements OnInit {
-  bookings: any[] = [];
-  currentBookings: any[] = [];
-  pastBookings: any[] = [];
-  availableRooms: any[] = []; // Store room types fetched from hotel database
-  specialOffers: any[] = [];
+  bookings: Booking[] = [];
+  currentBookings: Booking[] = [];
+  pastBookings: Booking[] = [];
+  availableRooms: Room[] = []; 
+  specialOffers: specialOffers[] = [];
 
+  //userid of logged in user
+  userid: string = "USER001";
+
+
+  //icons
   faHotel = faHotel;
   faMapMarkerAlt = faMapMarkerAlt;
   faCalendarCheck = faCalendarCheck;
@@ -39,21 +45,22 @@ export class MyBookingsComponent implements OnInit {
 
    // Popup and Review Form State
   
-   selectedBooking: any;
+   selectedBooking: Booking = {} as Booking;
+  
    reviewForm = {
      username: '',
      rating: null,
      comment: ''
    };
    
-   editForm : any = {};
+   editForm : Booking = {} as Booking;
   
     rebookForm = {
     id: '',
     hotelName: '',
     location: '',
     name: '',
-    age: null,
+    age: 0,
     gender: '',
     email: '',
     phone: '',
@@ -135,7 +142,7 @@ export class MyBookingsComponent implements OnInit {
   updatePastBookingStatus(): void {
     const today = new Date();
   
-    this.pastBookings.forEach((booking) => {
+    this.pastBookings.forEach((booking: Booking) => {
       if (booking.status !== 'cancelled') {
         const checkOutDate = new Date(booking.checkOut);
         if (checkOutDate < today && booking.status !== 'visited') {
@@ -207,7 +214,7 @@ export class MyBookingsComponent implements OnInit {
 showCancelPopup = false;
 
 // Open Cancel Popup
-openCancelPopup(booking: any): void {
+openCancelPopup(booking: Booking): void {
   this.selectedBooking = booking;
   this.showCancelPopup = true;
 }
@@ -279,7 +286,6 @@ closeCancelSuccessPopup(): void {
 
   closeDetailsPopup(): void {
     this.showDetailsPopup = false;
-    this.selectedBooking = null;
   }
 
 //--------------------------details section-------------------------------------------------
@@ -290,7 +296,7 @@ closeCancelSuccessPopup(): void {
 
 //--------------------------review section-------------------------------------------------
   showReviewForm = false;
-  openReviewForm(booking: any): void {
+  openReviewForm(booking: Booking): void {
     this.selectedBooking = booking;
     this.reviewForm = {
       username: '',
@@ -302,7 +308,6 @@ closeCancelSuccessPopup(): void {
 
   closeReviewForm(): void {
     this.showReviewForm = false;
-    this.selectedBooking = null;
   }
 
   submitReview(): void {
@@ -341,7 +346,7 @@ closeReviewSuccessPopup(): void {
 
   //--------------------------Edit section-------------------------------------------------
   showEditPopup = false;
- openEditPopup(booking: any): void {
+ openEditPopup(booking: Booking): void {
   this.editForm = booking;
 
   this.editForm = {
@@ -440,9 +445,11 @@ closeUpdateSuccessPopup(): void {
 
 //--------------------------rebook section-------------------------------------------------
 showRebookPopup = false;
-openRebookPopup(booking: any): void {
+openRebookPopup(booking: Booking): void {
+
   this.rebookForm = {
     ...booking,
+    id: Math.random().toString(36).substring(2, 9),
     checkIn: '', 
     checkOut: '', 
   };
@@ -501,8 +508,7 @@ submitRebookForm(): void {
   this.rebookForm.checkOut = this.convertToDBDate(this.rebookForm.checkOut);
   this.rebookForm.status = 'booked';
 
-  const { id, ...newBooking } = this.rebookForm;
-  this.hotelService.bookHotel(newBooking).subscribe({
+  this.hotelService.bookHotel(this.rebookForm).subscribe({
     next: () => {
       console.log('Rebooking completed successfully');
       this.fetchBookings();

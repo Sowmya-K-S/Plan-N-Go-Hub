@@ -172,15 +172,15 @@
           <div class="price-offer">
 
             <div class="price">
-            <p class="original-price" *ngIf="hotel.offerDescription"><s>₹{{ hotel.price }}</s></p>
-            <p class="discounted-price">₹{{ hotel.discountedPrice }}</p>
+            <p class="original-price" *ngIf="hotel.offerDescription"><s>₹{{ hotel['price'] }}</s></p>
+            <p class="discounted-price">₹{{ hotel['discountedPrice'] }}</p>
             </div>
 
             <div class = "description">
               <p class="offer-description" *ngIf="hotel.offerDescription">
-                {{ hotel.offerDescription }}
+                {{ hotel['offerDescription'] }}
               </p>
-              <p>{{ hotel.specialOffers[0].discount}}% off</p>
+              <p>{{ hotel['specialOffers'][0].discount }}% off</p>
             </div>
 
           </div>

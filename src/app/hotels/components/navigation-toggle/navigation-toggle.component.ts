@@ -28,7 +28,7 @@ export class NavigationToggleComponent {
   }
 
   navigateToHome(): void {
-    this.router.navigate(['/hotels']); // Navigate to home
+    this.router.navigate(['/hotels/search']); // Navigate to home
     this.isMenuOpen = false; // Close the menu after navigation
   }
 

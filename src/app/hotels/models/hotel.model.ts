@@ -21,10 +21,8 @@ export interface Room {
   };
 }
 
-
-
 export interface Hotel {
-    id: number;
+    id: string;
     name: string;
     location: string;
     Address: string;
@@ -66,6 +64,7 @@ export interface Hotel {
   
   export interface Booking {
     id: string;
+    userid: string;
     hotelid: string;
     hotelName: string;
     hotelImage: string;
@@ -86,5 +85,7 @@ export interface Hotel {
     checkIn: string;
     checkOut: string;
     status: string;
+    offer: number;
+    netPrice: number;
   }
   

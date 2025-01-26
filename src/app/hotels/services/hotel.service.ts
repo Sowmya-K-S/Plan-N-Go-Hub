@@ -95,7 +95,7 @@ cancelBooking(id: string, updatedBooking: any): Observable<any> {
   return this.http.put(url, updatedBooking);
 }
 
-addReviewToHotel(hotelId: number, review: any): Observable<any> {
+addReviewToHotel(hotelId: string, review: any): Observable<any> {
   const url = `${this.apiUrl}/${hotelId}`;
   return this.http.get<Hotel>(url).pipe(
     switchMap((hotel) => {
@@ -129,6 +129,14 @@ editBooking(booking: any): Observable<any> {
   const url = `http://localhost:3000/bookings/${booking.id}`;
   return this.http.put<any>(url, booking);
 }
+
+
+
+// ----------------------------ADMIN SERVICES-------------------------------------
+deleteHotel(id: string): Observable<void> {
+  return this.http.delete<void>(`${this.apiUrl}/${id}`);
+}
+
 
 }
 
