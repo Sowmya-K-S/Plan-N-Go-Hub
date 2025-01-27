@@ -4,13 +4,14 @@ import { RouterModule } from '@angular/router';
 import { HotelService } from '../../services/hotel.service';
 import { Hotel } from '../../models/hotel.model';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faMapMarkerAlt, faCircle, faMoneyBill, faStar, faTag } from '@fortawesome/free-solid-svg-icons';
+import { faMapMarkerAlt, faCircle, faMoneyBill, faStar, faTag, faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { FormsModule } from '@angular/forms';
+import { AdminNavigationComponent } from '../admin-navigation/admin-navigation.component';
 
 @Component({
   selector: 'app-hotel-results',
   standalone: true,
-  imports: [CommonModule, RouterModule, FontAwesomeModule, FormsModule],
+  imports: [CommonModule, RouterModule, FontAwesomeModule, FormsModule, AdminNavigationComponent],
   templateUrl: './admin-hotels.component.html',
   styleUrls: ['./admin-hotels.component.css'],
 })
@@ -21,6 +22,8 @@ export class AdminHotelsComponent implements OnInit {
   faMoneyBill = faMoneyBill;
   faStar = faStar;
   faTag = faTag;
+  faArrowLeft = faArrowLeft;
+  faArrowRight = faArrowRight;
 
   constructor(private hotelService: HotelService) {}
 
@@ -32,9 +35,20 @@ export class AdminHotelsComponent implements OnInit {
     });
   }
 
+
+
+  // open details popup function
+  hotel: Hotel = {} as Hotel;
+
+  openDetailsPopup = false;
   viewDetails(hotel: Hotel): void {
-    this.hotelService.setSelectedHotel(hotel);
-    // Navigate to details page or open details popup
+    this.hotel = hotel
+    this.openDetailsPopup = true
+  }
+
+  closeDetailsPopup()
+  {
+    this.openDetailsPopup = false;
   }
 
   updateHotel(hotel: Hotel): void {
@@ -54,8 +68,8 @@ export class AdminHotelsComponent implements OnInit {
 
 //   Pagination code
 displayedHotels: Hotel[] = [];
-rowsPerPageOptions: number[] = [5, 10, 15];
-rowsPerPage: number = 5;
+rowsPerPageOptions: number[] = [3, 6, 9, 12];
+rowsPerPage: number = 3;
 currentPage: number = 1;
 totalPages: number = 1;
 
@@ -85,6 +99,11 @@ updatePagination(): void {
       this.updatePagination();
     }
   }
+
+
+  // hotel details popup
+
+
 
 }
 

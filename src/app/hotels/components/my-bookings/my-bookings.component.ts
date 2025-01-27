@@ -18,6 +18,8 @@ import { Booking, Room, specialOffers } from '../../models/hotel.model';
   templateUrl: './my-bookings.component.html',
   styleUrls: ['./my-bookings.component.css']
 })
+
+
 export class MyBookingsComponent implements OnInit {
   bookings: Booking[] = [];
   currentBookings: Booking[] = [];

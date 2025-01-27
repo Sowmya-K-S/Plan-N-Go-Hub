@@ -1,5 +1,5 @@
 <div class="hotels-container">
-  <h1>Available Hotels</h1>
+  <h1>All Hotels</h1>
 
   <!-- Hotel Cards -->
   <div *ngIf="displayedHotels.length; else noHotels">
@@ -69,9 +69,15 @@
   
     <!-- Pagination Buttons Section -->
     <div class="pagination-buttons">
-      <button (click)="goToPreviousPage()" [disabled]="currentPage === 1">Previous</button>
+      <button (click)="goToPreviousPage()" [disabled]="currentPage === 1"><i><fa-icon [icon]="faArrowLeft"></fa-icon></i></button>
       <span class="page-info">Page {{ currentPage }} of {{ totalPages }}</span>
-      <button (click)="goToNextPage()" [disabled]="currentPage === totalPages">Next</button>
+      <button (click)="goToNextPage()" [disabled]="currentPage === totalPages"><i><fa-icon [icon]="faArrowRight"></fa-icon></i></button>
     </div>
   </div>
+
+  </div>
+
+
+  <!-- Navigation -->
+  <app-admin-navigation></app-admin-navigation>
   
