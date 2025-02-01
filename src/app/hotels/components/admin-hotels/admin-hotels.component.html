@@ -3,6 +3,7 @@
 
   <!-- Hotel Cards -->
   <div *ngIf="displayedHotels.length; else noHotels">
+
     <div *ngFor="let hotel of displayedHotels" class="hotel-card">
       <!-- Image Section -->
       <div class="hotel-image">
@@ -51,9 +52,11 @@
         <button (click)="updateHotel(hotel)">Update Hotel</button>
         <button (click)="deleteHotel(hotel.id)">Delete Hotel</button>
       </div>
-    </div>
-  </div>
 
+    </div>
+
+  </div>
+  
   <ng-template #noHotels>
     <p class="no-hotels">No hotels available at the moment.</p>
   </ng-template>
@@ -61,7 +64,7 @@
   <div class="pagination-controls">
     <!-- Rows Per Page Section -->
     <div class="rows-per-page">
-      <label for="rowsPerPage">Rows per page:</label>
+      <label for="rowsPerPage">Rows per page</label>
       <select id="rowsPerPage" [(ngModel)]="rowsPerPage" (change)="changeRowsPerPage($event)">
         <option *ngFor="let option of rowsPerPageOptions" [value]="option">{{ option }}</option>
       </select>
@@ -75,7 +78,7 @@
     </div>
   </div>
 
-  </div>
+</div>
 
 
   <!-- Navigation -->

@@ -4,7 +4,7 @@ import { Router } from '@angular/router'; // Import Router
 import { HotelService } from '../../services/hotel.service';
 import { FormsModule} from '@angular/forms'; // Import FormsModule
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faHotel, faMapMarkerAlt, faCalendarCheck, faCalendarMinus, faBed, faCircle, faMoneyBill, faCloudMoon, faUsers, faBars, faClipboardList, faHome, faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { faHotel, faMapMarkerAlt, faCalendarCheck, faCalendarMinus, faBed, faCircle, faMoneyBill, faCloudMoon, faUsers, faBars, faClipboardList, faHome, faArrowLeft, faArrowRight, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { AdminNavigationComponent } from '../admin-navigation/admin-navigation.component';
 import { Booking, Room, specialOffers } from '../../models/hotel.model';
 
@@ -41,6 +41,8 @@ export class AdminBookingsComponent implements OnInit {
   faHome = faHome;
   faArrowLeft = faArrowLeft;
   faArrowRight = faArrowRight;
+  faChevronLeft = faChevronLeft;
+  faChevronRight = faChevronRight;
 
   
    selectedBooking: Booking = {} as Booking;
@@ -84,6 +86,7 @@ export class AdminBookingsComponent implements OnInit {
 
   ngOnInit(): void {
     this.fetchBookings();
+    
   }
 
   
@@ -95,8 +98,8 @@ export class AdminBookingsComponent implements OnInit {
       next: (data) => {
         this.bookings = data;
         this.segregateBookings();
-        // Update the total pages for pagination
-        this.updateTotalPages();
+        this.updateCurrentPagination();
+        this.updatePastPagination();
       },
       error: (err) => console.error('Error fetching bookings:', err)
     });
@@ -126,10 +129,7 @@ export class AdminBookingsComponent implements OnInit {
       if (isPast && booking.status !== 'cancelled' && booking.status !== 'visited') {
         const updatedBooking = { ...booking, status: 'visited' };
         this.hotelService.updateBookingStatus(updatedBooking).subscribe({
-          next: () => {
-            console.log(`Booking ${booking.id} updated to 'visited'.`);
-          },
-          error: (err) => console.error('Error updating past booking status:', err),
+    
         });
       }
   
@@ -146,10 +146,7 @@ export class AdminBookingsComponent implements OnInit {
         const checkOutDate = new Date(booking.checkOut);
         if (checkOutDate < today && booking.status !== 'visited') {
           const updatedBooking = { ...booking, status: 'visited' };
-          this.hotelService.updateBookingStatus(updatedBooking).subscribe({
-            next: () => console.log(`Booking ${booking.id} updated to 'visited'.`),
-            error: (err) => console.error('Error updating past booking status:', err),
-          });
+          this.hotelService.updateBookingStatus(updatedBooking).subscribe();
         }
       }
     });
@@ -234,7 +231,6 @@ confirmCancellation(): void {
 
   this.hotelService.updateBookingStatus(updatedBooking).subscribe({
     next: () => {
-      console.log('Booking cancelled successfully');
       this.fetchBookings(); // Refresh bookings to reflect updated status
       this.showCancelPopup = false; // Close the confirmation popup
       this.showCancelSuccessPopup = true; // Show success popup
@@ -263,7 +259,6 @@ closeCancelSuccessPopup(): void {
     this.hotelService.cancelBooking(id, updatedBooking).subscribe({
       next: () => {
         this.fetchBookings(); // Refresh bookings after cancellation
-        console.log('Booking cancelled successfully');
       },
       error: (err) => console.error('Error cancelling booking:', err)
     });
@@ -365,7 +360,6 @@ submitEditForm(): void {
 
   this.hotelService.editBooking(this.editForm).subscribe({
     next: () => {
-      console.log('Booking updated successfully');
       this.fetchBookings();
       this.showUpdateSuccessPopup = true;
       this.closeEditPopup();
@@ -456,7 +450,6 @@ submitRebookForm(): void {
 
   this.hotelService.bookHotel(this.rebookForm).subscribe({
     next: () => {
-      console.log('Rebooking completed successfully');
       this.fetchBookings();
       this.showRebookingSuccessPopup = true;
       this.closeRebookPopup();
@@ -500,66 +493,79 @@ closeRebookingSuccessPopup(): void {
 
   // ---------------------------Pagination--------------------------------------------------
 
-    // Pagination variables
-    currentPageCurrent = 1;
-    currentPagePast = 1;
+  // for current bookings
   
-    itemsPerPageCurrent = 5;
-    itemsPerPagePast = 5;
+  displayedCurrentBookings: Booking[] = [];
+  currentRowsPerPageOptions: number[] = [3, 6, 9, 12];
+  currentRowsPerPage: number = 3;
+  currentCurrentPage: number = 1;
+  currentTotalPages: number = 1;
   
-    itemsPerPageOptions = [5, 10, 15, 20]; // Rows per page options
-  
-    totalPagesCurrent = 0;
-    totalPagesPast = 0;
-
-
-    updateTotalPages() {
-      this.totalPagesCurrent = Math.ceil(this.currentBookings.length / this.itemsPerPageCurrent);
-      this.totalPagesPast = Math.ceil(this.pastBookings.length / this.itemsPerPagePast);
-    }
-  
-    // Current Bookings Pagination
-    previousPageCurrent() {
-      if (this.currentPageCurrent > 1) this.currentPageCurrent--;
-    }
-  
-    nextPageCurrent() {
-      if (this.currentPageCurrent < this.totalPagesCurrent) this.currentPageCurrent++;
-    }
-  
-    changeItemsPerPageCurrent(event: Event) {
-      const value = (event.target as HTMLSelectElement)?.value; // Type cast to HTMLSelectElement
-      this.itemsPerPageCurrent = Number(value);
-      this.currentPageCurrent = 1; // Reset to the first page
-      this.updateTotalPages();
-    }
-  
-    // Past Bookings Pagination
-    previousPagePast() {
-      if (this.currentPagePast > 1) this.currentPagePast--;
-    }
-  
-    nextPagePast() {
-      if (this.currentPagePast < this.totalPagesPast) this.currentPagePast++;
-    }
-  
-    changeItemsPerPagePast(event: Event) {
-      const value = (event.target as HTMLSelectElement)?.value; // Type cast to HTMLSelectElement
-      this.itemsPerPagePast = Number(value);
-      this.currentPagePast = 1; // Reset to the first page
-      this.updateTotalPages();
-    }
-
-    get paginatedCurrentBookings(): Booking[] {
-      const startIndex = (this.currentPageCurrent - 1) * this.itemsPerPageCurrent;
-      const endIndex = startIndex + this.itemsPerPageCurrent;
-      return this.currentBookings.slice(startIndex, endIndex);
-    }
+  updateCurrentPagination(): void {
+    const startIndex = (this.currentCurrentPage - 1) * this.currentRowsPerPage;
+    const endIndex = startIndex + this.currentRowsPerPage;
+    this.displayedCurrentBookings = this.currentBookings.slice(startIndex, endIndex);
+    this.currentTotalPages = Math.ceil(this.currentBookings.length / this.currentRowsPerPage);
     
-    get paginatedPastBookings(): Booking[] {
-      const startIndex = (this.currentPagePast - 1) * this.itemsPerPagePast;
-      const endIndex = startIndex + this.itemsPerPagePast;
-      return this.pastBookings.slice(startIndex, endIndex);
+  }
+  
+    changeCurrentRowsPerPage(event: any): void {
+      this.currentRowsPerPage = +event.target.value;
+      this.currentCurrentPage = 1; // Reset to first page
+      this.updateCurrentPagination();
     }
-    
+  
+    goToCurrentPreviousPage(): void {
+      if (this.currentCurrentPage > 1) {
+        this.currentCurrentPage--;
+        this.updateCurrentPagination();
+      }
+    }
+  
+    goToCurrentNextPage(): void {
+      if (this.currentCurrentPage < this.currentTotalPages) {
+        this.currentCurrentPage++;
+        this.updateCurrentPagination();
+      }
+    }
+
+    // for past bookings
+
+    displayedPastBookings: Booking[] = [];
+    pastRowsPerPageOptions: number[] = [3, 6, 9, 12];
+    pastRowsPerPage: number = 3;
+    pastCurrentPage: number = 1;
+    pastTotalPages: number = 1;
+
+    updatePastPagination(): void {
+      const startIndex = (this.pastCurrentPage - 1) * this.pastRowsPerPage;
+      const endIndex = startIndex + this.pastRowsPerPage;
+      this.displayedPastBookings = this.pastBookings.slice(startIndex, endIndex);
+      this.pastTotalPages = Math.ceil(this.pastBookings.length / this.pastRowsPerPage);
+    }
+  
+    changePastRowsPerPage(event: any): void {
+      this.pastRowsPerPage = +event.target.value;
+      this.pastCurrentPage = 1; // Reset to first page
+      this.updatePastPagination();
+    }
+  
+    goToPastPreviousPage(): void {
+      if (this.pastCurrentPage > 1) {
+        this.pastCurrentPage--;
+        this.updatePastPagination();
+      }
+    }
+  
+    goToPastNextPage(): void {
+      if (this.pastCurrentPage < this.pastTotalPages) {
+        this.pastCurrentPage++;
+        this.updatePastPagination();
+      }
+    }
+
+  // ---------------------------Pagination--------------------------------------------------
+  
+  
+
 }

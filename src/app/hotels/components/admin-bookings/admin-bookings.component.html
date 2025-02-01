@@ -4,8 +4,10 @@
         
         <!-- Current Bookings Section -->
         <h2>Current Bookings</h2>
-        <div *ngIf="currentBookings.length; else noCurrentBookings">
-        <div *ngFor="let booking of paginatedCurrentBookings">
+        <div *ngIf="displayedCurrentBookings.length; else noCurrentBookings">
+
+        <!-- Booking cards -->
+        <div *ngFor="let booking of displayedCurrentBookings">
             <div class="booking-card">
         
             <!-- Image column -->
@@ -45,55 +47,99 @@
             </div>
             </div>
         </div>
+
         </div>
+
+        <!-- Pagination for Current Bookings -->
+        <div class="pagination-controls">
+          <!-- Rows Per Page Section -->
+          <div class="rows-per-page">
+            <label for="rowsPerPage">Rows per page</label>
+            <select id="rowsPerPage" [(ngModel)]="currentRowsPerPage" (change)="changeCurrentRowsPerPage($event)">
+              <option *ngFor="let option of currentRowsPerPageOptions" [value]="option">{{ option }}</option>
+            </select>
+          </div>
+        
+          <!-- Pagination Buttons Section -->
+          <div class="pagination-buttons">
+            <button (click)="goToCurrentPreviousPage()" [disabled]="currentCurrentPage === 1"><i><fa-icon [icon]="faArrowLeft"></fa-icon></i></button>
+            <span class="page-info">Page {{ currentCurrentPage }} of {{ currentTotalPages }}</span>
+            <button (click)="goToCurrentNextPage()" [disabled]="currentCurrentPage === currentTotalPages"><i><fa-icon [icon]="faArrowRight"></fa-icon></i></button>
+          </div>
+        </div>
+        
         <ng-template #noCurrentBookings>
-        <p class="no-bookings">No current bookings available.</p>
+          <p class="no-bookings">No current bookings available.</p>
         </ng-template>
         
         <!-- Past Bookings Section -->
         <h2>Past Bookings</h2>
-        <div *ngIf="pastBookings.length; else noPastBookings">
-        <div *ngFor="let booking of paginatedPastBookings">
+
+        <div *ngIf="displayedPastBookings.length; else noPastBookings">
+
+        <!-- Booking cards -->
+        <div *ngFor="let booking of displayedPastBookings">
             <div  class="booking-card">
-            <!-- Image column -->
-            <div class="booking-image">
-                <img src="{{ booking.hotelImage }}" alt="{{ booking.hotelName }}">
-            </div>
-        
-            <!-- Details columns -->
-            <div class="booking-details">
-                <div class="detail-column">
-                <p><fa-icon [icon]="faHotel"></fa-icon> {{ booking.hotelName }}</p>
-                <p><fa-icon [icon]="faMapMarkerAlt"></fa-icon> {{ booking.location }}</p>
-                </div>
-                <div class="detail-column">
-                <p><fa-icon [icon]="faCalendarCheck"></fa-icon> {{ booking.checkIn }} -> <fa-icon [icon]="faCalendarMinus"></fa-icon> {{ booking.checkOut }}</p>
-                <p><fa-icon [icon]="faUsers"></fa-icon> {{ booking.noOfGuests }} Guests</p>
-                </div>
-                <div class="detail-column">
-                <p><fa-icon [icon]="faBed"></fa-icon> {{ booking.roomType }}</p>
-                <p><fa-icon [icon]="faCircle" [style.color]="getStatusColor(booking.status)"></fa-icon>  {{ booking.status }}</p>
-                </div>
-                <div class="detail-column">
-                <p><fa-icon [icon]="faCloudMoon"></fa-icon> {{ booking.stayDuration }} night(s)</p>
-                <p><fa-icon [icon]="faMoneyBill"></fa-icon> ₹{{ booking.totalPayable }}</p>
-                </div>
-        
-                <!-- Buttons -->
-                <div class="booking-buttons">
-                <!-- <button>View Details</button>
-                <button (click)="giveReview(booking)">Give Review</button>
-                <button>Book Again</button>-->
-                <button (click)="openDetailsPopup(booking)">View Details</button>
-                <button (click)="openRebookPopup(booking)">Book Again</button>
-                </div>
-            </div>
+              <!-- Image column -->
+              <div class="booking-image">
+                  <img src="{{ booking.hotelImage }}" alt="{{ booking.hotelName }}">
+              </div>
+          
+              <!-- Details columns -->
+              <div class="booking-details">
+                  <div class="detail-column">
+                  <p><fa-icon [icon]="faHotel"></fa-icon> {{ booking.hotelName }}</p>
+                  <p><fa-icon [icon]="faMapMarkerAlt"></fa-icon> {{ booking.location }}</p>
+                  </div>
+                  <div class="detail-column">
+                  <p><fa-icon [icon]="faCalendarCheck"></fa-icon> {{ booking.checkIn }} -> <fa-icon [icon]="faCalendarMinus"></fa-icon> {{ booking.checkOut }}</p>
+                  <p><fa-icon [icon]="faUsers"></fa-icon> {{ booking.noOfGuests }} Guests</p>
+                  </div>
+                  <div class="detail-column">
+                  <p><fa-icon [icon]="faBed"></fa-icon> {{ booking.roomType }}</p>
+                  <p><fa-icon [icon]="faCircle" [style.color]="getStatusColor(booking.status)"></fa-icon>  {{ booking.status }}</p>
+                  </div>
+                  <div class="detail-column">
+                  <p><fa-icon [icon]="faCloudMoon"></fa-icon> {{ booking.stayDuration }} night(s)</p>
+                  <p><fa-icon [icon]="faMoneyBill"></fa-icon> ₹{{ booking.totalPayable }}</p>
+                  </div>
+          
+                  <!-- Buttons -->
+                  <div class="booking-buttons">
+                  <!-- <button>View Details</button>
+                  <button (click)="giveReview(booking)">Give Review</button>
+                  <button>Book Again</button>-->
+                  <button (click)="openDetailsPopup(booking)">View Details</button>
+                  <button (click)="openRebookPopup(booking)">Book Again</button>
+                  </div>
+              </div>
             </div>
         </div>
+       
         </div>
+
+        <!-- Pagination for Past Bookings -->
+        <div class="pagination-controls">
+          <!-- Rows Per Page Section -->
+          <div class="rows-per-page">
+            <label for="rowsPerPage">Rows per page</label>
+            <select id="rowsPerPage" [(ngModel)]="pastRowsPerPage" (change)="changePastRowsPerPage($event)">
+              <option *ngFor="let option of pastRowsPerPageOptions" [value]="option">{{ option }}</option>
+            </select>
+          </div>
+        
+          <!-- Pagination Buttons Section -->
+          <div class="pagination-buttons">
+            <button (click)="goToPastPreviousPage()" [disabled]="pastCurrentPage === 1"><i><fa-icon [icon]="faArrowLeft"></fa-icon></i></button>
+            <span class="page-info">Page {{ pastCurrentPage }} of {{ pastTotalPages }}</span>
+            <button (click)="goToPastNextPage()" [disabled]="pastCurrentPage === pastTotalPages"><i><fa-icon [icon]="faArrowRight"></fa-icon></i></button>
+          </div>
+        </div>
+
         <ng-template #noPastBookings>
         <p class="no-bookings">No past bookings available.</p>
-        </ng-template>        
+        </ng-template>   
+
     </div>
     
     <!-- Details Popup -->

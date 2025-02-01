@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faSearch, faStar, faCalendarCheck, faCalendarMinus, faUser, faLocation, faBed, faChild, faArrowRight, faMapMarkerAlt, faBars, faClipboardList, faHome } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faStar, faCalendarCheck, faCalendarMinus, faUser, faLocation, faBed, faChild, faArrowRight, faMapMarkerAlt, faBars, faClipboardList, faHome, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 import { HotelService } from '../../services/hotel.service';
 import { Hotel } from '../../models/hotel.model';
@@ -46,6 +46,7 @@ export class SearchHotelComponent implements OnInit {
   faBars = faBars;
   faClipboardList = faClipboardList;
   faHome = faHome;
+  faArrowLeft = faArrowLeft;
 
 
   constructor(private hotelService: HotelService, private router: Router) {
@@ -158,4 +159,26 @@ export class SearchHotelComponent implements OnInit {
       return nextDate.toISOString().split('T')[0]; // Format as 'YYYY-MM-DD'
     }
 
+  // pagination styles
+  
+  currentPage: number = 0;
+  pageSize: number = 4; // Number of cards per page
+
+  // Computed property to get the paginated list
+  get paginatedDeals() {
+    const start = this.currentPage * this.pageSize;
+    return this.topDeals.slice(start, start + this.pageSize);
+  }
+
+  nextPage() {
+    if ((this.currentPage + 1) * this.pageSize < this.topDeals.length) {
+      this.currentPage++;
+    }
+  }
+
+  prevPage() {
+    if (this.currentPage > 0) {
+      this.currentPage--;
+    }
+  }
 }

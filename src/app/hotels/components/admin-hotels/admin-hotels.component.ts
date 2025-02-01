@@ -29,13 +29,10 @@ export class AdminHotelsComponent implements OnInit {
 
   ngOnInit(): void {
     this.hotelService.getHotels().subscribe((data) => {
-      this.hotels = data;
-
-      this.updatePagination();
+    this.hotels = data;
+    this.updatePagination();
     });
   }
-
-
 
   // open details popup function
   hotel: Hotel = {} as Hotel;

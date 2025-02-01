@@ -120,6 +120,7 @@
   /* pagination styles */
 
   .pagination-controls {
+    width: 90%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -130,11 +131,16 @@
   /* Style for Rows Per Page */
   .pagination-controls .rows-per-page {
     display: flex;
-    align-items: center;
+    width:30%;
+    align-items: start;
     gap: 8px; /* Add spacing between label and dropdown */
-    /* position: absolute; */
     bottom: 20px;
     left: 20px; /* Align to the bottom-left */
+  }
+
+  .pagination-controls .rows-per-page select {
+    height: 25px; 
+    width: 35px;
   }
   
   /* Style for Centered Pagination Buttons */
@@ -143,6 +149,7 @@
     align-items: center;
     gap: 8px; /* Add spacing between buttons and text */
     margin: 0 auto; /* Center the buttons */
+    width:30%;
   }
   
   .pagination-controls button {

@@ -4,8 +4,8 @@
 
 <!-- Current Bookings Section -->
 <h2>Current Bookings</h2>
-<div *ngIf="currentBookings.length; else noCurrentBookings">
-  <div *ngFor="let booking of currentBookings">
+<div *ngIf="displayedCurrentBookings.length; else noCurrentBookings">
+  <div *ngFor="let booking of displayedCurrentBookings">
     <div *ngIf="booking.userid === userid" class="booking-card">
 
       <!-- Image column -->
@@ -46,14 +46,33 @@
     </div>
   </div>
 </div>
+
+<!-- Pagination for Current Bookings -->
+<div class="pagination-controls">
+  <!-- Rows Per Page Section -->
+  <div class="rows-per-page">
+    <label for="rowsPerPage">Rows per page</label>
+    <select id="rowsPerPage" [(ngModel)]="currentRowsPerPage" (change)="changeCurrentRowsPerPage($event)">
+      <option *ngFor="let option of currentRowsPerPageOptions" [value]="option">{{ option }}</option>
+    </select>
+  </div>
+
+  <!-- Pagination Buttons Section -->
+  <div class="pagination-buttons">
+    <button (click)="goToCurrentPreviousPage()" [disabled]="currentCurrentPage === 1"><i><fa-icon [icon]="faArrowLeft"></fa-icon></i></button>
+    <span class="page-info">Page {{ currentCurrentPage }} of {{ currentTotalPages }}</span>
+    <button (click)="goToCurrentNextPage()" [disabled]="currentCurrentPage === currentTotalPages"><i><fa-icon [icon]="faArrowRight"></fa-icon></i></button>
+  </div>
+</div>
+
 <ng-template #noCurrentBookings>
   <p class="no-bookings">No current bookings available.</p>
 </ng-template>
 
 <!-- Past Bookings Section -->
 <h2>Past Bookings</h2>
-<div *ngIf="pastBookings.length; else noPastBookings">
-  <div *ngFor="let booking of pastBookings">
+<div *ngIf="displayedPastBookings.length; else noPastBookings">
+  <div *ngFor="let booking of displayedPastBookings">
     <div  class="booking-card">
       <!-- Image column -->
       <div class="booking-image">
@@ -92,6 +111,25 @@
     </div>
   </div>
 </div>
+
+<!-- Pagination for Past Bookings -->
+<div class="pagination-controls">
+  <!-- Rows Per Page Section -->
+  <div class="rows-per-page">
+    <label for="rowsPerPage">Rows per page</label>
+    <select id="rowsPerPage" [(ngModel)]="pastRowsPerPage" (change)="changePastRowsPerPage($event)">
+      <option *ngFor="let option of pastRowsPerPageOptions" [value]="option">{{ option }}</option>
+    </select>
+  </div>
+
+  <!-- Pagination Buttons Section -->
+  <div class="pagination-buttons">
+    <button (click)="goToPastPreviousPage()" [disabled]="pastCurrentPage === 1"><i><fa-icon [icon]="faArrowLeft"></fa-icon></i></button>
+    <span class="page-info">Page {{ pastCurrentPage }} of {{ pastTotalPages }}</span>
+    <button (click)="goToPastNextPage()" [disabled]="pastCurrentPage === pastTotalPages"><i><fa-icon [icon]="faArrowRight"></fa-icon></i></button>
+  </div>
+</div>
+
 <ng-template #noPastBookings>
   <p class="no-bookings">No past bookings available.</p>
 </ng-template>
