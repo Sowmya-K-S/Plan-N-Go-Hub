@@ -10,6 +10,8 @@ import { MyBookingsComponent } from './hotels/components/my-bookings/my-bookings
 import { AdminHotelsComponent } from './hotels/components/admin-hotels/admin-hotels.component';
 import { AdminDashboardComponent } from './hotels/components/admin-dashboard/admin-dashboard.component';
 import { AdminBookingsComponent } from './hotels/components/admin-bookings/admin-bookings.component';
+import { ServiceProviderHotelComponent } from './hotels/components/service-provider-hotel/service-provider-hotel.component';
+import { ServiceProviderDashboardComponent } from './hotels/components/service-provider-dashboard/service-provider-dashboard.component';
 
 
 export const routes: Routes = [
@@ -28,7 +30,13 @@ export const routes: Routes = [
           { path: 'dashboard', component: AdminDashboardComponent },
           { path: 'bookings', component: AdminBookingsComponent },
         ]
-      }
+      },
+      { path: 'service-provider',
+        children: [
+          { path: 'hotels', component: ServiceProviderHotelComponent },
+          { path: 'dashboard', component: ServiceProviderDashboardComponent },
+        ]
+      },
     ],
   },
 ];

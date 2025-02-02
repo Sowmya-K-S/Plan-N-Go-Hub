@@ -1,7 +1,129 @@
 {
   "hotels": [
     {
+      "id": "HOTEL001",
+      "hspid": "HSP001",
+      "name": "The Oberoi Mumbai",
+      "location": "Mumbai",
+      "description": "Located on the iconic Marine Drive, The Oberoi Mumbai offers luxurious accommodations with panoramic views of the Arabian Sea.",
+      "Address": "Marine Drive, Mumbai, Maharashtra 400020, India",
+      "nearbyAttractions": [
+        "Gateway of India (Approx. 2 km)",
+        "Chhatrapati Shivaji Maharaj Vastu Sangrahalaya (Approx. 2 km)",
+        "Marine Drive (Approx. 3.2 km)",
+        "Colaba Causeway (Approx. 2 km)"
+      ],
+      "specialOffers": [
+        {
+          "discount": 10,
+          "description": "Exclusive Discount"
+        }
+      ],
+      "price": 18000,
+      "images": [
+        "assets/hotel/hotel-images/oberoi-mumbai.jpg",
+        "assets/hotel/hotel-images/oberoi-mumbai2.jpg",
+        "assets/hotel/hotel-images/oberoi-mumbai3.jpg",
+        "assets/hotel/hotel-images/oberoi-mumbai4.jpg"
+      ],
+      "amenities": [
+        "Free Wifi",
+        "Free Parking",
+        "Lift",
+        "Restaurant",
+        "Sauna",
+        "EV charging station",
+        "Children's pool",
+        "Luggage storage",
+        "Bar"
+      ],
+      "surroundings": {
+        "Airport": "Chhatrapati Shivaji Maharaj International Airport (Approx. 24 km)",
+        "Train": "Churchgate Railway Station (Approx. 5-minute walk)",
+        "Bus": "N.C.P.A. Bus Stop (Approx. 2-minute walk)"
+      },
+      "rooms": [
+        {
+          "type": "Luxury Room",
+          "bed": "King Size",
+          "size": "350 sq ft",
+          "amenities": [
+            "Free Wifi",
+            "Private Bathroom",
+            "Air Conditioning",
+            "Non-Smoking",
+            "Mountain View",
+            "Free Breakfast"
+          ],
+          "price": 18000,
+          "totalRooms": 30,
+          "availability": [],
+          "capacity": {
+            "adults": 2,
+            "children": 1
+          },
+          "image": "assets/hotel/room-images/luxury-room.jpg"
+        },
+        {
+          "type": "Executive Suite",
+          "bed": "Queen Size",
+          "size": "450 sq ft",
+          "amenities": [
+            "Free Wifi",
+            "Private Bathroom",
+            "Air Conditioning",
+            "Non-Smoking",
+            "Balcony",
+            "Ocean View",
+            "Room Service"
+          ],
+          "price": 24000,
+          "totalRooms": 15,
+          "availability": [],
+          "capacity": {
+            "adults": 3,
+            "children": 1
+          },
+          "image": "assets/hotel/room-images/executive-suite-room.jpg"
+        }
+      ],
+      "reviews": [
+        {
+          "username": "JohnDoe123",
+          "rating": 5,
+          "comment": "Amazing stay with great service and views!"
+        },
+        {
+          "username": "JaneSmith456",
+          "rating": 4,
+          "comment": "Beautiful hotel, but food could be better."
+        },
+        {
+          "username": "Jane12",
+          "rating": 4,
+          "comment": "Beautiful hotel, but food could be better."
+        }
+      ],
+      "rating": 4.5,
+      "star": 5,
+      "faqs": [
+        {
+          "question": "Is airport transportation available?",
+          "answer": "Yes, airport transportation can be arranged upon request."
+        },
+        {
+          "question": "Are pets allowed?",
+          "answer": "No, pets are not allowed at the property."
+        },
+        {
+          "question": "What are the check-in and check-out times?",
+          "answer": "Check-in is from 3:00 PM, and check-out is until 12:00 PM."
+        }
+      ]
+    },
+    {
       "id": "HOTEL002",
+      "hspid": "HSP002",
       "name": "The Leela Palace Udaipur",
       "location": "Udaipur",
       "description": "Situated on the banks of Lake Pichola, this palace hotel recreates the grandeur of the Mewar dynasty, offering opulent rooms and stunning views. ",
@@ -118,6 +240,7 @@
     },
     {
       "id": "HOTEL003",
+      "hspid": "HSP003",
       "name": "Taj Mahal Palace Hotel",
       "location": "Mumbai",
       "description": "A historic landmark in Mumbai, the Taj Mahal Palace Hotel combines old-world charm with modern luxury, overlooking the Arabian Sea.",
@@ -239,6 +362,7 @@
     },
     {
       "id": "HOTEL004",
+      "hspid": "HSP004",
       "name": "The Oberoi Rajvilas",
       "location": "Jaipur",
       "description": "Set amidst 32 acres of lush gardens, The Oberoi Rajvilas offers a regal experience with traditional Rajasthani architecture and modern amenities.",
@@ -356,6 +480,7 @@
     },
     {
       "id": "HOTEL005",
+      "hspid": "HSP005",
       "name": "The Leela Palace New Delhi",
       "location": "New Delhi",
       "description": "A blend of historic heritage and modern luxury, The Leela Palace New Delhi offers elegant rooms and exceptional service.",
@@ -472,6 +597,7 @@
     },
     {
       "id": "HOTEL006",
+      "hspid": "HSP006",
       "name": "The Oberoi Udaivilas",
       "location": "Udaipur",
       "description": "Overlooking Lake Pichola, The Oberoi Udaivilas is a luxurious resort set amidst 50 acres of landscaped gardens, offering a tranquil retreat.",
@@ -588,6 +714,7 @@
     },
     {
       "id": "HOTEL007",
+      "hspid": "HSP007",
       "name": "The Leela Palace Bengaluru",
       "location": "Bengaluru",
       "description": "Located in the heart of Bengaluru, The Leela Palace offers a blend of traditional Indian hospitality and modern luxury.",
@@ -703,6 +830,7 @@
     },
     {
       "id": "HOTEL008",
+      "hspid": "HSP008",
       "name": "The Oberoi Grand",
       "location": "Kolkata",
       "description": "Known as the 'Grande Dame of Kolkata,' this hotel offers colonial charm with modern amenities in the city's heart.",
@@ -818,6 +946,7 @@
     },
     {
       "id": "HOTEL009",
+      "hspid": "HSP009",
       "name": "The Leela Palace Chennai",
       "location": "Chennai",
       "description": "Overlooking the Bay of Bengal, The Leela Palace Chennai offers luxurious accommodations with a blend of traditional and contemporary design.",
@@ -949,6 +1078,7 @@
     },
     {
       "id": "HOTEL010",
+      "hspid": "HSP010",
       "name": "The Oberoi Sukhvilas Resort & Spa",
       "location": "Chandigarh",
       "description": "Nestled amidst 8,000 acres of natural forest, this resort offers a serene environment with luxury accommodations and wellness facilities.",
@@ -1070,6 +1200,7 @@
     },
     {
       "id": "HOTEL011",
+      "hspid": "HSP011",
       "name": "Wildflower Hall",
       "location": "Shimla",
       "description": "Located in the Himalayas, Wildflower Hall offers a luxurious retreat amidst pine and cedar forests, with panoramic mountain views.",
@@ -1191,6 +1322,7 @@
     },
     {
       "id": "HOTEL012",
+      "hspid": "HSP012",
       "name": "The Taj West End",
       "location": "Bengaluru",
       "description": "Set amidst 20 acres of lush gardens, The Taj West End offers a blend of colonial charm and modern luxury in the heart of Bengaluru.",
@@ -1331,6 +1463,7 @@
     },
     {
       "id": "HOTEL013",
+      "hspid": "HSP013",
       "name": "Ananda in the Himalayas",
       "location": "Rishikesh",
       "description": "A luxury yoga and wellness retreat, Ananda offers panoramic views of the Himalayas and the Ganges River.",
@@ -1447,6 +1580,7 @@
     },
     {
       "id": "HOTEL014",
+      "hspid": "HSP014",
       "name": "ITC Grand Bharat",
       "location": "Gurgaon",
       "description": "An all-suite luxury resort, ITC Grand Bharat offers a regal experience with traditional Indian architecture and modern amenities.",
@@ -1569,6 +1703,7 @@
     },
     {
       "id": "HOTEL015",
+      "hspid": "HSP015",
       "name": "Park Hyatt Chennai",
       "location": "Chennai",
       "description": "Located in the heart of Chennai, Park Hyatt offers contemporary luxury with a focus on art and design.",
@@ -1689,6 +1824,7 @@
     },
     {
       "id": "HOTEL016",
+      "hspid": "HSP016",
       "name": "Taj Falaknuma Palace",
       "location": "Hyderabad",
       "description": "Once the residence of the Nizam, this palace hotel offers a regal experience with opulent rooms and fine dining.",
@@ -1810,6 +1946,7 @@
     },
     {
       "id": "HOTEL017",
+      "hspid": "HSP017",
       "name": "The Grand New Delhi",
       "location": "New Delhi",
       "description": "A luxury hotel offering modern accommodations and facilities, located in the diplomatic enclave of New Delhi.",
@@ -1935,6 +2072,7 @@
     },
     {
       "id": "HOTEL018",
+      "hspid": "HSP018",
       "name": "ITC Maratha",
       "location": "Mumbai",
       "description": "A luxury hotel inspired by the Maratha dynasty's grandeur, offering refined accommodations and a range of dining options.",
@@ -2066,6 +2204,7 @@
     },
     {
       "id": "HOTEL019",
+      "hspid": "HSP019",
       "name": "The St. Regis Mumbai",
       "location": "Mumbai",
       "description": "A five-star hotel located in the heart of Mumbai, offering panoramic city views, upscale dining, and personalized services.",
@@ -2181,6 +2320,7 @@
     },
     {
       "id": "HOTEL020",
+      "hspid": "HSP020",
       "name": "Le Méridien Jaipur Resort & Spa",
       "location": "Jaipur",
       "description": "A resort blending traditional grandeur with modern amenities, featuring spacious rooms, a spa, and cultural experiences.",
@@ -2296,6 +2436,7 @@
     },
     {
       "id": "HOTEL021",
+      "hspid": "HSP021",
       "name": "Rambagh Palace",
       "location": "Jaipur",
       "description": "Once the residence of Jaipur's royalty, this palace hotel offers opulent rooms, exquisite gardens, and a rich history.",
@@ -2412,6 +2553,7 @@
     },
     {
       "id": "HOTEL022",
+      "hspid": "HSP022",
       "name": "The Park Chennai",
       "location": "Chennai",
       "description": "A contemporary hotel in Chennai's business district, known for its chic interiors, rooftop pool, and vibrant nightlife venues.",
@@ -2527,6 +2669,7 @@
     },
     {
       "id": "HOTEL023",
+      "hspid": "HSP023",
       "name": "The Imperial New Delhi",
       "location": "New Delhi",
       "description": "A historic hotel offering a blend of Victorian, colonial, and art deco styles, with luxurious rooms and a renowned art collection.",
@@ -2643,6 +2786,7 @@
     },
     {
       "id": "HOTEL024",
+      "hspid": "HSP024",
       "name": "JW Marriott Mussoorie Walnut Grove Resort & Spa",
       "location": "Mussoorie",
       "description": "A luxury resort nestled in the Himalayas, featuring elegant accommodations, a spa, and panoramic mountain views.",
@@ -2759,6 +2903,7 @@
     },
     {
       "id": "HOTEL025",
+      "hspid": "HSP025",
       "name": "The Leela Goa",
       "location": "Goa",
       "description": "A beachfront resort set amidst 75 acres of landscaped gardens, offering a blend of South Indian architecture and Portuguese heritage.",
@@ -2882,6 +3027,7 @@
     },
     {
       "id": "HOTEL026",
+      "hspid": "HSP026",
       "name": "The Ritz-Carlton Bangalore",
       "location": "Bengaluru",
       "description": "A luxury hotel in the city's heart, featuring elegant rooms, a rooftop bar, and a renowned spa.",
@@ -2997,6 +3143,7 @@
     },
     {
       "id": "HOTEL027",
+      "hspid": "HSP027",
       "name": "Viceroy Hotel",
       "location": "Hyderabad",
       "description": "A hotel offering comfortable accommodations and views of the Hussain Sagar Lake, located near major city attractions.",
@@ -3111,6 +3258,7 @@
     },
     {
       "id": "HOTEL028",
+      "hspid": "HSP028",
       "name": "Radisson Blu Resort Temple Bay Mamallapuram",
       "location": "Chennai",
       "description": "A seaside resort offering chalet-style accommodations, infinity pools, and proximity to UNESCO World Heritage sites.",
@@ -3224,6 +3372,7 @@
     },
     {
       "id": "HOTEL029",
+      "hspid": "HSP029",
       "name": "The Taj Coromandel",
       "location": "Chennai",
       "description": "A premier luxury hotel in Chennai, known for its elegant interiors, fine dining, and exceptional service",
@@ -3340,6 +3489,7 @@
     },
     {
       "id": "HOTEL030",
+      "hspid": "HSP030",
       "name": "The Oberoi Bangalore",
       "location": "Bengaluru",
       "description": "A luxury hotel set amidst lush gardens, offering spacious rooms, fine dining, and personalized service.",
@@ -3847,7 +3997,7 @@
       "totalPayable": 84960,
       "checkIn": "01/31/2025",
       "checkOut": "02/03/2025",
-      "status": "booked"
+      "status": "visited"
     },
     {
       "id": "04f3",
@@ -3911,7 +4061,7 @@
       "totalPayable": 113280,
       "checkIn": "01/31/2025",
       "checkOut": "02/04/2025",
-      "status": "booked"
+      "status": "cancelled"
     },
     {
       "id": "m9tk0jv",
@@ -3963,6 +4113,58 @@
       "totalPayable": 59000,
       "checkIn": "2/4/2025",
       "checkOut": "2/6/2025",
+      "status": "booked"
+    },
+    {
+      "id": "24byu48",
+      "userid": "USER001",
+      "hotelid": "HOTEL012",
+      "hotelName": "The Taj West End",
+      "hotelImage": "assets/hotel/hotel-images/taj-west-end-bengaluru.jpg",
+      "location": "Bengaluru",
+      "name": "Jenny",
+      "age": 25,
+      "gender": "female",
+      "email": "formyneeds1209@gmail.com",
+      "phone": "1234567890",
+      "guests": [],
+      "roomType": "Luxury Suite",
+      "roomPrice": 60000,
+      "noOfrooms": 1,
+      "stayDuration": 2,
+      "noOfGuests": 1,
+      "totalPrice": 120000,
+      "offer": 18000,
+      "netPrice": 102000,
+      "totalPayable": 120360,
+      "checkIn": "2/6/2025",
+      "checkOut": "2/8/2025",
+      "status": "booked"
+    },
+    {
+      "id": "tfmo881",
+      "userid": "USER001",
+      "hotelid": "HOTEL012",
+      "hotelName": "The Taj West End",
+      "hotelImage": "assets/hotel/hotel-images/taj-west-end-bengaluru.jpg",
+      "location": "Bengaluru",
+      "name": "kitty",
+      "age": 25,
+      "gender": "male",
+      "email": "abc@gmail.com",
+      "phone": "1234567890",
+      "guests": [],
+      "roomType": "Luxury Suite",
+      "roomPrice": 60000,
+      "noOfrooms": 1,
+      "stayDuration": 3,
+      "noOfGuests": 1,
+      "totalPrice": 180000,
+      "offer": 27000,
+      "netPrice": 153000,
+      "totalPayable": 180540,
+      "checkIn": "2/7/2025",
+      "checkOut": "2/10/2025",
       "status": "booked"
     }
   ]

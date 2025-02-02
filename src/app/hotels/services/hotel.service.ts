@@ -138,6 +138,20 @@ deleteHotel(id: string): Observable<void> {
 }
 
 
+//-------------------------------SERVICE PROVIDER SERVICES------------------------------
+getHotelByhspId(hspId: string): Observable<any> {
+  return this.http.get<Hotel[]>(`http://localhost:3000/hotels`).pipe(
+    map(hotels => hotels.find(hotel => hotel.hspid === hspId)) // This filters the hotels and finds the one with the matching hspid
+  );
 }
 
+getHotelIdByhspId(hspId: string): Observable<string | null> {
+  return this.http.get<any[]>(this.apiUrl).pipe(
+    map(hotels => {
+      const hotel = hotels.find(hotel => hotel.hspid === hspId);
+      return hotel ? hotel.id : null;
+    })
+  );
+}
 
+}
