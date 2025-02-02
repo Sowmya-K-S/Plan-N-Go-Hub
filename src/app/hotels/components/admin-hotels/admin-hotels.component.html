@@ -81,6 +81,65 @@
 </div>
 
 
+
+<!-- Pop-up for Hotel Details -->
+<!-- <div class="popup-overlay" *ngIf="showPopup">
+  <div class="popup-content">
+    <span class="close-btn" (click)="closePopup()">×</span>
+
+    <h2>{{ selectedHotel?.name }}</h2>
+    <p><strong>Hotel id:</strong> {{ selectedHotel?.id }}</p>
+    <p><strong>Location:</strong> {{ selectedHotel?.location }}</p>
+    <p><strong>Description:</strong> {{ selectedHotel?.description }}</p>
+    <p><strong>Address:</strong> {{ selectedHotel?.Address }}</p>
+
+    <h3>Nearby Attractions:</h3>
+    <ul>
+      <li *ngFor="let attraction of selectedHotel?.nearbyAttractions">
+        {{ attraction }}
+      </li>
+    </ul>
+
+    <h3>Surroundings:</h3>
+    <ul>
+      <li>
+        Airport: {{ selectedHotel?.surroundings.Airport }}
+      </li>
+      <li>
+        train: {{ selectedHotel?.surroundings.Train }}
+      </li>
+      <li>
+        Bus: {{ selectedHotel?.surroundings.Bus }}
+      </li>
+    </ul>
+
+    <h3>Amenities:</h3>
+    <ul>
+      <li *ngFor="let amenity of selectedHotel?.amenities">
+        {{ amenity }}
+      </li>
+    </ul>
+
+    <h2>Room Types:</h2>
+    <div *ngFor="let room of selectedHotel?.rooms">
+      <p><strong>{{ room.type }}</strong> - ₹{{ room.price }} / night</p>
+      <p><strong>Amenities:</strong><p>
+      <li *ngFor="let amenity of room.amenities">
+        {{ amenity }}
+      </li>
+    </div>
+
+    <h3>Reviews:</h3>
+    <div *ngFor="let review of selectedHotel?.reviews">
+      <p><strong>{{ review.username }}</strong> ({{ review.rating }}★): {{ review.comment }}</p>
+    </div>
+
+    <button class="close-popup-btn" (click)="closePopup()">Close</button>
+  </div>
+  </div> -->
+
+
+
   <!-- Navigation -->
   <app-admin-navigation></app-admin-navigation>
   

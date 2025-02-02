@@ -1,126 +1,6 @@
 {
   "hotels": [
     {
-      "id": "HOTEL001",
-      "name": "The Oberoi Mumbai",
-      "location": "Mumbai",
-      "description": "Located on the iconic Marine Drive, The Oberoi Mumbai offers luxurious accommodations with panoramic views of the Arabian Sea.",
-      "Address": "Marine Drive, Mumbai, Maharashtra 400020, India",
-      "nearbyAttractions": [
-        "Gateway of India (Approx. 2 km)",
-        "Chhatrapati Shivaji Maharaj Vastu Sangrahalaya (Approx. 2 km)",
-        "Marine Drive (Approx. 3.2 km)",
-        "Colaba Causeway (Approx. 2 km)"
-      ],
-      "specialOffers": [
-        {
-          "discount": 10,
-          "description": "Exclusive Discount"
-        }
-      ],
-      "price": 18000,
-      "images": [
-        "assets/hotel/hotel-images/oberoi-mumbai.jpg",
-        "assets/hotel/hotel-images/oberoi-mumbai2.jpg",
-        "assets/hotel/hotel-images/oberoi-mumbai3.jpg",
-        "assets/hotel/hotel-images/oberoi-mumbai4.jpg"
-      ],
-      "amenities": [
-        "Free Wifi",
-        "Free Parking",
-        "Lift",
-        "Restaurant",
-        "Sauna",
-        "EV charging station",
-        "Children's pool",
-        "Luggage storage",
-        "Bar"
-      ],
-      "surroundings": {
-        "Airport": "Chhatrapati Shivaji Maharaj International Airport (Approx. 24 km)",
-        "Train": "Churchgate Railway Station (Approx. 5-minute walk)",
-        "Bus": "N.C.P.A. Bus Stop (Approx. 2-minute walk)"
-      },
-      "rooms": [
-        {
-          "type": "Luxury Room",
-          "bed": "King Size",
-          "size": "350 sq ft",
-          "amenities": [
-            "Free Wifi",
-            "Private Bathroom",
-            "Air Conditioning",
-            "Non-Smoking",
-            "Mountain View",
-            "Free Breakfast"
-          ],
-          "price": 18000,
-          "totalRooms": 30,
-          "availability": [],
-          "capacity": {
-            "adults": 2,
-            "children": 1
-          },
-          "image": "assets/hotel/room-images/luxury-room.jpg"
-        },
-        {
-          "type": "Executive Suite",
-          "bed": "Queen Size",
-          "size": "450 sq ft",
-          "amenities": [
-            "Free Wifi",
-            "Private Bathroom",
-            "Air Conditioning",
-            "Non-Smoking",
-            "Balcony",
-            "Ocean View",
-            "Room Service"
-          ],
-          "price": 24000,
-          "totalRooms": 15,
-          "availability": [],
-          "capacity": {
-            "adults": 3,
-            "children": 1
-          },
-          "image": "assets/hotel/room-images/executive-suite-room.jpg"
-        }
-      ],
-      "reviews": [
-        {
-          "username": "JohnDoe123",
-          "rating": 5,
-          "comment": "Amazing stay with great service and views!"
-        },
-        {
-          "username": "JaneSmith456",
-          "rating": 4,
-          "comment": "Beautiful hotel, but food could be better."
-        },
-        {
-          "username": "Jane12",
-          "rating": 4,
-          "comment": "Beautiful hotel, but food could be better."
-        }
-      ],
-      "rating": 4.5,
-      "star": 5,
-      "faqs": [
-        {
-          "question": "Is airport transportation available?",
-          "answer": "Yes, airport transportation can be arranged upon request."
-        },
-        {
-          "question": "Are pets allowed?",
-          "answer": "No, pets are not allowed at the property."
-        },
-        {
-          "question": "What are the check-in and check-out times?",
-          "answer": "Check-in is from 3:00 PM, and check-out is until 12:00 PM."
-        }
-      ]
-    },
-    {
       "id": "HOTEL002",
       "name": "The Leela Palace Udaipur",
       "location": "Udaipur",
@@ -3935,7 +3815,7 @@
       "totalPayable": 70800,
       "checkIn": "01/31/2025",
       "checkOut": "02/02/2025",
-      "status": "booked"
+      "status": "visited"
     },
     {
       "id": "65a1",
@@ -4057,6 +3937,32 @@
       "totalPayable": 60416,
       "checkIn": "2/3/2025",
       "checkOut": "2/5/2025",
+      "status": "booked"
+    },
+    {
+      "id": "thxjl47",
+      "userid": "USER001",
+      "hotelid": "HOTEL026",
+      "hotelName": "The Ritz-Carlton Bangalore",
+      "hotelImage": "assets/hotel/hotel-images/ritz-carlton-bengaluru.jpg",
+      "location": "Bengaluru",
+      "name": "Sowmya",
+      "age": 25,
+      "gender": "female",
+      "email": "abc@gmail.com",
+      "phone": "1234567890",
+      "guests": [],
+      "roomType": "Deluxe Room",
+      "roomPrice": 25000,
+      "noOfrooms": 1,
+      "stayDuration": 2,
+      "noOfGuests": 1,
+      "totalPrice": 50000,
+      "offer": 0,
+      "netPrice": 50000,
+      "totalPayable": 59000,
+      "checkIn": "2/4/2025",
+      "checkOut": "2/6/2025",
       "status": "booked"
     }
   ]

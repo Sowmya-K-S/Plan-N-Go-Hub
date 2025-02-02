@@ -129,13 +129,17 @@ export class AdminBookingsComponent implements OnInit {
       if (isPast && booking.status !== 'cancelled' && booking.status !== 'visited') {
         const updatedBooking = { ...booking, status: 'visited' };
         this.hotelService.updateBookingStatus(updatedBooking).subscribe({
-    
+          next: () => {
+            console.log(`Booking ${booking.id} updated to 'visited'.`);
+          },
+          error: (err) => console.error('Error updating past booking status:', err),
         });
       }
   
       return booking.status === 'visited' || booking.status === 'cancelled' || isPast;
     });
   }
+  
   
 
   updatePastBookingStatus(): void {

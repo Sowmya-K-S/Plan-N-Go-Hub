@@ -34,19 +34,6 @@ export class AdminHotelsComponent implements OnInit {
     });
   }
 
-  // open details popup function
-  hotel: Hotel = {} as Hotel;
-
-  openDetailsPopup = false;
-  viewDetails(hotel: Hotel): void {
-    this.hotel = hotel
-    this.openDetailsPopup = true
-  }
-
-  closeDetailsPopup()
-  {
-    this.openDetailsPopup = false;
-  }
 
   updateHotel(hotel: Hotel): void {
     // Logic for updating hotel (show a form or navigate to update page)
@@ -99,7 +86,17 @@ updatePagination(): void {
 
 
   // hotel details popup
+  showPopup = false;
+  selectedHotel: any = null;
 
+  viewDetails(hotel: Hotel) {
+    this.selectedHotel = hotel;
+    this.showPopup = true;
+  }
+
+  closePopup() {
+    this.showPopup = false;
+  }
 
 
 }
