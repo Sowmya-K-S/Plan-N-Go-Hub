@@ -63,7 +63,7 @@ export class AdminDashboardComponent {
     this.totalBookings = this.bookings.length;
   
     // Total Revenue
-    this.totalRevenue = this.bookings.reduce((sum, booking) => sum + booking.totalPayable, 0);
+    this.totalRevenue = this.bookings.filter(booking => booking.status === 'visited').reduce((sum, booking) => sum + booking.totalPayable, 0);
   
     // Total Visits
     this.totalVisits = this.bookings.filter(booking => booking.status === 'visited').length;

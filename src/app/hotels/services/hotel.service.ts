@@ -134,7 +134,7 @@ editBooking(booking: any): Observable<any> {
 
 // ----------------------------ADMIN SERVICES-------------------------------------
 deleteHotel(id: string): Observable<void> {
-  return this.http.delete<void>(`${this.apiUrl}/${id}`);
+  return this.http.delete<void>(`http://localhost:3000/hotels/${id}`);
 }
 
 

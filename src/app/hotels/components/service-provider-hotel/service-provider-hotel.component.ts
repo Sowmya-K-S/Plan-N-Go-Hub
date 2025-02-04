@@ -8,10 +8,8 @@ import { Router } from '@angular/router';
 import { IconDefinition,faStar,faSwimmingPool,faSpa,faDumbbell, faCocktail, faHandSparkles, faUtensils, faBaby, faWifi, faMicrophone,faFutbol, faParking, faElevator, faHotTub, faChild, faSuitcase, faChalkboardTeacher, faChargingStation, faBroom, faTableTennis, faOm, faSmokingBan, faSmoking, faShower, faBath, faWind, faArchway, faWater, faSeedling, faConciergeBell, faCity, faMountain, faTree,faBed,faMapMarkerAlt,faHotel,faMapPin,faPlane,faTrain,faBus,faRulerCombined,faUser,faChildren,faCalendarCheck,faCalendarMinus} from '@fortawesome/free-solid-svg-icons';
 
 import { HotelService } from '../../services/hotel.service';
-import { Hotel } from '../../models/hotel.model';
 import { ServiceProviderNavigationComponent } from '../service-provider-navigation/service-provider-navigation.component';
 
-import { NavigationToggleComponent } from '../navigation-toggle/navigation-toggle.component';
 
 @Component({
   selector: 'app-hotel-details',
@@ -69,15 +67,12 @@ export class ServiceProviderHotelComponent implements OnInit {
   faCalendarCheck = faCalendarCheck;
   faCalendarMinus = faCalendarMinus;
 
-  minCheckinDate: string;
   constructor(private route: ActivatedRoute, private hotelService: HotelService,private router: Router) 
   {
-    const today = new Date();
-    this.minCheckinDate = today.toISOString().split('T')[0];
   }
 
   ngOnInit(): void {
-    const hspid = "HSP001";
+    const hspid = "HSP012";
     this.hotelService.getHotelByhspId(hspid).subscribe((data) => {
       if (data) {
         this.hotel = data;

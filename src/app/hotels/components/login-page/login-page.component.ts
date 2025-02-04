@@ -27,10 +27,14 @@ export class LoginPageComponent {
 
     // Redirect based on selected role
     if (this.selectedRole === 'admin') {
-      this.router.navigate(['/hotels/admin/hotels']); // Replace with the actual route for admin
+      this.router.navigate(['/hotels/admin/dashboard']); // Replace with the actual route for admin
     } else if (this.selectedRole === 'user') {
       this.router.navigate(['/hotels/search']); // Replace with the actual route for user
-    } else {
+    }
+    else if (this.selectedRole === 'service-provider') {
+      this.router.navigate(['/hotels/service-provider/dashboard']); // Replace with the actual route for user
+    }
+    else {
       alert('Invalid role selected!');
     }
   }
