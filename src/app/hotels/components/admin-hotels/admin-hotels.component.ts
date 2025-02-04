@@ -254,8 +254,6 @@ updatePagination(): void {
     this.showConfirmPopup = false; // Close popup without deleting
     this.hotelToDeleteId = null;
   }
-  
-
 
 }
 
